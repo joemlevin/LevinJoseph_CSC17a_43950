@@ -22,7 +22,9 @@ short slct(); //menu selection
 void prb312(); //driver for problem 3.12
 void prb313(); //driver for problem 3.13
 void prb410(); //driver for problem 4.10
-float celsius(); //gets input from user for temperature
+void prb511(); //driver for problem 5.11
+void prb607();//driver for problem 6.07
+float getcels(); //gets input from user for temperature
 float ctof(float);//converts celsius to fahrenehit
 bool again(); //problem repeater
 int dollars(); //prompts user for integer dollar amount and returns it
@@ -32,6 +34,10 @@ int month(); // returns integer for month 1-12
 int year(); //returns integer for year
 bool leap(int); //checks for leap year
 void days(int, int); //output numbers of day of a given year and month
+void getpop(float&,int&,int&); //function to gather population input
+void incpop(float&,int,int); //function to perform population calculations
+float celsius(int);// fahrenheit to celsius
+void clstbl();//outputs a formatting table of fahrenheit to celsius conversions
 
 int main(int argc, char** argv) {
     menu();
@@ -57,6 +63,14 @@ void menu(){
             clrscrn();
             prb410();
             break;
+        case 4:
+            clrscrn;
+            prb511();
+            break;
+        case 5:
+            clrscrn();
+            prb607();
+            break;
         case -1:
             cout<<"That's all, folks."<<endl;
         default:
@@ -80,6 +94,8 @@ short slct(){
             <<"1. Problem 3.12"<<endl
             <<"2. Problem 3.13"<<endl
             <<"3. Problem 4.10"<<endl
+            <<"4. Problem 5.11"<<endl
+            <<"5. Problem 6.07"<<endl
             <<"-1 to quit"<<endl;
     do{
         cin>>pick;
@@ -98,7 +114,7 @@ short slct(){
 void prb312(){
     do{
         clrscrn();//clears console
-        float c=celsius(); //calls celsius to get celsius temp from user
+        float c=getcels(); //calls celsius to get celsius temp from user
         float t=ctof(c);//converts c to fahrenheit
         cout<<c<<" degrees celsius is "<<
                 setprecision(1)<<fixed<<t<<" degrees fahrenheit."<<endl;
@@ -127,9 +143,38 @@ void prb410(){
     }while(again());//checks for repeat
     menu();//goes back to menu
 
+}//end
+//prb511 is the driver for problem 5.11, population.
+void prb511(){
+    int r, d;
+    float p;
+    do{
+        clrscrn();
+        getpop(p,r,d);//gets population information from user
+        incpop(p,r,d);//performs population growth calculations
+    }while(again());
+    menu();
+}//end
+//prb 607 is the main driver for problem 6.7, celsius temperature table
+void prb607(){
+    short pick;
+    bool check=false;
+    clstbl();
+    cout<<endl<<"-1 to return to menu"<<endl;
+    do{
+        cin>>pick;
+        if(cin.fail()||pick!=-1){
+            cin.clear();
+            cin.ignore(256,'\n');
+            cout<<"Error. Invalid selection. Try again."<<endl;
+        }
+        else
+            check=true;
+    }while(!check);
+    menu();
 }
 //celsius prompts user to enter a temperature for conversion
-float celsius(){
+float getcels(){
     bool check = false;
     float num; //stores user inputted value
     cout<<"Enter a temperature in celsius to convert to fahrenheit."<<endl;
@@ -257,4 +302,77 @@ void days(int month, int year){
         cout<<"30 days"<<endl;
     else
         cout<<"31 days"<<endl;
+}//end
+//getpop prompts the user to enter the initial population size for an
+//organism, its rate of growth as a percentage, and how many days it will
+//be multiplying and stores them in referenced variables from the
+//prb511 driver
+void getpop(float& p,int& r,int&d){
+    bool check=false;
+    //get the initial population from the user, and store into p
+    cout<<"Enter initial population (2 or greater)"<<endl;
+    do{
+        cin>>p;
+        if(cin.fail()|p<2){ //can't be less than 2
+            cin.clear();
+            cin.ignore(256,'\n');
+            cout<<"Error. Not a valid initial population."<<endl;
+        }
+        else
+            check=true;
+    }while(!check);
+    //reset bool for next round of input
+    check=false;
+    //get rate of growth of population and store as r
+    cout<<"Enter rate of growth as a percentage. (ie, 10% = 10)"<<endl;
+    do{
+        cin>>r;
+        if(cin.fail()|r<0){ //can't be less than 0
+            cin.clear();
+            cin.ignore(256,'\n');
+            cout<<"Error. Not a valid growth rate."<<endl;
+        }
+        else
+            check=true;
+    }while(!check);
+    //reset bool for next round of input
+    check=false;
+    //get the number of days from the user and store as d
+    cout<<"Enter the number of days the population will multiply for."
+            <<" (1 or greater)"<<endl;
+    do{
+        cin>>d;
+        if(cin.fail()|d<1){ //can't be less than 1
+            cin.clear();
+            cin.ignore(256,'\n');
+            cout<<"Error. Not a valid number of days."<<endl;
+        }
+        else
+            check=true;
+    }while(!check);
+}//end
+//incpop takes the information gained from getpop and uses it to simulate
+//population growth.
+void incpop(float& p,int r,int d){
+    cout<<"Day: 0, Population: "<<p<<endl;
+    for(int i=0;i<d;i++){//will loop 'd' times to represent number of days
+        p+=(p)*(static_cast<float>(r)*.01);//increases p by the growth rate
+        cout<<"Day: "<<i+1<<", Population: "
+                <<setprecision(0)<<fixed<<p<<endl;
+        //will only output integer portion
+    }
+}//end
+//celsius takes in an integer representing a fahrenheit temperature
+//converts to celsius, and returns that value as a float
+float celsius(int f){
+    return (static_cast<float>(f)-32.0)*(5.0/9.0);
+}//end
+//clstbl is an output function that outputs a formatting table
+//consisting of the first 20 degrees fahrenheit converted to celsius
+void clstbl(){
+    cout<<"Fahrenheit   "<<"Celsius"<<endl;
+    for(int i=0; i<=20; i++){
+        cout<<setw(5)<<right<<i<<setw(7)<<setfill(' ')<<" "
+                <<setw(4)<<right<<setprecision(1)<<fixed<<celsius(i)<<endl;
+    }
 }//end
