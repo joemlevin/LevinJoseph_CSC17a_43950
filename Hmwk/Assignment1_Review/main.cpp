@@ -8,12 +8,15 @@
 #include <cstdlib>
 #include <iostream>
 #include <iomanip>
+#include <fstream>
 
 using namespace std;
 
 //global constants
 const float YEN_PER_DOLLAR=121.39f;//conversion rate for USD to Yen
 const float EUROS_PER_DOLLAR=0.95f;//conversion rate for USD to Euros
+const int MONTHS=3;//number of months for problem 7.06
+const int DAYS=30;//number of days for problem 7.06
 
 //Function prototypes
 void menu(); //Main menu function
@@ -24,6 +27,7 @@ void prb313(); //driver for problem 3.13
 void prb410(); //driver for problem 4.10
 void prb511(); //driver for problem 5.11
 void prb607();//driver for problem 6.07
+void prb607();//driver for problem 7.06
 float getcels(); //gets input from user for temperature
 float ctof(float);//converts celsius to fahrenehit
 bool again(); //problem repeater
@@ -38,9 +42,19 @@ void getpop(float&,int&,int&); //function to gather population input
 void incpop(float&,int,int); //function to perform population calculations
 float celsius(int);// fahrenheit to celsius
 void clstbl();//outputs a formatting table of fahrenheit to celsius conversions
+void getWthr(char[][DAYS]);//reads from weather file
+void cntWthr(char[][DAYS],int[][MONTHS]);//counts rainy, cloud, sunny days
+void statWthr(int[][MONTHS]);//organizes and outputs the results of cntWthr
+int rainy(int[][MONTHS]);//finds the month with most rain
 
+//main
 int main(int argc, char** argv) {
-    menu();
+    char w[MONTHS][DAYS]={};//stores weather from each day of month
+    int l[MONTHS][MONTHS]={};//occurrences of each weather type
+    getWthr(w);
+    cntWthr(w,l);
+    statWthr(l);
+    //menu();
     return 0;
 }
 
@@ -375,4 +389,91 @@ void clstbl(){
         cout<<setw(5)<<right<<i<<setw(7)<<setfill(' ')<<" "
                 <<setw(4)<<right<<setprecision(1)<<fixed<<celsius(i)<<endl;
     }
+}//end
+//getWhtr reads from a data file named RainOrShine.txt and stores the contents
+//in a 2D array with rows representing month 1-3 and col representing days 1-30
+void getWthr(char w[][DAYS]){
+    ifstream infile;
+    char l;//for storing the content of the data file
+    infile.open("RainOrShine.txt");
+    for(int i=0;i<MONTHS;i++){
+        for(int j=0;j<DAYS;j++){
+            infile>>l;
+            w[i][j]=l; //stores contents of array sequentially into
+                              //month, day format
+        }
+    }
+    infile.close();
+}//end
+//cntWthr loops through the weather char array and counts the number
+//of sunny, rainy, and cloudy days in each of 3 months. It stores the number
+//in a 2D parallel (rows)integer array)
+void cntWthr(char w[][DAYS],int l[][MONTHS]){
+    int sunny=0; //counter for sunny days
+    int rainy=0; //counter for rainy days
+    int cloudy=0; //counter for cloudy days
+    for(int i=0;i<MONTHS;i++){
+        //reset counters at the beginning of each 'month'
+        cloudy=0;
+        sunny=0;
+        rainy=0;
+        for(int j=0;j<DAYS;j++){
+            if(w[i][j]=='S')
+                sunny++;
+            else if(w[i][j]=='C')
+                cloudy++;
+            else
+                rainy++;
+        }
+        l[i][0]=sunny;//stores the sunny days for month
+        l[i][1]=cloudy;//stores the cloudy days for month
+        l[i][2]=rainy;//stores the rainy days for month
+    }
+}//end
+//rainy searches an array of rainy, cloud, and sunny counts
+//and finds which month has the most rainy days and returns the location
+//in the array
+int rainy(int l[][MONTHS]){
+    int index=0;
+    for(int i=0;i<MONTHS;i++){
+        if(l[i][2]>l[index][2])
+            index=i;
+    }
+    return index;
+}
+//statWthr organizes and outputs the results of cntWthr. It lists the number
+//of rainy, cloudy, and sunny days for each month and also announces
+//which month had the most rainy days
+void statWthr(int l[][MONTHS]){
+    
+    //output table of June, July, and August vs sunny, rainy, cloudy days
+    cout<<setw(13)<<setfill(' ')<<" "
+            <<"June  July  Agst"<<endl;
+    cout<<"Sunny"<<setw(11)<<setfill(' ')<<right<<l[0][0]
+                 <<setw(6)<<setfill(' ')<<right<<l[1][0]
+                 <<setw(6)<<setfill(' ')<<right<<l[2][0]<<endl;
+    cout<<"Cloudy"<<setw(10)<<setfill(' ')<<right<<l[0][1]
+                 <<setw(6)<<setfill(' ')<<right<<l[1][1]
+                 <<setw(6)<<setfill(' ')<<right<<l[2][1]<<endl;
+    cout<<"Rainy"<<setw(11)<<setfill(' ')<<right<<l[0][2]
+                 <<setw(6)<<setfill(' ')<<right<<l[1][2]
+                 <<setw(6)<<setfill(' ')<<right<<l[2][2]<<endl;
+    cout<<endl;
+    
+    //sum together total sunny, rainy, and cloudy days from each month
+    cout<<"Total Sunny"<<setw(5)<<setfill(' ')<<right
+            <<l[0][0]+l[1][0]+l[2][0]<<endl;
+    cout<<"Total Cloudy"<<setw(4)<<setfill(' ')<<right
+            <<l[0][1]+l[1][1]+l[2][1]<<endl;
+    cout<<"Total Rainy"<<setw(5)<<setfill(' ')<<right
+            <<l[0][2]+l[1][2]+l[2][2]<<endl;
+    cout<<endl;
+    
+    //determine which month had most rainy days
+    if(rainy(l)==0)
+        cout<<"June had the most rainy days."<<endl;
+    else if(rainy(l)==1)
+        cout<<"July had the most rainy days."<<endl;
+    else
+        cout<<"Agst had the most rainy days."<<endl;
 }//end
