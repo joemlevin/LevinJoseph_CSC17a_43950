@@ -1,7 +1,7 @@
 /* 
- * file: main.cpp
- * Author: Joseph Levin
- * Assignment: C++ Assignment 1 Review - Spring 2015 43950
+ * File:   main.cpp
+ * Author: Joseph
+ *
  * Created on March 14, 2015, 1:53 PM
  */
 
@@ -27,8 +27,7 @@ void prb313(); //driver for problem 3.13
 void prb410(); //driver for problem 4.10
 void prb511(); //driver for problem 5.11
 void prb607();//driver for problem 6.07
-void prb706();//driver for problem 7.06
-void prb807();//driver for problem 8.07
+void prb607();//driver for problem 7.06
 float getcels(); //gets input from user for temperature
 float ctof(float);//converts celsius to fahrenehit
 bool again(); //problem repeater
@@ -47,14 +46,15 @@ void getWthr(char[][DAYS]);//reads from weather file
 void cntWthr(char[][DAYS],int[][MONTHS]);//counts rainy, cloud, sunny days
 void statWthr(int[][MONTHS]);//organizes and outputs the results of cntWthr
 int rainy(int[][MONTHS]);//finds the month with most rain
-void bubString(string[],int);//bubble sort for string array
-int binString(string[],int,string);//binary search for string array
-void output(string[],int);//outputs string array
-
 
 //main
 int main(int argc, char** argv) {
-    menu();
+    char w[MONTHS][DAYS]={};//stores weather from each day of month
+    int l[MONTHS][MONTHS]={};//occurrences of each weather type
+    getWthr(w);
+    cntWthr(w,l);
+    statWthr(l);
+    //menu();
     return 0;
 }
 
@@ -85,14 +85,6 @@ void menu(){
             clrscrn();
             prb607();
             break;
-        case 6:
-            clrscrn();
-            prb706();
-            break;
-        case 7:
-            clrscrn();
-            prb807();
-            break;
         case -1:
             cout<<"That's all, folks."<<endl;
         default:
@@ -112,15 +104,12 @@ void clrscrn(){
 short slct(){
     short pick; //for menu selection
     bool check=false;
-    cout<<"Assignment 1 Review"<<endl;
     cout<<"Choose an option from the menu: "<<endl
-            <<"1. Problem 3.12 (Celsius to Fahrenheit)"<<endl
-            <<"2. Problem 3.13 (Currency)"<<endl
-            <<"3. Problem 4.10 (Days in a  Month)"<<endl
-            <<"4. Problem 5.11 (Population)"<<endl
-            <<"5. Problem 6.07 (Celsius Temperature Table)"<<endl
-            <<"6. Problem 7.06 (Rain or Shine)"<<endl
-            <<"7. Problem 8.07 (Binary String Search)"<<endl
+            <<"1. Problem 3.12"<<endl
+            <<"2. Problem 3.13"<<endl
+            <<"3. Problem 4.10"<<endl
+            <<"4. Problem 5.11"<<endl
+            <<"5. Problem 6.07"<<endl
             <<"-1 to quit"<<endl;
     do{
         cin>>pick;
@@ -182,54 +171,21 @@ void prb511(){
 }//end
 //prb 607 is the main driver for problem 6.7, celsius temperature table
 void prb607(){
+    short pick;
+    bool check=false;
+    clstbl();
+    cout<<endl<<"-1 to return to menu"<<endl;
     do{
-        clrscrn();
-       short pick;
-       bool check=false;
-       clstbl();
-    }while(again());
-    menu();
-}//end
-//prb706 is the main driver for problem 7.6, rainy days
-void prb706(){
-    do{
-        clrscrn();
-        char w[MONTHS][DAYS]={};//stores weather from each day of month
-        int l[MONTHS][MONTHS]={};//occurrences of each weather type
-        getWthr(w);
-        cntWthr(w,l);
-        statWthr(l);    
-    }while(again());
-    menu();
-}//end
-//prb807 is the main driver for problem 8.7, binary string search
-void prb807(){
-    do{
-        clrscrn();
-        string n[20]={"Joseph","Brynn","Adam","Patrick","Nornu","Briana",
-                        "Ricardo","Alex","Terry","Jason","Gabriela","Mark",
-                        "Cody","Josh","Marlene","Phillip","Samuel","Jeff",
-                        "Barack","Elon"};//Example array
-        string name;
-        cout<<"Before Sorting:" <<endl;
-        output(n,20);//outputs the unsorted string array from above
-        bubString(n,20);//sorts the string array using bubble sort
-        cout<<endl<<"After Sorting: "<<endl;
-        output(n,20);//outputs the sorted array
-        cout<<endl
-            <<"Choose a name to determine location "
-                "in list (left-right,top-bottom)"
-            <<endl;
-        cin>>name;//for demonstrating the binary search for strings
-        if(binString(n,20,name)==-1)//name not found by search
-            cout<<"That name is not on the list."<<endl;
-        else{//name found by search
-            cout<<name<<" is number "<<binString(n,20,name)+1
-                    <<" on the list."<< endl;
+        cin>>pick;
+        if(cin.fail()||pick!=-1){
+            cin.clear();
+            cin.ignore(256,'\n');
+            cout<<"Error. Invalid selection. Try again."<<endl;
         }
-    }while(again());
+        else
+            check=true;
+    }while(!check);
     menu();
-
 }
 //celsius prompts user to enter a temperature for conversion
 float getcels(){
@@ -412,7 +368,7 @@ void getpop(float& p,int& r,int&d){
 //incpop takes the information gained from getpop and uses it to simulate
 //population growth.
 void incpop(float& p,int r,int d){
-    cout<<"Day: 0, Population: "<<setprecision(0)<<fixed<<p<<endl;
+    cout<<"Day: 0, Population: "<<p<<endl;
     for(int i=0;i<d;i++){//will loop 'd' times to represent number of days
         p+=(p)*(static_cast<float>(r)*.01);//increases p by the growth rate
         cout<<"Day: "<<i+1<<", Population: "
@@ -521,38 +477,3 @@ void statWthr(int l[][MONTHS]){
     else
         cout<<"Agst had the most rainy days."<<endl;
 }//end
-//bubString bubble sorts a given array of strings
-void bubString(string a[],int size){
-    for(int i=0; i<size; i++)
-    {
-        for (int j=0; j<size-1;j++)
-        {
-            if(a[j]>a[j+1])
-                swap(a[j],a[j+1]);
-        }
-    }
-}//end
-//binString binary searches for a specified string in an array of strings
-int binString(string a[],int size, string target){
-    int low=0; //first location in array
-    int high=size-1; //last location in array
-    while(low<=high){ // if low > high, target is not in array
-        int mid=(high+low)/2; //middle location
-        if(a[mid]==target) //compares target to potential location
-            return mid; //found target value at middle location
-        else if(a[mid]<target)
-            low=mid+1; //value is not to the left of middle location
-        else
-            high=mid-1; //value is not to the right of middle location
-    }
-    return -1; //value not found in array
-}//end
-//output outputs the contents of a string array, formatted to not be terrible
-void output(string a[],int size){
-    for(int i=0;i<20;i++){
-        if(i%5==0)
-            cout<<endl;
-        cout<<a[i]<<setw(4)<<setfill(' ')<<" ";
-    }
-    cout<<endl;
-}
