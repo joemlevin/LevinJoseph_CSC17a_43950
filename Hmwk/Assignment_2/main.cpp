@@ -23,20 +23,20 @@ short slct(); //menu selection
 bool again(); //problem repeater
 void prnt(int *,int,int);//prints dynamic array, perline amount
 void prbavg();//mean, median, and mode calculation problem
-void prb91();//Driver for problem 9.1, Test Scores #1
+void prb92();//Driver for problem 9.2, Test Scores #1
 int *scores();//Creates dynamic array for test scores
 float savg(int *);//calculates average score
 void prntscr(int *);//outputs score array with headers
 int *mode(int[],int); //Mode determining function
 float median(int[],int); //median determining function
 float mean(int[],int); //Mean determining function
-void bubSort(int *, int);
+void bubSort(int *, int);//bubsort for dynamic array with size
+void bubSort(int *);//bubble sort for dynamic array with size in array
 
 //Let the games begin!
 int main(int argc, char** argv) {
-    
-    srand(time(0));
     menu();
+    srand(time(0));
     return 0;
 }
 
@@ -48,7 +48,12 @@ void menu(){
     short pick = slct();
     switch(pick){
         case 1:
+            clrscrn();
             prbavg();
+            break;
+        case 2:
+            clrscrn();
+            prb92();
             break;
         case -1:
             cout<<"That's all, folks."<<endl;
@@ -71,10 +76,11 @@ short slct(){
     bool check=false;
     cout<<"Assignment 2"<<endl;
     cout<<"Choose an option from the menu: "<<endl
-            <<"1. Median, Mean, and Mode"<<endl;
+            <<"1. Median, Mean, and Mode"<<endl
+            <<"2. Problem 9.2 (Test Scores #1)"<<endl;
     do{
         cin>>pick;
-        if(cin.fail()||pick<=0&&pick!=-1||pick>1){//error checking
+        if(cin.fail()||pick<=0&&pick!=-1||pick>6){//error checking
             cin.clear();
             cin.ignore(256,'\n');
             cout<<"Error. Invalid selection. Try again."<<endl;
@@ -240,5 +246,66 @@ int *scores(){
             check=true;
     }while(!check);
     int *t=new int[s+1];//number of scores plus 1 for size of array
-    t[0]=s;//can call t[0] to access size of t
+    *t=s+1;//can call t[0] to access size of t
+    //loop 's' amount of times to fill array with grades from user
+    for(int i=1;i<*t;i++){
+        check=false;
+        cout<<"Enter grade #"<<i<<endl;
+        do{
+            cin>>n;
+            //error checking
+            if(cin.fail()||n<0){
+                cin.clear();
+                cin.ignore(256,'\n');
+                cout<<"Error. Must be positive, nonzero integer."<<endl;
+            }
+            else
+                check=true;
+        }while(!check);
+        *(t+i)=n;
+    }
+    //finished
+    return t;
+}//end
+void bubSort(int *a){
+    for(int i=1; i<*a; i++)//a must contain the size of the array to work
+    {
+        for (int j=1; j<*a-1;j++)
+        {
+            if(*(a+j)>*(a+j+1))
+                swap(*(a+j),*(a+j+1));
+        }
+    }
+}//end
+//savg calculates the average score from an array of test scores and
+//returns the value as a float
+float savg(int *a){
+    float avg=0.0f;
+    for(int i=1;i<*a;i++)
+        avg+=*(a+i);
+    avg=avg/((*a)-1);//actual amount of scores is one less than size
+    return avg;
+}//end
+//prntscr prints the contents of the score array
+//taking into consideration the presence of the size
+//and also prints the average score
+void prntscr(int *a){
+    //print the number of scores being printed
+    cout<<"The results from "<<*a-1<<" tests"<<endl;
+    //print the test scores, labeled by number
+    for(int i=1;i<*a;i++){
+        cout<<"Score #"<<i<<": "<<setw(4)<<right<<*(a+i)<<endl;
+    }
+    cout<<endl<<"Average Score: "<<savg(a)<<endl;
+}//end
+void prb92(){
+    do{
+        int *tests=scores();
+        bubSort(tests);
+        clrscrn();
+        prntscr(tests);
+        delete []tests;
+        delete tests;
+    }while(again());
+    menu();
 }
