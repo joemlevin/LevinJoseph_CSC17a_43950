@@ -23,6 +23,10 @@ short slct(); //menu selection
 bool again(); //problem repeater
 void prnt(int *,int,int);//prints dynamic array, perline amount
 void prbavg();//mean, median, and mode calculation problem
+void prb91();//Driver for problem 9.1, Test Scores #1
+int *scores();//Creates dynamic array for test scores
+float savg(int *);//calculates average score
+void prntscr(int *);//outputs score array with headers
 int *mode(int[],int); //Mode determining function
 float median(int[],int); //median determining function
 float mean(int[],int); //Mean determining function
@@ -217,3 +221,24 @@ void bubSort(int *a,int size){
         }
     }
 }//end
+//scores prompts user to enter number of tests and their scores,
+//and returns it as a dynamic array of the appropriate size
+int *scores(){
+    int s;//for storing the size
+    int n;//for storing each score into array
+    bool check=false;
+    cout<<"Enter the number of test scores"<<endl;
+    do{
+        cin>>s;
+        //error checking
+        if(cin.fail()||s<=0){
+            cin.clear();
+            cin.ignore(256,'\n');
+            cout<<"Error. Must be positive, nonzero integer."<<endl;
+        }
+        else
+            check=true;
+    }while(!check);
+    int *t=new int[s+1];//number of scores plus 1 for size of array
+    t[0]=s;//can call t[0] to access size of t
+}
