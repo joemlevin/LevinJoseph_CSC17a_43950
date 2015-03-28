@@ -24,6 +24,7 @@ bool again(); //problem repeater
 void prnt(int *,int,int);//prints dynamic array, perline amount
 void prbavg();//mean, median, and mode calculation problem
 void prb92();//Driver for problem 9.2, Test Scores #1
+void prb93();//driver for problem 9.3, Drop Lowest Score
 int *scores();//Creates dynamic array for test scores
 float savg(int *);//calculates average score
 void prntscr(int *);//outputs score array with headers
@@ -32,11 +33,16 @@ float median(int[],int); //median determining function
 float mean(int[],int); //Mean determining function
 void bubSort(int *, int);//bubsort for dynamic array with size
 void bubSort(int *);//bubble sort for dynamic array with size in array
+int *curve(int *);//drops the lowest score
+
 
 //Let the games begin!
 int main(int argc, char** argv) {
-    menu();
     srand(time(0));
+    menu();
+
+   
+ 
     return 0;
 }
 
@@ -54,6 +60,10 @@ void menu(){
         case 2:
             clrscrn();
             prb92();
+            break;
+        case 3:
+            clrscrn();
+            prb93();
             break;
         case -1:
             cout<<"That's all, folks."<<endl;
@@ -77,7 +87,9 @@ short slct(){
     cout<<"Assignment 2"<<endl;
     cout<<"Choose an option from the menu: "<<endl
             <<"1. Median, Mean, and Mode"<<endl
-            <<"2. Problem 9.2 (Test Scores #1)"<<endl;
+            <<"2. Problem 9.2 (Test Scores #1)"<<endl
+            <<"3. Problem 9.3 (Drop Lowest Score)"<<endl
+            <<"-1 to quit"<<endl;
     do{
         cin>>pick;
         if(cin.fail()||pick<=0&&pick!=-1||pick>6){//error checking
@@ -308,4 +320,44 @@ void prb92(){
         delete tests;
     }while(again());
     menu();
+}//end
+void prb93(){
+    do{
+        int *tests=scores();
+        bubSort(tests);
+        clrscrn();
+        prntscr(tests);
+        cout<<endl;
+        cout<<"After dropping the lowest score(s):"<<endl;
+        int *c=curve(tests);
+        prntscr(c);
+    }while(again());
+    menu();
+}
+//curve determines the lowest score from s and copies over every value
+//except the lowest
+int *curve(int *s){
+    //determines lowest value
+    int low=1000000;
+    for(int i=1;i<*s;i++){
+        if(*(s+i)<low)
+            low=*(s+i);
+    }
+    //determines how many of the lowest is in the array
+    int count=0;
+    for(int i=1;i<*s;i++){
+        if(*(s+i)==low)
+            count++;
+    }
+    //copies over every element in s except the lowest values
+    int *c=new int[*s-count];
+    *c=(*s-count);
+    count=0;
+    for(int i=1;i<*s;i++){
+        if(*(s+i)==low)
+            count++;
+        else
+            *(c+i-count)=*(s+i);
+    }
+    return c;
 }
