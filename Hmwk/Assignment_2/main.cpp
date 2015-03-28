@@ -26,6 +26,7 @@ void prbavg();//mean, median, and mode calculation problem
 void prb92();//Driver for problem 9.2, Test Scores #1
 void prb93();//driver for problem 9.3, Drop Lowest Score
 void prb95();//driver for problem 9.5, Pointer Rewrite
+void prb910();//driver for problem 9.10, Reverse Array
 int *scores();//Creates dynamic array for test scores
 float savg(int *);//calculates average score
 void prntscr(int *);//outputs score array with headers
@@ -36,6 +37,7 @@ void bubSort(int *, int);//bubsort for dynamic array with size
 void bubSort(int *);//bubble sort for dynamic array with size in array
 int *curve(int *);//drops the lowest score
 int tenSwap(int *, int *);//swaps the and multiplies both by 10
+int *reverse(int[],int);//reverses the order of an int array
 
 
 //Let the games begin!
@@ -71,6 +73,10 @@ void menu(){
             clrscrn();
             prb95();
             break;
+        case 5:
+            clrscrn();
+            prb910();
+            break;
         case -1:
             cout<<"That's all, folks."<<endl;
         default:
@@ -96,6 +102,7 @@ short slct(){
             <<"2. Problem 9.2 (Test Scores #1)"<<endl
             <<"3. Problem 9.3 (Drop Lowest Score)"<<endl
             <<"4. Problem 9.5 (Pointer Rewrite)"<<endl
+            <<"5. Problem 9.10 (Reverse Array)"<<endl
             <<"-1 to quit"<<endl;
     do{
         cin>>pick;
@@ -362,6 +369,22 @@ void prb95(){
     }while(again());
     menu();
 }
+void prb910(){
+    do{
+        int s=10;
+        int array[10]={};
+        for(int i=0;i<s;i++)
+            array[i]=rand()%90+10;
+        cout<<"The original array:"<<endl;
+        prnt(array,s,10);
+        cout<<endl;
+        int *brray=reverse(array,s);
+        cout<<"The reversed array:"<<endl;
+        prnt(brray,s,10);
+    }while(again());
+    menu();
+
+}
 //curve determines the lowest score from s and copies over every value
 //except the lowest
 int *curve(int *s){
@@ -396,4 +419,12 @@ int tenSwap(int *x, int *y){
     *x=*y*10;
     *y=temp*10;
     return *x+*y;
+}//end
+//reverse takes an integer array and reverses the order of the elements
+//returns a pointer to the new reversed array
+int *reverse(int a[],int size){
+    int *r=new int[size];
+    for(int i=0;i<size;i++)
+        r[i]=a[size-1-i];
+    return r;
 }
