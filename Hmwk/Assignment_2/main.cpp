@@ -25,6 +25,7 @@ void prnt(int *,int,int);//prints dynamic array, perline amount
 void prbavg();//mean, median, and mode calculation problem
 void prb92();//Driver for problem 9.2, Test Scores #1
 void prb93();//driver for problem 9.3, Drop Lowest Score
+void prb95();//driver for problem 9.5, Pointer Rewrite
 int *scores();//Creates dynamic array for test scores
 float savg(int *);//calculates average score
 void prntscr(int *);//outputs score array with headers
@@ -34,6 +35,7 @@ float mean(int[],int); //Mean determining function
 void bubSort(int *, int);//bubsort for dynamic array with size
 void bubSort(int *);//bubble sort for dynamic array with size in array
 int *curve(int *);//drops the lowest score
+int tenSwap(int *, int *);//swaps the and multiplies both by 10
 
 
 //Let the games begin!
@@ -65,6 +67,10 @@ void menu(){
             clrscrn();
             prb93();
             break;
+        case 4:
+            clrscrn();
+            prb95();
+            break;
         case -1:
             cout<<"That's all, folks."<<endl;
         default:
@@ -89,6 +95,7 @@ short slct(){
             <<"1. Median, Mean, and Mode"<<endl
             <<"2. Problem 9.2 (Test Scores #1)"<<endl
             <<"3. Problem 9.3 (Drop Lowest Score)"<<endl
+            <<"4. Problem 9.5 (Pointer Rewrite)"<<endl
             <<"-1 to quit"<<endl;
     do{
         cin>>pick;
@@ -331,6 +338,27 @@ void prb93(){
         cout<<"After dropping the lowest score(s):"<<endl;
         int *c=curve(tests);
         prntscr(c);
+        delete []tests;
+        delete []c;
+        delete tests;
+        delete c;
+    }while(again());
+    menu();
+}//end
+void prb95(){
+    do{
+        int x, y;
+        cout<<"Enter an integer for x"<<endl;
+        cin>>x;
+        cout<<"Enter another integer for y"<<endl;
+        cin>>y;
+        clrscrn();
+        cout<<"Before:"<<endl;
+        cout<<"x: "<<setw(3)<<right<<x<<" "<<"y: "<<setw(3)<<right<<y<<endl;
+        cout<<endl<<"x & y will be swapped, multiplied by 10, and added."<<endl;
+        cout<<"10(x+y)="<<tenSwap(&x,&y)<<endl;
+        cout<<endl<<"After:"<<endl;
+        cout<<"x: "<<setw(3)<<right<<x<<" "<<"y: "<<setw(3)<<right<<y<<endl;
     }while(again());
     menu();
 }
@@ -360,4 +388,12 @@ int *curve(int *s){
             *(c+i-count)=*(s+i);
     }
     return c;
+}//end
+//tenSwap swaps the values of x and y and multiples them by 10
+//and returns the sum of the two... who knows why.
+int tenSwap(int *x, int *y){
+    int temp=*x;
+    *x=*y*10;
+    *y=temp*10;
+    return *x+*y;
 }
