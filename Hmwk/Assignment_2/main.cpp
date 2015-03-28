@@ -27,6 +27,7 @@ void prb92();//Driver for problem 9.2, Test Scores #1
 void prb93();//driver for problem 9.3, Drop Lowest Score
 void prb95();//driver for problem 9.5, Pointer Rewrite
 void prb910();//driver for problem 9.10, Reverse Array
+void prb911();//driver for problem 9.11, Array Expander
 int *scores();//Creates dynamic array for test scores
 float savg(int *);//calculates average score
 void prntscr(int *);//outputs score array with headers
@@ -38,6 +39,7 @@ void bubSort(int *);//bubble sort for dynamic array with size in array
 int *curve(int *);//drops the lowest score
 int tenSwap(int *, int *);//swaps the and multiplies both by 10
 int *reverse(int[],int);//reverses the order of an int array
+int *expand(int[],int);//expands the given array
 
 
 //Let the games begin!
@@ -77,6 +79,10 @@ void menu(){
             clrscrn();
             prb910();
             break;
+        case 6:
+            clrscrn();
+            prb911();
+            break;
         case -1:
             cout<<"That's all, folks."<<endl;
         default:
@@ -103,6 +109,7 @@ short slct(){
             <<"3. Problem 9.3 (Drop Lowest Score)"<<endl
             <<"4. Problem 9.5 (Pointer Rewrite)"<<endl
             <<"5. Problem 9.10 (Reverse Array)"<<endl
+            <<"6. Problem 9.11 (Expand Array)"<<endl
             <<"-1 to quit"<<endl;
     do{
         cin>>pick;
@@ -384,6 +391,19 @@ void prb910(){
     }while(again());
     menu();
 
+}//end
+void prb911(){
+    do{
+    int a[10]={};
+    for(int i=0;i<10;i++)
+        a[i]=rand()%90+10;
+    cout<<"The original array:"<<endl;
+    prnt(a,10,10);
+    int *b=expand(a,10);
+    cout<<"The expanded array:"<<endl;
+    prnt(b+1,b[0]-1,10);
+    }while(again());
+    menu();
 }
 //curve determines the lowest score from s and copies over every value
 //except the lowest
@@ -427,4 +447,15 @@ int *reverse(int a[],int size){
     for(int i=0;i<size;i++)
         r[i]=a[size-1-i];
     return r;
+}//end
+//expand takes the given array and dynamically creates a new array of
+//double size, copies the elements, and initializes new memory as 0
+int *expand(int a[], int size){
+    int *b=new int[(2*size)+1];
+    b[0]=(2*size)+1;
+    for(int i=1;i<(2*size)+1;i++)
+        b[i]=0;
+    for(int i=0;i<size;i++)
+        b[i+1]=a[i];
+    return b;
 }
