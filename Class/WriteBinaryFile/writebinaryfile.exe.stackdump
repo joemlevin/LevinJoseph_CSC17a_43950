@@ -1,0 +1,6 @@
+Exception: STATUS_ACCESS_VIOLATION at eip=6F1A2994
+eax=00000053 ebx=0023CB20 ecx=00000000 edx=00000025 esi=00000001 edi=0000000C
+ebp=00000024 esp=0023CA60 program=C:\Users\Joe\Documents\School\CSC17A\LevinJoseph_CSC17a_43950\Class\WriteBinaryFile\dist\Debug\Cygwin_4.x-Windows\writebinaryfile.exe, pid 4528, thread main
+cs=001B ds=0023 es=0023 fs=003B gs=0000 ss=0023
+Stack trace:
+Frame     Function  Args

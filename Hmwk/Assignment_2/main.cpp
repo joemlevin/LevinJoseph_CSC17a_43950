@@ -1,7 +1,7 @@
 /* 
  * file: main.cpp
  * Author: Joseph Levin
- * Assignment: C++ Assignment 1 Review - Spring 2015 43950
+ * Assignment: C++ Assignment 2 - Spring 2015 43950
  * Created on March 26, 2015, 1:34 PM
  */
 
