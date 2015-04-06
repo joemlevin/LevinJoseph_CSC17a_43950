@@ -7,6 +7,8 @@
 //System Libraries
 #include <cstdlib>
 #include<iostream>
+#include<cctype>
+#include<cstring>
 
 //User Libraries
 
@@ -28,9 +30,7 @@ int con(char*);//counts consonants in cstring
 using namespace std;
 
 int main(int argc, char** argv) {
-    
-    prb106();
-    //menu();
+    menu();
     return 0;
 }
 //Menu function, displays all assignments and prompts for which
@@ -43,6 +43,10 @@ void menu(){
         case 1:
             clrscrn();
             prb104();
+            break;
+        case 2:
+            clrscrn();
+            prb106();
             break;
         case -1:
             cout<<"That's all, folks."<<endl;
@@ -66,6 +70,7 @@ short slct(){
     cout<<"Assignment 2"<<endl;
     cout<<"Choose an option from the menu: "<<endl
             <<"1. Problem 10.4 (Average Number of Letters)"<<endl
+            <<"2. Problem 10.6 (Vowels and Consonants)"<<endl
             <<"-1 to quit"<<endl;
     do{
         cin>>pick;
@@ -105,9 +110,9 @@ bool again(){
 }//end
 void prb104(){
     //get string from user
-    cin.clear();
-    cin.ignore(256,'\n');
     do{
+        cin.clear();//clear and ignore ensure the buffer is free of \n
+        cin.ignore(256,'\n');
         int size=60;
         char words[size];
         cout<<"Enter a sentence up to "<<size<<" characters long."<<endl;
@@ -124,6 +129,8 @@ void prb104(){
     
 }//end
 void prb106(){
+    cin.clear();
+    cin.ignore(265,'\n');
     int size=60;
     char a[size];
     char choose;
@@ -146,6 +153,10 @@ void prb106(){
                     <<endl;
         }
         else if(choose=='D'){
+            cout<<"Enter a string of up to 60 characters."<<endl;
+            cin.clear();
+            cin.ignore(256,'\n');
+            cin.getline(a,size);
         }
         else
             cout<<"Returning to menu"<<endl;

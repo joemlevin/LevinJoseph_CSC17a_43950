@@ -38,6 +38,8 @@ int main(int argc, char** argv) {
     prntStu(stu,nStudents);
     //Find 35th student
     Student *one=readStu(fn,35);
+    cout<<"The 35th student:"<<endl;
+    prntStu(one,1);
     //Deallocate memory
     delete []stu;
     //Exit stage right
@@ -49,7 +51,7 @@ Student *readStu(char *fn,int rec){
     fstream in;
     in.open(fn,ios::in|ios::binary);
     //Allocate memory for one student
-    Student *one;
+    Student *one=new Student;
     //{position read point
     in.seekg((rec-1)*sizeof(Student),ios::beg);
     //Read from the file
