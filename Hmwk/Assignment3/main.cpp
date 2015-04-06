@@ -29,8 +29,7 @@ using namespace std;
 
 int main(int argc, char** argv) {
     
-    char vowels[]="a e i o u f , w";
-    cout<<vow(vowels)<<endl<<con(vowels)<<endl;
+    prb106();
     //menu();
     return 0;
 }
@@ -123,6 +122,35 @@ void prb104(){
     }while(again());
     menu();
     
+}//end
+void prb106(){
+    int size=60;
+    char a[size];
+    char choose;
+    cout<<"Enter a string of up to 60 characters."<<endl;
+    cin.getline(a,size);
+    cout<<"A) Count the number of vowels in the string"<<endl
+        <<"B) Count the number of consonants in the string"<<endl
+        <<"C) Count both the vowels and the consonants in the string"<<endl
+        <<"D) Enter another string"<<endl
+        <<"E) Exit the program"<<endl;
+    do{
+        cout<<"Choose an option"<<endl;
+        cin>>choose;
+        if(choose=='A')
+            cout<<"The number of vowels is "<<vow(a)<<endl;
+        else if(choose=='B')
+            cout<<"The number of consonants is "<<con(a)<<endl;
+        else if(choose=='C'){
+            cout<<"The number of vowels and consonants is "<<vow(a)+con(a)
+                    <<endl;
+        }
+        else if(choose=='D'){
+        }
+        else
+            cout<<"Returning to menu"<<endl;
+    }while(choose!='E');
+    menu();
 }
 //cntw takes in a pointer to a c-string and counts the number of words in
 //the string. Returns it as an integer
