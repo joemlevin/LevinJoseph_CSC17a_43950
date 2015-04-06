@@ -17,16 +17,17 @@ void menu(); //Main menu function
 void clrscrn(); //Clear Screen function
 short slct(); //menu selection
 bool again(); //problem repeater
+void prb104();//driver for problem 10.4 (Avg. # of letters))
 int cntw(char *);//returns the number of words in a c-string
 int lavg(char *,int);//determines average number of letters
-void prntc(char *);//prints the contents of a c-string
+void prntc(char*);//prints cstring
 using namespace std;
 
 /*
  * 
  */
 int main(int argc, char** argv) {
-
+    menu();
     return 0;
 }
 //Menu function, displays all assignments and prompts for which
@@ -37,7 +38,9 @@ void menu(){
     short pick = slct();
     switch(pick){
         case 1:
-            
+            clrscrn();
+            prb104();
+            break;
         case -1:
             cout<<"That's all, folks."<<endl;
         default:
@@ -97,17 +100,65 @@ bool again(){
     }while(!check);
     
 }//end
+void prb104(){
+    //get string from user
+    cin.clear();
+    cin.ignore(256,'\n');
+    do{
+        int size=60;
+        char words[size];
+        cout<<"Enter a sentence up to "<<size<<" characters long."<<endl;
+        cin.getline(words,size);
+        //output number of words and average letters per word
+        int numWords=cntw(words);
+        int avg=lavg(words,numWords);
+        cout<<endl<<"The sentence you entered: "<<endl;
+        prntc(words);
+        cout<<endl<<"The number of words is "<<numWords<<endl;
+        cout<<"The average letters per word is "<<avg<<endl;
+    }while(again());
+    menu();
+    
+}
 //cntw takes in a pointer to a c-string and counts the number of words in
 //the string. Returns it as an integer
 int cntw(char *a){
     int count=1;//keeps track of number of spaces, indicating each new word
     int index=0;//moves through c-string starting at begin address
+    int letter=0;//counts letters
     while(*(a+index)!='\0'){//looks for null terminator at end of string
-        if(*(a+index)==' ')//indicates a new word has begun
+        if(isalpha(*(a+index)))
+            letter++;//helps differentiate between spaces due to new words
+        if(*(a+index)==' '&&letter!=0){//indicates a new word has begun
             count++;
+            letter=0;
+        }
         index++;
     }
     return count;
     
 }//end
-
+//lavg determines the average number of letters per word in
+//a c-string of words. Takes a pointer to a c-string and the number of
+//words in the string as aruguments and returns an integer
+int lavg(char *a,int w){
+    int count=0;//counts the letters
+    int index=0;//moves thru cstring
+    int avg=0;
+    //count thru cstring to determine number of letters
+    while(*(a+index)!='\0'){
+        //ignore any non-alphabetical
+        if(isalpha(*(a+index)))
+            count++;
+        index++;
+    }
+    return count/w;
+    
+}//end
+void prntc(char* a){
+    int index=0;
+    while(*(a+index)!='\0'){
+        cout<<*(a+index);
+        index++;
+    }
+}
