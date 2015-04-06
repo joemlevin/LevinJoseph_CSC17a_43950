@@ -1,0 +1,113 @@
+/* File:   main.cpp
+ * Author: Joseph Levin
+ * Assignment: C++ Assignment 3 - Spring 2015 43950
+ * Created on April 5, 2015, 7:38 PM
+ */
+
+//System Libraries
+#include <cstdlib>
+#include<iostream>
+
+//User Libraries
+
+//Global Constants
+
+//Function Prototypes
+void menu(); //Main menu function
+void clrscrn(); //Clear Screen function
+short slct(); //menu selection
+bool again(); //problem repeater
+int cntw(char *);//returns the number of words in a c-string
+int lavg(char *,int);//determines average number of letters
+void prntc(char *);//prints the contents of a c-string
+using namespace std;
+
+/*
+ * 
+ */
+int main(int argc, char** argv) {
+
+    return 0;
+}
+//Menu function, displays all assignments and prompts for which
+//the user would like to go to.
+void menu(){
+    
+    clrscrn(); //clears the screen of all text
+    short pick = slct();
+    switch(pick){
+        case 1:
+            
+        case -1:
+            cout<<"That's all, folks."<<endl;
+        default:
+            cout<<"Until next time."<<endl;
+    }
+}//end
+
+//Clear screen function outputs a ton of new lines in order to clear
+//the command prompt to look nice
+void clrscrn(){
+    for(int i=0; i<100; i++)
+        cout<<endl;
+}//end
+
+//slct serves to take in input for menu selection, performs error checks
+//and then returns the value if it passes checks
+short slct(){
+    short pick; //for menu selection
+    bool check=false;
+    cout<<"Assignment 2"<<endl;
+    cout<<"Choose an option from the menu: "<<endl
+            <<"1. Problem 10.4 (Average Number of Letters)"<<endl
+            <<"-1 to quit"<<endl;
+    do{
+        cin>>pick;
+        if(cin.fail()||pick<=0&&pick!=-1||pick>6){//error checking
+            cin.clear();
+            cin.ignore(256,'\n');
+            cout<<"Error. Invalid selection. Try again."<<endl;
+        }
+        else
+            check=true;//valid input
+    }while(!check);
+    return pick;
+}//end
+//again prompts the user to see if they want to run the same problem again
+//and returns to menu if not
+bool again(){
+    bool check=false;
+    char pick;
+    cout<<"Would you like to run this problem again? y/n"<<endl;
+    do{
+        cin>>pick;
+        if(cin.fail()||tolower(pick)!='y'&&tolower(pick)!='n'){//only accepts
+            cin.clear();                                       //y or n as input
+            cin.ignore(256,'\n');
+            cout<<"Error. Invalid selection. Try again."<<endl;
+        }
+        else if(tolower(pick)=='y'){//user wants to repeat
+            check=true;
+            return true;
+        }
+        else{ //user does not want to repeat
+            check=true;
+        return false;
+        }
+    }while(!check);
+    
+}//end
+//cntw takes in a pointer to a c-string and counts the number of words in
+//the string. Returns it as an integer
+int cntw(char *a){
+    int count=1;//keeps track of number of spaces, indicating each new word
+    int index=0;//moves through c-string starting at begin address
+    while(*(a+index)!='\0'){//looks for null terminator at end of string
+        if(*(a+index)==' ')//indicates a new word has begun
+            count++;
+        index++;
+    }
+    return count;
+    
+}//end
+
