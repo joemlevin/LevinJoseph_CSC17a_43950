@@ -17,17 +17,21 @@ void menu(); //Main menu function
 void clrscrn(); //Clear Screen function
 short slct(); //menu selection
 bool again(); //problem repeater
-void prb104();//driver for problem 10.4 (Avg. # of letters))
+void prb104();//driver for problem 10.4 (Avg. # of letters)
+void prb106();//driver for problem 10.6 (Vowels and Consonants))
 int cntw(char *);//returns the number of words in a c-string
 int lavg(char *,int);//determines average number of letters
 void prntc(char*);//prints cstring
+int vow(char *);//counts vowels in cstring
+int con(char*);//counts consonants in cstring
+
 using namespace std;
 
-/*
- * 
- */
 int main(int argc, char** argv) {
-    menu();
+    
+    char vowels[]="a e i o u f , w";
+    cout<<vow(vowels)<<endl<<con(vowels)<<endl;
+    //menu();
     return 0;
 }
 //Menu function, displays all assignments and prompts for which
@@ -161,4 +165,30 @@ void prntc(char* a){
         cout<<*(a+index);
         index++;
     }
-}
+}//end
+//vow counts the number of vowels found in a cstring and returns it as an int
+int vow(char *a){
+    int v=0;//counts vowels found
+    int index=0;
+    while(*(a+index)!='\0'){
+        if(tolower(*(a+index))=='a'||tolower(*(a+index))=='e'||
+                tolower(*(a+index))=='i'||tolower(*(a+index))=='o'||
+                tolower(*(a+index))=='u') //only if a,e,i,o,u
+            v++;
+        index++;
+    }
+    return v;
+}//end
+//con counts the number of consonants found in a cstring
+int con(char *a){
+    int v=0;//counts vowels found
+    int i=0;
+    while(*(a+i)!='\0'){
+        if(isalpha(*(a+i))!=0&&(tolower(*(a+i))!='a'&&tolower(*(a+i))!='e'&&
+                tolower(*(a+i))!='i'&&tolower(*(a+i))!='o'&&
+                tolower(*(a+i))!='u')) //must be alphabetical and not vowel
+            v++;
+        i++;
+    }
+    return v;
+}//end
