@@ -9,10 +9,23 @@
 #include<iostream>
 #include<cctype>
 #include<cstring>
+#include<string>
+
+using namespace std;
 
 //User Libraries
 
 //Global Constants
+
+//User data types
+
+//Speaker is the structure for problem 11.9 (Speaker's Bureau))
+struct Speaker{
+    string name;
+    int phone;
+    string topic;
+    int fee;
+};
 
 //Function Prototypes
 void menu(); //Main menu function
@@ -20,19 +33,70 @@ void clrscrn(); //Clear Screen function
 short slct(); //menu selection
 bool again(); //problem repeater
 void prb104();//driver for problem 10.4 (Avg. # of letters)
-void prb106();//driver for problem 10.6 (Vowels and Consonants))
+void prb106();//driver for problem 10.6 (Vowels and Consonants)
+void prb119();//driver for problem 11.9 (Speakers' Bureau)
 int cntw(char *);//returns the number of words in a c-string
 int lavg(char *,int);//determines average number of letters
 void prntc(char*);//prints cstring
 int vow(char *);//counts vowels in cstring
 int con(char*);//counts consonants in cstring
-
-using namespace std;
+Speaker *fllSpkr(int);//Creates an array of speakers
+string getName();//gets name of speaker
+int getPhone();//gets phone number of speaker
+string getTop();//gets topic of speaker
+int getFee();//gets fee of speaker
 
 int main(int argc, char** argv) {
-    menu();
+    cout<<"enter a number"<<endl;
+    int num;
+    num=getPhone();
+    cout<<num<<endl;
+    //menu();
     return 0;
 }
+
+//getName prompts the user for a name to store in a Speaker structure
+//and returns it as a string
+string getName(){
+    string name;
+    cin>>name;
+    return name;
+}//end
+//getPhone prompts the user to enter a phone number for a speaker struct
+//returns it as a int
+int getPhone(){
+    bool check=false;
+    int num=-1;
+    do{
+        cin>>num;
+        if(cin.fail()||num>max||num<min){
+            cout<<"Invalid phone number. Please ensure phone number is "
+                    <<size<<" digits long exactly"<<endl;
+            cin.clear();
+            cin.ignore(256,'\n');
+        }
+        else
+            check=true;;
+    }while(!check);
+    return num;
+}
+//fillSpkr fills a dynamic array of Speaker structures of size n
+//with user defined data
+//Speaker *fllSpkr(int n){
+//    Speaker *a=new Speaker[n];
+//    //loop to fill every element
+//    for(int i=0;i<n;i++){
+//        cout<<"Enter the name of speaker "<<i+1<<endl;
+//        a->name[i]=getName();
+//        cout<<"Enter the phone number of speaker "<<i+1<<endl;
+//        a->phone[i]=getPhone();
+//        cout<<"Enter the topic of speaker "<<i+1<<endl;
+//        a->topic[i]=getTop();
+//        cout<<"Enter the fee for speaker "<<i+1<<endl;
+//        a->fee[i]=getFee();
+//    }
+//    return a;
+//}
 //Menu function, displays all assignments and prompts for which
 //the user would like to go to.
 void menu(){
