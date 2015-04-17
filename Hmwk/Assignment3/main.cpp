@@ -16,6 +16,7 @@ using namespace std;
 
 //User Libraries
 #include "Speaker.h"
+#include "Report.h"
 
 //Global Constants
 
@@ -29,6 +30,7 @@ void prb106();//driver for problem 10.6 (Vowels and Consonants)
 void prb119();//driver for problem 11.9 (Speakers' Bureau)
 void prb127();//driver for problem 12.7 (Sentence Filter))
 void prb128();//driver for problem 12.8 (Array/File Functions)
+void prb1211();//driver for problem 12.1 (Coroporate Sales Data Output)
 int cntw(char *);//returns the number of words in a c-string
 int lavg(char *,int);//determines average number of letters
 void prntc(char*);//prints cstring
@@ -42,10 +44,10 @@ string getFee();//for editing speaker fee
 string getTopic();//for editing speaker topic
 void arrayToFile(string,int *,int);//stores int array as binary file
 void fileToArray(string, int *,int);
+int getSales(int);//gets the sales for a quarter of a company
 
 int main(int argc, char** argv) {
-    prb128();
-    //menu();
+    menu();
     return 0;
 }
 
@@ -76,6 +78,10 @@ void menu(){
             clrscrn();
             prb128();
             break;
+        case 6:
+            clrscrn();
+            prb1211();
+            break;
         case -1:
             cout<<"That's all, folks."<<endl;
             break;
@@ -102,7 +108,8 @@ short slct(){
             <<"2. Problem 10.6 (Vowels and Consonants)"<<endl
             <<"3. Problem 11.9 (Speaker's Bureau)"<<endl
             <<"4. Problem 12.7 (Sentence Filter)"<<endl
-            <<"5. Problem 17.8 (Array/File Functions)"<<endl
+            <<"5. Problem 12.8 (Array/File Functions)"<<endl
+            <<"6. Problem 12.11 (Corporate Sales)"<<endl
             <<"-1 to quit"<<endl;
     do{
         cin>>pick;
@@ -348,6 +355,38 @@ void prb128(){
         delete []num2;
 }while(again());
 menu();
+}//end
+void prb1211(){
+    do{//Create the report struct
+    const int QRT=4;//number of quarters in a year
+    Report *report=new Report[4];
+    int sales;//for storing sales for each quarter
+    string divName[QRT]={"North","East","South","West"};//names of divisions
+    for(int i=0;i<QRT;i++){//add names to structures
+        report[i].name=divName[i];
+    }
+    for(int i=0;i<QRT;i++){//get the sales of each quarter
+        cout<<report[i].name<<" Division:"<<endl;
+        for(int j=0;j<QRT;j++){
+            sales=getSales(j);
+            report[i].sales[j]=sales;
+        }
+    }
+    //Write data to file named report.dat
+    cout<<"Writing data to 'report.dat'"<<endl;
+    fstream outFile("report.dat",ios::out);
+    for(int i=0;i<QRT;i++){
+        outFile<<report[i].name<<" Division:"<<endl;
+        for(int j=0;j<QRT;j++){
+            outFile<<"Quarter "<<report[i].quarter[j]<<" sales: "<<
+                    "$"<<report[i].sales[j]<<endl;
+        }
+    }
+    cout<<"Writing successful"<<endl;
+    //clean up
+    delete []report;
+    }while(again());//end of problem
+    menu();
 }
 //cntw takes in a pointer to a c-string and counts the number of words in
 //the string. Returns it as an integer
@@ -517,4 +556,19 @@ void fileToArray(string file, int *array, int size){
     inFile.read(reinterpret_cast<char *>(array),size*sizeof(array));
     inFile.close();
     
+}//end
+//getSales prompts the user for the number of sales for "quarter" to stre
+//in a Report struct
+int getSales(int quarter){
+    int num;//stores the sales
+    bool check;//for error checking
+    cout<<"Enter the sales of quarter "<<quarter+1<<endl;
+    do{
+        cin>>num;
+        if(cin.fail()||num<0)//must be positive
+            cout<<"Invalid sales amount. Sales must be positive integer."<<endl;
+        else
+            check=true;
+    }while(!check);
+    return num;
 }
