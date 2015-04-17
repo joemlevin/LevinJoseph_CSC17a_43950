@@ -14,18 +14,9 @@
 using namespace std;
 
 //User Libraries
+#include "Speaker.h"
 
 //Global Constants
-
-//User data types
-
-//Speaker is the structure for problem 11.9 (Speaker's Bureau))
-struct Speaker{
-    string name;
-    int phone;
-    string topic;
-    int fee;
-};
 
 //Function Prototypes
 void menu(); //Main menu function
@@ -40,63 +31,18 @@ int lavg(char *,int);//determines average number of letters
 void prntc(char*);//prints cstring
 int vow(char *);//counts vowels in cstring
 int con(char*);//counts consonants in cstring
-Speaker *fllSpkr(int);//Creates an array of speakers
-string getName();//gets name of speaker
-int getPhone();//gets phone number of speaker
-string getTop();//gets topic of speaker
-int getFee();//gets fee of speaker
+Speaker *filSpkr();//creates a Speaker structure w/ default listings
+void prntSpk(Speaker *,int);//prints a Speaker Structure
+string getName();//For editing speaker name
+string getPhone();//For editing speaker phone
+string getFee();//for editing speaker fee
+string getTopic();//for editing speaker topic
 
 int main(int argc, char** argv) {
-    cout<<"enter a number"<<endl;
-    int num;
-    num=getPhone();
-    cout<<num<<endl;
-    //menu();
+    menu();
     return 0;
 }
 
-//getName prompts the user for a name to store in a Speaker structure
-//and returns it as a string
-string getName(){
-    string name;
-    cin>>name;
-    return name;
-}//end
-//getPhone prompts the user to enter a phone number for a speaker struct
-//returns it as a int
-int getPhone(){
-    bool check=false;
-    int num=-1;
-    do{
-        cin>>num;
-        if(cin.fail()||num>max||num<min){
-            cout<<"Invalid phone number. Please ensure phone number is "
-                    <<size<<" digits long exactly"<<endl;
-            cin.clear();
-            cin.ignore(256,'\n');
-        }
-        else
-            check=true;;
-    }while(!check);
-    return num;
-}
-//fillSpkr fills a dynamic array of Speaker structures of size n
-//with user defined data
-//Speaker *fllSpkr(int n){
-//    Speaker *a=new Speaker[n];
-//    //loop to fill every element
-//    for(int i=0;i<n;i++){
-//        cout<<"Enter the name of speaker "<<i+1<<endl;
-//        a->name[i]=getName();
-//        cout<<"Enter the phone number of speaker "<<i+1<<endl;
-//        a->phone[i]=getPhone();
-//        cout<<"Enter the topic of speaker "<<i+1<<endl;
-//        a->topic[i]=getTop();
-//        cout<<"Enter the fee for speaker "<<i+1<<endl;
-//        a->fee[i]=getFee();
-//    }
-//    return a;
-//}
 //Menu function, displays all assignments and prompts for which
 //the user would like to go to.
 void menu(){
@@ -112,8 +58,13 @@ void menu(){
             clrscrn();
             prb106();
             break;
+        case 3:
+            clrscrn();
+            prb119();
+            break;
         case -1:
             cout<<"That's all, folks."<<endl;
+            break;
         default:
             cout<<"Until next time."<<endl;
     }
@@ -135,6 +86,7 @@ short slct(){
     cout<<"Choose an option from the menu: "<<endl
             <<"1. Problem 10.4 (Average Number of Letters)"<<endl
             <<"2. Problem 10.6 (Vowels and Consonants)"<<endl
+            <<"3. Problem 11.9 (Speaker's Bureau)"<<endl
             <<"-1 to quit"<<endl;
     do{
         cin>>pick;
@@ -226,6 +178,72 @@ void prb106(){
             cout<<"Returning to menu"<<endl;
     }while(choose!='E');
     menu();
+}//end
+void prb119(){
+    Speaker *list=filSpkr();
+    int size=10;
+    short pick=-3;
+    do{
+        cout<<"Speaker's Bureau"<<endl;
+        cout<<"1. Speaker List"<<endl;
+        cout<<"2. Edit Speakers"<<endl;
+        cout<<"-1 to quit"<<endl;
+        cout<<"Enter the number corresponding to what you want to do"<<endl;
+        cin>>pick;
+        switch(pick){
+            case 1:
+                clrscrn();
+                prntSpk(list,size);
+                break;
+            case 2:
+                clrscrn();
+                for(int i=0;i<size;i++){
+                    cout<<i+1<<". "<<list[i].name<<endl;
+                }
+                cout<<"Enter the number corresponding to the speaker"<<endl;
+                short slct1,slct2;
+                cin>>slct1;
+                cout<<"1. Name"<<endl
+                        <<"2. Phone Number"<<endl
+                        <<"3. Fee"<<endl
+                        <<"4. Topic"<<endl;
+                cout<<"Enter the number corresponding to what you would"<<
+                        " like to edit"<<endl;
+                cin>>slct2;
+                switch(slct2){
+                    case 1:
+                        cin.clear();
+                        cin.ignore(256,'\n');
+                        list[slct1-1].name=getName();
+                        break;
+                    case 2:
+                        cin.clear();
+                        cin.ignore(256,'\n');
+                        list[slct1-1].phone=getPhone();
+                        break;
+                    case 3:
+                        cin.clear();
+                        cin.ignore(256,'\n');
+                        list[slct1-1].fee=getFee();
+                        break;
+                    case 4:
+                        cin.clear();
+                        cin.ignore(256,'\n');
+                        list[slct1-1].topic=getTopic();
+                        break;
+                    default:
+                        cout<<"Error. Invalid selection."<<endl;
+                        break;
+                }
+            case -1:
+                cout<<"Program terminating"<<endl;
+                break;
+            default:
+                cout<<"Default"<<endl;
+                break;
+    }
+    }while(pick!=-1);
+    menu();
 }
 //cntw takes in a pointer to a c-string and counts the number of words in
 //the string. Returns it as an integer
@@ -294,4 +312,89 @@ int con(char *a){
         i++;
     }
     return v;
+}//end
+//filSpkr creates an array of Speaker structures (size 10), and fills
+//the contents automatically with "default" values
+Speaker *filSpkr(){
+    //Create Speaker array
+    int size=10;
+    Speaker *list=new Speaker[size];
+    //fill all 10 with information
+    list[0].name="Brynn Caddel";
+    list[0].phone="2718381838";
+    list[0].fee="3.14";
+    list[0].topic="The Superiority of Marsupials";
+    list[1].name="Ricardo Gonzalez";
+    list[1].phone="9517122400";
+    list[1].fee="2.00";
+    list[1].topic="The Importance of Mountain Bikes";
+    list[2].name="Alex Gonzales";
+    list[2].phone="7602225412";
+    list[2].fee="0.09";
+    list[2].topic="Why Non-Bae's Gotta Pay";
+    list[3].name="Adam Christensen";
+    list[3].phone="9514118905";
+    list[3].fee="10";
+    list[3].topic="Meters?";
+    list[4].name="Patrick Doran";
+    list[4].phone="2127693424";
+    list[4].fee="1.50";
+    list[4].topic="Benefits to Carrying Your Shoes With You";
+    list[5].name="Nornubari Kolbololololol";
+    list[5].phone="4517682341";
+    list[5].fee="8.12";
+    list[5].topic="His Muscles";
+    list[6].name="The Fern";
+    list[6].phone="8424383376";
+    list[6].fee="2.20";
+    list[6].topic="How to Subtly Acquire Pencils";
+    list[7].name="Joseph Levin";
+    list[7].phone="9518076736";
+    list[7].fee="0.01";
+    list[7].topic="Thinking Before You Speak";
+    list[8].name="Mumbles McGoo";
+    list[8].phone="5555555555";
+    list[8].fee="1,000,000";
+    list[8].topic="How To Guarantee Nobody Will Understand a Thing You Say";
+    list[9].name="Barack Obama";
+    list[9].phone="9518675309";
+    list[9].fee="16,394,000,000,000";
+    list[9].topic="Folding Your Socks";
+    //return
+    return list;
+}
+//prntSpkt outputs the contents of a Speaker Structure
+void prntSpk(Speaker *l,int size){
+    for(int i=0;i<size;i++){
+        cout<<i+1<<". "<<l[i].name<<endl
+                <<"Phone Number: "<<l[i].phone<<endl
+                <<"Speaker's Fee: $"<<l[i].fee<<endl
+                <<"Speaker's Topic: "<<l[i].topic<<endl;
+        cout<<endl;
+    }
+}//end
+//getName gets a new name for a speaker and returns it as a string
+string getName(){
+    string name;
+    cout<<"Enter the name of the speaker."<<endl;
+    getline(cin,name);
+    return name;
+}//end
+string getPhone(){
+    string phone;
+    cout<<"Enter the phone number of the speaker."<<endl;
+    getline(cin,phone);
+    return phone;
+}//end
+string getFee(){
+    string fee;
+    cout<<"Enter the fee of the speaker"<<endl;
+    getline(cin,fee);
+    return fee;
+}//end
+string getTopic(){
+    string topic;
+    cout<<"Enter the topic of the speaker"<<endl;
+    getline(cin,topic);
+    return topic;
 }//end
