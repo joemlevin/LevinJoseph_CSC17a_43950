@@ -17,6 +17,7 @@ using namespace std;
 //User Libraries
 #include "Speaker.h"
 #include "Report.h"
+#include "Movie.h"
 
 //Global Constants
 
@@ -31,6 +32,10 @@ void prb119();//driver for problem 11.9 (Speakers' Bureau)
 void prb127();//driver for problem 12.7 (Sentence Filter))
 void prb128();//driver for problem 12.8 (Array/File Functions)
 void prb1211();//driver for problem 12.1 (Coroporate Sales Data Output)
+void prb101();//driver for problem 10.1 (C-String Length)
+void prb111();//driver for problem 11.1 (Movie Data))
+void prb112();//driver for problem 11.2 (Movie Profit))
+void prb121();//driver for problem 12.1 (File Head Program)
 int cntw(char *);//returns the number of words in a c-string
 int lavg(char *,int);//determines average number of letters
 void prntc(char*);//prints cstring
@@ -45,8 +50,11 @@ string getTopic();//for editing speaker topic
 void arrayToFile(string,int *,int);//stores int array as binary file
 void fileToArray(string, int *,int);
 int getSales(int);//gets the sales for a quarter of a company
+int cLength(char *);//counts the length of a c-string
+void prntMovie(MovieData);//prints the contents of MovieData structure
 
 int main(int argc, char** argv) {
+    
     menu();
     return 0;
 }
@@ -82,6 +90,22 @@ void menu(){
             clrscrn();
             prb1211();
             break;
+        case 7:
+            clrscrn();
+            prb101();
+            break;
+        case 8:
+            clrscrn();
+            prb111();
+            break;
+        case 9:
+            clrscrn();
+            prb112();
+            break;
+        case 10:
+            clrscrn();
+            prb121();
+            break;
         case -1:
             cout<<"That's all, folks."<<endl;
             break;
@@ -110,10 +134,14 @@ short slct(){
             <<"4. Problem 12.7 (Sentence Filter)"<<endl
             <<"5. Problem 12.8 (Array/File Functions)"<<endl
             <<"6. Problem 12.11 (Corporate Sales)"<<endl
+            <<"7. Problem 10.1 (String Length"<<endl
+            <<"8. Problem 11.1 (Movie Data)"<<endl
+            <<"9. Problem 11.2 (Movie Profit)"<<endl
+            <<"10. Problem 12.1 (File Header)"<<endl
             <<"-1 to quit"<<endl;
     do{
         cin>>pick;
-        if(cin.fail()||pick<=0&&pick!=-1||pick>6){//error checking
+        if(cin.fail()||pick<=0&&pick!=-1||pick>10){//error checking
             cin.clear();
             cin.ignore(256,'\n');
             cout<<"Error. Invalid selection. Try again."<<endl;
@@ -387,6 +415,83 @@ void prb1211(){
     delete []report;
     }while(again());//end of problem
     menu();
+}//end
+void prb101(){
+    do{
+        char *c=new char[50];
+        cout<<"Enter up to 50 characters"<<endl;
+        cin.getline(c,50);
+        cout<<"Length is "<<cLength(c)<<endl;
+        delete []c;
+    }while(again());
+    menu();
+}//end
+void prb111(){
+    do{
+        MovieData movie1;
+        movie1.title="The Attack of the Angry Baby Koala";
+        movie1.director="Brynn Caddel";
+        movie1.year="2015";
+        movie1.runTime="120";
+        MovieData movie2;
+        movie2.title="Mountain Bikes!";
+        movie2.director="Ricardo Gonzalez";
+        movie2.year="2013";
+        movie2.runTime="125";
+        prntMovie(movie1);
+        cout<<endl;
+        prntMovie(movie2);
+    }while(again());
+    menu();
+}//end
+void prb112(){
+    do{
+        MovieData movie1;
+        movie1.title="The Attack of the Angry Baby Koala";
+        movie1.director="Brynn Caddel";
+        movie1.year="2015";
+        movie1.runTime="120";
+        movie1.revenue=10000;
+        movie1.production=5000;
+        MovieData movie2;
+        movie2.title="Mountain Bikes!";
+        movie2.director="Ricardo Gonzalez";
+        movie2.year="2013";
+        movie2.runTime="125";
+        movie2.revenue=5000;
+        movie2.production=10000;
+        prntMovie(movie1);
+        cout<<"Profit: $"<<movie1.revenue-movie1.production<<endl;
+        cout<<endl;
+        prntMovie(movie2);
+        cout<<"Loss: $"<<(movie2.revenue)-(movie2.production)<<endl;
+    }while(again());
+    menu();
+}//end
+void prb121(){
+    do{
+        cout<<"Enter the name of a file (correct: FileHead.dat)"<<endl;
+    fstream inFile;
+    string file;
+    char ch;
+    do{
+        cin>>file;
+        inFile.open(file.c_str());
+        if(!inFile)
+            cout<<"Invalid File Name. FileHead.dat is default"<<endl;
+    }while(!inFile);
+    int index=0;//counts up to 10
+    inFile.get(ch);
+    while(inFile){
+        cout<<ch;
+        inFile.get(ch);
+        index++;
+    }
+    if(index!=10)
+        cout<<endl<<"End of file reached before 10 characters"<<endl;
+    cout<<endl;
+    }while(again());
+    menu();
 }
 //cntw takes in a pointer to a c-string and counts the number of words in
 //the string. Returns it as an integer
@@ -571,4 +676,20 @@ int getSales(int quarter){
             check=true;
     }while(!check);
     return num;
+}
+//cLength counts the number of elements in a c-string and returns
+//the value as an integer
+int cLength(char *c){
+    int count=0;//keeps track of elements
+    while(c[count]!='\0'){
+        count++;
+    }
+    return count;
+}
+//PrntMovie takes a MovieData struct as a parameter and prints its contents
+void prntMovie(MovieData movie){
+    cout<<"Title: "<<movie.title<<endl;
+    cout<<"Director: "<<movie.director<<endl;
+    cout<<"Year Released: "<<movie.year<<endl;
+    cout<<"Run Time: "<<movie.runTime<<endl;
 }
