@@ -10,6 +10,7 @@
 #include<cctype>
 #include<cstring>
 #include<string>
+#include<fstream>
 
 using namespace std;
 
@@ -26,6 +27,7 @@ bool again(); //problem repeater
 void prb104();//driver for problem 10.4 (Avg. # of letters)
 void prb106();//driver for problem 10.6 (Vowels and Consonants)
 void prb119();//driver for problem 11.9 (Speakers' Bureau)
+void prb127();//driver for problem 12.7 (Sentence Filter))
 int cntw(char *);//returns the number of words in a c-string
 int lavg(char *,int);//determines average number of letters
 void prntc(char*);//prints cstring
@@ -62,6 +64,10 @@ void menu(){
             clrscrn();
             prb119();
             break;
+        case 4:
+            clrscrn();
+            prb127();
+            break;
         case -1:
             cout<<"That's all, folks."<<endl;
             break;
@@ -87,6 +93,7 @@ short slct(){
             <<"1. Problem 10.4 (Average Number of Letters)"<<endl
             <<"2. Problem 10.6 (Vowels and Consonants)"<<endl
             <<"3. Problem 11.9 (Speaker's Bureau)"<<endl
+            <<"4. Problem 12.7 (Sentence Filter)"<<endl
             <<"-1 to quit"<<endl;
     do{
         cin>>pick;
@@ -243,6 +250,60 @@ void prb119(){
                 break;
     }
     }while(pick!=-1);
+    menu();
+}//end
+void prb127(){
+    do{
+        char ch;//for storing each character
+        string file;//file name to open
+        ifstream inFile;
+        string sentence;//output
+        cout<<"Enter the name of the file you'd like to filter."
+                <<" Pre-made file name: test.dat"<<endl;
+        do{
+            cin>>file;
+            inFile.open(file.c_str());
+            if(!inFile)
+                cout<<"Error. Invalid file name."<<endl;
+        }while(!inFile);
+        bool newLine=true;
+        fstream outFile;
+        outFile.open("output.dat",ios::out);
+        inFile.get(ch);
+        while(inFile){
+            if(newLine){
+                outFile.put(toupper(ch));
+                newLine=false;
+                inFile.get(ch);
+            }
+            else if(ch=='.'){
+                outFile.put(ch);
+                inFile.get(ch);
+                while(ch==' '||ch=='\n'){
+                    outFile.put(ch);
+                    inFile.get(ch);
+                }
+                outFile.put(toupper(ch));
+                inFile.get(ch);
+            }
+            else{
+                outFile.put(tolower(ch));
+                inFile.get(ch);
+            }
+        }
+        inFile.close();
+        outFile.close();
+        //output formatted file
+        cout<<"The file after formatting: "<<endl;
+        inFile.open("output.dat");
+        getline(inFile,sentence);
+        while(inFile){
+            cout<<sentence;
+            getline(inFile,sentence);
+        }
+        cout<<endl;
+        inFile.close();
+    }while(again());
     menu();
 }
 //cntw takes in a pointer to a c-string and counts the number of words in
