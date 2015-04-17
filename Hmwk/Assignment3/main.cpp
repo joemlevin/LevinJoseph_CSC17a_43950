@@ -28,6 +28,7 @@ void prb104();//driver for problem 10.4 (Avg. # of letters)
 void prb106();//driver for problem 10.6 (Vowels and Consonants)
 void prb119();//driver for problem 11.9 (Speakers' Bureau)
 void prb127();//driver for problem 12.7 (Sentence Filter))
+void prb128();//driver for problem 12.8 (Array/File Functions)
 int cntw(char *);//returns the number of words in a c-string
 int lavg(char *,int);//determines average number of letters
 void prntc(char*);//prints cstring
@@ -39,9 +40,12 @@ string getName();//For editing speaker name
 string getPhone();//For editing speaker phone
 string getFee();//for editing speaker fee
 string getTopic();//for editing speaker topic
+void arrayToFile(string,int *,int);//stores int array as binary file
+void fileToArray(string, int *,int);
 
 int main(int argc, char** argv) {
-    menu();
+    prb128();
+    //menu();
     return 0;
 }
 
@@ -67,6 +71,10 @@ void menu(){
         case 4:
             clrscrn();
             prb127();
+            break;
+        case 5:
+            clrscrn();
+            prb128();
             break;
         case -1:
             cout<<"That's all, folks."<<endl;
@@ -94,6 +102,7 @@ short slct(){
             <<"2. Problem 10.6 (Vowels and Consonants)"<<endl
             <<"3. Problem 11.9 (Speaker's Bureau)"<<endl
             <<"4. Problem 12.7 (Sentence Filter)"<<endl
+            <<"5. Problem 17.8 (Array/File Functions)"<<endl
             <<"-1 to quit"<<endl;
     do{
         cin>>pick;
@@ -305,6 +314,40 @@ void prb127(){
         inFile.close();
     }while(again());
     menu();
+}//end
+void prb128(){
+    do{
+        string file;
+        int size;
+        cout<<"Enter the size of the array you'd like to generate."<<endl;
+        cin>>size;
+        int *num=new int[size];
+        for(int i=0;i<size;i++)
+            num[i]=rand()%90+10;
+        cout<<"The array has been generated: "<<endl;
+        for(int i=0;i<size;i++){
+            if(i%10==0)
+                cout<<endl;
+            cout<<num[i]<<" ";
+        }
+        cout<<endl<<"Enter the file name to store array in."<<endl;
+        cin>>file;
+        cout<<"Generating binary file"<<endl;
+        arrayToFile(file,num,size);
+        cout<<"Copying file to new array"<<endl;
+        int *num2=new int[size];
+        fileToArray(file,num2,size);
+        cout<<"Copied Array:"<<endl;
+        for(int i=0;i<size;i++){
+            if(i%10==0)
+                cout<<endl;
+            cout<<num2[i]<<" ";
+        }
+        cout<<endl;
+        delete []num;
+        delete []num2;
+}while(again());
+menu();
 }
 //cntw takes in a pointer to a c-string and counts the number of words in
 //the string. Returns it as an integer
@@ -459,3 +502,19 @@ string getTopic(){
     getline(cin,topic);
     return topic;
 }//end
+//arrayToFile  reads an
+//integer array into the file in binary format
+void arrayToFile(string file,int *array,int size){
+    fstream outFile;
+    outFile.open(file.c_str(),ios::out|ios::binary);
+    outFile.write(reinterpret_cast<char *>(array),size*sizeof(array));
+    outFile.close();
+    
+}
+void fileToArray(string file, int *array, int size){
+    fstream inFile;
+    inFile.open(file.c_str(),ios::in|ios::binary);
+    inFile.read(reinterpret_cast<char *>(array),size*sizeof(array));
+    inFile.close();
+    
+}
