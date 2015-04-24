@@ -14,6 +14,7 @@ class Array{
       int *data;//Array containing data
       int size;//Size of the array
       void fillArray();//Fills the Array with Random NUmbers
+      int *indx;//Utility parameter
     public:
         Array(int);//Constructor
         ~Array();//Destructor
