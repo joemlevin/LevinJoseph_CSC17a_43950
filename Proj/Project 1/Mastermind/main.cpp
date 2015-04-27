@@ -19,7 +19,8 @@ using namespace std;
 //Global Constants
 
 //Function Prototypes
-Code *getAns();//generates an answer
+Code *getAns(int,int);//generates an answer
+void uGuess(Code *);//player guess function
 int main(int argc, char** argv) {
     
     srand(time(0));
@@ -34,14 +35,17 @@ int main(int argc, char** argv) {
 }
 
 //getAns dynamically creates a Code struct, fills the code array with
-//random integers 0-9, sets nGuess to 10 (max # of guesse) and then returns
-Code *getAns(){
+//random integers 0-9, sets nGuess to max (max # of guesse) and then returns
+Code *getAns(int max, int row){
     Code *answer=new Code;
-    answer->nGuess=10;//10 is the maximum number of guesses allowed
-    answer->code=new int[4];//the combination is 4 digits long
-    for(int i=0;i<4;i++)
+    answer->nGuess=max;//10 is the maximum number of guesses allowed
+    answer->code=new int[row];//the combination is 4 digits long
+    for(int i=0;i<row;i++)
         answer->code[i]=rand()%9;//fill code with 1-9
     return answer;
 }//end
+void uGuess(Code *guess){
+    
+}
 
 
