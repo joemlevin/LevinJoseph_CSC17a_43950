@@ -19,33 +19,41 @@ using namespace std;
 //Global Constants
 
 //Function Prototypes
-Code *getAns(int,int);//generates an answer
-void uGuess(Code *);//player guess function
+Answer *getAns(int,int);//generates an answer
+void checkG(Answer *,Guess *,int);//checks guess against answer
 int main(int argc, char** argv) {
     
     srand(time(0));
-    
-    Code *test=getAns();
+    Answer *test=getAns(10,4);
     for(int i=0;i<4;i++)
         cout<<test->code[i]<<" ";
     cout<<endl;
-    cout<<"Max Guess: "<<test->nGuess<<endl;
+    cout<<"Max Guess: "<<test->mxGuess<<endl;
 
     return 0;
 }
 
-//getAns dynamically creates a Code struct, fills the code array with
+//getAns dynamically creates a Answer struct, fills the code array with
 //random integers 0-9, sets nGuess to max (max # of guesse) and then returns
-Code *getAns(int max, int row){
-    Code *answer=new Code;
-    answer->nGuess=max;//10 is the maximum number of guesses allowed
-    answer->code=new int[row];//the combination is 4 digits long
+Answer *getAns(int max, int row){
+    Answer *answer=new Answer;
+    answer->mxGuess=max;//max number of guesses allowed
+    answer->corNum=0;//starts correct numbers at zero
+    answer->corPos=0;//starts correct positions at zero
+    answer->code=new int[row];//the combination is 'row' digits long
     for(int i=0;i<row;i++)
-        answer->code[i]=rand()%9;//fill code with 1-9
+        answer->code[i]=rand()%9-1;//fill code with 1-9
     return answer;
 }//end
-void uGuess(Code *guess){
-    
+//checkG compares each element in the code int array of guess to answer
+//for each element of guess that has the same position and number as in answer
+//the corPos and corNum variables in answer are incremented
+//for each element of guesst that has only the correct position,
+//corPos is incremented only
+void checkG(Answer *answer,Guess *guess,int row){
+    int gdex=0;//tracks the index for guess
+    int adex=0;//tracks the index for answer
+    do{
+        if()
+    }
 }
-
-
