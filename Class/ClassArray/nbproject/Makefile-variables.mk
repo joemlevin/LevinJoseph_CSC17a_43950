@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=Cygwin_4.x-Windows
 CND_ARTIFACT_DIR_Debug=dist/Debug/Cygwin_4.x-Windows
-CND_ARTIFACT_NAME_Debug=assignment1_review
-CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin_4.x-Windows/assignment1_review
+CND_ARTIFACT_NAME_Debug=classarray
+CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin_4.x-Windows/classarray
 CND_PACKAGE_DIR_Debug=dist/Debug/Cygwin_4.x-Windows/package
-CND_PACKAGE_NAME_Debug=assignment1review.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin_4.x-Windows/package/assignment1review.tar
+CND_PACKAGE_NAME_Debug=classarray.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin_4.x-Windows/package/classarray.tar
 # Release configuration
 CND_PLATFORM_Release=Cygwin_4.x-Windows
 CND_ARTIFACT_DIR_Release=dist/Release/Cygwin_4.x-Windows
-CND_ARTIFACT_NAME_Release=assignment1_review
-CND_ARTIFACT_PATH_Release=dist/Release/Cygwin_4.x-Windows/assignment1_review
+CND_ARTIFACT_NAME_Release=classarray
+CND_ARTIFACT_PATH_Release=dist/Release/Cygwin_4.x-Windows/classarray
 CND_PACKAGE_DIR_Release=dist/Release/Cygwin_4.x-Windows/package
-CND_PACKAGE_NAME_Release=assignment1review.tar
-CND_PACKAGE_PATH_Release=dist/Release/Cygwin_4.x-Windows/package/assignment1review.tar
+CND_PACKAGE_NAME_Release=classarray.tar
+CND_PACKAGE_PATH_Release=dist/Release/Cygwin_4.x-Windows/package/classarray.tar
 #
 # include compiler specific variables
 #
