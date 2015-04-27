@@ -29,6 +29,15 @@ int main(int argc, char** argv) {
         cout<<test->code[i]<<" ";
     cout<<endl;
     cout<<"Max Guess: "<<test->mxGuess<<endl;
+    Guess *temp=new Guess;
+    temp->code=new int[4];
+    for(int i=0;i<4;i++)
+        temp->code[i]=i;
+    for(int i=0;i<4;i++)
+        cout<<temp->code[i]<<" ";
+    cout<<endl;
+    checkG(test,temp,4);
+    cout<<test->corNum<<" "<<test->corPos<<endl;
 
     return 0;
 }
@@ -45,15 +54,36 @@ Answer *getAns(int max, int row){
         answer->code[i]=rand()%9-1;//fill code with 1-9
     return answer;
 }//end
-//checkG compares each element in the code int array of guess to answer
-//for each element of guess that has the same position and number as in answer
-//the corPos and corNum variables in answer are incremented
-//for each element of guesst that has only the correct position,
-//corPos is incremented only
+//checkG takes in an Answer struct. It copies the contents of the code array
+//into another int array and compares each element to a Guess array
+//It changes the elments in the temp int array to -1 as it finds matches
+//in order to ensure no duplicate matches are found
+//if an element in the guess matches the position and number of the answer
+//both the correct number and correct position counters are incremented
+//otherwise if only the number is matched then the correct number indication
+//is incremented. Man this is a long description.
 void checkG(Answer *answer,Guess *guess,int row){
-    int gdex=0;//tracks the index for guess
-    int adex=0;//tracks the index for answer
-    do{
-        if()
+    int *temp=new int[row];//temp array to store
+    for(int i=0;i<row;i++)
+        temp[i]=answer->code[i];
+    //loop through arrays to check for both correct position and correct number
+    for(int i=0;i<row;i++){
+        if(guess->code[i]==temp[i]){
+            answer->corPos++;
+            answer->corNum++;
+            temp[i]=-1;//
+        }
     }
+    //loop through temp answer again
+    for(int i=0;i<row;i++){
+        //loop through guess
+        for(int j=0;j<row;j++){
+            //check for same number
+            if(temp[i]==guess->code[j]&&i!=j){//same num, diff pos
+                answer->corNum++;
+                temp[i]=-1;
+            }
+        }
+    }
+    delete []temp;
 }
