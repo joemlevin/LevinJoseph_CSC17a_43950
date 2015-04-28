@@ -1,0 +1,8 @@
+copy answer to temp int array
+initialize corNum, corPos to zero
+loop for the contents of both guess and temp answer
+	if guess[i]==temp[i], increment both counters and set temp[i] to -1
+loop for contents of temp answer
+	loop for contents of guess
+		if temp[i]==guess[j] AND i!=j increment corNum and set temp[i] to -1
+						

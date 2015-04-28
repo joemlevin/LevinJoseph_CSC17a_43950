@@ -24,20 +24,39 @@ void checkG(Answer *,Guess *,int);//checks guess against answer
 int main(int argc, char** argv) {
     
     srand(time(0));
-    Answer *test=getAns(10,4);
-    for(int i=0;i<4;i++)
-        cout<<test->code[i]<<" ";
-    cout<<endl;
-    cout<<"Max Guess: "<<test->mxGuess<<endl;
+        Answer *test=getAns(10,4);
     Guess *temp=new Guess;
     temp->code=new int[4];
+    for(int i=0;i<50000;i++){
+     
+   // cout<<"Answer: ";   
+    //for(int i=0;i<4;i++)
+        //cout<<test->code[i]<<" ";
+    //cout<<endl;
     for(int i=0;i<4;i++)
-        temp->code[i]=i;
+        temp->code[i]=rand()%8+1;
+    //cout<<"Guess: ";
+    //for(int i=0;i<4;i++)
+       // cout<<temp->code[i]<<" ";
+    //cout<<endl;
+    checkG(test,temp,4);
+    //cout<<"Correct numbers: "<<test->corNum<<" Correct position: "
+            //<<test->corPos<<endl;
+    if(test->corPos==4){
+        cout<<"found"<<endl;
+        cout<<"Try "<<i<<endl;
+         cout<<"Answer: ";   
+    for(int i=0;i<4;i++)
+        cout<<test->code[i]<<" ";
+         cout<<endl;
+             cout<<"Guess: ";
     for(int i=0;i<4;i++)
         cout<<temp->code[i]<<" ";
     cout<<endl;
-    checkG(test,temp,4);
-    cout<<test->corNum<<" "<<test->corPos<<endl;
+    }
+    test->corNum=0;
+    test->corPos=0;
+    }
 
     return 0;
 }
@@ -51,7 +70,7 @@ Answer *getAns(int max, int row){
     answer->corPos=0;//starts correct positions at zero
     answer->code=new int[row];//the combination is 'row' digits long
     for(int i=0;i<row;i++)
-        answer->code[i]=rand()%9-1;//fill code with 1-9
+        answer->code[i]=rand()%8+1;//fill code with 1-9
     return answer;
 }//end
 //checkG takes in an Answer struct. It copies the contents of the code array
@@ -63,15 +82,19 @@ Answer *getAns(int max, int row){
 //otherwise if only the number is matched then the correct number indication
 //is incremented. Man this is a long description.
 void checkG(Answer *answer,Guess *guess,int row){
-    int *temp=new int[row];//temp array to store
-    for(int i=0;i<row;i++)
-        temp[i]=answer->code[i];
+    int *ta=new int[row];//temp array to store answer
+    int *tg=new int[row];//temp array to store guess
+    for(int i=0;i<row;i++){
+        ta[i]=answer->code[i];//copy answer to temp answer
+        tg[i]=guess->code[i];//copy guess to temp guess
+    }
     //loop through arrays to check for both correct position and correct number
     for(int i=0;i<row;i++){
-        if(guess->code[i]==temp[i]){
+        if(tg[i]==ta[i]){
             answer->corPos++;
             answer->corNum++;
-            temp[i]=-1;//
+            ta[i]=-1;//no duplicates
+            tg[i]=-1;
         }
     }
     //loop through temp answer again
@@ -79,11 +102,13 @@ void checkG(Answer *answer,Guess *guess,int row){
         //loop through guess
         for(int j=0;j<row;j++){
             //check for same number
-            if(temp[i]==guess->code[j]&&i!=j){//same num, diff pos
+            if(ta[i]==tg[j]&&i!=j&&tg[i]!=-1&&ta[i]!=-1){//same num, diff pos
                 answer->corNum++;
-                temp[i]=-1;
+                ta[i]=-1;
+                tg[j]=-1;
             }
         }
     }
-    delete []temp;
+    delete []ta;
+    delete []tg;
 }
