@@ -1,0 +1,139 @@
+\hypertarget{class_c_bitcoin_address}{}\section{C\+Bitcoin\+Address Class Reference}
+\label{class_c_bitcoin_address}\index{C\+Bitcoin\+Address@{C\+Bitcoin\+Address}}
+
+
+{\ttfamily \#include $<$base58.\+h$>$}
+
+Inheritance diagram for C\+Bitcoin\+Address\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_c_bitcoin_address}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_c_bitcoin_address_abe1614f9ecd143ae69256d65c5edbcab}{Set} (const \hyperlink{class_c_key_i_d}{C\+Key\+I\+D} \&id)
+\item 
+bool \hyperlink{class_c_bitcoin_address_abb974c40304444b0f14a005ddb7dac03}{Set} (const C\+Script\+I\+D \&id)
+\item 
+bool \hyperlink{class_c_bitcoin_address_a819dfc6a4866832e2cd2e51c1a245d80}{Set} (const C\+Tx\+Destination \&dest)
+\item 
+bool \hyperlink{class_c_bitcoin_address_a3861fc29b82dba7d8bc8430ca461a20f}{Is\+Valid} () const 
+\item 
+bool \hyperlink{class_c_bitcoin_address_a9597ff4b2b7089364cde253a5fdd4f76}{Is\+Valid} (const \hyperlink{class_c_chain_params}{C\+Chain\+Params} \&params) const 
+\item 
+\hyperlink{class_c_bitcoin_address_ae1870e2f346a1f9968a201864fbdf010}{C\+Bitcoin\+Address} ()
+\item 
+\hyperlink{class_c_bitcoin_address_a4c9c03791561557b8a1926567456712e}{C\+Bitcoin\+Address} (const C\+Tx\+Destination \&dest)
+\item 
+\hyperlink{class_c_bitcoin_address_a23f7116fe3a89ab9a551f1d8c29469da}{C\+Bitcoin\+Address} (const std\+::string \&str\+Address)
+\item 
+\hyperlink{class_c_bitcoin_address_ac0fd8d46f815948d471a8896997a3211}{C\+Bitcoin\+Address} (const char $\ast$psz\+Address)
+\item 
+C\+Tx\+Destination \hyperlink{class_c_bitcoin_address_a46d632250c4b47727f8e9b2f8141fd69}{Get} () const 
+\item 
+bool \hyperlink{class_c_bitcoin_address_a077afe9cf27a69dd50be1339310764a2}{Get\+Key\+I\+D} (\hyperlink{class_c_key_i_d}{C\+Key\+I\+D} \&key\+I\+D) const 
+\item 
+bool \hyperlink{class_c_bitcoin_address_a2e605ae688b2064155a9978104a9099d}{Is\+Script} () const 
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+base58-\/encoded Bitcoin addresses. Public-\/key-\/hash-\/addresses have version 0 (or 111 testnet). The data vector contains R\+I\+P\+E\+M\+D160(\+S\+H\+A256(pubkey)), where pubkey is the serialized public key. Script-\/hash-\/addresses have version 5 (or 196 testnet). The data vector contains R\+I\+P\+E\+M\+D160(\+S\+H\+A256(cscript)), where cscript is the serialized redemption script. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_c_bitcoin_address_ae1870e2f346a1f9968a201864fbdf010}{}\index{C\+Bitcoin\+Address@{C\+Bitcoin\+Address}!C\+Bitcoin\+Address@{C\+Bitcoin\+Address}}
+\index{C\+Bitcoin\+Address@{C\+Bitcoin\+Address}!C\+Bitcoin\+Address@{C\+Bitcoin\+Address}}
+\subsubsection[{C\+Bitcoin\+Address}]{\setlength{\rightskip}{0pt plus 5cm}C\+Bitcoin\+Address\+::\+C\+Bitcoin\+Address (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_bitcoin_address_ae1870e2f346a1f9968a201864fbdf010}
+\hypertarget{class_c_bitcoin_address_a4c9c03791561557b8a1926567456712e}{}\index{C\+Bitcoin\+Address@{C\+Bitcoin\+Address}!C\+Bitcoin\+Address@{C\+Bitcoin\+Address}}
+\index{C\+Bitcoin\+Address@{C\+Bitcoin\+Address}!C\+Bitcoin\+Address@{C\+Bitcoin\+Address}}
+\subsubsection[{C\+Bitcoin\+Address}]{\setlength{\rightskip}{0pt plus 5cm}C\+Bitcoin\+Address\+::\+C\+Bitcoin\+Address (
+\begin{DoxyParamCaption}
+\item[{const C\+Tx\+Destination \&}]{dest}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_bitcoin_address_a4c9c03791561557b8a1926567456712e}
+\hypertarget{class_c_bitcoin_address_a23f7116fe3a89ab9a551f1d8c29469da}{}\index{C\+Bitcoin\+Address@{C\+Bitcoin\+Address}!C\+Bitcoin\+Address@{C\+Bitcoin\+Address}}
+\index{C\+Bitcoin\+Address@{C\+Bitcoin\+Address}!C\+Bitcoin\+Address@{C\+Bitcoin\+Address}}
+\subsubsection[{C\+Bitcoin\+Address}]{\setlength{\rightskip}{0pt plus 5cm}C\+Bitcoin\+Address\+::\+C\+Bitcoin\+Address (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{str\+Address}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_bitcoin_address_a23f7116fe3a89ab9a551f1d8c29469da}
+\hypertarget{class_c_bitcoin_address_ac0fd8d46f815948d471a8896997a3211}{}\index{C\+Bitcoin\+Address@{C\+Bitcoin\+Address}!C\+Bitcoin\+Address@{C\+Bitcoin\+Address}}
+\index{C\+Bitcoin\+Address@{C\+Bitcoin\+Address}!C\+Bitcoin\+Address@{C\+Bitcoin\+Address}}
+\subsubsection[{C\+Bitcoin\+Address}]{\setlength{\rightskip}{0pt plus 5cm}C\+Bitcoin\+Address\+::\+C\+Bitcoin\+Address (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{psz\+Address}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_bitcoin_address_ac0fd8d46f815948d471a8896997a3211}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_c_bitcoin_address_a46d632250c4b47727f8e9b2f8141fd69}{}\index{C\+Bitcoin\+Address@{C\+Bitcoin\+Address}!Get@{Get}}
+\index{Get@{Get}!C\+Bitcoin\+Address@{C\+Bitcoin\+Address}}
+\subsubsection[{Get}]{\setlength{\rightskip}{0pt plus 5cm}C\+Tx\+Destination C\+Bitcoin\+Address\+::\+Get (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_c_bitcoin_address_a46d632250c4b47727f8e9b2f8141fd69}
+\hypertarget{class_c_bitcoin_address_a077afe9cf27a69dd50be1339310764a2}{}\index{C\+Bitcoin\+Address@{C\+Bitcoin\+Address}!Get\+Key\+I\+D@{Get\+Key\+I\+D}}
+\index{Get\+Key\+I\+D@{Get\+Key\+I\+D}!C\+Bitcoin\+Address@{C\+Bitcoin\+Address}}
+\subsubsection[{Get\+Key\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+Bitcoin\+Address\+::\+Get\+Key\+I\+D (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Key\+I\+D} \&}]{key\+I\+D}
+\end{DoxyParamCaption}
+) const}\label{class_c_bitcoin_address_a077afe9cf27a69dd50be1339310764a2}
+\hypertarget{class_c_bitcoin_address_a2e605ae688b2064155a9978104a9099d}{}\index{C\+Bitcoin\+Address@{C\+Bitcoin\+Address}!Is\+Script@{Is\+Script}}
+\index{Is\+Script@{Is\+Script}!C\+Bitcoin\+Address@{C\+Bitcoin\+Address}}
+\subsubsection[{Is\+Script}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+Bitcoin\+Address\+::\+Is\+Script (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_c_bitcoin_address_a2e605ae688b2064155a9978104a9099d}
+\hypertarget{class_c_bitcoin_address_a3861fc29b82dba7d8bc8430ca461a20f}{}\index{C\+Bitcoin\+Address@{C\+Bitcoin\+Address}!Is\+Valid@{Is\+Valid}}
+\index{Is\+Valid@{Is\+Valid}!C\+Bitcoin\+Address@{C\+Bitcoin\+Address}}
+\subsubsection[{Is\+Valid}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+Bitcoin\+Address\+::\+Is\+Valid (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_c_bitcoin_address_a3861fc29b82dba7d8bc8430ca461a20f}
+\hypertarget{class_c_bitcoin_address_a9597ff4b2b7089364cde253a5fdd4f76}{}\index{C\+Bitcoin\+Address@{C\+Bitcoin\+Address}!Is\+Valid@{Is\+Valid}}
+\index{Is\+Valid@{Is\+Valid}!C\+Bitcoin\+Address@{C\+Bitcoin\+Address}}
+\subsubsection[{Is\+Valid}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+Bitcoin\+Address\+::\+Is\+Valid (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\+Chain\+Params} \&}]{params}
+\end{DoxyParamCaption}
+) const}\label{class_c_bitcoin_address_a9597ff4b2b7089364cde253a5fdd4f76}
+\hypertarget{class_c_bitcoin_address_abe1614f9ecd143ae69256d65c5edbcab}{}\index{C\+Bitcoin\+Address@{C\+Bitcoin\+Address}!Set@{Set}}
+\index{Set@{Set}!C\+Bitcoin\+Address@{C\+Bitcoin\+Address}}
+\subsubsection[{Set}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+Bitcoin\+Address\+::\+Set (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\+Key\+I\+D} \&}]{id}
+\end{DoxyParamCaption}
+)}\label{class_c_bitcoin_address_abe1614f9ecd143ae69256d65c5edbcab}
+\hypertarget{class_c_bitcoin_address_abb974c40304444b0f14a005ddb7dac03}{}\index{C\+Bitcoin\+Address@{C\+Bitcoin\+Address}!Set@{Set}}
+\index{Set@{Set}!C\+Bitcoin\+Address@{C\+Bitcoin\+Address}}
+\subsubsection[{Set}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+Bitcoin\+Address\+::\+Set (
+\begin{DoxyParamCaption}
+\item[{const C\+Script\+I\+D \&}]{id}
+\end{DoxyParamCaption}
+)}\label{class_c_bitcoin_address_abb974c40304444b0f14a005ddb7dac03}
+\hypertarget{class_c_bitcoin_address_a819dfc6a4866832e2cd2e51c1a245d80}{}\index{C\+Bitcoin\+Address@{C\+Bitcoin\+Address}!Set@{Set}}
+\index{Set@{Set}!C\+Bitcoin\+Address@{C\+Bitcoin\+Address}}
+\subsubsection[{Set}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+Bitcoin\+Address\+::\+Set (
+\begin{DoxyParamCaption}
+\item[{const C\+Tx\+Destination \&}]{dest}
+\end{DoxyParamCaption}
+)}\label{class_c_bitcoin_address_a819dfc6a4866832e2cd2e51c1a245d80}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/\hyperlink{base58_8h}{base58.\+h}\item 
+C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/\hyperlink{base58_8cpp}{base58.\+cpp}\end{DoxyCompactItemize}

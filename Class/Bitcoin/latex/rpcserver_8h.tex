@@ -1,0 +1,1151 @@
+\hypertarget{rpcserver_8h}{}\section{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/rpcserver.h File Reference}
+\label{rpcserver_8h}\index{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/rpcserver.\+h@{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/rpcserver.\+h}}
+{\ttfamily \#include \char`\"{}amount.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}rpcprotocol.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}uint256.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$list$>$}\\*
+{\ttfamily \#include $<$map$>$}\\*
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include \char`\"{}json/json\+\_\+spirit\+\_\+reader\+\_\+template.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}json/json\+\_\+spirit\+\_\+utils.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}json/json\+\_\+spirit\+\_\+writer\+\_\+template.\+h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_accepted_connection}{Accepted\+Connection}
+\item 
+class \hyperlink{class_c_r_p_c_command}{C\+R\+P\+C\+Command}
+\item 
+class \hyperlink{class_c_r_p_c_table}{C\+R\+P\+C\+Table}
+\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespace_r_p_c_server}{R\+P\+C\+Server}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef json\+\_\+spirit\+::\+Value($\ast$ \hyperlink{rpcserver_8h_a55410ecf7b981d238edda579f8c97040}{rpcfn\+\_\+type}) (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{namespace_r_p_c_server_a7c3a8e18df87039ee9c3ea4217b89b0c}{R\+P\+C\+Server\+::\+On\+Started} (boost\+::function$<$ void()$>$ slot)
+\item 
+void \hyperlink{namespace_r_p_c_server_a281edbc9eae581611c3f8d0278c9ab69}{R\+P\+C\+Server\+::\+On\+Stopped} (boost\+::function$<$ void()$>$ slot)
+\item 
+void \hyperlink{namespace_r_p_c_server_a6150327eb9a893eb202bd7f922e3529f}{R\+P\+C\+Server\+::\+On\+Pre\+Command} (boost\+::function$<$ void(const \hyperlink{class_c_r_p_c_command}{C\+R\+P\+C\+Command} \&)$>$ slot)
+\item 
+void \hyperlink{namespace_r_p_c_server_a6eb38e7ec2a577523d045502d5d750b2}{R\+P\+C\+Server\+::\+On\+Post\+Command} (boost\+::function$<$ void(const \hyperlink{class_c_r_p_c_command}{C\+R\+P\+C\+Command} \&)$>$ slot)
+\item 
+void \hyperlink{rpcserver_8h_af4d692a884c24c4abe2fc3f2b165542d}{Start\+R\+P\+C\+Threads} ()
+\item 
+void \hyperlink{rpcserver_8h_abbdd9938022ac36af7f0a436038d700d}{Start\+Dummy\+R\+P\+C\+Thread} ()
+\item 
+void \hyperlink{rpcserver_8h_af5be6ec7b71359ed4111f1a5ed93b893}{Stop\+R\+P\+C\+Threads} ()
+\item 
+bool \hyperlink{rpcserver_8h_a6e430f3dcb8182cc7c7330fdef63575b}{Is\+R\+P\+C\+Running} ()
+\item 
+void \hyperlink{rpcserver_8h_aeff535d4f2cca2e52debc19711ca4406}{Set\+R\+P\+C\+Warmup\+Status} (const std\+::string \&new\+Status)
+\item 
+void \hyperlink{rpcserver_8h_a124bc19db90eb0d986647ecf8ad2df0f}{Set\+R\+P\+C\+Warmup\+Finished} ()
+\item 
+bool \hyperlink{rpcserver_8h_a0408560bb818610444eb2e11578eaed0}{R\+P\+C\+Is\+In\+Warmup} (std\+::string $\ast$status\+Out)
+\item 
+void \hyperlink{rpcserver_8h_a2b4519844d12aa7a421d20532386bdf9}{R\+P\+C\+Type\+Check} (const json\+\_\+spirit\+::\+Array \&params, const std\+::list$<$ json\+\_\+spirit\+::\+Value\+\_\+type $>$ \&types\+Expected, bool f\+Allow\+Null=false)
+\item 
+void \hyperlink{rpcserver_8h_aeb330535a63c08475ab6418f591c956b}{R\+P\+C\+Type\+Check} (const json\+\_\+spirit\+::\+Object \&o, const std\+::map$<$ std\+::string, json\+\_\+spirit\+::\+Value\+\_\+type $>$ \&types\+Expected, bool f\+Allow\+Null=false)
+\item 
+void \hyperlink{rpcserver_8h_a5061d3a516e4daf4f4be1e11fc98248a}{R\+P\+C\+Run\+Later} (const std\+::string \&\hyperlink{rest_8cpp_a8f8f80d37794cde9472343e4487ba3eb}{name}, boost\+::function$<$ void(void)$>$ func, int64\+\_\+t n\+Seconds)
+\item 
+\hyperlink{class_c_net_addr}{C\+Net\+Addr} \hyperlink{rpcserver_8h_a03b0b3f6c441efa6cf8d205673c51a51}{Boost\+Asio\+To\+C\+Net\+Addr} (boost\+::asio\+::ip\+::address address)
+\begin{DoxyCompactList}\small\item\em Convert boost\+::asio address to \hyperlink{class_c_net_addr}{C\+Net\+Addr}. \end{DoxyCompactList}\item 
+\hyperlink{classuint256}{uint256} \hyperlink{rpcserver_8h_a78996ea0cdadb526fc365ea1c352c40f}{Parse\+Hash\+V} (const json\+\_\+spirit\+::\+Value \&v, std\+::string str\+Name)
+\item 
+\hyperlink{classuint256}{uint256} \hyperlink{rpcserver_8h_a0b301d768322e3b1689d8b60a905439a}{Parse\+Hash\+O} (const json\+\_\+spirit\+::\+Object \&o, std\+::string str\+Key)
+\item 
+std\+::vector$<$ unsigned char $>$ \hyperlink{rpcserver_8h_ac4abe67d9f1de6dbf909f9be7b9e33c3}{Parse\+Hex\+V} (const json\+\_\+spirit\+::\+Value \&v, std\+::string str\+Name)
+\item 
+std\+::vector$<$ unsigned char $>$ \hyperlink{rpcserver_8h_a00043e448b54f99eb1b3b084b3a93933}{Parse\+Hex\+O} (const json\+\_\+spirit\+::\+Object \&o, std\+::string str\+Key)
+\item 
+void \hyperlink{rpcserver_8h_ad47789e7e3d3323a832e764f692e4ea8}{Init\+R\+P\+C\+Mining} ()
+\item 
+void \hyperlink{rpcserver_8h_ae7370e6af93e26e0c967cda6a63fe3a9}{Shutdown\+R\+P\+C\+Mining} ()
+\item 
+\hyperlink{amount_8h_a4eaf3a5239714d8c45b851527f7cb564}{C\+Amount} \hyperlink{rpcserver_8h_adc8974c0b60608b5af5ca7f04c484bef}{Amount\+From\+Value} (const json\+\_\+spirit\+::\+Value \&value)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_abe5e42b466d4a6aa9ea2336c254f8519}{Value\+From\+Amount} (const \hyperlink{amount_8h_a4eaf3a5239714d8c45b851527f7cb564}{C\+Amount} \&amount)
+\item 
+double \hyperlink{rpcserver_8h_a8fcb55e3479716ded2b499e470bdc13a}{Get\+Difficulty} (const \hyperlink{class_c_block_index}{C\+Block\+Index} $\ast$blockindex=N\+U\+L\+L)
+\item 
+std\+::string \hyperlink{rpcserver_8h_abcfbb0ad9335791f2832c01209b8f12d}{Help\+Requiring\+Passphrase} ()
+\item 
+std\+::string \hyperlink{rpcserver_8h_a84ebddbf2129e9a9497c75b0aabe2585}{Help\+Example\+Cli} (std\+::string methodname, std\+::string args)
+\item 
+std\+::string \hyperlink{rpcserver_8h_add973df458429ce9e8f55b966a45dbea}{Help\+Example\+Rpc} (std\+::string methodname, std\+::string args)
+\item 
+void \hyperlink{rpcserver_8h_a8f837f6d506b9719cef93188db00fd3c}{Ensure\+Wallet\+Is\+Unlocked} ()
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_a3740680cc7e38009224ffa24078f2e06}{getconnectioncount} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_adfec050abf04c7324874dc2dc3a1e9c2}{getpeerinfo} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_a5611d8f199f7429a1db7ec6ff9c4e780}{ping} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_a5ae6045d2d4cc0deffbb43304e888cb0}{addnode} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_a7f6afe057fee189c07b4908704153ccb}{getaddednodeinfo} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_acadb4670dad2611b18186fb13e1290db}{getnettotals} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_a6e0572b23b564e68cf4bb6de62249c97}{dumpprivkey} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_a93f44897483cf1efd8a2f5134eaacf74}{importprivkey} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_a2fc040098d9e7b893561c80e949e24c8}{importaddress} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_a4b3dff30dbf1cd3c82109944a06b6787}{dumpwallet} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_a3262eeeff98740a4595c79eef4000473}{importwallet} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_a0d915dd7ca06e4208a5ac6e01fb63890}{getgenerate} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_a62e20a20767e262e283716a583cb3e8b}{setgenerate} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_a4ac8aef79b8aab2d9188dd0ea41b6baa}{generate} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_a1c5e07352b8082ee6b33e6332f469877}{getnetworkhashps} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_aeb91f453075f3c22c57034728c0155b2}{getmininginfo} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_adbb9ba658a98baf837f1707aa0f1e3e8}{prioritisetransaction} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_afb81b4e747a83a2f6269bbb2b3b0df25}{getblocktemplate} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_af263532ae55fe152c1fec0d01331cec3}{submitblock} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_a361f35e84cd1d607ccc2b79777347df9}{estimatefee} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_a29f671d1024c5d2b3ebde68022d58e5e}{estimatepriority} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_a698ea2958b8016853f80ecdae498880c}{getnewaddress} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_a828cec0b2dc4fc6abe4067322e1b23fd}{getaccountaddress} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_a9564a70dff07571be1f300447fc25cfa}{getrawchangeaddress} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_af34e0fcd0e918b7bdeebe385bb070ec9}{setaccount} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_a608c9d199207722a3682536d2f726d7f}{getaccount} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_a40560dbaefc812236ebc5c8f6cf1f2ea}{getaddressesbyaccount} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_aaecc2a1bb70aa448c86b5202c8bb9205}{sendtoaddress} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_ac26b2169bbca2da59a26c065afe17905}{signmessage} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_a8f57dc19d3f5986adc434ffb716b4b24}{verifymessage} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_aef1e3c62a6853ccb7755cf8e58f776a2}{getreceivedbyaddress} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_ab03060805f59fab65dbc6de4be77de35}{getreceivedbyaccount} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_a5216980d02aa5738e4f4916b3d58b4d6}{getbalance} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_ac7c5d861204a6d6653ec718ef11812e5}{getunconfirmedbalance} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_ac7697eae03f4bd9bdba9b3589a966f01}{movecmd} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_a31032a97d919afe3c2bd3d2888f0820e}{sendfrom} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_a9ef1e12089532035ac95c7a1e161c046}{sendmany} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_afc1dc7554cf0cdcdec826fd84f69fb46}{addmultisigaddress} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_a7ce4d7ef3b783846dbdfcfe34430508f}{createmultisig} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_a5ed0dfeae8443b72030a9fc4b03ad046}{listreceivedbyaddress} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_a0f29e7a4e3e3973bf44842d643919fcb}{listreceivedbyaccount} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_a6fbbf073d17b9a0e8226065cd010bdd0}{listtransactions} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_a8c71e92f5096c0ff22d6937872615136}{listaddressgroupings} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_a8072f73adbb543a718196659b29f79d8}{listaccounts} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_a0b535bb11482a1c42944f0546d2bdfe2}{listsinceblock} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_af35ea13d2cac65c3b45cd439b0f1477f}{gettransaction} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_a1aa9a2eb20b6c99a29d6046f2c63e6ca}{backupwallet} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_aa98bf322bc6b754a1383c395628aa8ee}{keypoolrefill} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_a5996ce39655f71b387e00b4d2bc50bc7}{walletpassphrase} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_ac083424e8f0517847ae836d3456d5489}{walletpassphrasechange} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_a4432c3d6ef0d23716d55793499565c12}{walletlock} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_ae9c6c5afb89e747c7c642c9b4cf9e504}{encryptwallet} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_a843ad5d7ed07a5b8cce4bd06c90b4b7f}{validateaddress} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_a1c0b7fe913867ef1fef3266e79b62fe3}{getinfo} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_aba76079488b688634be8af2d217e5d99}{getwalletinfo} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_ad4cf4e9325aa7b4a0ef97a3528d5b3e0}{getblockchaininfo} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_a30ccbe9123ec55cdb8a3c5a40a18b491}{getnetworkinfo} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_ab3fcbe796e63a8d323beb6b79f71cbf1}{setmocktime} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_af74f6c91845248349c259e7b7054bce1}{resendwallettransactions} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_afe3379feabcba84a8d731a85312578c7}{getrawtransaction} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_ac4ab7a74b8720a653d697eeba2a10650}{listunspent} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_ad8955dc549f3d8289cff71dd4dbb9f93}{lockunspent} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_a1e0a957428cf65b9392c27b384c793a2}{listlockunspent} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_a2001557499eb100f5f88297d7ac9354f}{createrawtransaction} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_a6fa2adfff10a56b2840b4d6d0e001cb9}{decoderawtransaction} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_a3525fc2ae4c773be1bc169385ed6a0f9}{decodescript} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_a7e0f51d634b3812d6510108789d5a266}{signrawtransaction} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_aede74be8a396d193b733aab857eb94cd}{sendrawtransaction} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_ac06c56abd846c7d978ceef4f3514cf23}{gettxoutproof} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_a064e25123089ab87509b5c830ba0d34b}{verifytxoutproof} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_ab8e19d56b57d35659a75eb1775431b1e}{getblockcount} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_a7ac22ef1024de0f7a4053fd39c87520d}{getbestblockhash} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_ac2f1d0c1c87ed048043c2fee46149a85}{getdifficulty} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_a6393a6a6ebeea64017559ebb5e7a36c8}{settxfee} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_ae14711109206a3a54655bde295d2c95f}{getmempoolinfo} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_a875f64ee66ff0582fdc2446435f9c886}{getrawmempool} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_a3685c57c1aa798ca338fa961b3895789}{getblockhash} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_a2c6d680fc84eeb1b818f58ccf4558395}{getblock} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_aafca82ee7b0b84c018a825fbcb75c2df}{gettxoutsetinfo} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_a6bdd0ec47fb96b9ce73b421ed6e45801}{gettxout} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_a9e23f0d24e1d4708eab18ba04487c3db}{verifychain} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_acabf382935c86090c61c0161b2d9a24e}{getchaintips} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_afb07ba2414d5dbe2d373767ae7b9ec96}{invalidateblock} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+json\+\_\+spirit\+::\+Value \hyperlink{rpcserver_8h_ad3c8b655ee7fc32d8ae7eb1b13ac0a73}{reconsiderblock} (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)
+\item 
+bool \hyperlink{rpcserver_8h_a3b4ebb3671ed6622d75913101b296120}{H\+T\+T\+P\+Req\+\_\+\+R\+E\+S\+T} (\hyperlink{class_accepted_connection}{Accepted\+Connection} $\ast$conn, const std\+::string \&str\+U\+R\+I, const std\+::map$<$ std\+::string, std\+::string $>$ \&map\+Headers, bool f\+Run)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{class_c_r_p_c_table}{C\+R\+P\+C\+Table} \hyperlink{rpcserver_8h_a429f7846ff8cb60ec898309c28931129}{table\+R\+P\+C}
+\item 
+int64\+\_\+t \hyperlink{rpcserver_8h_a8c30ff08026dc3d08b61141b5a6aa411}{n\+Wallet\+Unlock\+Time}
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{rpcserver_8h_a55410ecf7b981d238edda579f8c97040}{}\index{rpcserver.\+h@{rpcserver.\+h}!rpcfn\+\_\+type@{rpcfn\+\_\+type}}
+\index{rpcfn\+\_\+type@{rpcfn\+\_\+type}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{rpcfn\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}typedef json\+\_\+spirit\+::\+Value($\ast$ rpcfn\+\_\+type) (const json\+\_\+spirit\+::\+Array \&params, bool f\+Help)}\label{rpcserver_8h_a55410ecf7b981d238edda579f8c97040}
+
+
+\subsection{Function Documentation}
+\hypertarget{rpcserver_8h_afc1dc7554cf0cdcdec826fd84f69fb46}{}\index{rpcserver.\+h@{rpcserver.\+h}!addmultisigaddress@{addmultisigaddress}}
+\index{addmultisigaddress@{addmultisigaddress}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{addmultisigaddress}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value addmultisigaddress (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_afc1dc7554cf0cdcdec826fd84f69fb46}
+\hypertarget{rpcserver_8h_a5ae6045d2d4cc0deffbb43304e888cb0}{}\index{rpcserver.\+h@{rpcserver.\+h}!addnode@{addnode}}
+\index{addnode@{addnode}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{addnode}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value addnode (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_a5ae6045d2d4cc0deffbb43304e888cb0}
+\hypertarget{rpcserver_8h_adc8974c0b60608b5af5ca7f04c484bef}{}\index{rpcserver.\+h@{rpcserver.\+h}!Amount\+From\+Value@{Amount\+From\+Value}}
+\index{Amount\+From\+Value@{Amount\+From\+Value}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{Amount\+From\+Value}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Amount} Amount\+From\+Value (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Value \&}]{value}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_adc8974c0b60608b5af5ca7f04c484bef}
+\hypertarget{rpcserver_8h_a1aa9a2eb20b6c99a29d6046f2c63e6ca}{}\index{rpcserver.\+h@{rpcserver.\+h}!backupwallet@{backupwallet}}
+\index{backupwallet@{backupwallet}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{backupwallet}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value backupwallet (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_a1aa9a2eb20b6c99a29d6046f2c63e6ca}
+\hypertarget{rpcserver_8h_a03b0b3f6c441efa6cf8d205673c51a51}{}\index{rpcserver.\+h@{rpcserver.\+h}!Boost\+Asio\+To\+C\+Net\+Addr@{Boost\+Asio\+To\+C\+Net\+Addr}}
+\index{Boost\+Asio\+To\+C\+Net\+Addr@{Boost\+Asio\+To\+C\+Net\+Addr}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{Boost\+Asio\+To\+C\+Net\+Addr}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Net\+Addr} Boost\+Asio\+To\+C\+Net\+Addr (
+\begin{DoxyParamCaption}
+\item[{boost\+::asio\+::ip\+::address}]{address}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_a03b0b3f6c441efa6cf8d205673c51a51}
+
+
+Convert boost\+::asio address to \hyperlink{class_c_net_addr}{C\+Net\+Addr}. 
+
+\hypertarget{rpcserver_8h_a7ce4d7ef3b783846dbdfcfe34430508f}{}\index{rpcserver.\+h@{rpcserver.\+h}!createmultisig@{createmultisig}}
+\index{createmultisig@{createmultisig}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{createmultisig}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value createmultisig (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_a7ce4d7ef3b783846dbdfcfe34430508f}
+\hypertarget{rpcserver_8h_a2001557499eb100f5f88297d7ac9354f}{}\index{rpcserver.\+h@{rpcserver.\+h}!createrawtransaction@{createrawtransaction}}
+\index{createrawtransaction@{createrawtransaction}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{createrawtransaction}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value createrawtransaction (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_a2001557499eb100f5f88297d7ac9354f}
+\hypertarget{rpcserver_8h_a6fa2adfff10a56b2840b4d6d0e001cb9}{}\index{rpcserver.\+h@{rpcserver.\+h}!decoderawtransaction@{decoderawtransaction}}
+\index{decoderawtransaction@{decoderawtransaction}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{decoderawtransaction}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value decoderawtransaction (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_a6fa2adfff10a56b2840b4d6d0e001cb9}
+\hypertarget{rpcserver_8h_a3525fc2ae4c773be1bc169385ed6a0f9}{}\index{rpcserver.\+h@{rpcserver.\+h}!decodescript@{decodescript}}
+\index{decodescript@{decodescript}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{decodescript}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value decodescript (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_a3525fc2ae4c773be1bc169385ed6a0f9}
+\hypertarget{rpcserver_8h_a6e0572b23b564e68cf4bb6de62249c97}{}\index{rpcserver.\+h@{rpcserver.\+h}!dumpprivkey@{dumpprivkey}}
+\index{dumpprivkey@{dumpprivkey}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{dumpprivkey}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value dumpprivkey (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_a6e0572b23b564e68cf4bb6de62249c97}
+\hypertarget{rpcserver_8h_a4b3dff30dbf1cd3c82109944a06b6787}{}\index{rpcserver.\+h@{rpcserver.\+h}!dumpwallet@{dumpwallet}}
+\index{dumpwallet@{dumpwallet}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{dumpwallet}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value dumpwallet (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_a4b3dff30dbf1cd3c82109944a06b6787}
+\hypertarget{rpcserver_8h_ae9c6c5afb89e747c7c642c9b4cf9e504}{}\index{rpcserver.\+h@{rpcserver.\+h}!encryptwallet@{encryptwallet}}
+\index{encryptwallet@{encryptwallet}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{encryptwallet}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value encryptwallet (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_ae9c6c5afb89e747c7c642c9b4cf9e504}
+\hypertarget{rpcserver_8h_a8f837f6d506b9719cef93188db00fd3c}{}\index{rpcserver.\+h@{rpcserver.\+h}!Ensure\+Wallet\+Is\+Unlocked@{Ensure\+Wallet\+Is\+Unlocked}}
+\index{Ensure\+Wallet\+Is\+Unlocked@{Ensure\+Wallet\+Is\+Unlocked}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{Ensure\+Wallet\+Is\+Unlocked}]{\setlength{\rightskip}{0pt plus 5cm}void Ensure\+Wallet\+Is\+Unlocked (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_a8f837f6d506b9719cef93188db00fd3c}
+\hypertarget{rpcserver_8h_a361f35e84cd1d607ccc2b79777347df9}{}\index{rpcserver.\+h@{rpcserver.\+h}!estimatefee@{estimatefee}}
+\index{estimatefee@{estimatefee}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{estimatefee}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value estimatefee (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_a361f35e84cd1d607ccc2b79777347df9}
+\hypertarget{rpcserver_8h_a29f671d1024c5d2b3ebde68022d58e5e}{}\index{rpcserver.\+h@{rpcserver.\+h}!estimatepriority@{estimatepriority}}
+\index{estimatepriority@{estimatepriority}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{estimatepriority}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value estimatepriority (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_a29f671d1024c5d2b3ebde68022d58e5e}
+\hypertarget{rpcserver_8h_a4ac8aef79b8aab2d9188dd0ea41b6baa}{}\index{rpcserver.\+h@{rpcserver.\+h}!generate@{generate}}
+\index{generate@{generate}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{generate}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value generate (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_a4ac8aef79b8aab2d9188dd0ea41b6baa}
+\hypertarget{rpcserver_8h_a608c9d199207722a3682536d2f726d7f}{}\index{rpcserver.\+h@{rpcserver.\+h}!getaccount@{getaccount}}
+\index{getaccount@{getaccount}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{getaccount}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value getaccount (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_a608c9d199207722a3682536d2f726d7f}
+\hypertarget{rpcserver_8h_a828cec0b2dc4fc6abe4067322e1b23fd}{}\index{rpcserver.\+h@{rpcserver.\+h}!getaccountaddress@{getaccountaddress}}
+\index{getaccountaddress@{getaccountaddress}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{getaccountaddress}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value getaccountaddress (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_a828cec0b2dc4fc6abe4067322e1b23fd}
+\hypertarget{rpcserver_8h_a7f6afe057fee189c07b4908704153ccb}{}\index{rpcserver.\+h@{rpcserver.\+h}!getaddednodeinfo@{getaddednodeinfo}}
+\index{getaddednodeinfo@{getaddednodeinfo}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{getaddednodeinfo}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value getaddednodeinfo (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_a7f6afe057fee189c07b4908704153ccb}
+\hypertarget{rpcserver_8h_a40560dbaefc812236ebc5c8f6cf1f2ea}{}\index{rpcserver.\+h@{rpcserver.\+h}!getaddressesbyaccount@{getaddressesbyaccount}}
+\index{getaddressesbyaccount@{getaddressesbyaccount}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{getaddressesbyaccount}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value getaddressesbyaccount (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_a40560dbaefc812236ebc5c8f6cf1f2ea}
+\hypertarget{rpcserver_8h_a5216980d02aa5738e4f4916b3d58b4d6}{}\index{rpcserver.\+h@{rpcserver.\+h}!getbalance@{getbalance}}
+\index{getbalance@{getbalance}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{getbalance}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value getbalance (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_a5216980d02aa5738e4f4916b3d58b4d6}
+\hypertarget{rpcserver_8h_a7ac22ef1024de0f7a4053fd39c87520d}{}\index{rpcserver.\+h@{rpcserver.\+h}!getbestblockhash@{getbestblockhash}}
+\index{getbestblockhash@{getbestblockhash}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{getbestblockhash}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value getbestblockhash (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_a7ac22ef1024de0f7a4053fd39c87520d}
+\hypertarget{rpcserver_8h_a2c6d680fc84eeb1b818f58ccf4558395}{}\index{rpcserver.\+h@{rpcserver.\+h}!getblock@{getblock}}
+\index{getblock@{getblock}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{getblock}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value getblock (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_a2c6d680fc84eeb1b818f58ccf4558395}
+\hypertarget{rpcserver_8h_ad4cf4e9325aa7b4a0ef97a3528d5b3e0}{}\index{rpcserver.\+h@{rpcserver.\+h}!getblockchaininfo@{getblockchaininfo}}
+\index{getblockchaininfo@{getblockchaininfo}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{getblockchaininfo}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value getblockchaininfo (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_ad4cf4e9325aa7b4a0ef97a3528d5b3e0}
+\hypertarget{rpcserver_8h_ab8e19d56b57d35659a75eb1775431b1e}{}\index{rpcserver.\+h@{rpcserver.\+h}!getblockcount@{getblockcount}}
+\index{getblockcount@{getblockcount}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{getblockcount}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value getblockcount (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_ab8e19d56b57d35659a75eb1775431b1e}
+\hypertarget{rpcserver_8h_a3685c57c1aa798ca338fa961b3895789}{}\index{rpcserver.\+h@{rpcserver.\+h}!getblockhash@{getblockhash}}
+\index{getblockhash@{getblockhash}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{getblockhash}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value getblockhash (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_a3685c57c1aa798ca338fa961b3895789}
+\hypertarget{rpcserver_8h_afb81b4e747a83a2f6269bbb2b3b0df25}{}\index{rpcserver.\+h@{rpcserver.\+h}!getblocktemplate@{getblocktemplate}}
+\index{getblocktemplate@{getblocktemplate}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{getblocktemplate}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value getblocktemplate (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_afb81b4e747a83a2f6269bbb2b3b0df25}
+\hypertarget{rpcserver_8h_acabf382935c86090c61c0161b2d9a24e}{}\index{rpcserver.\+h@{rpcserver.\+h}!getchaintips@{getchaintips}}
+\index{getchaintips@{getchaintips}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{getchaintips}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value getchaintips (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_acabf382935c86090c61c0161b2d9a24e}
+\hypertarget{rpcserver_8h_a3740680cc7e38009224ffa24078f2e06}{}\index{rpcserver.\+h@{rpcserver.\+h}!getconnectioncount@{getconnectioncount}}
+\index{getconnectioncount@{getconnectioncount}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{getconnectioncount}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value getconnectioncount (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_a3740680cc7e38009224ffa24078f2e06}
+\hypertarget{rpcserver_8h_a8fcb55e3479716ded2b499e470bdc13a}{}\index{rpcserver.\+h@{rpcserver.\+h}!Get\+Difficulty@{Get\+Difficulty}}
+\index{Get\+Difficulty@{Get\+Difficulty}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{Get\+Difficulty}]{\setlength{\rightskip}{0pt plus 5cm}double Get\+Difficulty (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\+Block\+Index} $\ast$}]{blockindex = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_a8fcb55e3479716ded2b499e470bdc13a}
+\hypertarget{rpcserver_8h_ac2f1d0c1c87ed048043c2fee46149a85}{}\index{rpcserver.\+h@{rpcserver.\+h}!getdifficulty@{getdifficulty}}
+\index{getdifficulty@{getdifficulty}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{getdifficulty}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value getdifficulty (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_ac2f1d0c1c87ed048043c2fee46149a85}
+\hypertarget{rpcserver_8h_a0d915dd7ca06e4208a5ac6e01fb63890}{}\index{rpcserver.\+h@{rpcserver.\+h}!getgenerate@{getgenerate}}
+\index{getgenerate@{getgenerate}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{getgenerate}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value getgenerate (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_a0d915dd7ca06e4208a5ac6e01fb63890}
+\hypertarget{rpcserver_8h_a1c0b7fe913867ef1fef3266e79b62fe3}{}\index{rpcserver.\+h@{rpcserver.\+h}!getinfo@{getinfo}}
+\index{getinfo@{getinfo}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{getinfo}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value getinfo (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_a1c0b7fe913867ef1fef3266e79b62fe3}
+\hypertarget{rpcserver_8h_ae14711109206a3a54655bde295d2c95f}{}\index{rpcserver.\+h@{rpcserver.\+h}!getmempoolinfo@{getmempoolinfo}}
+\index{getmempoolinfo@{getmempoolinfo}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{getmempoolinfo}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value getmempoolinfo (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_ae14711109206a3a54655bde295d2c95f}
+\hypertarget{rpcserver_8h_aeb91f453075f3c22c57034728c0155b2}{}\index{rpcserver.\+h@{rpcserver.\+h}!getmininginfo@{getmininginfo}}
+\index{getmininginfo@{getmininginfo}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{getmininginfo}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value getmininginfo (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_aeb91f453075f3c22c57034728c0155b2}
+\hypertarget{rpcserver_8h_acadb4670dad2611b18186fb13e1290db}{}\index{rpcserver.\+h@{rpcserver.\+h}!getnettotals@{getnettotals}}
+\index{getnettotals@{getnettotals}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{getnettotals}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value getnettotals (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_acadb4670dad2611b18186fb13e1290db}
+\hypertarget{rpcserver_8h_a1c5e07352b8082ee6b33e6332f469877}{}\index{rpcserver.\+h@{rpcserver.\+h}!getnetworkhashps@{getnetworkhashps}}
+\index{getnetworkhashps@{getnetworkhashps}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{getnetworkhashps}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value getnetworkhashps (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_a1c5e07352b8082ee6b33e6332f469877}
+\hypertarget{rpcserver_8h_a30ccbe9123ec55cdb8a3c5a40a18b491}{}\index{rpcserver.\+h@{rpcserver.\+h}!getnetworkinfo@{getnetworkinfo}}
+\index{getnetworkinfo@{getnetworkinfo}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{getnetworkinfo}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value getnetworkinfo (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_a30ccbe9123ec55cdb8a3c5a40a18b491}
+\hypertarget{rpcserver_8h_a698ea2958b8016853f80ecdae498880c}{}\index{rpcserver.\+h@{rpcserver.\+h}!getnewaddress@{getnewaddress}}
+\index{getnewaddress@{getnewaddress}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{getnewaddress}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value getnewaddress (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_a698ea2958b8016853f80ecdae498880c}
+\hypertarget{rpcserver_8h_adfec050abf04c7324874dc2dc3a1e9c2}{}\index{rpcserver.\+h@{rpcserver.\+h}!getpeerinfo@{getpeerinfo}}
+\index{getpeerinfo@{getpeerinfo}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{getpeerinfo}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value getpeerinfo (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_adfec050abf04c7324874dc2dc3a1e9c2}
+\hypertarget{rpcserver_8h_a9564a70dff07571be1f300447fc25cfa}{}\index{rpcserver.\+h@{rpcserver.\+h}!getrawchangeaddress@{getrawchangeaddress}}
+\index{getrawchangeaddress@{getrawchangeaddress}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{getrawchangeaddress}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value getrawchangeaddress (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_a9564a70dff07571be1f300447fc25cfa}
+\hypertarget{rpcserver_8h_a875f64ee66ff0582fdc2446435f9c886}{}\index{rpcserver.\+h@{rpcserver.\+h}!getrawmempool@{getrawmempool}}
+\index{getrawmempool@{getrawmempool}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{getrawmempool}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value getrawmempool (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_a875f64ee66ff0582fdc2446435f9c886}
+\hypertarget{rpcserver_8h_afe3379feabcba84a8d731a85312578c7}{}\index{rpcserver.\+h@{rpcserver.\+h}!getrawtransaction@{getrawtransaction}}
+\index{getrawtransaction@{getrawtransaction}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{getrawtransaction}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value getrawtransaction (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_afe3379feabcba84a8d731a85312578c7}
+\hypertarget{rpcserver_8h_ab03060805f59fab65dbc6de4be77de35}{}\index{rpcserver.\+h@{rpcserver.\+h}!getreceivedbyaccount@{getreceivedbyaccount}}
+\index{getreceivedbyaccount@{getreceivedbyaccount}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{getreceivedbyaccount}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value getreceivedbyaccount (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_ab03060805f59fab65dbc6de4be77de35}
+\hypertarget{rpcserver_8h_aef1e3c62a6853ccb7755cf8e58f776a2}{}\index{rpcserver.\+h@{rpcserver.\+h}!getreceivedbyaddress@{getreceivedbyaddress}}
+\index{getreceivedbyaddress@{getreceivedbyaddress}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{getreceivedbyaddress}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value getreceivedbyaddress (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_aef1e3c62a6853ccb7755cf8e58f776a2}
+\hypertarget{rpcserver_8h_af35ea13d2cac65c3b45cd439b0f1477f}{}\index{rpcserver.\+h@{rpcserver.\+h}!gettransaction@{gettransaction}}
+\index{gettransaction@{gettransaction}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{gettransaction}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value gettransaction (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_af35ea13d2cac65c3b45cd439b0f1477f}
+\hypertarget{rpcserver_8h_a6bdd0ec47fb96b9ce73b421ed6e45801}{}\index{rpcserver.\+h@{rpcserver.\+h}!gettxout@{gettxout}}
+\index{gettxout@{gettxout}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{gettxout}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value gettxout (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_a6bdd0ec47fb96b9ce73b421ed6e45801}
+\hypertarget{rpcserver_8h_ac06c56abd846c7d978ceef4f3514cf23}{}\index{rpcserver.\+h@{rpcserver.\+h}!gettxoutproof@{gettxoutproof}}
+\index{gettxoutproof@{gettxoutproof}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{gettxoutproof}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value gettxoutproof (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_ac06c56abd846c7d978ceef4f3514cf23}
+\hypertarget{rpcserver_8h_aafca82ee7b0b84c018a825fbcb75c2df}{}\index{rpcserver.\+h@{rpcserver.\+h}!gettxoutsetinfo@{gettxoutsetinfo}}
+\index{gettxoutsetinfo@{gettxoutsetinfo}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{gettxoutsetinfo}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value gettxoutsetinfo (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_aafca82ee7b0b84c018a825fbcb75c2df}
+\hypertarget{rpcserver_8h_ac7c5d861204a6d6653ec718ef11812e5}{}\index{rpcserver.\+h@{rpcserver.\+h}!getunconfirmedbalance@{getunconfirmedbalance}}
+\index{getunconfirmedbalance@{getunconfirmedbalance}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{getunconfirmedbalance}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value getunconfirmedbalance (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_ac7c5d861204a6d6653ec718ef11812e5}
+\hypertarget{rpcserver_8h_aba76079488b688634be8af2d217e5d99}{}\index{rpcserver.\+h@{rpcserver.\+h}!getwalletinfo@{getwalletinfo}}
+\index{getwalletinfo@{getwalletinfo}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{getwalletinfo}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value getwalletinfo (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_aba76079488b688634be8af2d217e5d99}
+\hypertarget{rpcserver_8h_a84ebddbf2129e9a9497c75b0aabe2585}{}\index{rpcserver.\+h@{rpcserver.\+h}!Help\+Example\+Cli@{Help\+Example\+Cli}}
+\index{Help\+Example\+Cli@{Help\+Example\+Cli}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{Help\+Example\+Cli}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Help\+Example\+Cli (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{methodname, }
+\item[{std\+::string}]{args}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_a84ebddbf2129e9a9497c75b0aabe2585}
+\hypertarget{rpcserver_8h_add973df458429ce9e8f55b966a45dbea}{}\index{rpcserver.\+h@{rpcserver.\+h}!Help\+Example\+Rpc@{Help\+Example\+Rpc}}
+\index{Help\+Example\+Rpc@{Help\+Example\+Rpc}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{Help\+Example\+Rpc}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Help\+Example\+Rpc (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{methodname, }
+\item[{std\+::string}]{args}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_add973df458429ce9e8f55b966a45dbea}
+\hypertarget{rpcserver_8h_abcfbb0ad9335791f2832c01209b8f12d}{}\index{rpcserver.\+h@{rpcserver.\+h}!Help\+Requiring\+Passphrase@{Help\+Requiring\+Passphrase}}
+\index{Help\+Requiring\+Passphrase@{Help\+Requiring\+Passphrase}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{Help\+Requiring\+Passphrase}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Help\+Requiring\+Passphrase (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_abcfbb0ad9335791f2832c01209b8f12d}
+\hypertarget{rpcserver_8h_a3b4ebb3671ed6622d75913101b296120}{}\index{rpcserver.\+h@{rpcserver.\+h}!H\+T\+T\+P\+Req\+\_\+\+R\+E\+S\+T@{H\+T\+T\+P\+Req\+\_\+\+R\+E\+S\+T}}
+\index{H\+T\+T\+P\+Req\+\_\+\+R\+E\+S\+T@{H\+T\+T\+P\+Req\+\_\+\+R\+E\+S\+T}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{H\+T\+T\+P\+Req\+\_\+\+R\+E\+S\+T}]{\setlength{\rightskip}{0pt plus 5cm}bool H\+T\+T\+P\+Req\+\_\+\+R\+E\+S\+T (
+\begin{DoxyParamCaption}
+\item[{{\bf Accepted\+Connection} $\ast$}]{conn, }
+\item[{const std\+::string \&}]{str\+U\+R\+I, }
+\item[{const std\+::map$<$ std\+::string, std\+::string $>$ \&}]{map\+Headers, }
+\item[{bool}]{f\+Run}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_a3b4ebb3671ed6622d75913101b296120}
+\hypertarget{rpcserver_8h_a2fc040098d9e7b893561c80e949e24c8}{}\index{rpcserver.\+h@{rpcserver.\+h}!importaddress@{importaddress}}
+\index{importaddress@{importaddress}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{importaddress}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value importaddress (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_a2fc040098d9e7b893561c80e949e24c8}
+\hypertarget{rpcserver_8h_a93f44897483cf1efd8a2f5134eaacf74}{}\index{rpcserver.\+h@{rpcserver.\+h}!importprivkey@{importprivkey}}
+\index{importprivkey@{importprivkey}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{importprivkey}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value importprivkey (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_a93f44897483cf1efd8a2f5134eaacf74}
+\hypertarget{rpcserver_8h_a3262eeeff98740a4595c79eef4000473}{}\index{rpcserver.\+h@{rpcserver.\+h}!importwallet@{importwallet}}
+\index{importwallet@{importwallet}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{importwallet}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value importwallet (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_a3262eeeff98740a4595c79eef4000473}
+\hypertarget{rpcserver_8h_ad47789e7e3d3323a832e764f692e4ea8}{}\index{rpcserver.\+h@{rpcserver.\+h}!Init\+R\+P\+C\+Mining@{Init\+R\+P\+C\+Mining}}
+\index{Init\+R\+P\+C\+Mining@{Init\+R\+P\+C\+Mining}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{Init\+R\+P\+C\+Mining}]{\setlength{\rightskip}{0pt plus 5cm}void Init\+R\+P\+C\+Mining (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_ad47789e7e3d3323a832e764f692e4ea8}
+\hypertarget{rpcserver_8h_afb07ba2414d5dbe2d373767ae7b9ec96}{}\index{rpcserver.\+h@{rpcserver.\+h}!invalidateblock@{invalidateblock}}
+\index{invalidateblock@{invalidateblock}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{invalidateblock}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value invalidateblock (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_afb07ba2414d5dbe2d373767ae7b9ec96}
+\hypertarget{rpcserver_8h_a6e430f3dcb8182cc7c7330fdef63575b}{}\index{rpcserver.\+h@{rpcserver.\+h}!Is\+R\+P\+C\+Running@{Is\+R\+P\+C\+Running}}
+\index{Is\+R\+P\+C\+Running@{Is\+R\+P\+C\+Running}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{Is\+R\+P\+C\+Running}]{\setlength{\rightskip}{0pt plus 5cm}bool Is\+R\+P\+C\+Running (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_a6e430f3dcb8182cc7c7330fdef63575b}
+Query whether R\+P\+C is running \hypertarget{rpcserver_8h_aa98bf322bc6b754a1383c395628aa8ee}{}\index{rpcserver.\+h@{rpcserver.\+h}!keypoolrefill@{keypoolrefill}}
+\index{keypoolrefill@{keypoolrefill}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{keypoolrefill}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value keypoolrefill (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_aa98bf322bc6b754a1383c395628aa8ee}
+\hypertarget{rpcserver_8h_a8072f73adbb543a718196659b29f79d8}{}\index{rpcserver.\+h@{rpcserver.\+h}!listaccounts@{listaccounts}}
+\index{listaccounts@{listaccounts}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{listaccounts}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value listaccounts (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_a8072f73adbb543a718196659b29f79d8}
+\hypertarget{rpcserver_8h_a8c71e92f5096c0ff22d6937872615136}{}\index{rpcserver.\+h@{rpcserver.\+h}!listaddressgroupings@{listaddressgroupings}}
+\index{listaddressgroupings@{listaddressgroupings}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{listaddressgroupings}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value listaddressgroupings (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_a8c71e92f5096c0ff22d6937872615136}
+\hypertarget{rpcserver_8h_a1e0a957428cf65b9392c27b384c793a2}{}\index{rpcserver.\+h@{rpcserver.\+h}!listlockunspent@{listlockunspent}}
+\index{listlockunspent@{listlockunspent}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{listlockunspent}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value listlockunspent (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_a1e0a957428cf65b9392c27b384c793a2}
+\hypertarget{rpcserver_8h_a0f29e7a4e3e3973bf44842d643919fcb}{}\index{rpcserver.\+h@{rpcserver.\+h}!listreceivedbyaccount@{listreceivedbyaccount}}
+\index{listreceivedbyaccount@{listreceivedbyaccount}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{listreceivedbyaccount}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value listreceivedbyaccount (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_a0f29e7a4e3e3973bf44842d643919fcb}
+\hypertarget{rpcserver_8h_a5ed0dfeae8443b72030a9fc4b03ad046}{}\index{rpcserver.\+h@{rpcserver.\+h}!listreceivedbyaddress@{listreceivedbyaddress}}
+\index{listreceivedbyaddress@{listreceivedbyaddress}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{listreceivedbyaddress}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value listreceivedbyaddress (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_a5ed0dfeae8443b72030a9fc4b03ad046}
+\hypertarget{rpcserver_8h_a0b535bb11482a1c42944f0546d2bdfe2}{}\index{rpcserver.\+h@{rpcserver.\+h}!listsinceblock@{listsinceblock}}
+\index{listsinceblock@{listsinceblock}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{listsinceblock}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value listsinceblock (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_a0b535bb11482a1c42944f0546d2bdfe2}
+\hypertarget{rpcserver_8h_a6fbbf073d17b9a0e8226065cd010bdd0}{}\index{rpcserver.\+h@{rpcserver.\+h}!listtransactions@{listtransactions}}
+\index{listtransactions@{listtransactions}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{listtransactions}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value listtransactions (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_a6fbbf073d17b9a0e8226065cd010bdd0}
+\hypertarget{rpcserver_8h_ac4ab7a74b8720a653d697eeba2a10650}{}\index{rpcserver.\+h@{rpcserver.\+h}!listunspent@{listunspent}}
+\index{listunspent@{listunspent}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{listunspent}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value listunspent (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_ac4ab7a74b8720a653d697eeba2a10650}
+\hypertarget{rpcserver_8h_ad8955dc549f3d8289cff71dd4dbb9f93}{}\index{rpcserver.\+h@{rpcserver.\+h}!lockunspent@{lockunspent}}
+\index{lockunspent@{lockunspent}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{lockunspent}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value lockunspent (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_ad8955dc549f3d8289cff71dd4dbb9f93}
+\hypertarget{rpcserver_8h_ac7697eae03f4bd9bdba9b3589a966f01}{}\index{rpcserver.\+h@{rpcserver.\+h}!movecmd@{movecmd}}
+\index{movecmd@{movecmd}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{movecmd}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value movecmd (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_ac7697eae03f4bd9bdba9b3589a966f01}
+\hypertarget{rpcserver_8h_a0b301d768322e3b1689d8b60a905439a}{}\index{rpcserver.\+h@{rpcserver.\+h}!Parse\+Hash\+O@{Parse\+Hash\+O}}
+\index{Parse\+Hash\+O@{Parse\+Hash\+O}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{Parse\+Hash\+O}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint256} Parse\+Hash\+O (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Object \&}]{o, }
+\item[{std\+::string}]{str\+Key}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_a0b301d768322e3b1689d8b60a905439a}
+\hypertarget{rpcserver_8h_a78996ea0cdadb526fc365ea1c352c40f}{}\index{rpcserver.\+h@{rpcserver.\+h}!Parse\+Hash\+V@{Parse\+Hash\+V}}
+\index{Parse\+Hash\+V@{Parse\+Hash\+V}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{Parse\+Hash\+V}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint256} Parse\+Hash\+V (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Value \&}]{v, }
+\item[{std\+::string}]{str\+Name}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_a78996ea0cdadb526fc365ea1c352c40f}
+Utilities\+: convert hex-\/encoded Values (throws error if not hex). \hypertarget{rpcserver_8h_a00043e448b54f99eb1b3b084b3a93933}{}\index{rpcserver.\+h@{rpcserver.\+h}!Parse\+Hex\+O@{Parse\+Hex\+O}}
+\index{Parse\+Hex\+O@{Parse\+Hex\+O}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{Parse\+Hex\+O}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$unsigned char$>$ Parse\+Hex\+O (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Object \&}]{o, }
+\item[{std\+::string}]{str\+Key}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_a00043e448b54f99eb1b3b084b3a93933}
+\hypertarget{rpcserver_8h_ac4abe67d9f1de6dbf909f9be7b9e33c3}{}\index{rpcserver.\+h@{rpcserver.\+h}!Parse\+Hex\+V@{Parse\+Hex\+V}}
+\index{Parse\+Hex\+V@{Parse\+Hex\+V}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{Parse\+Hex\+V}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$unsigned char$>$ Parse\+Hex\+V (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Value \&}]{v, }
+\item[{std\+::string}]{str\+Name}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_ac4abe67d9f1de6dbf909f9be7b9e33c3}
+\hypertarget{rpcserver_8h_a5611d8f199f7429a1db7ec6ff9c4e780}{}\index{rpcserver.\+h@{rpcserver.\+h}!ping@{ping}}
+\index{ping@{ping}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{ping}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value ping (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_a5611d8f199f7429a1db7ec6ff9c4e780}
+\hypertarget{rpcserver_8h_adbb9ba658a98baf837f1707aa0f1e3e8}{}\index{rpcserver.\+h@{rpcserver.\+h}!prioritisetransaction@{prioritisetransaction}}
+\index{prioritisetransaction@{prioritisetransaction}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{prioritisetransaction}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value prioritisetransaction (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_adbb9ba658a98baf837f1707aa0f1e3e8}
+\hypertarget{rpcserver_8h_ad3c8b655ee7fc32d8ae7eb1b13ac0a73}{}\index{rpcserver.\+h@{rpcserver.\+h}!reconsiderblock@{reconsiderblock}}
+\index{reconsiderblock@{reconsiderblock}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{reconsiderblock}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value reconsiderblock (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_ad3c8b655ee7fc32d8ae7eb1b13ac0a73}
+\hypertarget{rpcserver_8h_af74f6c91845248349c259e7b7054bce1}{}\index{rpcserver.\+h@{rpcserver.\+h}!resendwallettransactions@{resendwallettransactions}}
+\index{resendwallettransactions@{resendwallettransactions}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{resendwallettransactions}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value resendwallettransactions (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_af74f6c91845248349c259e7b7054bce1}
+\hypertarget{rpcserver_8h_a0408560bb818610444eb2e11578eaed0}{}\index{rpcserver.\+h@{rpcserver.\+h}!R\+P\+C\+Is\+In\+Warmup@{R\+P\+C\+Is\+In\+Warmup}}
+\index{R\+P\+C\+Is\+In\+Warmup@{R\+P\+C\+Is\+In\+Warmup}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{R\+P\+C\+Is\+In\+Warmup}]{\setlength{\rightskip}{0pt plus 5cm}bool R\+P\+C\+Is\+In\+Warmup (
+\begin{DoxyParamCaption}
+\item[{std\+::string $\ast$}]{status\+Out}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_a0408560bb818610444eb2e11578eaed0}
+\hypertarget{rpcserver_8h_a5061d3a516e4daf4f4be1e11fc98248a}{}\index{rpcserver.\+h@{rpcserver.\+h}!R\+P\+C\+Run\+Later@{R\+P\+C\+Run\+Later}}
+\index{R\+P\+C\+Run\+Later@{R\+P\+C\+Run\+Later}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{R\+P\+C\+Run\+Later}]{\setlength{\rightskip}{0pt plus 5cm}void R\+P\+C\+Run\+Later (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{name, }
+\item[{boost\+::function$<$ void(void)$>$}]{func, }
+\item[{int64\+\_\+t}]{n\+Seconds}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_a5061d3a516e4daf4f4be1e11fc98248a}
+Run func n\+Seconds from now. Uses boost deadline timers. Overrides previous timer $<$name$>$ (if any). \hypertarget{rpcserver_8h_a2b4519844d12aa7a421d20532386bdf9}{}\index{rpcserver.\+h@{rpcserver.\+h}!R\+P\+C\+Type\+Check@{R\+P\+C\+Type\+Check}}
+\index{R\+P\+C\+Type\+Check@{R\+P\+C\+Type\+Check}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{R\+P\+C\+Type\+Check}]{\setlength{\rightskip}{0pt plus 5cm}void R\+P\+C\+Type\+Check (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{const std\+::list$<$ json\+\_\+spirit\+::\+Value\+\_\+type $>$ \&}]{types\+Expected, }
+\item[{bool}]{f\+Allow\+Null = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_a2b4519844d12aa7a421d20532386bdf9}
+Type-\/check arguments; throws J\+S\+O\+N\+R\+P\+C\+Error if wrong type given. Does not check that the right number of arguments are passed, just that any passed are the correct type. Use like\+: R\+P\+C\+Type\+Check(params, boost\+::assign\+::list\+\_\+of(str\+\_\+type)(int\+\_\+type)(obj\+\_\+type)); \hypertarget{rpcserver_8h_aeb330535a63c08475ab6418f591c956b}{}\index{rpcserver.\+h@{rpcserver.\+h}!R\+P\+C\+Type\+Check@{R\+P\+C\+Type\+Check}}
+\index{R\+P\+C\+Type\+Check@{R\+P\+C\+Type\+Check}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{R\+P\+C\+Type\+Check}]{\setlength{\rightskip}{0pt plus 5cm}void R\+P\+C\+Type\+Check (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Object \&}]{o, }
+\item[{const std\+::map$<$ std\+::string, json\+\_\+spirit\+::\+Value\+\_\+type $>$ \&}]{types\+Expected, }
+\item[{bool}]{f\+Allow\+Null = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_aeb330535a63c08475ab6418f591c956b}
+Check for expected keys/value types in an Object. Use like\+: R\+P\+C\+Type\+Check(object, boost\+::assign\+::map\+\_\+list\+\_\+of(\char`\"{}name\char`\"{}, str\+\_\+type)(\char`\"{}value\char`\"{}, int\+\_\+type)); \hypertarget{rpcserver_8h_a31032a97d919afe3c2bd3d2888f0820e}{}\index{rpcserver.\+h@{rpcserver.\+h}!sendfrom@{sendfrom}}
+\index{sendfrom@{sendfrom}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{sendfrom}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value sendfrom (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_a31032a97d919afe3c2bd3d2888f0820e}
+\hypertarget{rpcserver_8h_a9ef1e12089532035ac95c7a1e161c046}{}\index{rpcserver.\+h@{rpcserver.\+h}!sendmany@{sendmany}}
+\index{sendmany@{sendmany}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{sendmany}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value sendmany (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_a9ef1e12089532035ac95c7a1e161c046}
+\hypertarget{rpcserver_8h_aede74be8a396d193b733aab857eb94cd}{}\index{rpcserver.\+h@{rpcserver.\+h}!sendrawtransaction@{sendrawtransaction}}
+\index{sendrawtransaction@{sendrawtransaction}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{sendrawtransaction}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value sendrawtransaction (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_aede74be8a396d193b733aab857eb94cd}
+\hypertarget{rpcserver_8h_aaecc2a1bb70aa448c86b5202c8bb9205}{}\index{rpcserver.\+h@{rpcserver.\+h}!sendtoaddress@{sendtoaddress}}
+\index{sendtoaddress@{sendtoaddress}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{sendtoaddress}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value sendtoaddress (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_aaecc2a1bb70aa448c86b5202c8bb9205}
+\hypertarget{rpcserver_8h_af34e0fcd0e918b7bdeebe385bb070ec9}{}\index{rpcserver.\+h@{rpcserver.\+h}!setaccount@{setaccount}}
+\index{setaccount@{setaccount}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{setaccount}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value setaccount (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_af34e0fcd0e918b7bdeebe385bb070ec9}
+\hypertarget{rpcserver_8h_a62e20a20767e262e283716a583cb3e8b}{}\index{rpcserver.\+h@{rpcserver.\+h}!setgenerate@{setgenerate}}
+\index{setgenerate@{setgenerate}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{setgenerate}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value setgenerate (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_a62e20a20767e262e283716a583cb3e8b}
+\hypertarget{rpcserver_8h_ab3fcbe796e63a8d323beb6b79f71cbf1}{}\index{rpcserver.\+h@{rpcserver.\+h}!setmocktime@{setmocktime}}
+\index{setmocktime@{setmocktime}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{setmocktime}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value setmocktime (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_ab3fcbe796e63a8d323beb6b79f71cbf1}
+\hypertarget{rpcserver_8h_a124bc19db90eb0d986647ecf8ad2df0f}{}\index{rpcserver.\+h@{rpcserver.\+h}!Set\+R\+P\+C\+Warmup\+Finished@{Set\+R\+P\+C\+Warmup\+Finished}}
+\index{Set\+R\+P\+C\+Warmup\+Finished@{Set\+R\+P\+C\+Warmup\+Finished}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{Set\+R\+P\+C\+Warmup\+Finished}]{\setlength{\rightskip}{0pt plus 5cm}void Set\+R\+P\+C\+Warmup\+Finished (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_a124bc19db90eb0d986647ecf8ad2df0f}
+\hypertarget{rpcserver_8h_aeff535d4f2cca2e52debc19711ca4406}{}\index{rpcserver.\+h@{rpcserver.\+h}!Set\+R\+P\+C\+Warmup\+Status@{Set\+R\+P\+C\+Warmup\+Status}}
+\index{Set\+R\+P\+C\+Warmup\+Status@{Set\+R\+P\+C\+Warmup\+Status}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{Set\+R\+P\+C\+Warmup\+Status}]{\setlength{\rightskip}{0pt plus 5cm}void Set\+R\+P\+C\+Warmup\+Status (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{new\+Status}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_aeff535d4f2cca2e52debc19711ca4406}
+Set the R\+P\+C warmup status. When this is done, all R\+P\+C calls will error out immediately with R\+P\+C\+\_\+\+I\+N\+\_\+\+W\+A\+R\+M\+U\+P. \hypertarget{rpcserver_8h_a6393a6a6ebeea64017559ebb5e7a36c8}{}\index{rpcserver.\+h@{rpcserver.\+h}!settxfee@{settxfee}}
+\index{settxfee@{settxfee}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{settxfee}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value settxfee (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_a6393a6a6ebeea64017559ebb5e7a36c8}
+\hypertarget{rpcserver_8h_ae7370e6af93e26e0c967cda6a63fe3a9}{}\index{rpcserver.\+h@{rpcserver.\+h}!Shutdown\+R\+P\+C\+Mining@{Shutdown\+R\+P\+C\+Mining}}
+\index{Shutdown\+R\+P\+C\+Mining@{Shutdown\+R\+P\+C\+Mining}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{Shutdown\+R\+P\+C\+Mining}]{\setlength{\rightskip}{0pt plus 5cm}void Shutdown\+R\+P\+C\+Mining (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_ae7370e6af93e26e0c967cda6a63fe3a9}
+\hypertarget{rpcserver_8h_ac26b2169bbca2da59a26c065afe17905}{}\index{rpcserver.\+h@{rpcserver.\+h}!signmessage@{signmessage}}
+\index{signmessage@{signmessage}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{signmessage}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value signmessage (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_ac26b2169bbca2da59a26c065afe17905}
+\hypertarget{rpcserver_8h_a7e0f51d634b3812d6510108789d5a266}{}\index{rpcserver.\+h@{rpcserver.\+h}!signrawtransaction@{signrawtransaction}}
+\index{signrawtransaction@{signrawtransaction}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{signrawtransaction}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value signrawtransaction (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_a7e0f51d634b3812d6510108789d5a266}
+\hypertarget{rpcserver_8h_abbdd9938022ac36af7f0a436038d700d}{}\index{rpcserver.\+h@{rpcserver.\+h}!Start\+Dummy\+R\+P\+C\+Thread@{Start\+Dummy\+R\+P\+C\+Thread}}
+\index{Start\+Dummy\+R\+P\+C\+Thread@{Start\+Dummy\+R\+P\+C\+Thread}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{Start\+Dummy\+R\+P\+C\+Thread}]{\setlength{\rightskip}{0pt plus 5cm}void Start\+Dummy\+R\+P\+C\+Thread (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_abbdd9938022ac36af7f0a436038d700d}
+Alternative to Start\+R\+P\+C\+Threads for the G\+U\+I, when no server is used. The R\+P\+C thread in this case is only used to handle timeouts. If real R\+P\+C threads have already been started this is a no-\/op. \hypertarget{rpcserver_8h_af4d692a884c24c4abe2fc3f2b165542d}{}\index{rpcserver.\+h@{rpcserver.\+h}!Start\+R\+P\+C\+Threads@{Start\+R\+P\+C\+Threads}}
+\index{Start\+R\+P\+C\+Threads@{Start\+R\+P\+C\+Threads}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{Start\+R\+P\+C\+Threads}]{\setlength{\rightskip}{0pt plus 5cm}void Start\+R\+P\+C\+Threads (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_af4d692a884c24c4abe2fc3f2b165542d}
+Start R\+P\+C threads \hypertarget{rpcserver_8h_af5be6ec7b71359ed4111f1a5ed93b893}{}\index{rpcserver.\+h@{rpcserver.\+h}!Stop\+R\+P\+C\+Threads@{Stop\+R\+P\+C\+Threads}}
+\index{Stop\+R\+P\+C\+Threads@{Stop\+R\+P\+C\+Threads}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{Stop\+R\+P\+C\+Threads}]{\setlength{\rightskip}{0pt plus 5cm}void Stop\+R\+P\+C\+Threads (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_af5be6ec7b71359ed4111f1a5ed93b893}
+Stop R\+P\+C threads \hypertarget{rpcserver_8h_af263532ae55fe152c1fec0d01331cec3}{}\index{rpcserver.\+h@{rpcserver.\+h}!submitblock@{submitblock}}
+\index{submitblock@{submitblock}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{submitblock}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value submitblock (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_af263532ae55fe152c1fec0d01331cec3}
+\hypertarget{rpcserver_8h_a843ad5d7ed07a5b8cce4bd06c90b4b7f}{}\index{rpcserver.\+h@{rpcserver.\+h}!validateaddress@{validateaddress}}
+\index{validateaddress@{validateaddress}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{validateaddress}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value validateaddress (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_a843ad5d7ed07a5b8cce4bd06c90b4b7f}
+\hypertarget{rpcserver_8h_abe5e42b466d4a6aa9ea2336c254f8519}{}\index{rpcserver.\+h@{rpcserver.\+h}!Value\+From\+Amount@{Value\+From\+Amount}}
+\index{Value\+From\+Amount@{Value\+From\+Amount}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{Value\+From\+Amount}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value Value\+From\+Amount (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\+Amount} \&}]{amount}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_abe5e42b466d4a6aa9ea2336c254f8519}
+\hypertarget{rpcserver_8h_a9e23f0d24e1d4708eab18ba04487c3db}{}\index{rpcserver.\+h@{rpcserver.\+h}!verifychain@{verifychain}}
+\index{verifychain@{verifychain}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{verifychain}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value verifychain (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_a9e23f0d24e1d4708eab18ba04487c3db}
+\hypertarget{rpcserver_8h_a8f57dc19d3f5986adc434ffb716b4b24}{}\index{rpcserver.\+h@{rpcserver.\+h}!verifymessage@{verifymessage}}
+\index{verifymessage@{verifymessage}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{verifymessage}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value verifymessage (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_a8f57dc19d3f5986adc434ffb716b4b24}
+\hypertarget{rpcserver_8h_a064e25123089ab87509b5c830ba0d34b}{}\index{rpcserver.\+h@{rpcserver.\+h}!verifytxoutproof@{verifytxoutproof}}
+\index{verifytxoutproof@{verifytxoutproof}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{verifytxoutproof}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value verifytxoutproof (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_a064e25123089ab87509b5c830ba0d34b}
+\hypertarget{rpcserver_8h_a4432c3d6ef0d23716d55793499565c12}{}\index{rpcserver.\+h@{rpcserver.\+h}!walletlock@{walletlock}}
+\index{walletlock@{walletlock}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{walletlock}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value walletlock (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_a4432c3d6ef0d23716d55793499565c12}
+\hypertarget{rpcserver_8h_a5996ce39655f71b387e00b4d2bc50bc7}{}\index{rpcserver.\+h@{rpcserver.\+h}!walletpassphrase@{walletpassphrase}}
+\index{walletpassphrase@{walletpassphrase}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{walletpassphrase}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value walletpassphrase (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_a5996ce39655f71b387e00b4d2bc50bc7}
+\hypertarget{rpcserver_8h_ac083424e8f0517847ae836d3456d5489}{}\index{rpcserver.\+h@{rpcserver.\+h}!walletpassphrasechange@{walletpassphrasechange}}
+\index{walletpassphrasechange@{walletpassphrasechange}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{walletpassphrasechange}]{\setlength{\rightskip}{0pt plus 5cm}json\+\_\+spirit\+::\+Value walletpassphrasechange (
+\begin{DoxyParamCaption}
+\item[{const json\+\_\+spirit\+::\+Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcserver_8h_ac083424e8f0517847ae836d3456d5489}
+
+
+\subsection{Variable Documentation}
+\hypertarget{rpcserver_8h_a8c30ff08026dc3d08b61141b5a6aa411}{}\index{rpcserver.\+h@{rpcserver.\+h}!n\+Wallet\+Unlock\+Time@{n\+Wallet\+Unlock\+Time}}
+\index{n\+Wallet\+Unlock\+Time@{n\+Wallet\+Unlock\+Time}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{n\+Wallet\+Unlock\+Time}]{\setlength{\rightskip}{0pt plus 5cm}int64\+\_\+t n\+Wallet\+Unlock\+Time}\label{rpcserver_8h_a8c30ff08026dc3d08b61141b5a6aa411}
+\hypertarget{rpcserver_8h_a429f7846ff8cb60ec898309c28931129}{}\index{rpcserver.\+h@{rpcserver.\+h}!table\+R\+P\+C@{table\+R\+P\+C}}
+\index{table\+R\+P\+C@{table\+R\+P\+C}!rpcserver.\+h@{rpcserver.\+h}}
+\subsubsection[{table\+R\+P\+C}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf C\+R\+P\+C\+Table} table\+R\+P\+C}\label{rpcserver_8h_a429f7846ff8cb60ec898309c28931129}

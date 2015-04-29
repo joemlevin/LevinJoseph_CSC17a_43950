@@ -1,0 +1,85 @@
+\hypertarget{classuint256}{}\section{uint256 Class Reference}
+\label{classuint256}\index{uint256@{uint256}}
+
+
+{\ttfamily \#include $<$uint256.\+h$>$}
+
+Inheritance diagram for uint256\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classuint256}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classuint256_aca0c2c2c61e453717e72a4eaec71168f}{uint256} ()
+\item 
+\hyperlink{classuint256_a01460091171cf2b82b9e41cdb0326bed}{uint256} (const \hyperlink{classbase__blob}{base\+\_\+blob}$<$ 256 $>$ \&b)
+\item 
+\hyperlink{classuint256_a7cad0fc486ebc2ed02462d5a7d4e4f2d}{uint256} (const std\+::vector$<$ unsigned char $>$ \&vch)
+\item 
+uint64\+\_\+t \hyperlink{classuint256_a38210c00440a6c5f438f0c16cb8647fc}{Get\+Cheap\+Hash} () const 
+\item 
+uint64\+\_\+t \hyperlink{classuint256_a2ed8bd4e54421a37430768374a7e91b3}{Get\+Hash} (const \hyperlink{classuint256}{uint256} \&salt) const 
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+256-\/bit opaque blob. \begin{DoxyNote}{Note}
+This type is called \hyperlink{classuint256}{uint256} for historical reasons only. It is an opaque blob of 256 bits and has no integer operations. Use \hyperlink{classarith__uint256}{arith\+\_\+uint256} if those are required. 
+\end{DoxyNote}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classuint256_aca0c2c2c61e453717e72a4eaec71168f}{}\index{uint256@{uint256}!uint256@{uint256}}
+\index{uint256@{uint256}!uint256@{uint256}}
+\subsubsection[{uint256}]{\setlength{\rightskip}{0pt plus 5cm}uint256\+::uint256 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classuint256_aca0c2c2c61e453717e72a4eaec71168f}
+\hypertarget{classuint256_a01460091171cf2b82b9e41cdb0326bed}{}\index{uint256@{uint256}!uint256@{uint256}}
+\index{uint256@{uint256}!uint256@{uint256}}
+\subsubsection[{uint256}]{\setlength{\rightskip}{0pt plus 5cm}uint256\+::uint256 (
+\begin{DoxyParamCaption}
+\item[{const {\bf base\+\_\+blob}$<$ 256 $>$ \&}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classuint256_a01460091171cf2b82b9e41cdb0326bed}
+\hypertarget{classuint256_a7cad0fc486ebc2ed02462d5a7d4e4f2d}{}\index{uint256@{uint256}!uint256@{uint256}}
+\index{uint256@{uint256}!uint256@{uint256}}
+\subsubsection[{uint256}]{\setlength{\rightskip}{0pt plus 5cm}uint256\+::uint256 (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ unsigned char $>$ \&}]{vch}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}\label{classuint256_a7cad0fc486ebc2ed02462d5a7d4e4f2d}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classuint256_a38210c00440a6c5f438f0c16cb8647fc}{}\index{uint256@{uint256}!Get\+Cheap\+Hash@{Get\+Cheap\+Hash}}
+\index{Get\+Cheap\+Hash@{Get\+Cheap\+Hash}!uint256@{uint256}}
+\subsubsection[{Get\+Cheap\+Hash}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t uint256\+::\+Get\+Cheap\+Hash (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classuint256_a38210c00440a6c5f438f0c16cb8647fc}
+A cheap hash function that just returns 64 bits from the result, it can be used when the contents are considered uniformly random. It is not appropriate when the value can easily be influenced from outside as e.\+g. a network adversary could provide values to trigger worst-\/case behavior. \begin{DoxyNote}{Note}
+The result of this function is not stable between little and big endian. 
+\end{DoxyNote}
+\hypertarget{classuint256_a2ed8bd4e54421a37430768374a7e91b3}{}\index{uint256@{uint256}!Get\+Hash@{Get\+Hash}}
+\index{Get\+Hash@{Get\+Hash}!uint256@{uint256}}
+\subsubsection[{Get\+Hash}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t uint256\+::\+Get\+Hash (
+\begin{DoxyParamCaption}
+\item[{const {\bf uint256} \&}]{salt}
+\end{DoxyParamCaption}
+) const}\label{classuint256_a2ed8bd4e54421a37430768374a7e91b3}
+A more secure, salted hash function. \begin{DoxyNote}{Note}
+This hash is not stable between little and big endian. 
+\end{DoxyNote}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/\hyperlink{uint256_8h}{uint256.\+h}\item 
+C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/\hyperlink{uint256_8cpp}{uint256.\+cpp}\end{DoxyCompactItemize}

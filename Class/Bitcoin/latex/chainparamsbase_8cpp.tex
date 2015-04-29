@@ -1,0 +1,68 @@
+\hypertarget{chainparamsbase_8cpp}{}\section{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/chainparamsbase.cpp File Reference}
+\label{chainparamsbase_8cpp}\index{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/chainparamsbase.\+cpp@{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/chainparamsbase.\+cpp}}
+{\ttfamily \#include \char`\"{}chainparamsbase.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}util.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$assert.\+h$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_c_base_main_params}{C\+Base\+Main\+Params}
+\item 
+class \hyperlink{class_c_base_test_net_params}{C\+Base\+Test\+Net\+Params}
+\item 
+class \hyperlink{class_c_base_reg_test_params}{C\+Base\+Reg\+Test\+Params}
+\item 
+class \hyperlink{class_c_base_unit_test_params}{C\+Base\+Unit\+Test\+Params}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{class_c_base_chain_params}{C\+Base\+Chain\+Params} \& \hyperlink{chainparamsbase_8cpp_a06ef5bfd0efb53d13bbf4276726e84ab}{Base\+Params} ()
+\item 
+void \hyperlink{chainparamsbase_8cpp_ac7440f589a328bf35d832bc05a446ebd}{Select\+Base\+Params} (\hyperlink{class_c_base_chain_params_a19fb46b499c21801c0ff3c8607a0994e}{C\+Base\+Chain\+Params\+::\+Network} network)
+\item 
+\hyperlink{class_c_base_chain_params_a19fb46b499c21801c0ff3c8607a0994e}{C\+Base\+Chain\+Params\+::\+Network} \hyperlink{chainparamsbase_8cpp_a564d464052fc11d3bca1c87098934f39}{Network\+Id\+From\+Command\+Line} ()
+\item 
+bool \hyperlink{chainparamsbase_8cpp_a72b1e0d99bf1dfae454243fa3eec94a2}{Select\+Base\+Params\+From\+Command\+Line} ()
+\item 
+bool \hyperlink{chainparamsbase_8cpp_a6c3c6a1ea4fa02bf5a8cfeb7464b4f6b}{Are\+Base\+Params\+Configured} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{chainparamsbase_8cpp_a6c3c6a1ea4fa02bf5a8cfeb7464b4f6b}{}\index{chainparamsbase.\+cpp@{chainparamsbase.\+cpp}!Are\+Base\+Params\+Configured@{Are\+Base\+Params\+Configured}}
+\index{Are\+Base\+Params\+Configured@{Are\+Base\+Params\+Configured}!chainparamsbase.\+cpp@{chainparamsbase.\+cpp}}
+\subsubsection[{Are\+Base\+Params\+Configured}]{\setlength{\rightskip}{0pt plus 5cm}bool Are\+Base\+Params\+Configured (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{chainparamsbase_8cpp_a6c3c6a1ea4fa02bf5a8cfeb7464b4f6b}
+Return true if \hyperlink{chainparamsbase_8h_a72b1e0d99bf1dfae454243fa3eec94a2}{Select\+Base\+Params\+From\+Command\+Line()} has been called to select a network. \hypertarget{chainparamsbase_8cpp_a06ef5bfd0efb53d13bbf4276726e84ab}{}\index{chainparamsbase.\+cpp@{chainparamsbase.\+cpp}!Base\+Params@{Base\+Params}}
+\index{Base\+Params@{Base\+Params}!chainparamsbase.\+cpp@{chainparamsbase.\+cpp}}
+\subsubsection[{Base\+Params}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf C\+Base\+Chain\+Params}\& Base\+Params (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{chainparamsbase_8cpp_a06ef5bfd0efb53d13bbf4276726e84ab}
+Return the currently selected parameters. This won\textquotesingle{}t change after app startup outside of the unit tests. \hypertarget{chainparamsbase_8cpp_a564d464052fc11d3bca1c87098934f39}{}\index{chainparamsbase.\+cpp@{chainparamsbase.\+cpp}!Network\+Id\+From\+Command\+Line@{Network\+Id\+From\+Command\+Line}}
+\index{Network\+Id\+From\+Command\+Line@{Network\+Id\+From\+Command\+Line}!chainparamsbase.\+cpp@{chainparamsbase.\+cpp}}
+\subsubsection[{Network\+Id\+From\+Command\+Line}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Base\+Chain\+Params\+::\+Network} Network\+Id\+From\+Command\+Line (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{chainparamsbase_8cpp_a564d464052fc11d3bca1c87098934f39}
+Looks for -\/regtest or -\/testnet and returns the appropriate Network I\+D. Returns M\+A\+X\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+T\+Y\+P\+E\+S if an invalid combination is given. \hypertarget{chainparamsbase_8cpp_ac7440f589a328bf35d832bc05a446ebd}{}\index{chainparamsbase.\+cpp@{chainparamsbase.\+cpp}!Select\+Base\+Params@{Select\+Base\+Params}}
+\index{Select\+Base\+Params@{Select\+Base\+Params}!chainparamsbase.\+cpp@{chainparamsbase.\+cpp}}
+\subsubsection[{Select\+Base\+Params}]{\setlength{\rightskip}{0pt plus 5cm}void Select\+Base\+Params (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Base\+Chain\+Params\+::\+Network}}]{network}
+\end{DoxyParamCaption}
+)}\label{chainparamsbase_8cpp_ac7440f589a328bf35d832bc05a446ebd}
+Sets the params returned by \hyperlink{chainparams_8cpp_ace5c5b706d71a324a417dd2db394fd4a}{Params()} to those for the given network. \hypertarget{chainparamsbase_8cpp_a72b1e0d99bf1dfae454243fa3eec94a2}{}\index{chainparamsbase.\+cpp@{chainparamsbase.\+cpp}!Select\+Base\+Params\+From\+Command\+Line@{Select\+Base\+Params\+From\+Command\+Line}}
+\index{Select\+Base\+Params\+From\+Command\+Line@{Select\+Base\+Params\+From\+Command\+Line}!chainparamsbase.\+cpp@{chainparamsbase.\+cpp}}
+\subsubsection[{Select\+Base\+Params\+From\+Command\+Line}]{\setlength{\rightskip}{0pt plus 5cm}bool Select\+Base\+Params\+From\+Command\+Line (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{chainparamsbase_8cpp_a72b1e0d99bf1dfae454243fa3eec94a2}
+Calls \hyperlink{chainparamsbase_8h_a564d464052fc11d3bca1c87098934f39}{Network\+Id\+From\+Command\+Line()} and then calls Select\+Params as appropriate. Returns false if an invalid combination is given. 

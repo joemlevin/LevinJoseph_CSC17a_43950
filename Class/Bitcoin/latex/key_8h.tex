@@ -1,0 +1,43 @@
+\hypertarget{key_8h}{}\section{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/key.h File Reference}
+\label{key_8h}\index{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/key.\+h@{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/key.\+h}}
+{\ttfamily \#include \char`\"{}serialize.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}support/allocators/secure.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}uint256.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$stdexcept$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_c_key}{C\+Key}
+\item 
+struct \hyperlink{struct_c_ext_key}{C\+Ext\+Key}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::vector$<$ unsigned char, secure\+\_\+allocator$<$ unsigned char $>$ $>$ \hyperlink{key_8h_a1da569b8b6e5b3fa1196cc1b877e7f54}{C\+Priv\+Key}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{key_8h_a55cc40f04bf887c1000667caccb0684a}{E\+C\+C\+\_\+\+Init\+Sanity\+Check} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{key_8h_a1da569b8b6e5b3fa1196cc1b877e7f54}{}\index{key.\+h@{key.\+h}!C\+Priv\+Key@{C\+Priv\+Key}}
+\index{C\+Priv\+Key@{C\+Priv\+Key}!key.\+h@{key.\+h}}
+\subsubsection[{C\+Priv\+Key}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::vector$<$unsigned char, secure\+\_\+allocator$<$unsigned char$>$ $>$ {\bf C\+Priv\+Key}}\label{key_8h_a1da569b8b6e5b3fa1196cc1b877e7f54}
+secp256k1\+: const unsigned int P\+R\+I\+V\+A\+T\+E\+\_\+\+K\+E\+Y\+\_\+\+S\+I\+Z\+E = 279; const unsigned int P\+U\+B\+L\+I\+C\+\_\+\+K\+E\+Y\+\_\+\+S\+I\+Z\+E = 65; const unsigned int S\+I\+G\+N\+A\+T\+U\+R\+E\+\_\+\+S\+I\+Z\+E = 72;
+
+see www.\+keylength.\+com script supports up to 75 for single byte push secure\+\_\+allocator is defined in allocators.\+h C\+Priv\+Key is a serialized private key, with all parameters included (279 bytes) 
+
+\subsection{Function Documentation}
+\hypertarget{key_8h_a55cc40f04bf887c1000667caccb0684a}{}\index{key.\+h@{key.\+h}!E\+C\+C\+\_\+\+Init\+Sanity\+Check@{E\+C\+C\+\_\+\+Init\+Sanity\+Check}}
+\index{E\+C\+C\+\_\+\+Init\+Sanity\+Check@{E\+C\+C\+\_\+\+Init\+Sanity\+Check}!key.\+h@{key.\+h}}
+\subsubsection[{E\+C\+C\+\_\+\+Init\+Sanity\+Check}]{\setlength{\rightskip}{0pt plus 5cm}bool E\+C\+C\+\_\+\+Init\+Sanity\+Check (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{key_8h_a55cc40f04bf887c1000667caccb0684a}
+Check that required E\+C support is available at runtime 

@@ -1,0 +1,100 @@
+\hypertarget{random_8h}{}\section{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/random.h File Reference}
+\label{random_8h}\index{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/random.\+h@{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/random.\+h}}
+{\ttfamily \#include \char`\"{}uint256.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{random_8h_ab699fbdf803610a4e2060fd87787f7e0}{Rand\+Add\+Seed} ()
+\item 
+void \hyperlink{random_8h_a786af12a87491f8dc24351d93b9833b6}{Rand\+Add\+Seed\+Perfmon} ()
+\item 
+void \hyperlink{random_8h_ada0c29949c4d1ac0cc027d93c4771423}{Get\+Rand\+Bytes} (unsigned char $\ast$buf, int num)
+\item 
+uint64\+\_\+t \hyperlink{random_8h_a27d9149d522b1fa87d84e5e9ca902aef}{Get\+Rand} (uint64\+\_\+t n\+Max)
+\item 
+int \hyperlink{random_8h_a0e44e088732172da6662db2d5e37d4b2}{Get\+Rand\+Int} (int n\+Max)
+\item 
+\hyperlink{classuint256}{uint256} \hyperlink{random_8h_af3aedae75efabb170337a497457f7ecf}{Get\+Rand\+Hash} ()
+\item 
+void \hyperlink{random_8h_abef4e13668f53ac5404c796462aed9b4}{seed\+\_\+insecure\+\_\+rand} (bool f\+Deterministic=false)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \hyperlink{random_8h_ad679dcd7cb4960c49a8d400bcc23b0d0}{insecure\+\_\+rand\+\_\+\+Rz}
+\item 
+uint32\+\_\+t \hyperlink{random_8h_a45e4e024616db2e96c5ffc34928c553b}{insecure\+\_\+rand\+\_\+\+Rw}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{random_8h_a27d9149d522b1fa87d84e5e9ca902aef}{}\index{random.\+h@{random.\+h}!Get\+Rand@{Get\+Rand}}
+\index{Get\+Rand@{Get\+Rand}!random.\+h@{random.\+h}}
+\subsubsection[{Get\+Rand}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t Get\+Rand (
+\begin{DoxyParamCaption}
+\item[{uint64\+\_\+t}]{n\+Max}
+\end{DoxyParamCaption}
+)}\label{random_8h_a27d9149d522b1fa87d84e5e9ca902aef}
+\hypertarget{random_8h_ada0c29949c4d1ac0cc027d93c4771423}{}\index{random.\+h@{random.\+h}!Get\+Rand\+Bytes@{Get\+Rand\+Bytes}}
+\index{Get\+Rand\+Bytes@{Get\+Rand\+Bytes}!random.\+h@{random.\+h}}
+\subsubsection[{Get\+Rand\+Bytes}]{\setlength{\rightskip}{0pt plus 5cm}void Get\+Rand\+Bytes (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{buf, }
+\item[{int}]{num}
+\end{DoxyParamCaption}
+)}\label{random_8h_ada0c29949c4d1ac0cc027d93c4771423}
+Functions to gather random data via the Open\+S\+S\+L P\+R\+N\+G \hypertarget{random_8h_af3aedae75efabb170337a497457f7ecf}{}\index{random.\+h@{random.\+h}!Get\+Rand\+Hash@{Get\+Rand\+Hash}}
+\index{Get\+Rand\+Hash@{Get\+Rand\+Hash}!random.\+h@{random.\+h}}
+\subsubsection[{Get\+Rand\+Hash}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint256} Get\+Rand\+Hash (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{random_8h_af3aedae75efabb170337a497457f7ecf}
+\hypertarget{random_8h_a0e44e088732172da6662db2d5e37d4b2}{}\index{random.\+h@{random.\+h}!Get\+Rand\+Int@{Get\+Rand\+Int}}
+\index{Get\+Rand\+Int@{Get\+Rand\+Int}!random.\+h@{random.\+h}}
+\subsubsection[{Get\+Rand\+Int}]{\setlength{\rightskip}{0pt plus 5cm}int Get\+Rand\+Int (
+\begin{DoxyParamCaption}
+\item[{int}]{n\+Max}
+\end{DoxyParamCaption}
+)}\label{random_8h_a0e44e088732172da6662db2d5e37d4b2}
+\hypertarget{random_8h_ab699fbdf803610a4e2060fd87787f7e0}{}\index{random.\+h@{random.\+h}!Rand\+Add\+Seed@{Rand\+Add\+Seed}}
+\index{Rand\+Add\+Seed@{Rand\+Add\+Seed}!random.\+h@{random.\+h}}
+\subsubsection[{Rand\+Add\+Seed}]{\setlength{\rightskip}{0pt plus 5cm}void Rand\+Add\+Seed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{random_8h_ab699fbdf803610a4e2060fd87787f7e0}
+Seed Open\+S\+S\+L P\+R\+N\+G with additional entropy data \hypertarget{random_8h_a786af12a87491f8dc24351d93b9833b6}{}\index{random.\+h@{random.\+h}!Rand\+Add\+Seed\+Perfmon@{Rand\+Add\+Seed\+Perfmon}}
+\index{Rand\+Add\+Seed\+Perfmon@{Rand\+Add\+Seed\+Perfmon}!random.\+h@{random.\+h}}
+\subsubsection[{Rand\+Add\+Seed\+Perfmon}]{\setlength{\rightskip}{0pt plus 5cm}void Rand\+Add\+Seed\+Perfmon (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{random_8h_a786af12a87491f8dc24351d93b9833b6}
+\hypertarget{random_8h_abef4e13668f53ac5404c796462aed9b4}{}\index{random.\+h@{random.\+h}!seed\+\_\+insecure\+\_\+rand@{seed\+\_\+insecure\+\_\+rand}}
+\index{seed\+\_\+insecure\+\_\+rand@{seed\+\_\+insecure\+\_\+rand}!random.\+h@{random.\+h}}
+\subsubsection[{seed\+\_\+insecure\+\_\+rand}]{\setlength{\rightskip}{0pt plus 5cm}void seed\+\_\+insecure\+\_\+rand (
+\begin{DoxyParamCaption}
+\item[{bool}]{f\+Deterministic = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}\label{random_8h_abef4e13668f53ac5404c796462aed9b4}
+Seed insecure\+\_\+rand using the random pool. 
+\begin{DoxyParams}{Parameters}
+{\em Deterministic} & Use a deterministic seed \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Variable Documentation}
+\hypertarget{random_8h_a45e4e024616db2e96c5ffc34928c553b}{}\index{random.\+h@{random.\+h}!insecure\+\_\+rand\+\_\+\+Rw@{insecure\+\_\+rand\+\_\+\+Rw}}
+\index{insecure\+\_\+rand\+\_\+\+Rw@{insecure\+\_\+rand\+\_\+\+Rw}!random.\+h@{random.\+h}}
+\subsubsection[{insecure\+\_\+rand\+\_\+\+Rw}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t insecure\+\_\+rand\+\_\+\+Rw}\label{random_8h_a45e4e024616db2e96c5ffc34928c553b}
+\hypertarget{random_8h_ad679dcd7cb4960c49a8d400bcc23b0d0}{}\index{random.\+h@{random.\+h}!insecure\+\_\+rand\+\_\+\+Rz@{insecure\+\_\+rand\+\_\+\+Rz}}
+\index{insecure\+\_\+rand\+\_\+\+Rz@{insecure\+\_\+rand\+\_\+\+Rz}!random.\+h@{random.\+h}}
+\subsubsection[{insecure\+\_\+rand\+\_\+\+Rz}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t insecure\+\_\+rand\+\_\+\+Rz}\label{random_8h_ad679dcd7cb4960c49a8d400bcc23b0d0}
+M\+W\+C R\+N\+G of George Marsaglia This is intended to be fast. It has a period of 2$^\wedge$59.3, though the least significant 16 bits only have a period of about 2$^\wedge$30.1.
+
+\begin{DoxyReturn}{Returns}
+random value 
+\end{DoxyReturn}

@@ -1,0 +1,103 @@
+\hypertarget{class_c_base_chain_params}{}\section{C\+Base\+Chain\+Params Class Reference}
+\label{class_c_base_chain_params}\index{C\+Base\+Chain\+Params@{C\+Base\+Chain\+Params}}
+
+
+{\ttfamily \#include $<$chainparamsbase.\+h$>$}
+
+Inheritance diagram for C\+Base\+Chain\+Params\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_c_base_chain_params}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{class_c_base_chain_params_a19fb46b499c21801c0ff3c8607a0994e}{Network} \{ \hyperlink{class_c_base_chain_params_a19fb46b499c21801c0ff3c8607a0994ea17aedaa2a3181d12f0d32afc70a6c68c}{M\+A\+I\+N}, 
+\hyperlink{class_c_base_chain_params_a19fb46b499c21801c0ff3c8607a0994ea0a9c4e42da932cdd126777f7f4dd0e22}{T\+E\+S\+T\+N\+E\+T}, 
+\hyperlink{class_c_base_chain_params_a19fb46b499c21801c0ff3c8607a0994eace36282edb786b098dbdd48f98ddb793}{R\+E\+G\+T\+E\+S\+T}, 
+\hyperlink{class_c_base_chain_params_a19fb46b499c21801c0ff3c8607a0994eaf4a96679adc48f01c489d1b4d740deb5}{M\+A\+X\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+T\+Y\+P\+E\+S}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::string \& \hyperlink{class_c_base_chain_params_af56a637b20c9f496108bffc3166ea53a}{Data\+Dir} () const 
+\item 
+int \hyperlink{class_c_base_chain_params_a06d2e58bdb42bb54932daf9a7a11182f}{R\+P\+C\+Port} () const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_base_chain_params_a4c0e84608b2fa636be3a3683653d9533}{C\+Base\+Chain\+Params} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_c_base_chain_params_ae020d8f669175bcac3ab44f9c095c977}{n\+R\+P\+C\+Port}
+\item 
+std\+::string \hyperlink{class_c_base_chain_params_af5868778f8c6c676aabc9fb2366d2447}{str\+Data\+Dir}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_c_base_chain_params}{C\+Base\+Chain\+Params} defines the base parameters (shared between bitcoin-\/cli and bitcoind) of a given instance of the Bitcoin system. 
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{class_c_base_chain_params_a19fb46b499c21801c0ff3c8607a0994e}{}\index{C\+Base\+Chain\+Params@{C\+Base\+Chain\+Params}!Network@{Network}}
+\index{Network@{Network}!C\+Base\+Chain\+Params@{C\+Base\+Chain\+Params}}
+\subsubsection[{Network}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf C\+Base\+Chain\+Params\+::\+Network}}\label{class_c_base_chain_params_a19fb46b499c21801c0ff3c8607a0994e}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{M\+A\+I\+N@{M\+A\+I\+N}!C\+Base\+Chain\+Params@{C\+Base\+Chain\+Params}}\index{C\+Base\+Chain\+Params@{C\+Base\+Chain\+Params}!M\+A\+I\+N@{M\+A\+I\+N}}\item[{\em 
+\hypertarget{class_c_base_chain_params_a19fb46b499c21801c0ff3c8607a0994ea17aedaa2a3181d12f0d32afc70a6c68c}{}M\+A\+I\+N\label{class_c_base_chain_params_a19fb46b499c21801c0ff3c8607a0994ea17aedaa2a3181d12f0d32afc70a6c68c}
+}]\index{T\+E\+S\+T\+N\+E\+T@{T\+E\+S\+T\+N\+E\+T}!C\+Base\+Chain\+Params@{C\+Base\+Chain\+Params}}\index{C\+Base\+Chain\+Params@{C\+Base\+Chain\+Params}!T\+E\+S\+T\+N\+E\+T@{T\+E\+S\+T\+N\+E\+T}}\item[{\em 
+\hypertarget{class_c_base_chain_params_a19fb46b499c21801c0ff3c8607a0994ea0a9c4e42da932cdd126777f7f4dd0e22}{}T\+E\+S\+T\+N\+E\+T\label{class_c_base_chain_params_a19fb46b499c21801c0ff3c8607a0994ea0a9c4e42da932cdd126777f7f4dd0e22}
+}]\index{R\+E\+G\+T\+E\+S\+T@{R\+E\+G\+T\+E\+S\+T}!C\+Base\+Chain\+Params@{C\+Base\+Chain\+Params}}\index{C\+Base\+Chain\+Params@{C\+Base\+Chain\+Params}!R\+E\+G\+T\+E\+S\+T@{R\+E\+G\+T\+E\+S\+T}}\item[{\em 
+\hypertarget{class_c_base_chain_params_a19fb46b499c21801c0ff3c8607a0994eace36282edb786b098dbdd48f98ddb793}{}R\+E\+G\+T\+E\+S\+T\label{class_c_base_chain_params_a19fb46b499c21801c0ff3c8607a0994eace36282edb786b098dbdd48f98ddb793}
+}]\index{M\+A\+X\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+T\+Y\+P\+E\+S@{M\+A\+X\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+T\+Y\+P\+E\+S}!C\+Base\+Chain\+Params@{C\+Base\+Chain\+Params}}\index{C\+Base\+Chain\+Params@{C\+Base\+Chain\+Params}!M\+A\+X\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+T\+Y\+P\+E\+S@{M\+A\+X\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+T\+Y\+P\+E\+S}}\item[{\em 
+\hypertarget{class_c_base_chain_params_a19fb46b499c21801c0ff3c8607a0994eaf4a96679adc48f01c489d1b4d740deb5}{}M\+A\+X\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+T\+Y\+P\+E\+S\label{class_c_base_chain_params_a19fb46b499c21801c0ff3c8607a0994eaf4a96679adc48f01c489d1b4d740deb5}
+}]\end{description}
+\end{Desc}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_c_base_chain_params_a4c0e84608b2fa636be3a3683653d9533}{}\index{C\+Base\+Chain\+Params@{C\+Base\+Chain\+Params}!C\+Base\+Chain\+Params@{C\+Base\+Chain\+Params}}
+\index{C\+Base\+Chain\+Params@{C\+Base\+Chain\+Params}!C\+Base\+Chain\+Params@{C\+Base\+Chain\+Params}}
+\subsubsection[{C\+Base\+Chain\+Params}]{\setlength{\rightskip}{0pt plus 5cm}C\+Base\+Chain\+Params\+::\+C\+Base\+Chain\+Params (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{class_c_base_chain_params_a4c0e84608b2fa636be3a3683653d9533}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_c_base_chain_params_af56a637b20c9f496108bffc3166ea53a}{}\index{C\+Base\+Chain\+Params@{C\+Base\+Chain\+Params}!Data\+Dir@{Data\+Dir}}
+\index{Data\+Dir@{Data\+Dir}!C\+Base\+Chain\+Params@{C\+Base\+Chain\+Params}}
+\subsubsection[{Data\+Dir}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string\& C\+Base\+Chain\+Params\+::\+Data\+Dir (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_base_chain_params_af56a637b20c9f496108bffc3166ea53a}
+\hypertarget{class_c_base_chain_params_a06d2e58bdb42bb54932daf9a7a11182f}{}\index{C\+Base\+Chain\+Params@{C\+Base\+Chain\+Params}!R\+P\+C\+Port@{R\+P\+C\+Port}}
+\index{R\+P\+C\+Port@{R\+P\+C\+Port}!C\+Base\+Chain\+Params@{C\+Base\+Chain\+Params}}
+\subsubsection[{R\+P\+C\+Port}]{\setlength{\rightskip}{0pt plus 5cm}int C\+Base\+Chain\+Params\+::\+R\+P\+C\+Port (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_base_chain_params_a06d2e58bdb42bb54932daf9a7a11182f}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_c_base_chain_params_ae020d8f669175bcac3ab44f9c095c977}{}\index{C\+Base\+Chain\+Params@{C\+Base\+Chain\+Params}!n\+R\+P\+C\+Port@{n\+R\+P\+C\+Port}}
+\index{n\+R\+P\+C\+Port@{n\+R\+P\+C\+Port}!C\+Base\+Chain\+Params@{C\+Base\+Chain\+Params}}
+\subsubsection[{n\+R\+P\+C\+Port}]{\setlength{\rightskip}{0pt plus 5cm}int C\+Base\+Chain\+Params\+::n\+R\+P\+C\+Port\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_base_chain_params_ae020d8f669175bcac3ab44f9c095c977}
+\hypertarget{class_c_base_chain_params_af5868778f8c6c676aabc9fb2366d2447}{}\index{C\+Base\+Chain\+Params@{C\+Base\+Chain\+Params}!str\+Data\+Dir@{str\+Data\+Dir}}
+\index{str\+Data\+Dir@{str\+Data\+Dir}!C\+Base\+Chain\+Params@{C\+Base\+Chain\+Params}}
+\subsubsection[{str\+Data\+Dir}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string C\+Base\+Chain\+Params\+::str\+Data\+Dir\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_base_chain_params_af5868778f8c6c676aabc9fb2366d2447}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/\hyperlink{chainparamsbase_8h}{chainparamsbase.\+h}\end{DoxyCompactItemize}

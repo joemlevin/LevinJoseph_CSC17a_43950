@@ -1,0 +1,30 @@
+\hypertarget{checkpoints_8h}{}\section{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/checkpoints.h File Reference}
+\label{checkpoints_8h}\index{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/checkpoints.\+h@{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/checkpoints.\+h}}
+{\ttfamily \#include \char`\"{}uint256.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$map$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_checkpoints_1_1_c_checkpoint_data}{Checkpoints\+::\+C\+Checkpoint\+Data}
+\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespace_checkpoints}{Checkpoints}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::map$<$ int, \hyperlink{classuint256}{uint256} $>$ \hyperlink{namespace_checkpoints_a996cca530c4568a2eb4516e8f351b9a2}{Checkpoints\+::\+Map\+Checkpoints}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{namespace_checkpoints_a4d9e42c5e5659730fc98113a94e2c84c}{Checkpoints\+::\+Check\+Block} (int n\+Height, const \hyperlink{classuint256}{uint256} \&hash)
+\begin{DoxyCompactList}\small\item\em Returns true if block passes checkpoint checks. \end{DoxyCompactList}\item 
+int \hyperlink{namespace_checkpoints_ac4dc0a0ba00009be52fee3eef694c2c0}{Checkpoints\+::\+Get\+Total\+Blocks\+Estimate} ()
+\begin{DoxyCompactList}\small\item\em Return conservative estimate of total number of blocks, 0 if unknown. \end{DoxyCompactList}\item 
+\hyperlink{class_c_block_index}{C\+Block\+Index} $\ast$ \hyperlink{namespace_checkpoints_acd7c59bef29b80f040017d27b76e09a8}{Checkpoints\+::\+Get\+Last\+Checkpoint} ()
+\begin{DoxyCompactList}\small\item\em Returns last C\+Block\+Index$\ast$ in map\+Block\+Index that is a checkpoint. \end{DoxyCompactList}\item 
+double \hyperlink{namespace_checkpoints_ad473e253a3826fec1a7f9394c695ba91}{Checkpoints\+::\+Guess\+Verification\+Progress} (\hyperlink{class_c_block_index}{C\+Block\+Index} $\ast$pindex, bool f\+Sigchecks)
+\begin{DoxyCompactList}\small\item\em Guess how far we are in the verification process at the given block index. \end{DoxyCompactList}\end{DoxyCompactItemize}

@@ -1,0 +1,104 @@
+\hypertarget{init_8h}{}\section{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/init.h File Reference}
+\label{init_8h}\index{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/init.\+h@{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/init.\+h}}
+{\ttfamily \#include $<$string$>$}\\*
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespaceboost}{boost}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{init_8h_a1c8f8e4f16a572c4e86bfaae5a977e28}{Help\+Message\+Mode} \{ \hyperlink{init_8h_a1c8f8e4f16a572c4e86bfaae5a977e28ada8b8ec2044be2e24ecd6cc48699bce4}{H\+M\+M\+\_\+\+B\+I\+T\+C\+O\+I\+N\+D}, 
+\hyperlink{init_8h_a1c8f8e4f16a572c4e86bfaae5a977e28aa56d81b648c21edbd4fa87c8d9651751}{H\+M\+M\+\_\+\+B\+I\+T\+C\+O\+I\+N\+\_\+\+Q\+T}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{init_8h_ac7140c7327b1e6a8d46470b1cd0e8e1b}{Start\+Shutdown} ()
+\item 
+bool \hyperlink{init_8h_a6f201ca9fe6b594f1985c12b4482ea5a}{Shutdown\+Requested} ()
+\item 
+void \hyperlink{init_8h_ac5f038c2b480cf9ef5e19e3eba8dbaf9}{Shutdown} ()
+\item 
+bool \hyperlink{init_8h_a1a4c1bfbf6ba1db77e988b89b9cadfd3}{App\+Init2} (boost\+::thread\+\_\+group \&thread\+Group)
+\item 
+std\+::string \hyperlink{init_8h_a514083d1b88bf8cf314f27ee3dc966c1}{Help\+Message} (\hyperlink{init_8h_a1c8f8e4f16a572c4e86bfaae5a977e28}{Help\+Message\+Mode} mode)
+\item 
+std\+::string \hyperlink{init_8h_ac9e2081343d328ca68b7c4c4793442d2}{License\+Info} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+C\+Wallet $\ast$ \hyperlink{init_8h_a8c747077ad84071cba8b87f34fe38920}{pwallet\+Main}
+\end{DoxyCompactItemize}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{init_8h_a1c8f8e4f16a572c4e86bfaae5a977e28}{}\index{init.\+h@{init.\+h}!Help\+Message\+Mode@{Help\+Message\+Mode}}
+\index{Help\+Message\+Mode@{Help\+Message\+Mode}!init.\+h@{init.\+h}}
+\subsubsection[{Help\+Message\+Mode}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Help\+Message\+Mode}}\label{init_8h_a1c8f8e4f16a572c4e86bfaae5a977e28}
+The help message mode determines what help message to show \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{H\+M\+M\+\_\+\+B\+I\+T\+C\+O\+I\+N\+D@{H\+M\+M\+\_\+\+B\+I\+T\+C\+O\+I\+N\+D}!init.\+h@{init.\+h}}\index{init.\+h@{init.\+h}!H\+M\+M\+\_\+\+B\+I\+T\+C\+O\+I\+N\+D@{H\+M\+M\+\_\+\+B\+I\+T\+C\+O\+I\+N\+D}}\item[{\em 
+\hypertarget{init_8h_a1c8f8e4f16a572c4e86bfaae5a977e28ada8b8ec2044be2e24ecd6cc48699bce4}{}H\+M\+M\+\_\+\+B\+I\+T\+C\+O\+I\+N\+D\label{init_8h_a1c8f8e4f16a572c4e86bfaae5a977e28ada8b8ec2044be2e24ecd6cc48699bce4}
+}]\index{H\+M\+M\+\_\+\+B\+I\+T\+C\+O\+I\+N\+\_\+\+Q\+T@{H\+M\+M\+\_\+\+B\+I\+T\+C\+O\+I\+N\+\_\+\+Q\+T}!init.\+h@{init.\+h}}\index{init.\+h@{init.\+h}!H\+M\+M\+\_\+\+B\+I\+T\+C\+O\+I\+N\+\_\+\+Q\+T@{H\+M\+M\+\_\+\+B\+I\+T\+C\+O\+I\+N\+\_\+\+Q\+T}}\item[{\em 
+\hypertarget{init_8h_a1c8f8e4f16a572c4e86bfaae5a977e28aa56d81b648c21edbd4fa87c8d9651751}{}H\+M\+M\+\_\+\+B\+I\+T\+C\+O\+I\+N\+\_\+\+Q\+T\label{init_8h_a1c8f8e4f16a572c4e86bfaae5a977e28aa56d81b648c21edbd4fa87c8d9651751}
+}]\end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{init_8h_a1a4c1bfbf6ba1db77e988b89b9cadfd3}{}\index{init.\+h@{init.\+h}!App\+Init2@{App\+Init2}}
+\index{App\+Init2@{App\+Init2}!init.\+h@{init.\+h}}
+\subsubsection[{App\+Init2}]{\setlength{\rightskip}{0pt plus 5cm}bool App\+Init2 (
+\begin{DoxyParamCaption}
+\item[{boost\+::thread\+\_\+group \&}]{thread\+Group}
+\end{DoxyParamCaption}
+)}\label{init_8h_a1a4c1bfbf6ba1db77e988b89b9cadfd3}
+Initialize bitcoin. \begin{DoxyPrecond}{Precondition}
+Parameters should be parsed and config file should be read. 
+\end{DoxyPrecond}
+\hypertarget{init_8h_a514083d1b88bf8cf314f27ee3dc966c1}{}\index{init.\+h@{init.\+h}!Help\+Message@{Help\+Message}}
+\index{Help\+Message@{Help\+Message}!init.\+h@{init.\+h}}
+\subsubsection[{Help\+Message}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Help\+Message (
+\begin{DoxyParamCaption}
+\item[{{\bf Help\+Message\+Mode}}]{mode}
+\end{DoxyParamCaption}
+)}\label{init_8h_a514083d1b88bf8cf314f27ee3dc966c1}
+Help for options shared between U\+I and daemon (for -\/help) \hypertarget{init_8h_ac9e2081343d328ca68b7c4c4793442d2}{}\index{init.\+h@{init.\+h}!License\+Info@{License\+Info}}
+\index{License\+Info@{License\+Info}!init.\+h@{init.\+h}}
+\subsubsection[{License\+Info}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string License\+Info (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{init_8h_ac9e2081343d328ca68b7c4c4793442d2}
+Returns licensing information (for -\/version) \hypertarget{init_8h_ac5f038c2b480cf9ef5e19e3eba8dbaf9}{}\index{init.\+h@{init.\+h}!Shutdown@{Shutdown}}
+\index{Shutdown@{Shutdown}!init.\+h@{init.\+h}}
+\subsubsection[{Shutdown}]{\setlength{\rightskip}{0pt plus 5cm}void Shutdown (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{init_8h_ac5f038c2b480cf9ef5e19e3eba8dbaf9}
+Note\+: \hyperlink{init_8cpp_ac5f038c2b480cf9ef5e19e3eba8dbaf9}{Shutdown()} must be able to handle cases in which \hyperlink{init_8cpp_a1a4c1bfbf6ba1db77e988b89b9cadfd3}{App\+Init2()} failed part of the way, for example if the data directory was found to be locked. Be sure that anything that writes files or flushes caches only does this if the respective module was initialized. \hypertarget{init_8h_a6f201ca9fe6b594f1985c12b4482ea5a}{}\index{init.\+h@{init.\+h}!Shutdown\+Requested@{Shutdown\+Requested}}
+\index{Shutdown\+Requested@{Shutdown\+Requested}!init.\+h@{init.\+h}}
+\subsubsection[{Shutdown\+Requested}]{\setlength{\rightskip}{0pt plus 5cm}bool Shutdown\+Requested (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{init_8h_a6f201ca9fe6b594f1985c12b4482ea5a}
+\hypertarget{init_8h_ac7140c7327b1e6a8d46470b1cd0e8e1b}{}\index{init.\+h@{init.\+h}!Start\+Shutdown@{Start\+Shutdown}}
+\index{Start\+Shutdown@{Start\+Shutdown}!init.\+h@{init.\+h}}
+\subsubsection[{Start\+Shutdown}]{\setlength{\rightskip}{0pt plus 5cm}void Start\+Shutdown (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{init_8h_ac7140c7327b1e6a8d46470b1cd0e8e1b}
+
+
+\subsection{Variable Documentation}
+\hypertarget{init_8h_a8c747077ad84071cba8b87f34fe38920}{}\index{init.\+h@{init.\+h}!pwallet\+Main@{pwallet\+Main}}
+\index{pwallet\+Main@{pwallet\+Main}!init.\+h@{init.\+h}}
+\subsubsection[{pwallet\+Main}]{\setlength{\rightskip}{0pt plus 5cm}C\+Wallet$\ast$ pwallet\+Main}\label{init_8h_a8c747077ad84071cba8b87f34fe38920}

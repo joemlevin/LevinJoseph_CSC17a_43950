@@ -1,0 +1,239 @@
+\hypertarget{classbase__blob}{}\section{base\+\_\+blob$<$ B\+I\+T\+S $>$ Class Template Reference}
+\label{classbase__blob}\index{base\+\_\+blob$<$ B\+I\+T\+S $>$@{base\+\_\+blob$<$ B\+I\+T\+S $>$}}
+
+
+{\ttfamily \#include $<$uint256.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classbase__blob_ada7be83089951dc9438f384c0587cf29}{base\+\_\+blob} ()
+\item 
+\hyperlink{classbase__blob_a874bc08d9039eb202fb2ab95dd9f49a0}{base\+\_\+blob} (const std\+::vector$<$ unsigned char $>$ \&vch)
+\item 
+bool \hyperlink{classbase__blob_aff2f3d1d623d91b6895a6a153434770e}{Is\+Null} () const 
+\item 
+void \hyperlink{classbase__blob_aa340be5328d911272eded433d03f30a3}{Set\+Null} ()
+\item 
+std\+::string \hyperlink{classbase__blob_a9541747b1f91f9469ac0aff90665bd32}{Get\+Hex} () const 
+\item 
+void \hyperlink{classbase__blob_a5ec1f681a2830f4e180fe664c0eb4dd0}{Set\+Hex} (const char $\ast$psz)
+\item 
+void \hyperlink{classbase__blob_a5df0a1d46bdf167b4e2dc7c7068ff53a}{Set\+Hex} (const std\+::string \&str)
+\item 
+std\+::string \hyperlink{classbase__blob_a1a26b5da921f48b09b228d1bfda05088}{To\+String} () const 
+\item 
+unsigned char $\ast$ \hyperlink{classbase__blob_aeee68e00ceeacf49086e98b661e017ff}{begin} ()
+\item 
+unsigned char $\ast$ \hyperlink{classbase__blob_ab60d34d18e5b5f74d285480f7b3db00c}{end} ()
+\item 
+const unsigned char $\ast$ \hyperlink{classbase__blob_ae0cb02356abee204d1e86da2b0842745}{begin} () const 
+\item 
+const unsigned char $\ast$ \hyperlink{classbase__blob_a9f2fb60d0014cdc1afda230cfa8f7f7d}{end} () const 
+\item 
+unsigned int \hyperlink{classbase__blob_a449c3f902fcab7af6c74aa9fee099542}{size} () const 
+\item 
+unsigned int \hyperlink{classbase__blob_ae88b1782486e704927aa10ae20c491a9}{Get\+Serialize\+Size} (int n\+Type, int n\+Version) const 
+\item 
+{\footnotesize template$<$typename Stream $>$ }\\void \hyperlink{classbase__blob_ac9ccfed4de6210801d4dbede71ad8ba6}{Serialize} (Stream \&s, int n\+Type, int n\+Version) const 
+\item 
+{\footnotesize template$<$typename Stream $>$ }\\void \hyperlink{classbase__blob_a3d3f418c65801267e8de23d9367532c0}{Unserialize} (Stream \&s, int n\+Type, int n\+Version)
+\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \hyperlink{classbase__blob_a41aa51643c1ccfdcc1fa2aad41f0fde9a3e53605ecb8eb4c497cb23476695f0c3}{W\+I\+D\+T\+H} =B\+I\+T\+S/8
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \hyperlink{classbase__blob_a667a178269121efb4ec95bd59e6a9615}{data} \mbox{[}\hyperlink{classbase__blob_a41aa51643c1ccfdcc1fa2aad41f0fde9a3e53605ecb8eb4c497cb23476695f0c3}{W\+I\+D\+T\+H}\mbox{]}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classbase__blob_abed369be2b14c869397bb2cccc066a13}{operator==} (const \hyperlink{classbase__blob}{base\+\_\+blob} \&a, const \hyperlink{classbase__blob}{base\+\_\+blob} \&b)
+\item 
+bool \hyperlink{classbase__blob_a7f04c806d3164a5c0417bcce70be4959}{operator!=} (const \hyperlink{classbase__blob}{base\+\_\+blob} \&a, const \hyperlink{classbase__blob}{base\+\_\+blob} \&b)
+\item 
+bool \hyperlink{classbase__blob_af1ef6aa747985902964e7a5d2f8dad05}{operator$<$} (const \hyperlink{classbase__blob}{base\+\_\+blob} \&a, const \hyperlink{classbase__blob}{base\+\_\+blob} \&b)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$unsigned int B\+I\+T\+S$>$class base\+\_\+blob$<$ B\+I\+T\+S $>$}
+
+Template base class for fixed-\/sized opaque blobs. 
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classbase__blob_a41aa51643c1ccfdcc1fa2aad41f0fde9}{}\subsubsection[{anonymous enum}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned int B\+I\+T\+S$>$ anonymous enum\hspace{0.3cm}{\ttfamily [protected]}}\label{classbase__blob_a41aa51643c1ccfdcc1fa2aad41f0fde9}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{W\+I\+D\+T\+H@{W\+I\+D\+T\+H}!base\+\_\+blob@{base\+\_\+blob}}\index{base\+\_\+blob@{base\+\_\+blob}!W\+I\+D\+T\+H@{W\+I\+D\+T\+H}}\item[{\em 
+\hypertarget{classbase__blob_a41aa51643c1ccfdcc1fa2aad41f0fde9a3e53605ecb8eb4c497cb23476695f0c3}{}W\+I\+D\+T\+H\label{classbase__blob_a41aa51643c1ccfdcc1fa2aad41f0fde9a3e53605ecb8eb4c497cb23476695f0c3}
+}]\end{description}
+\end{Desc}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classbase__blob_ada7be83089951dc9438f384c0587cf29}{}\index{base\+\_\+blob@{base\+\_\+blob}!base\+\_\+blob@{base\+\_\+blob}}
+\index{base\+\_\+blob@{base\+\_\+blob}!base\+\_\+blob@{base\+\_\+blob}}
+\subsubsection[{base\+\_\+blob}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned int B\+I\+T\+S$>$ {\bf base\+\_\+blob}$<$ B\+I\+T\+S $>$\+::{\bf base\+\_\+blob} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classbase__blob_ada7be83089951dc9438f384c0587cf29}
+\hypertarget{classbase__blob_a874bc08d9039eb202fb2ab95dd9f49a0}{}\index{base\+\_\+blob@{base\+\_\+blob}!base\+\_\+blob@{base\+\_\+blob}}
+\index{base\+\_\+blob@{base\+\_\+blob}!base\+\_\+blob@{base\+\_\+blob}}
+\subsubsection[{base\+\_\+blob}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned int B\+I\+T\+S$>$ {\bf base\+\_\+blob}$<$ B\+I\+T\+S $>$\+::{\bf base\+\_\+blob} (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ unsigned char $>$ \&}]{vch}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\label{classbase__blob_a874bc08d9039eb202fb2ab95dd9f49a0}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classbase__blob_aeee68e00ceeacf49086e98b661e017ff}{}\index{base\+\_\+blob@{base\+\_\+blob}!begin@{begin}}
+\index{begin@{begin}!base\+\_\+blob@{base\+\_\+blob}}
+\subsubsection[{begin}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned int B\+I\+T\+S$>$ unsigned char$\ast$ {\bf base\+\_\+blob}$<$ B\+I\+T\+S $>$\+::begin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classbase__blob_aeee68e00ceeacf49086e98b661e017ff}
+\hypertarget{classbase__blob_ae0cb02356abee204d1e86da2b0842745}{}\index{base\+\_\+blob@{base\+\_\+blob}!begin@{begin}}
+\index{begin@{begin}!base\+\_\+blob@{base\+\_\+blob}}
+\subsubsection[{begin}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned int B\+I\+T\+S$>$ const unsigned char$\ast$ {\bf base\+\_\+blob}$<$ B\+I\+T\+S $>$\+::begin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbase__blob_ae0cb02356abee204d1e86da2b0842745}
+\hypertarget{classbase__blob_ab60d34d18e5b5f74d285480f7b3db00c}{}\index{base\+\_\+blob@{base\+\_\+blob}!end@{end}}
+\index{end@{end}!base\+\_\+blob@{base\+\_\+blob}}
+\subsubsection[{end}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned int B\+I\+T\+S$>$ unsigned char$\ast$ {\bf base\+\_\+blob}$<$ B\+I\+T\+S $>$\+::end (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classbase__blob_ab60d34d18e5b5f74d285480f7b3db00c}
+\hypertarget{classbase__blob_a9f2fb60d0014cdc1afda230cfa8f7f7d}{}\index{base\+\_\+blob@{base\+\_\+blob}!end@{end}}
+\index{end@{end}!base\+\_\+blob@{base\+\_\+blob}}
+\subsubsection[{end}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned int B\+I\+T\+S$>$ const unsigned char$\ast$ {\bf base\+\_\+blob}$<$ B\+I\+T\+S $>$\+::end (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbase__blob_a9f2fb60d0014cdc1afda230cfa8f7f7d}
+\hypertarget{classbase__blob_a9541747b1f91f9469ac0aff90665bd32}{}\index{base\+\_\+blob@{base\+\_\+blob}!Get\+Hex@{Get\+Hex}}
+\index{Get\+Hex@{Get\+Hex}!base\+\_\+blob@{base\+\_\+blob}}
+\subsubsection[{Get\+Hex}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned int B\+I\+T\+S$>$ std\+::string {\bf base\+\_\+blob}$<$ B\+I\+T\+S $>$\+::Get\+Hex (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classbase__blob_a9541747b1f91f9469ac0aff90665bd32}
+\hypertarget{classbase__blob_ae88b1782486e704927aa10ae20c491a9}{}\index{base\+\_\+blob@{base\+\_\+blob}!Get\+Serialize\+Size@{Get\+Serialize\+Size}}
+\index{Get\+Serialize\+Size@{Get\+Serialize\+Size}!base\+\_\+blob@{base\+\_\+blob}}
+\subsubsection[{Get\+Serialize\+Size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned int B\+I\+T\+S$>$ unsigned int {\bf base\+\_\+blob}$<$ B\+I\+T\+S $>$\+::Get\+Serialize\+Size (
+\begin{DoxyParamCaption}
+\item[{int}]{n\+Type, }
+\item[{int}]{n\+Version}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbase__blob_ae88b1782486e704927aa10ae20c491a9}
+\hypertarget{classbase__blob_aff2f3d1d623d91b6895a6a153434770e}{}\index{base\+\_\+blob@{base\+\_\+blob}!Is\+Null@{Is\+Null}}
+\index{Is\+Null@{Is\+Null}!base\+\_\+blob@{base\+\_\+blob}}
+\subsubsection[{Is\+Null}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned int B\+I\+T\+S$>$ bool {\bf base\+\_\+blob}$<$ B\+I\+T\+S $>$\+::Is\+Null (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbase__blob_aff2f3d1d623d91b6895a6a153434770e}
+\hypertarget{classbase__blob_ac9ccfed4de6210801d4dbede71ad8ba6}{}\index{base\+\_\+blob@{base\+\_\+blob}!Serialize@{Serialize}}
+\index{Serialize@{Serialize}!base\+\_\+blob@{base\+\_\+blob}}
+\subsubsection[{Serialize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned int B\+I\+T\+S$>$ template$<$typename Stream $>$ void {\bf base\+\_\+blob}$<$ B\+I\+T\+S $>$\+::Serialize (
+\begin{DoxyParamCaption}
+\item[{Stream \&}]{s, }
+\item[{int}]{n\+Type, }
+\item[{int}]{n\+Version}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbase__blob_ac9ccfed4de6210801d4dbede71ad8ba6}
+\hypertarget{classbase__blob_a5ec1f681a2830f4e180fe664c0eb4dd0}{}\index{base\+\_\+blob@{base\+\_\+blob}!Set\+Hex@{Set\+Hex}}
+\index{Set\+Hex@{Set\+Hex}!base\+\_\+blob@{base\+\_\+blob}}
+\subsubsection[{Set\+Hex}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned int B\+I\+T\+S$>$ void {\bf base\+\_\+blob}$<$ B\+I\+T\+S $>$\+::Set\+Hex (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{psz}
+\end{DoxyParamCaption}
+)}\label{classbase__blob_a5ec1f681a2830f4e180fe664c0eb4dd0}
+\hypertarget{classbase__blob_a5df0a1d46bdf167b4e2dc7c7068ff53a}{}\index{base\+\_\+blob@{base\+\_\+blob}!Set\+Hex@{Set\+Hex}}
+\index{Set\+Hex@{Set\+Hex}!base\+\_\+blob@{base\+\_\+blob}}
+\subsubsection[{Set\+Hex}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned int B\+I\+T\+S$>$ void {\bf base\+\_\+blob}$<$ B\+I\+T\+S $>$\+::Set\+Hex (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{str}
+\end{DoxyParamCaption}
+)}\label{classbase__blob_a5df0a1d46bdf167b4e2dc7c7068ff53a}
+\hypertarget{classbase__blob_aa340be5328d911272eded433d03f30a3}{}\index{base\+\_\+blob@{base\+\_\+blob}!Set\+Null@{Set\+Null}}
+\index{Set\+Null@{Set\+Null}!base\+\_\+blob@{base\+\_\+blob}}
+\subsubsection[{Set\+Null}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned int B\+I\+T\+S$>$ void {\bf base\+\_\+blob}$<$ B\+I\+T\+S $>$\+::Set\+Null (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classbase__blob_aa340be5328d911272eded433d03f30a3}
+\hypertarget{classbase__blob_a449c3f902fcab7af6c74aa9fee099542}{}\index{base\+\_\+blob@{base\+\_\+blob}!size@{size}}
+\index{size@{size}!base\+\_\+blob@{base\+\_\+blob}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned int B\+I\+T\+S$>$ unsigned int {\bf base\+\_\+blob}$<$ B\+I\+T\+S $>$\+::size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbase__blob_a449c3f902fcab7af6c74aa9fee099542}
+\hypertarget{classbase__blob_a1a26b5da921f48b09b228d1bfda05088}{}\index{base\+\_\+blob@{base\+\_\+blob}!To\+String@{To\+String}}
+\index{To\+String@{To\+String}!base\+\_\+blob@{base\+\_\+blob}}
+\subsubsection[{To\+String}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned int B\+I\+T\+S$>$ std\+::string {\bf base\+\_\+blob}$<$ B\+I\+T\+S $>$\+::To\+String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classbase__blob_a1a26b5da921f48b09b228d1bfda05088}
+\hypertarget{classbase__blob_a3d3f418c65801267e8de23d9367532c0}{}\index{base\+\_\+blob@{base\+\_\+blob}!Unserialize@{Unserialize}}
+\index{Unserialize@{Unserialize}!base\+\_\+blob@{base\+\_\+blob}}
+\subsubsection[{Unserialize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned int B\+I\+T\+S$>$ template$<$typename Stream $>$ void {\bf base\+\_\+blob}$<$ B\+I\+T\+S $>$\+::Unserialize (
+\begin{DoxyParamCaption}
+\item[{Stream \&}]{s, }
+\item[{int}]{n\+Type, }
+\item[{int}]{n\+Version}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classbase__blob_a3d3f418c65801267e8de23d9367532c0}
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classbase__blob_a7f04c806d3164a5c0417bcce70be4959}{}\index{base\+\_\+blob@{base\+\_\+blob}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!base\+\_\+blob@{base\+\_\+blob}}
+\subsubsection[{operator"!=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned int B\+I\+T\+S$>$ bool operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf base\+\_\+blob}$<$ B\+I\+T\+S $>$ \&}]{a, }
+\item[{const {\bf base\+\_\+blob}$<$ B\+I\+T\+S $>$ \&}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\label{classbase__blob_a7f04c806d3164a5c0417bcce70be4959}
+\hypertarget{classbase__blob_af1ef6aa747985902964e7a5d2f8dad05}{}\index{base\+\_\+blob@{base\+\_\+blob}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!base\+\_\+blob@{base\+\_\+blob}}
+\subsubsection[{operator$<$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned int B\+I\+T\+S$>$ bool operator$<$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf base\+\_\+blob}$<$ B\+I\+T\+S $>$ \&}]{a, }
+\item[{const {\bf base\+\_\+blob}$<$ B\+I\+T\+S $>$ \&}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\label{classbase__blob_af1ef6aa747985902964e7a5d2f8dad05}
+\hypertarget{classbase__blob_abed369be2b14c869397bb2cccc066a13}{}\index{base\+\_\+blob@{base\+\_\+blob}!operator==@{operator==}}
+\index{operator==@{operator==}!base\+\_\+blob@{base\+\_\+blob}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned int B\+I\+T\+S$>$ bool operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf base\+\_\+blob}$<$ B\+I\+T\+S $>$ \&}]{a, }
+\item[{const {\bf base\+\_\+blob}$<$ B\+I\+T\+S $>$ \&}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\label{classbase__blob_abed369be2b14c869397bb2cccc066a13}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classbase__blob_a667a178269121efb4ec95bd59e6a9615}{}\index{base\+\_\+blob@{base\+\_\+blob}!data@{data}}
+\index{data@{data}!base\+\_\+blob@{base\+\_\+blob}}
+\subsubsection[{data}]{\setlength{\rightskip}{0pt plus 5cm}template$<$unsigned int B\+I\+T\+S$>$ uint8\+\_\+t {\bf base\+\_\+blob}$<$ B\+I\+T\+S $>$\+::data\mbox{[}{\bf W\+I\+D\+T\+H}\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}\label{classbase__blob_a667a178269121efb4ec95bd59e6a9615}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/\hyperlink{uint256_8h}{uint256.\+h}\item 
+C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/\hyperlink{uint256_8cpp}{uint256.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,90 @@
+\hypertarget{rpcmisc_8cpp}{}\section{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/rpcmisc.cpp File Reference}
+\label{rpcmisc_8cpp}\index{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/rpcmisc.\+cpp@{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/rpcmisc.\+cpp}}
+{\ttfamily \#include \char`\"{}base58.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}clientversion.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}init.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}main.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}net.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}netbase.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}rpcserver.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}timedata.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}util.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include $<$boost/assign/list\+\_\+of.\+hpp$>$}\\*
+{\ttfamily \#include \char`\"{}json/json\+\_\+spirit\+\_\+utils.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}json/json\+\_\+spirit\+\_\+value.\+h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Value \hyperlink{rpcmisc_8cpp_a70335b93783d51e48d276a1e08bd721a}{getinfo} (const Array \&params, bool f\+Help)
+\item 
+Value \hyperlink{rpcmisc_8cpp_aea4124dcc1390de557db6128da0697f4}{validateaddress} (const Array \&params, bool f\+Help)
+\item 
+C\+Script \hyperlink{rpcmisc_8cpp_aa9b91e060b2d18fffb3b57a679441e68}{\+\_\+createmultisig\+\_\+redeem\+Script} (const Array \&params)
+\item 
+Value \hyperlink{rpcmisc_8cpp_a10f145bcadd06025abb3b065e2fa7a84}{createmultisig} (const Array \&params, bool f\+Help)
+\item 
+Value \hyperlink{rpcmisc_8cpp_ad8fce781dfd9dfd4866bba2a4589141a}{verifymessage} (const Array \&params, bool f\+Help)
+\item 
+Value \hyperlink{rpcmisc_8cpp_a808646ce5129187238eb74115ca960a0}{setmocktime} (const Array \&params, bool f\+Help)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{rpcmisc_8cpp_aa9b91e060b2d18fffb3b57a679441e68}{}\index{rpcmisc.\+cpp@{rpcmisc.\+cpp}!\+\_\+createmultisig\+\_\+redeem\+Script@{\+\_\+createmultisig\+\_\+redeem\+Script}}
+\index{\+\_\+createmultisig\+\_\+redeem\+Script@{\+\_\+createmultisig\+\_\+redeem\+Script}!rpcmisc.\+cpp@{rpcmisc.\+cpp}}
+\subsubsection[{\+\_\+createmultisig\+\_\+redeem\+Script}]{\setlength{\rightskip}{0pt plus 5cm}C\+Script \+\_\+createmultisig\+\_\+redeem\+Script (
+\begin{DoxyParamCaption}
+\item[{const Array \&}]{params}
+\end{DoxyParamCaption}
+)}\label{rpcmisc_8cpp_aa9b91e060b2d18fffb3b57a679441e68}
+Used by addmultisigaddress / createmultisig\+: \hypertarget{rpcmisc_8cpp_a10f145bcadd06025abb3b065e2fa7a84}{}\index{rpcmisc.\+cpp@{rpcmisc.\+cpp}!createmultisig@{createmultisig}}
+\index{createmultisig@{createmultisig}!rpcmisc.\+cpp@{rpcmisc.\+cpp}}
+\subsubsection[{createmultisig}]{\setlength{\rightskip}{0pt plus 5cm}Value createmultisig (
+\begin{DoxyParamCaption}
+\item[{const Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcmisc_8cpp_a10f145bcadd06025abb3b065e2fa7a84}
+\hypertarget{rpcmisc_8cpp_a70335b93783d51e48d276a1e08bd721a}{}\index{rpcmisc.\+cpp@{rpcmisc.\+cpp}!getinfo@{getinfo}}
+\index{getinfo@{getinfo}!rpcmisc.\+cpp@{rpcmisc.\+cpp}}
+\subsubsection[{getinfo}]{\setlength{\rightskip}{0pt plus 5cm}Value getinfo (
+\begin{DoxyParamCaption}
+\item[{const Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcmisc_8cpp_a70335b93783d51e48d276a1e08bd721a}
+\begin{DoxyNote}{Note}
+Do not add or change anything in the information returned by this method. {\ttfamily getinfo} exists for backwards-\/compatibility only. It combines information from wildly different sources in the program, which is a mess, and is thus planned to be deprecated eventually.
+\end{DoxyNote}
+Based on the source of the information, new information should be added to\+:
+\begin{DoxyItemize}
+\item {\ttfamily getblockchaininfo},
+\item {\ttfamily getnetworkinfo} or
+\item {\ttfamily getwalletinfo}
+\end{DoxyItemize}
+
+Or alternatively, create a specific query method for the information. \hypertarget{rpcmisc_8cpp_a808646ce5129187238eb74115ca960a0}{}\index{rpcmisc.\+cpp@{rpcmisc.\+cpp}!setmocktime@{setmocktime}}
+\index{setmocktime@{setmocktime}!rpcmisc.\+cpp@{rpcmisc.\+cpp}}
+\subsubsection[{setmocktime}]{\setlength{\rightskip}{0pt plus 5cm}Value setmocktime (
+\begin{DoxyParamCaption}
+\item[{const Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcmisc_8cpp_a808646ce5129187238eb74115ca960a0}
+\hypertarget{rpcmisc_8cpp_aea4124dcc1390de557db6128da0697f4}{}\index{rpcmisc.\+cpp@{rpcmisc.\+cpp}!validateaddress@{validateaddress}}
+\index{validateaddress@{validateaddress}!rpcmisc.\+cpp@{rpcmisc.\+cpp}}
+\subsubsection[{validateaddress}]{\setlength{\rightskip}{0pt plus 5cm}Value validateaddress (
+\begin{DoxyParamCaption}
+\item[{const Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcmisc_8cpp_aea4124dcc1390de557db6128da0697f4}
+\hypertarget{rpcmisc_8cpp_ad8fce781dfd9dfd4866bba2a4589141a}{}\index{rpcmisc.\+cpp@{rpcmisc.\+cpp}!verifymessage@{verifymessage}}
+\index{verifymessage@{verifymessage}!rpcmisc.\+cpp@{rpcmisc.\+cpp}}
+\subsubsection[{verifymessage}]{\setlength{\rightskip}{0pt plus 5cm}Value verifymessage (
+\begin{DoxyParamCaption}
+\item[{const Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcmisc_8cpp_ad8fce781dfd9dfd4866bba2a4589141a}

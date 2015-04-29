@@ -1,0 +1,374 @@
+\hypertarget{class_c_chain_params}{}\section{C\+Chain\+Params Class Reference}
+\label{class_c_chain_params}\index{C\+Chain\+Params@{C\+Chain\+Params}}
+
+
+{\ttfamily \#include $<$chainparams.\+h$>$}
+
+Inheritance diagram for C\+Chain\+Params\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_c_chain_params}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{class_c_chain_params_aa294058ec2e3586bd8d03d6c39667058}{Base58\+Type} \{ \\*
+\hyperlink{class_c_chain_params_aa294058ec2e3586bd8d03d6c39667058af088724f20c49c73e548f94d8f1808dd}{P\+U\+B\+K\+E\+Y\+\_\+\+A\+D\+D\+R\+E\+S\+S}, 
+\hyperlink{class_c_chain_params_aa294058ec2e3586bd8d03d6c39667058adf0172df56140eb2f6fb7a59df0bb76a}{S\+C\+R\+I\+P\+T\+\_\+\+A\+D\+D\+R\+E\+S\+S}, 
+\hyperlink{class_c_chain_params_aa294058ec2e3586bd8d03d6c39667058aacf95cbb9b5f51445295c704540adb18}{S\+E\+C\+R\+E\+T\+\_\+\+K\+E\+Y}, 
+\hyperlink{class_c_chain_params_aa294058ec2e3586bd8d03d6c39667058a1259eb07831c689e393e5008d7bd0085}{E\+X\+T\+\_\+\+P\+U\+B\+L\+I\+C\+\_\+\+K\+E\+Y}, 
+\\*
+\hyperlink{class_c_chain_params_aa294058ec2e3586bd8d03d6c39667058ab5636e60152f35f6595fe413eae430b0}{E\+X\+T\+\_\+\+S\+E\+C\+R\+E\+T\+\_\+\+K\+E\+Y}, 
+\hyperlink{class_c_chain_params_aa294058ec2e3586bd8d03d6c39667058a6b21a525c7fab64a5df656e708f71a98}{M\+A\+X\+\_\+\+B\+A\+S\+E58\+\_\+\+T\+Y\+P\+E\+S}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{chainparams_8h_a5e1ca1b35c3dd1a4e20f18445f28dd9c}{Consensus\+::\+Params} \& \hyperlink{class_c_chain_params_a34b124f87e3b7864fec208ba8879e9e9}{Get\+Consensus} () const 
+\item 
+const \hyperlink{class_c_message_header_a0d0eeb540cbf4087973f6652ad61878f}{C\+Message\+Header\+::\+Message\+Start\+Chars} \& \hyperlink{class_c_chain_params_ae4f7e42b4fa574aad4e2688f574227da}{Message\+Start} () const 
+\item 
+const std\+::vector$<$ unsigned char $>$ \& \hyperlink{class_c_chain_params_aec4d2aa83f6fd444f68df1a92140075a}{Alert\+Key} () const 
+\item 
+int \hyperlink{class_c_chain_params_afdb7793273cdb87cc5fd75450eb2258b}{Get\+Default\+Port} () const 
+\item 
+int \hyperlink{class_c_chain_params_a22301443ebfa49c61f9a7d75b03a84f2}{Subsidy\+Halving\+Interval} () const 
+\item 
+int \hyperlink{class_c_chain_params_a11c62c3c053019d7c10034d7690d4311}{Enforce\+Block\+Upgrade\+Majority} () const 
+\item 
+int \hyperlink{class_c_chain_params_ac30ca8a722c96c7d7894637b409bf32a}{Reject\+Block\+Outdated\+Majority} () const 
+\item 
+int \hyperlink{class_c_chain_params_ae7c61aab594b025befa97accf28e7324}{To\+Check\+Block\+Upgrade\+Majority} () const 
+\item 
+int \hyperlink{class_c_chain_params_a6dd15e60d45273fef82c7ca435b1c1e9}{Default\+Miner\+Threads} () const 
+\item 
+const C\+Block \& \hyperlink{class_c_chain_params_a93e04059986f1b0ad673304260176956}{Genesis\+Block} () const 
+\item 
+bool \hyperlink{class_c_chain_params_ad4063a9056a4e87f471e671ab8e7e6c9}{Require\+R\+P\+C\+Password} () const 
+\item 
+bool \hyperlink{class_c_chain_params_a0afe61c7b66dcdc88a7c4ad39a64562d}{Mining\+Requires\+Peers} () const 
+\item 
+bool \hyperlink{class_c_chain_params_ac821d208a2c8c3e1713f206eacfc7adc}{Default\+Consistency\+Checks} () const 
+\item 
+bool \hyperlink{class_c_chain_params_aab181655e60d8b6ca2097b4f5e5e38c5}{Require\+Standard} () const 
+\item 
+int64\+\_\+t \hyperlink{class_c_chain_params_aed0dc911b1632d46831bf3d5ad82a07d}{Prune\+After\+Height} () const 
+\item 
+bool \hyperlink{class_c_chain_params_a43391a278460183ece50859c286c46bd}{Mine\+Blocks\+On\+Demand} () const 
+\item 
+bool \hyperlink{class_c_chain_params_abbad9c090ffa75608cc04edc3c2a0e62}{Testnet\+To\+Be\+Deprecated\+Field\+R\+P\+C} () const 
+\item 
+std\+::string \hyperlink{class_c_chain_params_a252d329780e7e16f795b8e54f010c8e1}{Network\+I\+D\+String} () const 
+\item 
+const std\+::vector$<$ \hyperlink{struct_c_d_n_s_seed_data}{C\+D\+N\+S\+Seed\+Data} $>$ \& \hyperlink{class_c_chain_params_a379fef70fd1eea0cbb94442a45224b21}{D\+N\+S\+Seeds} () const 
+\item 
+const std\+::vector$<$ unsigned char $>$ \& \hyperlink{class_c_chain_params_a6088d3a4f45d89c90e7e6117c3c5720d}{Base58\+Prefix} (\hyperlink{class_c_chain_params_aa294058ec2e3586bd8d03d6c39667058}{Base58\+Type} type) const 
+\item 
+const std\+::vector$<$ \hyperlink{class_c_address}{C\+Address} $>$ \& \hyperlink{class_c_chain_params_a85e4471025b35c657bbbc8f871361271}{Fixed\+Seeds} () const 
+\item 
+virtual const \hyperlink{struct_checkpoints_1_1_c_checkpoint_data}{Checkpoints\+::\+C\+Checkpoint\+Data} \& \hyperlink{class_c_chain_params_aba314e7660492aee43812344fa796d6c}{Checkpoints} () const =0
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_chain_params_a8d07fce73d4160244459c5aaae8fb966}{C\+Chain\+Params} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{chainparams_8h_a5e1ca1b35c3dd1a4e20f18445f28dd9c}{Consensus\+::\+Params} \hyperlink{class_c_chain_params_a9eddbbd84a87109643d670766683aae2}{consensus}
+\item 
+\hyperlink{class_c_message_header_a0d0eeb540cbf4087973f6652ad61878f}{C\+Message\+Header\+::\+Message\+Start\+Chars} \hyperlink{class_c_chain_params_ae403e6b6d36b8f8c4d9d494cf686658c}{pch\+Message\+Start}
+\item 
+std\+::vector$<$ unsigned char $>$ \hyperlink{class_c_chain_params_adf435bdf2d9cd00936d7da0fb4237921}{v\+Alert\+Pub\+Key}
+\begin{DoxyCompactList}\small\item\em Raw pub key bytes for the broadcast alert signing key. \end{DoxyCompactList}\item 
+int \hyperlink{class_c_chain_params_a76d9a8dc59e179ca94b6b9e04a93e5f4}{n\+Default\+Port}
+\item 
+int \hyperlink{class_c_chain_params_a3efbcec19f3883c8300063ec0acf4a35}{n\+Miner\+Threads}
+\item 
+uint64\+\_\+t \hyperlink{class_c_chain_params_aee6b9132f0ce8dcbfc242c3d2e1293e6}{n\+Prune\+After\+Height}
+\item 
+std\+::vector$<$ \hyperlink{struct_c_d_n_s_seed_data}{C\+D\+N\+S\+Seed\+Data} $>$ \hyperlink{class_c_chain_params_a9ce50b4162fb2ebf5bd72ad4045aa70c}{v\+Seeds}
+\item 
+std\+::vector$<$ unsigned char $>$ \hyperlink{class_c_chain_params_a923d956c5d3891d0c682b7ef5410ed8f}{base58\+Prefixes} \mbox{[}\hyperlink{class_c_chain_params_aa294058ec2e3586bd8d03d6c39667058a6b21a525c7fab64a5df656e708f71a98}{M\+A\+X\+\_\+\+B\+A\+S\+E58\+\_\+\+T\+Y\+P\+E\+S}\mbox{]}
+\item 
+std\+::string \hyperlink{class_c_chain_params_a8542ce21d5b9bdc2eadad8702fdd584a}{str\+Network\+I\+D}
+\item 
+C\+Block \hyperlink{class_c_chain_params_a2e4119fa75f6ea0c64ba8809dab5c4f8}{genesis}
+\item 
+std\+::vector$<$ \hyperlink{class_c_address}{C\+Address} $>$ \hyperlink{class_c_chain_params_af3ad79fb5bf4938750317c91e4c4b954}{v\+Fixed\+Seeds}
+\item 
+bool \hyperlink{class_c_chain_params_af84ed151ace6ddc0cbfa649b1c263e9d}{f\+Require\+R\+P\+C\+Password}
+\item 
+bool \hyperlink{class_c_chain_params_abe9980263561e3f26b6352daa64092da}{f\+Mining\+Requires\+Peers}
+\item 
+bool \hyperlink{class_c_chain_params_a630f023ae4a95a8b420bad0a08b4428c}{f\+Default\+Consistency\+Checks}
+\item 
+bool \hyperlink{class_c_chain_params_abc615d2750d847e1eac0ecb7fc8d2da8}{f\+Require\+Standard}
+\item 
+bool \hyperlink{class_c_chain_params_ad640045ea40c569df7b826551872e1bd}{f\+Mine\+Blocks\+On\+Demand}
+\item 
+bool \hyperlink{class_c_chain_params_a4f62f1b7070f83b48aa86564628a2e7d}{f\+Testnet\+To\+Be\+Deprecated\+Field\+R\+P\+C}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_c_chain_params}{C\+Chain\+Params} defines various tweakable parameters of a given instance of the Bitcoin system. There are three\+: the main network on which people trade goods and services, the public test network which gets reset from time to time and a regression test mode which is intended for private networks only. It has minimal difficulty to ensure that blocks can be found instantly. 
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{class_c_chain_params_aa294058ec2e3586bd8d03d6c39667058}{}\index{C\+Chain\+Params@{C\+Chain\+Params}!Base58\+Type@{Base58\+Type}}
+\index{Base58\+Type@{Base58\+Type}!C\+Chain\+Params@{C\+Chain\+Params}}
+\subsubsection[{Base58\+Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf C\+Chain\+Params\+::\+Base58\+Type}}\label{class_c_chain_params_aa294058ec2e3586bd8d03d6c39667058}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{P\+U\+B\+K\+E\+Y\+\_\+\+A\+D\+D\+R\+E\+S\+S@{P\+U\+B\+K\+E\+Y\+\_\+\+A\+D\+D\+R\+E\+S\+S}!C\+Chain\+Params@{C\+Chain\+Params}}\index{C\+Chain\+Params@{C\+Chain\+Params}!P\+U\+B\+K\+E\+Y\+\_\+\+A\+D\+D\+R\+E\+S\+S@{P\+U\+B\+K\+E\+Y\+\_\+\+A\+D\+D\+R\+E\+S\+S}}\item[{\em 
+\hypertarget{class_c_chain_params_aa294058ec2e3586bd8d03d6c39667058af088724f20c49c73e548f94d8f1808dd}{}P\+U\+B\+K\+E\+Y\+\_\+\+A\+D\+D\+R\+E\+S\+S\label{class_c_chain_params_aa294058ec2e3586bd8d03d6c39667058af088724f20c49c73e548f94d8f1808dd}
+}]\index{S\+C\+R\+I\+P\+T\+\_\+\+A\+D\+D\+R\+E\+S\+S@{S\+C\+R\+I\+P\+T\+\_\+\+A\+D\+D\+R\+E\+S\+S}!C\+Chain\+Params@{C\+Chain\+Params}}\index{C\+Chain\+Params@{C\+Chain\+Params}!S\+C\+R\+I\+P\+T\+\_\+\+A\+D\+D\+R\+E\+S\+S@{S\+C\+R\+I\+P\+T\+\_\+\+A\+D\+D\+R\+E\+S\+S}}\item[{\em 
+\hypertarget{class_c_chain_params_aa294058ec2e3586bd8d03d6c39667058adf0172df56140eb2f6fb7a59df0bb76a}{}S\+C\+R\+I\+P\+T\+\_\+\+A\+D\+D\+R\+E\+S\+S\label{class_c_chain_params_aa294058ec2e3586bd8d03d6c39667058adf0172df56140eb2f6fb7a59df0bb76a}
+}]\index{S\+E\+C\+R\+E\+T\+\_\+\+K\+E\+Y@{S\+E\+C\+R\+E\+T\+\_\+\+K\+E\+Y}!C\+Chain\+Params@{C\+Chain\+Params}}\index{C\+Chain\+Params@{C\+Chain\+Params}!S\+E\+C\+R\+E\+T\+\_\+\+K\+E\+Y@{S\+E\+C\+R\+E\+T\+\_\+\+K\+E\+Y}}\item[{\em 
+\hypertarget{class_c_chain_params_aa294058ec2e3586bd8d03d6c39667058aacf95cbb9b5f51445295c704540adb18}{}S\+E\+C\+R\+E\+T\+\_\+\+K\+E\+Y\label{class_c_chain_params_aa294058ec2e3586bd8d03d6c39667058aacf95cbb9b5f51445295c704540adb18}
+}]\index{E\+X\+T\+\_\+\+P\+U\+B\+L\+I\+C\+\_\+\+K\+E\+Y@{E\+X\+T\+\_\+\+P\+U\+B\+L\+I\+C\+\_\+\+K\+E\+Y}!C\+Chain\+Params@{C\+Chain\+Params}}\index{C\+Chain\+Params@{C\+Chain\+Params}!E\+X\+T\+\_\+\+P\+U\+B\+L\+I\+C\+\_\+\+K\+E\+Y@{E\+X\+T\+\_\+\+P\+U\+B\+L\+I\+C\+\_\+\+K\+E\+Y}}\item[{\em 
+\hypertarget{class_c_chain_params_aa294058ec2e3586bd8d03d6c39667058a1259eb07831c689e393e5008d7bd0085}{}E\+X\+T\+\_\+\+P\+U\+B\+L\+I\+C\+\_\+\+K\+E\+Y\label{class_c_chain_params_aa294058ec2e3586bd8d03d6c39667058a1259eb07831c689e393e5008d7bd0085}
+}]\index{E\+X\+T\+\_\+\+S\+E\+C\+R\+E\+T\+\_\+\+K\+E\+Y@{E\+X\+T\+\_\+\+S\+E\+C\+R\+E\+T\+\_\+\+K\+E\+Y}!C\+Chain\+Params@{C\+Chain\+Params}}\index{C\+Chain\+Params@{C\+Chain\+Params}!E\+X\+T\+\_\+\+S\+E\+C\+R\+E\+T\+\_\+\+K\+E\+Y@{E\+X\+T\+\_\+\+S\+E\+C\+R\+E\+T\+\_\+\+K\+E\+Y}}\item[{\em 
+\hypertarget{class_c_chain_params_aa294058ec2e3586bd8d03d6c39667058ab5636e60152f35f6595fe413eae430b0}{}E\+X\+T\+\_\+\+S\+E\+C\+R\+E\+T\+\_\+\+K\+E\+Y\label{class_c_chain_params_aa294058ec2e3586bd8d03d6c39667058ab5636e60152f35f6595fe413eae430b0}
+}]\index{M\+A\+X\+\_\+\+B\+A\+S\+E58\+\_\+\+T\+Y\+P\+E\+S@{M\+A\+X\+\_\+\+B\+A\+S\+E58\+\_\+\+T\+Y\+P\+E\+S}!C\+Chain\+Params@{C\+Chain\+Params}}\index{C\+Chain\+Params@{C\+Chain\+Params}!M\+A\+X\+\_\+\+B\+A\+S\+E58\+\_\+\+T\+Y\+P\+E\+S@{M\+A\+X\+\_\+\+B\+A\+S\+E58\+\_\+\+T\+Y\+P\+E\+S}}\item[{\em 
+\hypertarget{class_c_chain_params_aa294058ec2e3586bd8d03d6c39667058a6b21a525c7fab64a5df656e708f71a98}{}M\+A\+X\+\_\+\+B\+A\+S\+E58\+\_\+\+T\+Y\+P\+E\+S\label{class_c_chain_params_aa294058ec2e3586bd8d03d6c39667058a6b21a525c7fab64a5df656e708f71a98}
+}]\end{description}
+\end{Desc}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_c_chain_params_a8d07fce73d4160244459c5aaae8fb966}{}\index{C\+Chain\+Params@{C\+Chain\+Params}!C\+Chain\+Params@{C\+Chain\+Params}}
+\index{C\+Chain\+Params@{C\+Chain\+Params}!C\+Chain\+Params@{C\+Chain\+Params}}
+\subsubsection[{C\+Chain\+Params}]{\setlength{\rightskip}{0pt plus 5cm}C\+Chain\+Params\+::\+C\+Chain\+Params (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{class_c_chain_params_a8d07fce73d4160244459c5aaae8fb966}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_c_chain_params_aec4d2aa83f6fd444f68df1a92140075a}{}\index{C\+Chain\+Params@{C\+Chain\+Params}!Alert\+Key@{Alert\+Key}}
+\index{Alert\+Key@{Alert\+Key}!C\+Chain\+Params@{C\+Chain\+Params}}
+\subsubsection[{Alert\+Key}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::vector$<$unsigned char$>$\& C\+Chain\+Params\+::\+Alert\+Key (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_chain_params_aec4d2aa83f6fd444f68df1a92140075a}
+\hypertarget{class_c_chain_params_a6088d3a4f45d89c90e7e6117c3c5720d}{}\index{C\+Chain\+Params@{C\+Chain\+Params}!Base58\+Prefix@{Base58\+Prefix}}
+\index{Base58\+Prefix@{Base58\+Prefix}!C\+Chain\+Params@{C\+Chain\+Params}}
+\subsubsection[{Base58\+Prefix}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::vector$<$unsigned char$>$\& C\+Chain\+Params\+::\+Base58\+Prefix (
+\begin{DoxyParamCaption}
+\item[{{\bf Base58\+Type}}]{type}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_chain_params_a6088d3a4f45d89c90e7e6117c3c5720d}
+\hypertarget{class_c_chain_params_aba314e7660492aee43812344fa796d6c}{}\index{C\+Chain\+Params@{C\+Chain\+Params}!Checkpoints@{Checkpoints}}
+\index{Checkpoints@{Checkpoints}!C\+Chain\+Params@{C\+Chain\+Params}}
+\subsubsection[{Checkpoints}]{\setlength{\rightskip}{0pt plus 5cm}virtual const {\bf Checkpoints\+::\+C\+Checkpoint\+Data}\& C\+Chain\+Params\+::\+Checkpoints (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{class_c_chain_params_aba314e7660492aee43812344fa796d6c}
+
+
+Implemented in \hyperlink{class_c_reg_test_params_ab748b010a203dbdf6e5f77eb8b6f7cb0}{C\+Reg\+Test\+Params}, \hyperlink{class_c_test_net_params_a1a8828912574c509825ccc5cc0e0a9be}{C\+Test\+Net\+Params}, and \hyperlink{class_c_main_params_abfaf5edda329d8b2ff23c0108cb8c16e}{C\+Main\+Params}.
+
+\hypertarget{class_c_chain_params_ac821d208a2c8c3e1713f206eacfc7adc}{}\index{C\+Chain\+Params@{C\+Chain\+Params}!Default\+Consistency\+Checks@{Default\+Consistency\+Checks}}
+\index{Default\+Consistency\+Checks@{Default\+Consistency\+Checks}!C\+Chain\+Params@{C\+Chain\+Params}}
+\subsubsection[{Default\+Consistency\+Checks}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+Chain\+Params\+::\+Default\+Consistency\+Checks (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_chain_params_ac821d208a2c8c3e1713f206eacfc7adc}
+Default value for -\/checkmempool and -\/checkblockindex argument \hypertarget{class_c_chain_params_a6dd15e60d45273fef82c7ca435b1c1e9}{}\index{C\+Chain\+Params@{C\+Chain\+Params}!Default\+Miner\+Threads@{Default\+Miner\+Threads}}
+\index{Default\+Miner\+Threads@{Default\+Miner\+Threads}!C\+Chain\+Params@{C\+Chain\+Params}}
+\subsubsection[{Default\+Miner\+Threads}]{\setlength{\rightskip}{0pt plus 5cm}int C\+Chain\+Params\+::\+Default\+Miner\+Threads (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_chain_params_a6dd15e60d45273fef82c7ca435b1c1e9}
+Used if Generate\+Bitcoins is called with a negative number of threads \hypertarget{class_c_chain_params_a379fef70fd1eea0cbb94442a45224b21}{}\index{C\+Chain\+Params@{C\+Chain\+Params}!D\+N\+S\+Seeds@{D\+N\+S\+Seeds}}
+\index{D\+N\+S\+Seeds@{D\+N\+S\+Seeds}!C\+Chain\+Params@{C\+Chain\+Params}}
+\subsubsection[{D\+N\+S\+Seeds}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::vector$<${\bf C\+D\+N\+S\+Seed\+Data}$>$\& C\+Chain\+Params\+::\+D\+N\+S\+Seeds (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_chain_params_a379fef70fd1eea0cbb94442a45224b21}
+\hypertarget{class_c_chain_params_a11c62c3c053019d7c10034d7690d4311}{}\index{C\+Chain\+Params@{C\+Chain\+Params}!Enforce\+Block\+Upgrade\+Majority@{Enforce\+Block\+Upgrade\+Majority}}
+\index{Enforce\+Block\+Upgrade\+Majority@{Enforce\+Block\+Upgrade\+Majority}!C\+Chain\+Params@{C\+Chain\+Params}}
+\subsubsection[{Enforce\+Block\+Upgrade\+Majority}]{\setlength{\rightskip}{0pt plus 5cm}int C\+Chain\+Params\+::\+Enforce\+Block\+Upgrade\+Majority (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_chain_params_a11c62c3c053019d7c10034d7690d4311}
+\hypertarget{class_c_chain_params_a85e4471025b35c657bbbc8f871361271}{}\index{C\+Chain\+Params@{C\+Chain\+Params}!Fixed\+Seeds@{Fixed\+Seeds}}
+\index{Fixed\+Seeds@{Fixed\+Seeds}!C\+Chain\+Params@{C\+Chain\+Params}}
+\subsubsection[{Fixed\+Seeds}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::vector$<${\bf C\+Address}$>$\& C\+Chain\+Params\+::\+Fixed\+Seeds (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_chain_params_a85e4471025b35c657bbbc8f871361271}
+\hypertarget{class_c_chain_params_a93e04059986f1b0ad673304260176956}{}\index{C\+Chain\+Params@{C\+Chain\+Params}!Genesis\+Block@{Genesis\+Block}}
+\index{Genesis\+Block@{Genesis\+Block}!C\+Chain\+Params@{C\+Chain\+Params}}
+\subsubsection[{Genesis\+Block}]{\setlength{\rightskip}{0pt plus 5cm}const C\+Block\& C\+Chain\+Params\+::\+Genesis\+Block (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_chain_params_a93e04059986f1b0ad673304260176956}
+\hypertarget{class_c_chain_params_a34b124f87e3b7864fec208ba8879e9e9}{}\index{C\+Chain\+Params@{C\+Chain\+Params}!Get\+Consensus@{Get\+Consensus}}
+\index{Get\+Consensus@{Get\+Consensus}!C\+Chain\+Params@{C\+Chain\+Params}}
+\subsubsection[{Get\+Consensus}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Consensus\+::\+Params}\& C\+Chain\+Params\+::\+Get\+Consensus (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_chain_params_a34b124f87e3b7864fec208ba8879e9e9}
+\hypertarget{class_c_chain_params_afdb7793273cdb87cc5fd75450eb2258b}{}\index{C\+Chain\+Params@{C\+Chain\+Params}!Get\+Default\+Port@{Get\+Default\+Port}}
+\index{Get\+Default\+Port@{Get\+Default\+Port}!C\+Chain\+Params@{C\+Chain\+Params}}
+\subsubsection[{Get\+Default\+Port}]{\setlength{\rightskip}{0pt plus 5cm}int C\+Chain\+Params\+::\+Get\+Default\+Port (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_chain_params_afdb7793273cdb87cc5fd75450eb2258b}
+\hypertarget{class_c_chain_params_ae4f7e42b4fa574aad4e2688f574227da}{}\index{C\+Chain\+Params@{C\+Chain\+Params}!Message\+Start@{Message\+Start}}
+\index{Message\+Start@{Message\+Start}!C\+Chain\+Params@{C\+Chain\+Params}}
+\subsubsection[{Message\+Start}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf C\+Message\+Header\+::\+Message\+Start\+Chars}\& C\+Chain\+Params\+::\+Message\+Start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_chain_params_ae4f7e42b4fa574aad4e2688f574227da}
+\hypertarget{class_c_chain_params_a43391a278460183ece50859c286c46bd}{}\index{C\+Chain\+Params@{C\+Chain\+Params}!Mine\+Blocks\+On\+Demand@{Mine\+Blocks\+On\+Demand}}
+\index{Mine\+Blocks\+On\+Demand@{Mine\+Blocks\+On\+Demand}!C\+Chain\+Params@{C\+Chain\+Params}}
+\subsubsection[{Mine\+Blocks\+On\+Demand}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+Chain\+Params\+::\+Mine\+Blocks\+On\+Demand (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_chain_params_a43391a278460183ece50859c286c46bd}
+Make miner stop after a block is found. In R\+P\+C, don\textquotesingle{}t return until n\+Gen\+Proc\+Limit blocks are generated \hypertarget{class_c_chain_params_a0afe61c7b66dcdc88a7c4ad39a64562d}{}\index{C\+Chain\+Params@{C\+Chain\+Params}!Mining\+Requires\+Peers@{Mining\+Requires\+Peers}}
+\index{Mining\+Requires\+Peers@{Mining\+Requires\+Peers}!C\+Chain\+Params@{C\+Chain\+Params}}
+\subsubsection[{Mining\+Requires\+Peers}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+Chain\+Params\+::\+Mining\+Requires\+Peers (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_chain_params_a0afe61c7b66dcdc88a7c4ad39a64562d}
+Make miner wait to have peers to avoid wasting work \hypertarget{class_c_chain_params_a252d329780e7e16f795b8e54f010c8e1}{}\index{C\+Chain\+Params@{C\+Chain\+Params}!Network\+I\+D\+String@{Network\+I\+D\+String}}
+\index{Network\+I\+D\+String@{Network\+I\+D\+String}!C\+Chain\+Params@{C\+Chain\+Params}}
+\subsubsection[{Network\+I\+D\+String}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string C\+Chain\+Params\+::\+Network\+I\+D\+String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_chain_params_a252d329780e7e16f795b8e54f010c8e1}
+Return the B\+I\+P70 network string (main, test or regtest) \hypertarget{class_c_chain_params_aed0dc911b1632d46831bf3d5ad82a07d}{}\index{C\+Chain\+Params@{C\+Chain\+Params}!Prune\+After\+Height@{Prune\+After\+Height}}
+\index{Prune\+After\+Height@{Prune\+After\+Height}!C\+Chain\+Params@{C\+Chain\+Params}}
+\subsubsection[{Prune\+After\+Height}]{\setlength{\rightskip}{0pt plus 5cm}int64\+\_\+t C\+Chain\+Params\+::\+Prune\+After\+Height (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_chain_params_aed0dc911b1632d46831bf3d5ad82a07d}
+\hypertarget{class_c_chain_params_ac30ca8a722c96c7d7894637b409bf32a}{}\index{C\+Chain\+Params@{C\+Chain\+Params}!Reject\+Block\+Outdated\+Majority@{Reject\+Block\+Outdated\+Majority}}
+\index{Reject\+Block\+Outdated\+Majority@{Reject\+Block\+Outdated\+Majority}!C\+Chain\+Params@{C\+Chain\+Params}}
+\subsubsection[{Reject\+Block\+Outdated\+Majority}]{\setlength{\rightskip}{0pt plus 5cm}int C\+Chain\+Params\+::\+Reject\+Block\+Outdated\+Majority (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_chain_params_ac30ca8a722c96c7d7894637b409bf32a}
+\hypertarget{class_c_chain_params_ad4063a9056a4e87f471e671ab8e7e6c9}{}\index{C\+Chain\+Params@{C\+Chain\+Params}!Require\+R\+P\+C\+Password@{Require\+R\+P\+C\+Password}}
+\index{Require\+R\+P\+C\+Password@{Require\+R\+P\+C\+Password}!C\+Chain\+Params@{C\+Chain\+Params}}
+\subsubsection[{Require\+R\+P\+C\+Password}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+Chain\+Params\+::\+Require\+R\+P\+C\+Password (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_chain_params_ad4063a9056a4e87f471e671ab8e7e6c9}
+\hypertarget{class_c_chain_params_aab181655e60d8b6ca2097b4f5e5e38c5}{}\index{C\+Chain\+Params@{C\+Chain\+Params}!Require\+Standard@{Require\+Standard}}
+\index{Require\+Standard@{Require\+Standard}!C\+Chain\+Params@{C\+Chain\+Params}}
+\subsubsection[{Require\+Standard}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+Chain\+Params\+::\+Require\+Standard (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_chain_params_aab181655e60d8b6ca2097b4f5e5e38c5}
+Make standard checks \hypertarget{class_c_chain_params_a22301443ebfa49c61f9a7d75b03a84f2}{}\index{C\+Chain\+Params@{C\+Chain\+Params}!Subsidy\+Halving\+Interval@{Subsidy\+Halving\+Interval}}
+\index{Subsidy\+Halving\+Interval@{Subsidy\+Halving\+Interval}!C\+Chain\+Params@{C\+Chain\+Params}}
+\subsubsection[{Subsidy\+Halving\+Interval}]{\setlength{\rightskip}{0pt plus 5cm}int C\+Chain\+Params\+::\+Subsidy\+Halving\+Interval (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_chain_params_a22301443ebfa49c61f9a7d75b03a84f2}
+\hypertarget{class_c_chain_params_abbad9c090ffa75608cc04edc3c2a0e62}{}\index{C\+Chain\+Params@{C\+Chain\+Params}!Testnet\+To\+Be\+Deprecated\+Field\+R\+P\+C@{Testnet\+To\+Be\+Deprecated\+Field\+R\+P\+C}}
+\index{Testnet\+To\+Be\+Deprecated\+Field\+R\+P\+C@{Testnet\+To\+Be\+Deprecated\+Field\+R\+P\+C}!C\+Chain\+Params@{C\+Chain\+Params}}
+\subsubsection[{Testnet\+To\+Be\+Deprecated\+Field\+R\+P\+C}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+Chain\+Params\+::\+Testnet\+To\+Be\+Deprecated\+Field\+R\+P\+C (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_chain_params_abbad9c090ffa75608cc04edc3c2a0e62}
+In the future use \hyperlink{class_c_chain_params_a252d329780e7e16f795b8e54f010c8e1}{Network\+I\+D\+String()} for R\+P\+C fields \hypertarget{class_c_chain_params_ae7c61aab594b025befa97accf28e7324}{}\index{C\+Chain\+Params@{C\+Chain\+Params}!To\+Check\+Block\+Upgrade\+Majority@{To\+Check\+Block\+Upgrade\+Majority}}
+\index{To\+Check\+Block\+Upgrade\+Majority@{To\+Check\+Block\+Upgrade\+Majority}!C\+Chain\+Params@{C\+Chain\+Params}}
+\subsubsection[{To\+Check\+Block\+Upgrade\+Majority}]{\setlength{\rightskip}{0pt plus 5cm}int C\+Chain\+Params\+::\+To\+Check\+Block\+Upgrade\+Majority (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_chain_params_ae7c61aab594b025befa97accf28e7324}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_c_chain_params_a923d956c5d3891d0c682b7ef5410ed8f}{}\index{C\+Chain\+Params@{C\+Chain\+Params}!base58\+Prefixes@{base58\+Prefixes}}
+\index{base58\+Prefixes@{base58\+Prefixes}!C\+Chain\+Params@{C\+Chain\+Params}}
+\subsubsection[{base58\+Prefixes}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$unsigned char$>$ C\+Chain\+Params\+::base58\+Prefixes\mbox{[}{\bf M\+A\+X\+\_\+\+B\+A\+S\+E58\+\_\+\+T\+Y\+P\+E\+S}\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_chain_params_a923d956c5d3891d0c682b7ef5410ed8f}
+\hypertarget{class_c_chain_params_a9eddbbd84a87109643d670766683aae2}{}\index{C\+Chain\+Params@{C\+Chain\+Params}!consensus@{consensus}}
+\index{consensus@{consensus}!C\+Chain\+Params@{C\+Chain\+Params}}
+\subsubsection[{consensus}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Consensus\+::\+Params} C\+Chain\+Params\+::consensus\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_chain_params_a9eddbbd84a87109643d670766683aae2}
+\hypertarget{class_c_chain_params_a630f023ae4a95a8b420bad0a08b4428c}{}\index{C\+Chain\+Params@{C\+Chain\+Params}!f\+Default\+Consistency\+Checks@{f\+Default\+Consistency\+Checks}}
+\index{f\+Default\+Consistency\+Checks@{f\+Default\+Consistency\+Checks}!C\+Chain\+Params@{C\+Chain\+Params}}
+\subsubsection[{f\+Default\+Consistency\+Checks}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+Chain\+Params\+::f\+Default\+Consistency\+Checks\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_chain_params_a630f023ae4a95a8b420bad0a08b4428c}
+\hypertarget{class_c_chain_params_ad640045ea40c569df7b826551872e1bd}{}\index{C\+Chain\+Params@{C\+Chain\+Params}!f\+Mine\+Blocks\+On\+Demand@{f\+Mine\+Blocks\+On\+Demand}}
+\index{f\+Mine\+Blocks\+On\+Demand@{f\+Mine\+Blocks\+On\+Demand}!C\+Chain\+Params@{C\+Chain\+Params}}
+\subsubsection[{f\+Mine\+Blocks\+On\+Demand}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+Chain\+Params\+::f\+Mine\+Blocks\+On\+Demand\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_chain_params_ad640045ea40c569df7b826551872e1bd}
+\hypertarget{class_c_chain_params_abe9980263561e3f26b6352daa64092da}{}\index{C\+Chain\+Params@{C\+Chain\+Params}!f\+Mining\+Requires\+Peers@{f\+Mining\+Requires\+Peers}}
+\index{f\+Mining\+Requires\+Peers@{f\+Mining\+Requires\+Peers}!C\+Chain\+Params@{C\+Chain\+Params}}
+\subsubsection[{f\+Mining\+Requires\+Peers}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+Chain\+Params\+::f\+Mining\+Requires\+Peers\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_chain_params_abe9980263561e3f26b6352daa64092da}
+\hypertarget{class_c_chain_params_af84ed151ace6ddc0cbfa649b1c263e9d}{}\index{C\+Chain\+Params@{C\+Chain\+Params}!f\+Require\+R\+P\+C\+Password@{f\+Require\+R\+P\+C\+Password}}
+\index{f\+Require\+R\+P\+C\+Password@{f\+Require\+R\+P\+C\+Password}!C\+Chain\+Params@{C\+Chain\+Params}}
+\subsubsection[{f\+Require\+R\+P\+C\+Password}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+Chain\+Params\+::f\+Require\+R\+P\+C\+Password\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_chain_params_af84ed151ace6ddc0cbfa649b1c263e9d}
+\hypertarget{class_c_chain_params_abc615d2750d847e1eac0ecb7fc8d2da8}{}\index{C\+Chain\+Params@{C\+Chain\+Params}!f\+Require\+Standard@{f\+Require\+Standard}}
+\index{f\+Require\+Standard@{f\+Require\+Standard}!C\+Chain\+Params@{C\+Chain\+Params}}
+\subsubsection[{f\+Require\+Standard}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+Chain\+Params\+::f\+Require\+Standard\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_chain_params_abc615d2750d847e1eac0ecb7fc8d2da8}
+\hypertarget{class_c_chain_params_a4f62f1b7070f83b48aa86564628a2e7d}{}\index{C\+Chain\+Params@{C\+Chain\+Params}!f\+Testnet\+To\+Be\+Deprecated\+Field\+R\+P\+C@{f\+Testnet\+To\+Be\+Deprecated\+Field\+R\+P\+C}}
+\index{f\+Testnet\+To\+Be\+Deprecated\+Field\+R\+P\+C@{f\+Testnet\+To\+Be\+Deprecated\+Field\+R\+P\+C}!C\+Chain\+Params@{C\+Chain\+Params}}
+\subsubsection[{f\+Testnet\+To\+Be\+Deprecated\+Field\+R\+P\+C}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+Chain\+Params\+::f\+Testnet\+To\+Be\+Deprecated\+Field\+R\+P\+C\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_chain_params_a4f62f1b7070f83b48aa86564628a2e7d}
+\hypertarget{class_c_chain_params_a2e4119fa75f6ea0c64ba8809dab5c4f8}{}\index{C\+Chain\+Params@{C\+Chain\+Params}!genesis@{genesis}}
+\index{genesis@{genesis}!C\+Chain\+Params@{C\+Chain\+Params}}
+\subsubsection[{genesis}]{\setlength{\rightskip}{0pt plus 5cm}C\+Block C\+Chain\+Params\+::genesis\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_chain_params_a2e4119fa75f6ea0c64ba8809dab5c4f8}
+\hypertarget{class_c_chain_params_a76d9a8dc59e179ca94b6b9e04a93e5f4}{}\index{C\+Chain\+Params@{C\+Chain\+Params}!n\+Default\+Port@{n\+Default\+Port}}
+\index{n\+Default\+Port@{n\+Default\+Port}!C\+Chain\+Params@{C\+Chain\+Params}}
+\subsubsection[{n\+Default\+Port}]{\setlength{\rightskip}{0pt plus 5cm}int C\+Chain\+Params\+::n\+Default\+Port\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_chain_params_a76d9a8dc59e179ca94b6b9e04a93e5f4}
+\hypertarget{class_c_chain_params_a3efbcec19f3883c8300063ec0acf4a35}{}\index{C\+Chain\+Params@{C\+Chain\+Params}!n\+Miner\+Threads@{n\+Miner\+Threads}}
+\index{n\+Miner\+Threads@{n\+Miner\+Threads}!C\+Chain\+Params@{C\+Chain\+Params}}
+\subsubsection[{n\+Miner\+Threads}]{\setlength{\rightskip}{0pt plus 5cm}int C\+Chain\+Params\+::n\+Miner\+Threads\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_chain_params_a3efbcec19f3883c8300063ec0acf4a35}
+\hypertarget{class_c_chain_params_aee6b9132f0ce8dcbfc242c3d2e1293e6}{}\index{C\+Chain\+Params@{C\+Chain\+Params}!n\+Prune\+After\+Height@{n\+Prune\+After\+Height}}
+\index{n\+Prune\+After\+Height@{n\+Prune\+After\+Height}!C\+Chain\+Params@{C\+Chain\+Params}}
+\subsubsection[{n\+Prune\+After\+Height}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t C\+Chain\+Params\+::n\+Prune\+After\+Height\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_chain_params_aee6b9132f0ce8dcbfc242c3d2e1293e6}
+\hypertarget{class_c_chain_params_ae403e6b6d36b8f8c4d9d494cf686658c}{}\index{C\+Chain\+Params@{C\+Chain\+Params}!pch\+Message\+Start@{pch\+Message\+Start}}
+\index{pch\+Message\+Start@{pch\+Message\+Start}!C\+Chain\+Params@{C\+Chain\+Params}}
+\subsubsection[{pch\+Message\+Start}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Message\+Header\+::\+Message\+Start\+Chars} C\+Chain\+Params\+::pch\+Message\+Start\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_chain_params_ae403e6b6d36b8f8c4d9d494cf686658c}
+\hypertarget{class_c_chain_params_a8542ce21d5b9bdc2eadad8702fdd584a}{}\index{C\+Chain\+Params@{C\+Chain\+Params}!str\+Network\+I\+D@{str\+Network\+I\+D}}
+\index{str\+Network\+I\+D@{str\+Network\+I\+D}!C\+Chain\+Params@{C\+Chain\+Params}}
+\subsubsection[{str\+Network\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string C\+Chain\+Params\+::str\+Network\+I\+D\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_chain_params_a8542ce21d5b9bdc2eadad8702fdd584a}
+\hypertarget{class_c_chain_params_adf435bdf2d9cd00936d7da0fb4237921}{}\index{C\+Chain\+Params@{C\+Chain\+Params}!v\+Alert\+Pub\+Key@{v\+Alert\+Pub\+Key}}
+\index{v\+Alert\+Pub\+Key@{v\+Alert\+Pub\+Key}!C\+Chain\+Params@{C\+Chain\+Params}}
+\subsubsection[{v\+Alert\+Pub\+Key}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$unsigned char$>$ C\+Chain\+Params\+::v\+Alert\+Pub\+Key\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_chain_params_adf435bdf2d9cd00936d7da0fb4237921}
+
+
+Raw pub key bytes for the broadcast alert signing key. 
+
+\hypertarget{class_c_chain_params_af3ad79fb5bf4938750317c91e4c4b954}{}\index{C\+Chain\+Params@{C\+Chain\+Params}!v\+Fixed\+Seeds@{v\+Fixed\+Seeds}}
+\index{v\+Fixed\+Seeds@{v\+Fixed\+Seeds}!C\+Chain\+Params@{C\+Chain\+Params}}
+\subsubsection[{v\+Fixed\+Seeds}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<${\bf C\+Address}$>$ C\+Chain\+Params\+::v\+Fixed\+Seeds\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_chain_params_af3ad79fb5bf4938750317c91e4c4b954}
+\hypertarget{class_c_chain_params_a9ce50b4162fb2ebf5bd72ad4045aa70c}{}\index{C\+Chain\+Params@{C\+Chain\+Params}!v\+Seeds@{v\+Seeds}}
+\index{v\+Seeds@{v\+Seeds}!C\+Chain\+Params@{C\+Chain\+Params}}
+\subsubsection[{v\+Seeds}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<${\bf C\+D\+N\+S\+Seed\+Data}$>$ C\+Chain\+Params\+::v\+Seeds\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_chain_params_a9ce50b4162fb2ebf5bd72ad4045aa70c}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/\hyperlink{chainparams_8h}{chainparams.\+h}\end{DoxyCompactItemize}

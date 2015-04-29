@@ -1,0 +1,235 @@
+\hypertarget{utilstrencodings_8cpp}{}\section{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/utilstrencodings.cpp File Reference}
+\label{utilstrencodings_8cpp}\index{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/utilstrencodings.\+cpp@{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/utilstrencodings.\+cpp}}
+{\ttfamily \#include \char`\"{}utilstrencodings.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}tinyformat.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$cstdlib$>$}\\*
+{\ttfamily \#include $<$cstring$>$}\\*
+{\ttfamily \#include $<$errno.\+h$>$}\\*
+{\ttfamily \#include $<$limits$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{utilstrencodings_8cpp_ae204f01eeaadc5a85015a51f369a8356}{Sanitize\+String} (const string \&str)
+\item 
+signed char \hyperlink{utilstrencodings_8cpp_aa59e8a8c5a39cb5041f93bb95dd02119}{Hex\+Digit} (char c)
+\item 
+bool \hyperlink{utilstrencodings_8cpp_aa4e3553d2b2fe693c106f4296685f75c}{Is\+Hex} (const string \&str)
+\item 
+vector$<$ unsigned char $>$ \hyperlink{utilstrencodings_8cpp_abea395175fbc4a788ed0f0a41710b8a7}{Parse\+Hex} (const char $\ast$psz)
+\item 
+vector$<$ unsigned char $>$ \hyperlink{utilstrencodings_8cpp_a64d56c5bed7672ee006ff2c29f3554ee}{Parse\+Hex} (const string \&str)
+\item 
+string \hyperlink{utilstrencodings_8cpp_a5e074135870a6fdfae4ac02047bc0432}{Encode\+Base64} (const unsigned char $\ast$pch, size\+\_\+t len)
+\item 
+string \hyperlink{utilstrencodings_8cpp_a01c144e3a6e8de1ea8481bd7c69fef07}{Encode\+Base64} (const string \&str)
+\item 
+vector$<$ unsigned char $>$ \hyperlink{utilstrencodings_8cpp_a224a1ec4dc69c9463abf0e8ae767af0d}{Decode\+Base64} (const char $\ast$p, bool $\ast$pf\+Invalid)
+\item 
+string \hyperlink{utilstrencodings_8cpp_a1fc3cb76c00fb587855511c99a715af5}{Decode\+Base64} (const string \&str)
+\item 
+string \hyperlink{utilstrencodings_8cpp_a71aa75e646de8a10971f887bc71d9a75}{Encode\+Base32} (const unsigned char $\ast$pch, size\+\_\+t len)
+\item 
+string \hyperlink{utilstrencodings_8cpp_aa4484ee0b7560f87051606f109e5d96a}{Encode\+Base32} (const string \&str)
+\item 
+vector$<$ unsigned char $>$ \hyperlink{utilstrencodings_8cpp_a8266fd137bc7f76f4a75024baab5c18f}{Decode\+Base32} (const char $\ast$p, bool $\ast$pf\+Invalid)
+\item 
+string \hyperlink{utilstrencodings_8cpp_ab2bcbf931beb3b2a813db9daf09f265c}{Decode\+Base32} (const string \&str)
+\item 
+bool \hyperlink{utilstrencodings_8cpp_a880a215d9e931432b095084c756a49bb}{Parse\+Int32} (const std\+::string \&str, int32\+\_\+t $\ast$out)
+\item 
+std\+::string \hyperlink{utilstrencodings_8cpp_a3eded752d24f2ca1ad72f6907dd23832}{Format\+Paragraph} (const std\+::string in, size\+\_\+t width, size\+\_\+t indent)
+\item 
+std\+::string \hyperlink{utilstrencodings_8cpp_ab7a07cad3bcdf95935f4f6b5c039c546}{i64tostr} (int64\+\_\+t n)
+\item 
+std\+::string \hyperlink{utilstrencodings_8cpp_a565b3ea015b133d01dc52b4ec6e45f07}{itostr} (int n)
+\item 
+int64\+\_\+t \hyperlink{utilstrencodings_8cpp_a22916d155600c742c4efad727462588e}{atoi64} (const char $\ast$psz)
+\item 
+int64\+\_\+t \hyperlink{utilstrencodings_8cpp_aba1c6f08c135078a7af3385ed3e91ef3}{atoi64} (const std\+::string \&str)
+\item 
+int \hyperlink{utilstrencodings_8cpp_aa5ce96ec36f4413f820cec9c1831c070}{atoi} (const std\+::string \&str)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const signed char \hyperlink{utilstrencodings_8cpp_a48299e74a5c04c846cbdfc372ee464ec}{p\+\_\+util\+\_\+hexdigit} \mbox{[}256\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{utilstrencodings_8cpp_aa5ce96ec36f4413f820cec9c1831c070}{}\index{utilstrencodings.\+cpp@{utilstrencodings.\+cpp}!atoi@{atoi}}
+\index{atoi@{atoi}!utilstrencodings.\+cpp@{utilstrencodings.\+cpp}}
+\subsubsection[{atoi}]{\setlength{\rightskip}{0pt plus 5cm}int atoi (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{str}
+\end{DoxyParamCaption}
+)}\label{utilstrencodings_8cpp_aa5ce96ec36f4413f820cec9c1831c070}
+\hypertarget{utilstrencodings_8cpp_a22916d155600c742c4efad727462588e}{}\index{utilstrencodings.\+cpp@{utilstrencodings.\+cpp}!atoi64@{atoi64}}
+\index{atoi64@{atoi64}!utilstrencodings.\+cpp@{utilstrencodings.\+cpp}}
+\subsubsection[{atoi64}]{\setlength{\rightskip}{0pt plus 5cm}int64\+\_\+t atoi64 (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{psz}
+\end{DoxyParamCaption}
+)}\label{utilstrencodings_8cpp_a22916d155600c742c4efad727462588e}
+\hypertarget{utilstrencodings_8cpp_aba1c6f08c135078a7af3385ed3e91ef3}{}\index{utilstrencodings.\+cpp@{utilstrencodings.\+cpp}!atoi64@{atoi64}}
+\index{atoi64@{atoi64}!utilstrencodings.\+cpp@{utilstrencodings.\+cpp}}
+\subsubsection[{atoi64}]{\setlength{\rightskip}{0pt plus 5cm}int64\+\_\+t atoi64 (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{str}
+\end{DoxyParamCaption}
+)}\label{utilstrencodings_8cpp_aba1c6f08c135078a7af3385ed3e91ef3}
+\hypertarget{utilstrencodings_8cpp_a8266fd137bc7f76f4a75024baab5c18f}{}\index{utilstrencodings.\+cpp@{utilstrencodings.\+cpp}!Decode\+Base32@{Decode\+Base32}}
+\index{Decode\+Base32@{Decode\+Base32}!utilstrencodings.\+cpp@{utilstrencodings.\+cpp}}
+\subsubsection[{Decode\+Base32}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$unsigned char$>$ Decode\+Base32 (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{p, }
+\item[{bool $\ast$}]{pf\+Invalid}
+\end{DoxyParamCaption}
+)}\label{utilstrencodings_8cpp_a8266fd137bc7f76f4a75024baab5c18f}
+\hypertarget{utilstrencodings_8cpp_ab2bcbf931beb3b2a813db9daf09f265c}{}\index{utilstrencodings.\+cpp@{utilstrencodings.\+cpp}!Decode\+Base32@{Decode\+Base32}}
+\index{Decode\+Base32@{Decode\+Base32}!utilstrencodings.\+cpp@{utilstrencodings.\+cpp}}
+\subsubsection[{Decode\+Base32}]{\setlength{\rightskip}{0pt plus 5cm}string Decode\+Base32 (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{str}
+\end{DoxyParamCaption}
+)}\label{utilstrencodings_8cpp_ab2bcbf931beb3b2a813db9daf09f265c}
+\hypertarget{utilstrencodings_8cpp_a224a1ec4dc69c9463abf0e8ae767af0d}{}\index{utilstrencodings.\+cpp@{utilstrencodings.\+cpp}!Decode\+Base64@{Decode\+Base64}}
+\index{Decode\+Base64@{Decode\+Base64}!utilstrencodings.\+cpp@{utilstrencodings.\+cpp}}
+\subsubsection[{Decode\+Base64}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$unsigned char$>$ Decode\+Base64 (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{p, }
+\item[{bool $\ast$}]{pf\+Invalid}
+\end{DoxyParamCaption}
+)}\label{utilstrencodings_8cpp_a224a1ec4dc69c9463abf0e8ae767af0d}
+\hypertarget{utilstrencodings_8cpp_a1fc3cb76c00fb587855511c99a715af5}{}\index{utilstrencodings.\+cpp@{utilstrencodings.\+cpp}!Decode\+Base64@{Decode\+Base64}}
+\index{Decode\+Base64@{Decode\+Base64}!utilstrencodings.\+cpp@{utilstrencodings.\+cpp}}
+\subsubsection[{Decode\+Base64}]{\setlength{\rightskip}{0pt plus 5cm}string Decode\+Base64 (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{str}
+\end{DoxyParamCaption}
+)}\label{utilstrencodings_8cpp_a1fc3cb76c00fb587855511c99a715af5}
+\hypertarget{utilstrencodings_8cpp_a71aa75e646de8a10971f887bc71d9a75}{}\index{utilstrencodings.\+cpp@{utilstrencodings.\+cpp}!Encode\+Base32@{Encode\+Base32}}
+\index{Encode\+Base32@{Encode\+Base32}!utilstrencodings.\+cpp@{utilstrencodings.\+cpp}}
+\subsubsection[{Encode\+Base32}]{\setlength{\rightskip}{0pt plus 5cm}string Encode\+Base32 (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{pch, }
+\item[{size\+\_\+t}]{len}
+\end{DoxyParamCaption}
+)}\label{utilstrencodings_8cpp_a71aa75e646de8a10971f887bc71d9a75}
+\hypertarget{utilstrencodings_8cpp_aa4484ee0b7560f87051606f109e5d96a}{}\index{utilstrencodings.\+cpp@{utilstrencodings.\+cpp}!Encode\+Base32@{Encode\+Base32}}
+\index{Encode\+Base32@{Encode\+Base32}!utilstrencodings.\+cpp@{utilstrencodings.\+cpp}}
+\subsubsection[{Encode\+Base32}]{\setlength{\rightskip}{0pt plus 5cm}string Encode\+Base32 (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{str}
+\end{DoxyParamCaption}
+)}\label{utilstrencodings_8cpp_aa4484ee0b7560f87051606f109e5d96a}
+\hypertarget{utilstrencodings_8cpp_a5e074135870a6fdfae4ac02047bc0432}{}\index{utilstrencodings.\+cpp@{utilstrencodings.\+cpp}!Encode\+Base64@{Encode\+Base64}}
+\index{Encode\+Base64@{Encode\+Base64}!utilstrencodings.\+cpp@{utilstrencodings.\+cpp}}
+\subsubsection[{Encode\+Base64}]{\setlength{\rightskip}{0pt plus 5cm}string Encode\+Base64 (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{pch, }
+\item[{size\+\_\+t}]{len}
+\end{DoxyParamCaption}
+)}\label{utilstrencodings_8cpp_a5e074135870a6fdfae4ac02047bc0432}
+\hypertarget{utilstrencodings_8cpp_a01c144e3a6e8de1ea8481bd7c69fef07}{}\index{utilstrencodings.\+cpp@{utilstrencodings.\+cpp}!Encode\+Base64@{Encode\+Base64}}
+\index{Encode\+Base64@{Encode\+Base64}!utilstrencodings.\+cpp@{utilstrencodings.\+cpp}}
+\subsubsection[{Encode\+Base64}]{\setlength{\rightskip}{0pt plus 5cm}string Encode\+Base64 (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{str}
+\end{DoxyParamCaption}
+)}\label{utilstrencodings_8cpp_a01c144e3a6e8de1ea8481bd7c69fef07}
+\hypertarget{utilstrencodings_8cpp_a3eded752d24f2ca1ad72f6907dd23832}{}\index{utilstrencodings.\+cpp@{utilstrencodings.\+cpp}!Format\+Paragraph@{Format\+Paragraph}}
+\index{Format\+Paragraph@{Format\+Paragraph}!utilstrencodings.\+cpp@{utilstrencodings.\+cpp}}
+\subsubsection[{Format\+Paragraph}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Format\+Paragraph (
+\begin{DoxyParamCaption}
+\item[{const std\+::string}]{in, }
+\item[{size\+\_\+t}]{width = {\ttfamily 79}, }
+\item[{size\+\_\+t}]{indent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}\label{utilstrencodings_8cpp_a3eded752d24f2ca1ad72f6907dd23832}
+Format a paragraph of text to a fixed width, adding spaces for indentation to any added line. \hypertarget{utilstrencodings_8cpp_aa59e8a8c5a39cb5041f93bb95dd02119}{}\index{utilstrencodings.\+cpp@{utilstrencodings.\+cpp}!Hex\+Digit@{Hex\+Digit}}
+\index{Hex\+Digit@{Hex\+Digit}!utilstrencodings.\+cpp@{utilstrencodings.\+cpp}}
+\subsubsection[{Hex\+Digit}]{\setlength{\rightskip}{0pt plus 5cm}signed char Hex\+Digit (
+\begin{DoxyParamCaption}
+\item[{char}]{c}
+\end{DoxyParamCaption}
+)}\label{utilstrencodings_8cpp_aa59e8a8c5a39cb5041f93bb95dd02119}
+\hypertarget{utilstrencodings_8cpp_ab7a07cad3bcdf95935f4f6b5c039c546}{}\index{utilstrencodings.\+cpp@{utilstrencodings.\+cpp}!i64tostr@{i64tostr}}
+\index{i64tostr@{i64tostr}!utilstrencodings.\+cpp@{utilstrencodings.\+cpp}}
+\subsubsection[{i64tostr}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string i64tostr (
+\begin{DoxyParamCaption}
+\item[{int64\+\_\+t}]{n}
+\end{DoxyParamCaption}
+)}\label{utilstrencodings_8cpp_ab7a07cad3bcdf95935f4f6b5c039c546}
+\hypertarget{utilstrencodings_8cpp_aa4e3553d2b2fe693c106f4296685f75c}{}\index{utilstrencodings.\+cpp@{utilstrencodings.\+cpp}!Is\+Hex@{Is\+Hex}}
+\index{Is\+Hex@{Is\+Hex}!utilstrencodings.\+cpp@{utilstrencodings.\+cpp}}
+\subsubsection[{Is\+Hex}]{\setlength{\rightskip}{0pt plus 5cm}bool Is\+Hex (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{str}
+\end{DoxyParamCaption}
+)}\label{utilstrencodings_8cpp_aa4e3553d2b2fe693c106f4296685f75c}
+\hypertarget{utilstrencodings_8cpp_a565b3ea015b133d01dc52b4ec6e45f07}{}\index{utilstrencodings.\+cpp@{utilstrencodings.\+cpp}!itostr@{itostr}}
+\index{itostr@{itostr}!utilstrencodings.\+cpp@{utilstrencodings.\+cpp}}
+\subsubsection[{itostr}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string itostr (
+\begin{DoxyParamCaption}
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}\label{utilstrencodings_8cpp_a565b3ea015b133d01dc52b4ec6e45f07}
+\hypertarget{utilstrencodings_8cpp_abea395175fbc4a788ed0f0a41710b8a7}{}\index{utilstrencodings.\+cpp@{utilstrencodings.\+cpp}!Parse\+Hex@{Parse\+Hex}}
+\index{Parse\+Hex@{Parse\+Hex}!utilstrencodings.\+cpp@{utilstrencodings.\+cpp}}
+\subsubsection[{Parse\+Hex}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$unsigned char$>$ Parse\+Hex (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{psz}
+\end{DoxyParamCaption}
+)}\label{utilstrencodings_8cpp_abea395175fbc4a788ed0f0a41710b8a7}
+\hypertarget{utilstrencodings_8cpp_a64d56c5bed7672ee006ff2c29f3554ee}{}\index{utilstrencodings.\+cpp@{utilstrencodings.\+cpp}!Parse\+Hex@{Parse\+Hex}}
+\index{Parse\+Hex@{Parse\+Hex}!utilstrencodings.\+cpp@{utilstrencodings.\+cpp}}
+\subsubsection[{Parse\+Hex}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$unsigned char$>$ Parse\+Hex (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{str}
+\end{DoxyParamCaption}
+)}\label{utilstrencodings_8cpp_a64d56c5bed7672ee006ff2c29f3554ee}
+\hypertarget{utilstrencodings_8cpp_a880a215d9e931432b095084c756a49bb}{}\index{utilstrencodings.\+cpp@{utilstrencodings.\+cpp}!Parse\+Int32@{Parse\+Int32}}
+\index{Parse\+Int32@{Parse\+Int32}!utilstrencodings.\+cpp@{utilstrencodings.\+cpp}}
+\subsubsection[{Parse\+Int32}]{\setlength{\rightskip}{0pt plus 5cm}bool Parse\+Int32 (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{str, }
+\item[{int32\+\_\+t $\ast$}]{out}
+\end{DoxyParamCaption}
+)}\label{utilstrencodings_8cpp_a880a215d9e931432b095084c756a49bb}
+Convert string to signed 32-\/bit integer with strict parse error feedback. \begin{DoxyReturn}{Returns}
+true if the entire string could be parsed as valid integer, false if not the entire string could be parsed or when overflow or underflow occurred. 
+\end{DoxyReturn}
+\hypertarget{utilstrencodings_8cpp_ae204f01eeaadc5a85015a51f369a8356}{}\index{utilstrencodings.\+cpp@{utilstrencodings.\+cpp}!Sanitize\+String@{Sanitize\+String}}
+\index{Sanitize\+String@{Sanitize\+String}!utilstrencodings.\+cpp@{utilstrencodings.\+cpp}}
+\subsubsection[{Sanitize\+String}]{\setlength{\rightskip}{0pt plus 5cm}string Sanitize\+String (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{str}
+\end{DoxyParamCaption}
+)}\label{utilstrencodings_8cpp_ae204f01eeaadc5a85015a51f369a8356}
+safe\+Chars chosen to allow simple messages/\+U\+R\+Ls/email addresses, but avoid anything even possibly remotely dangerous like \& or $>$
+
+\subsection{Variable Documentation}
+\hypertarget{utilstrencodings_8cpp_a48299e74a5c04c846cbdfc372ee464ec}{}\index{utilstrencodings.\+cpp@{utilstrencodings.\+cpp}!p\+\_\+util\+\_\+hexdigit@{p\+\_\+util\+\_\+hexdigit}}
+\index{p\+\_\+util\+\_\+hexdigit@{p\+\_\+util\+\_\+hexdigit}!utilstrencodings.\+cpp@{utilstrencodings.\+cpp}}
+\subsubsection[{p\+\_\+util\+\_\+hexdigit}]{\setlength{\rightskip}{0pt plus 5cm}const signed char p\+\_\+util\+\_\+hexdigit\mbox{[}256\mbox{]}}\label{utilstrencodings_8cpp_a48299e74a5c04c846cbdfc372ee464ec}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+=
+\{ -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
+  -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
+  -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
+  0,1,2,3,4,5,6,7,8,9,-1,-1,-1,-1,-1,-1,
+  -1,0xa,0xb,0xc,0xd,0xe,0xf,-1,-1,-1,-1,-1,-1,-1,-1,-1,
+  -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
+  -1,0xa,0xb,0xc,0xd,0xe,0xf,-1,-1,-1,-1,-1,-1,-1,-1,-1,
+  -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
+  -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
+  -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
+  -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
+  -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
+  -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
+  -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
+  -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
+  -1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1, \}
+\end{DoxyCode}

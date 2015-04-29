@@ -1,0 +1,49 @@
+\hypertarget{timedata_8cpp}{}\section{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/timedata.cpp File Reference}
+\label{timedata_8cpp}\index{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/timedata.\+cpp@{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/timedata.\+cpp}}
+{\ttfamily \#include \char`\"{}timedata.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}netbase.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sync.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ui\+\_\+interface.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}util.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utilstrencodings.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$boost/foreach.\+hpp$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int64\+\_\+t \hyperlink{timedata_8cpp_a50ca5344c75631267633f15cfe5e983e}{Get\+Time\+Offset} ()
+\item 
+int64\+\_\+t \hyperlink{timedata_8cpp_a09f81b9c7650f898cf3cf305b87547e6}{Get\+Adjusted\+Time} ()
+\item 
+void \hyperlink{timedata_8cpp_ac2624434f4891e8d74f9b13ec91f95d2}{Add\+Time\+Data} (const \hyperlink{class_c_net_addr}{C\+Net\+Addr} \&ip, int64\+\_\+t n\+Offset\+Sample)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{timedata_8cpp_ac2624434f4891e8d74f9b13ec91f95d2}{}\index{timedata.\+cpp@{timedata.\+cpp}!Add\+Time\+Data@{Add\+Time\+Data}}
+\index{Add\+Time\+Data@{Add\+Time\+Data}!timedata.\+cpp@{timedata.\+cpp}}
+\subsubsection[{Add\+Time\+Data}]{\setlength{\rightskip}{0pt plus 5cm}void Add\+Time\+Data (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\+Net\+Addr} \&}]{ip, }
+\item[{int64\+\_\+t}]{n\+Offset\+Sample}
+\end{DoxyParamCaption}
+)}\label{timedata_8cpp_ac2624434f4891e8d74f9b13ec91f95d2}
+\hypertarget{timedata_8cpp_a09f81b9c7650f898cf3cf305b87547e6}{}\index{timedata.\+cpp@{timedata.\+cpp}!Get\+Adjusted\+Time@{Get\+Adjusted\+Time}}
+\index{Get\+Adjusted\+Time@{Get\+Adjusted\+Time}!timedata.\+cpp@{timedata.\+cpp}}
+\subsubsection[{Get\+Adjusted\+Time}]{\setlength{\rightskip}{0pt plus 5cm}int64\+\_\+t Get\+Adjusted\+Time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{timedata_8cpp_a09f81b9c7650f898cf3cf305b87547e6}
+\hypertarget{timedata_8cpp_a50ca5344c75631267633f15cfe5e983e}{}\index{timedata.\+cpp@{timedata.\+cpp}!Get\+Time\+Offset@{Get\+Time\+Offset}}
+\index{Get\+Time\+Offset@{Get\+Time\+Offset}!timedata.\+cpp@{timedata.\+cpp}}
+\subsubsection[{Get\+Time\+Offset}]{\setlength{\rightskip}{0pt plus 5cm}int64\+\_\+t Get\+Time\+Offset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{timedata_8cpp_a50ca5344c75631267633f15cfe5e983e}
+\char`\"{}\+Never go to sea with two chronometers; take one or three.\char`\"{} Our three time sources are\+:
+\begin{DoxyItemize}
+\item System clock
+\item Median of other nodes clocks
+\item The user (asking the user to fix the system clock if the first two disagree) 
+\end{DoxyItemize}

@@ -1,0 +1,533 @@
+\hypertarget{net_8cpp}{}\section{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/net.cpp File Reference}
+\label{net_8cpp}\index{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/net.\+cpp@{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/net.\+cpp}}
+{\ttfamily \#include \char`\"{}net.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}addrman.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}chainparams.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}clientversion.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}primitives/transaction.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ui\+\_\+interface.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}crypto/common.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$fcntl.\+h$>$}\\*
+{\ttfamily \#include $<$boost/filesystem.\+hpp$>$}\\*
+{\ttfamily \#include $<$boost/thread.\+hpp$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_c_net_cleanup}{C\+Net\+Cleanup}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{net_8cpp_a272e900bb201601d6842e465bec135af}{D\+U\+M\+P\+\_\+\+A\+D\+D\+R\+E\+S\+S\+E\+S\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L}~900
+\item 
+\#define \hyperlink{net_8cpp_a826edd40636cbaa44266b97c8c6a4fa3}{X}(\hyperlink{rest_8cpp_a8f8f80d37794cde9472343e4487ba3eb}{name})~\hyperlink{rest_8cpp_a8f8f80d37794cde9472343e4487ba3eb}{stats.\+name} = \hyperlink{rest_8cpp_a8f8f80d37794cde9472343e4487ba3eb}{name}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_c_node_signals}{C\+Node\+Signals} \& \hyperlink{net_8cpp_a475f2fc7d8f5cd7511db253cae8fe28a}{Get\+Node\+Signals} ()
+\item 
+void \hyperlink{net_8cpp_a5230a9dcbf8f7663e386b358f8d2fdc8}{Add\+One\+Shot} (string str\+Dest)
+\item 
+unsigned short \hyperlink{net_8cpp_af6d341a24d761a509fca026458cf2f72}{Get\+Listen\+Port} ()
+\item 
+bool \hyperlink{net_8cpp_a51605827c953a7843f9b165eada26857}{Get\+Local} (\hyperlink{class_c_service}{C\+Service} \&addr, const \hyperlink{class_c_net_addr}{C\+Net\+Addr} $\ast$paddr\+Peer)
+\item 
+\hyperlink{class_c_address}{C\+Address} \hyperlink{net_8cpp_a66f5f0bc1dad5cfe429157d5637a93dc}{Get\+Local\+Address} (const \hyperlink{class_c_net_addr}{C\+Net\+Addr} $\ast$paddr\+Peer)
+\item 
+int \hyperlink{net_8cpp_afa6b10687ddaa84fa7ba65b83ad1f069}{Getn\+Score} (const \hyperlink{class_c_service}{C\+Service} \&addr)
+\item 
+bool \hyperlink{net_8cpp_a058b75c6fcc94a0643184c237ad6de93}{Is\+Peer\+Addr\+Local\+Good} (\hyperlink{class_c_node}{C\+Node} $\ast$pnode)
+\item 
+void \hyperlink{net_8cpp_a049abe300398a68bfbd8ec6afc6046a9}{Advertize\+Local} (\hyperlink{class_c_node}{C\+Node} $\ast$pnode)
+\item 
+void \hyperlink{net_8cpp_a89098b55df7d627a7a3c7f367cae24e6}{Set\+Reachable} (enum \hyperlink{netbase_8h_acc9a38c714afe79b5035cb36f560dac3}{Network} net, bool f\+Flag)
+\item 
+bool \hyperlink{net_8cpp_abb92a02eecc581e8927c8a6e31968645}{Add\+Local} (const \hyperlink{class_c_service}{C\+Service} \&addr, int n\+Score)
+\item 
+bool \hyperlink{net_8cpp_a5a95db59a5d1a78e0d8694ae48d205cd}{Add\+Local} (const \hyperlink{class_c_net_addr}{C\+Net\+Addr} \&addr, int n\+Score)
+\item 
+void \hyperlink{net_8cpp_a2f6d62a9d456bf38003df3815b707f46}{Set\+Limited} (enum \hyperlink{netbase_8h_acc9a38c714afe79b5035cb36f560dac3}{Network} net, bool f\+Limited)
+\item 
+bool \hyperlink{net_8cpp_a96eb2fba6d80870802ac787b6ada4beb}{Is\+Limited} (enum \hyperlink{netbase_8h_acc9a38c714afe79b5035cb36f560dac3}{Network} net)
+\item 
+bool \hyperlink{net_8cpp_a7f5f5a0bf934e49c7137ee4aa6eb8732}{Is\+Limited} (const \hyperlink{class_c_net_addr}{C\+Net\+Addr} \&addr)
+\item 
+bool \hyperlink{net_8cpp_af7487aacfc9d708b3db40c255ec070a8}{Seen\+Local} (const \hyperlink{class_c_service}{C\+Service} \&addr)
+\item 
+bool \hyperlink{net_8cpp_a16fa1bd4d34c4c29c90903fc3cdf7517}{Is\+Local} (const \hyperlink{class_c_service}{C\+Service} \&addr)
+\item 
+bool \hyperlink{net_8cpp_af6de8e47b01a96206402ddef734114f2}{Is\+Reachable} (enum \hyperlink{netbase_8h_acc9a38c714afe79b5035cb36f560dac3}{Network} net)
+\item 
+bool \hyperlink{net_8cpp_a0eb7db987ad1a1bf139d0cd46873ed29}{Is\+Reachable} (const \hyperlink{class_c_net_addr}{C\+Net\+Addr} \&addr)
+\item 
+void \hyperlink{net_8cpp_ad4aabaa937cd6f4b708c47dbbdb8ea60}{Address\+Currently\+Connected} (const \hyperlink{class_c_service}{C\+Service} \&addr)
+\item 
+\hyperlink{class_c_node}{C\+Node} $\ast$ \hyperlink{net_8cpp_a66a7371d8e724cac0b4495169cdf2859}{Find\+Node} (const \hyperlink{class_c_net_addr}{C\+Net\+Addr} \&ip)
+\item 
+\hyperlink{class_c_node}{C\+Node} $\ast$ \hyperlink{net_8cpp_abebbeb89006ec148ba3c184e123170c5}{Find\+Node} (const std\+::string \&addr\+Name)
+\item 
+\hyperlink{class_c_node}{C\+Node} $\ast$ \hyperlink{net_8cpp_aaef21dfcc9b267d3f4e698d7c2b60eed}{Find\+Node} (const \hyperlink{class_c_service}{C\+Service} \&addr)
+\item 
+\hyperlink{class_c_node}{C\+Node} $\ast$ \hyperlink{net_8cpp_a50fb6e457be5579fb51d3a2827b1cba5}{Connect\+Node} (\hyperlink{class_c_address}{C\+Address} addr\+Connect, const char $\ast$psz\+Dest)
+\item 
+void \hyperlink{net_8cpp_aff6b7f2f213ce1e8d3aea65c41c99cb8}{Socket\+Send\+Data} (\hyperlink{class_c_node}{C\+Node} $\ast$pnode)
+\item 
+void \hyperlink{net_8cpp_aa1111c12121e039bbd8eedb556e4514a}{Thread\+Socket\+Handler} ()
+\item 
+void \hyperlink{net_8cpp_a93e4e6fbe288b6e882e697918695f88e}{Map\+Port} (bool)
+\item 
+void \hyperlink{net_8cpp_ab2d8883b5524ec7b80d3b9535e73a3ed}{Thread\+D\+N\+S\+Address\+Seed} ()
+\item 
+void \hyperlink{net_8cpp_ab8b5323f5ef61499582a5a6e53b49b6e}{Dump\+Addresses} ()
+\item 
+void \hyperlink{net_8cpp_a3b4720330e61127963a43df26b80f804}{Thread\+Open\+Connections} ()
+\item 
+void \hyperlink{net_8cpp_a2d1ca95557ae336582b886a251e7fe94}{Thread\+Open\+Added\+Connections} ()
+\item 
+bool \hyperlink{net_8cpp_ae2bcee201d33de468678ed615de41436}{Open\+Network\+Connection} (const \hyperlink{class_c_address}{C\+Address} \&addr\+Connect, \hyperlink{class_c_semaphore_grant}{C\+Semaphore\+Grant} $\ast$grant\+Outbound, const char $\ast$psz\+Dest, bool f\+One\+Shot)
+\item 
+void \hyperlink{net_8cpp_a379b0d3521bdd62ac296f219d70c4e30}{Thread\+Message\+Handler} ()
+\item 
+bool \hyperlink{net_8cpp_a9aace0157891faf517375c634647029a}{Bind\+Listen\+Port} (const \hyperlink{class_c_service}{C\+Service} \&addr\+Bind, string \&str\+Error, bool f\+Whitelisted)
+\item 
+void \hyperlink{net_8cpp_a9396d8054e8f74959e9391871aaddde0}{Start\+Node} (boost\+::thread\+\_\+group \&thread\+Group)
+\item 
+bool \hyperlink{net_8cpp_ac9110488f45c160d58f3c7ab7197bcea}{Stop\+Node} ()
+\item 
+void \hyperlink{net_8cpp_a35036853878d9ce5de4e386dcdba612d}{Relay\+Transaction} (const C\+Transaction \&tx)
+\item 
+void \hyperlink{net_8cpp_a9b1fd21b29b86ead3587731eeaf7b42c}{Relay\+Transaction} (const C\+Transaction \&tx, const \hyperlink{class_c_data_stream}{C\+Data\+Stream} \&ss)
+\item 
+unsigned int \hyperlink{net_8cpp_a7b020b8dc4437a88cf92570b82c55f25}{Receive\+Flood\+Size} ()
+\item 
+unsigned int \hyperlink{net_8cpp_a13f289d6233bd32b78a38793f76bdccb}{Send\+Buffer\+Size} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{net_8cpp_a37089835ec27ad8bf945a458708165b9}{f\+Discover} = true
+\item 
+bool \hyperlink{net_8cpp_a5067f8b9215406011fa3461be92d819c}{f\+Listen} = true
+\item 
+uint64\+\_\+t \hyperlink{net_8cpp_aac7a5df09042b8fc16272947ca022c2c}{n\+Local\+Services} = \hyperlink{protocol_8h_adc29c2ff13d900c2f185ee95427fb06ca9d1154f0e7e56f183a5c8373abe2e86c}{N\+O\+D\+E\+\_\+\+N\+E\+T\+W\+O\+R\+K}
+\item 
+\hyperlink{sync_8h_a37a4692b2d517f2843655ca11af7668a}{C\+Critical\+Section} \hyperlink{net_8cpp_a62111271618110807cc534e55c13cb70}{cs\+\_\+map\+Local\+Host}
+\item 
+map$<$ \hyperlink{class_c_net_addr}{C\+Net\+Addr}, \hyperlink{struct_local_service_info}{Local\+Service\+Info} $>$ \hyperlink{net_8cpp_ac585e737c081ba921335070264a93a79}{map\+Local\+Host}
+\item 
+uint64\+\_\+t \hyperlink{net_8cpp_a8c1a78575c0e397b5af7e6b4cc4493f2}{n\+Local\+Host\+Nonce} = 0
+\item 
+\hyperlink{class_c_addr_man}{C\+Addr\+Man} \hyperlink{net_8cpp_ac575e3335fd15a19b567026491f8f01a}{addrman}
+\item 
+int \hyperlink{net_8cpp_ac6a6856c007126a1119dd879120e12a7}{n\+Max\+Connections} = 125
+\item 
+bool \hyperlink{net_8cpp_ac9dc57f371fefa8c8a63823b2d301f8d}{f\+Addresses\+Initialized} = false
+\item 
+vector$<$ \hyperlink{class_c_node}{C\+Node} $\ast$ $>$ \hyperlink{net_8cpp_aa5a11f8873e230cea77bc7e91ee51918}{v\+Nodes}
+\item 
+\hyperlink{sync_8h_a37a4692b2d517f2843655ca11af7668a}{C\+Critical\+Section} \hyperlink{net_8cpp_a8282e3a7948351ac96516573cd31f9d0}{cs\+\_\+v\+Nodes}
+\item 
+map$<$ \hyperlink{class_c_inv}{C\+Inv}, \hyperlink{class_c_data_stream}{C\+Data\+Stream} $>$ \hyperlink{net_8cpp_a2c9eaa799e02fdf8a5c52eb9a5f750f6}{map\+Relay}
+\item 
+deque$<$ pair$<$ int64\+\_\+t, \hyperlink{class_c_inv}{C\+Inv} $>$ $>$ \hyperlink{net_8cpp_aebaeae1f0ac40d20a7aa3dd851176ae8}{v\+Relay\+Expiration}
+\item 
+\hyperlink{sync_8h_a37a4692b2d517f2843655ca11af7668a}{C\+Critical\+Section} \hyperlink{net_8cpp_ae1ed86ae54e13fe5f0ae1c12e48e3a0e}{cs\+\_\+map\+Relay}
+\item 
+\hyperlink{classlimitedmap}{limitedmap}$<$ \hyperlink{class_c_inv}{C\+Inv}, int64\+\_\+t $>$ \hyperlink{net_8cpp_a3ca4c22748ec77e179461ce20bcc4e8f}{map\+Already\+Asked\+For} (M\+A\+X\+\_\+\+I\+N\+V\+\_\+\+S\+Z)
+\item 
+\hyperlink{sync_8h_a37a4692b2d517f2843655ca11af7668a}{C\+Critical\+Section} \hyperlink{net_8cpp_a0600e532fa61e857559ac0327d5a5324}{cs\+\_\+v\+One\+Shots}
+\item 
+set$<$ \hyperlink{class_c_net_addr}{C\+Net\+Addr} $>$ \hyperlink{net_8cpp_adfc6e2c8b106da3807ca34d27577b37e}{setserv\+Add\+Node\+Addresses}
+\item 
+\hyperlink{sync_8h_a37a4692b2d517f2843655ca11af7668a}{C\+Critical\+Section} \hyperlink{net_8cpp_a670309f2c43b90009fc727bf9ed3be37}{cs\+\_\+setserv\+Add\+Node\+Addresses}
+\item 
+vector$<$ std\+::string $>$ \hyperlink{net_8cpp_aea576e413065756784b47d68d5051f72}{v\+Added\+Nodes}
+\item 
+\hyperlink{sync_8h_a37a4692b2d517f2843655ca11af7668a}{C\+Critical\+Section} \hyperlink{net_8cpp_a899fdfda20966914780d1937d7ab47a3}{cs\+\_\+v\+Added\+Nodes}
+\item 
+\hyperlink{net_8h_a954d746a58632565552615fd0a4ee660}{Node\+Id} \hyperlink{net_8cpp_a5232bdb878735fcc15a65c964f29f2b7}{n\+Last\+Node\+Id} = 0
+\item 
+\hyperlink{sync_8h_a37a4692b2d517f2843655ca11af7668a}{C\+Critical\+Section} \hyperlink{net_8cpp_a96f4c71f3c36f02b7edbdf04117e0e8c}{cs\+\_\+n\+Last\+Node\+Id}
+\item 
+boost\+::condition\+\_\+variable \hyperlink{net_8cpp_aaac6c79794fcfc2d7f583ee12650f27f}{message\+Handler\+Condition}
+\item 
+class \hyperlink{class_c_net_cleanup}{C\+Net\+Cleanup} \hyperlink{net_8cpp_ae560d3fdf794873af9a1212644985fdd}{instance\+\_\+of\+\_\+cnetcleanup}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{net_8cpp_a272e900bb201601d6842e465bec135af}{}\index{net.\+cpp@{net.\+cpp}!D\+U\+M\+P\+\_\+\+A\+D\+D\+R\+E\+S\+S\+E\+S\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L@{D\+U\+M\+P\+\_\+\+A\+D\+D\+R\+E\+S\+S\+E\+S\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L}}
+\index{D\+U\+M\+P\+\_\+\+A\+D\+D\+R\+E\+S\+S\+E\+S\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L@{D\+U\+M\+P\+\_\+\+A\+D\+D\+R\+E\+S\+S\+E\+S\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L}!net.\+cpp@{net.\+cpp}}
+\subsubsection[{D\+U\+M\+P\+\_\+\+A\+D\+D\+R\+E\+S\+S\+E\+S\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+U\+M\+P\+\_\+\+A\+D\+D\+R\+E\+S\+S\+E\+S\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L~900}\label{net_8cpp_a272e900bb201601d6842e465bec135af}
+\hypertarget{net_8cpp_a826edd40636cbaa44266b97c8c6a4fa3}{}\index{net.\+cpp@{net.\+cpp}!X@{X}}
+\index{X@{X}!net.\+cpp@{net.\+cpp}}
+\subsubsection[{X}]{\setlength{\rightskip}{0pt plus 5cm}\#define X(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf name}}
+\end{DoxyParamCaption}
+)~{\bf stats.\+name} = {\bf name}}\label{net_8cpp_a826edd40636cbaa44266b97c8c6a4fa3}
+
+
+\subsection{Function Documentation}
+\hypertarget{net_8cpp_abb92a02eecc581e8927c8a6e31968645}{}\index{net.\+cpp@{net.\+cpp}!Add\+Local@{Add\+Local}}
+\index{Add\+Local@{Add\+Local}!net.\+cpp@{net.\+cpp}}
+\subsubsection[{Add\+Local}]{\setlength{\rightskip}{0pt plus 5cm}bool Add\+Local (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\+Service} \&}]{addr, }
+\item[{int}]{n\+Score}
+\end{DoxyParamCaption}
+)}\label{net_8cpp_abb92a02eecc581e8927c8a6e31968645}
+\hypertarget{net_8cpp_a5a95db59a5d1a78e0d8694ae48d205cd}{}\index{net.\+cpp@{net.\+cpp}!Add\+Local@{Add\+Local}}
+\index{Add\+Local@{Add\+Local}!net.\+cpp@{net.\+cpp}}
+\subsubsection[{Add\+Local}]{\setlength{\rightskip}{0pt plus 5cm}bool Add\+Local (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\+Net\+Addr} \&}]{addr, }
+\item[{int}]{n\+Score}
+\end{DoxyParamCaption}
+)}\label{net_8cpp_a5a95db59a5d1a78e0d8694ae48d205cd}
+\hypertarget{net_8cpp_a5230a9dcbf8f7663e386b358f8d2fdc8}{}\index{net.\+cpp@{net.\+cpp}!Add\+One\+Shot@{Add\+One\+Shot}}
+\index{Add\+One\+Shot@{Add\+One\+Shot}!net.\+cpp@{net.\+cpp}}
+\subsubsection[{Add\+One\+Shot}]{\setlength{\rightskip}{0pt plus 5cm}void Add\+One\+Shot (
+\begin{DoxyParamCaption}
+\item[{string}]{str\+Dest}
+\end{DoxyParamCaption}
+)}\label{net_8cpp_a5230a9dcbf8f7663e386b358f8d2fdc8}
+\hypertarget{net_8cpp_ad4aabaa937cd6f4b708c47dbbdb8ea60}{}\index{net.\+cpp@{net.\+cpp}!Address\+Currently\+Connected@{Address\+Currently\+Connected}}
+\index{Address\+Currently\+Connected@{Address\+Currently\+Connected}!net.\+cpp@{net.\+cpp}}
+\subsubsection[{Address\+Currently\+Connected}]{\setlength{\rightskip}{0pt plus 5cm}void Address\+Currently\+Connected (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\+Service} \&}]{addr}
+\end{DoxyParamCaption}
+)}\label{net_8cpp_ad4aabaa937cd6f4b708c47dbbdb8ea60}
+\hypertarget{net_8cpp_a049abe300398a68bfbd8ec6afc6046a9}{}\index{net.\+cpp@{net.\+cpp}!Advertize\+Local@{Advertize\+Local}}
+\index{Advertize\+Local@{Advertize\+Local}!net.\+cpp@{net.\+cpp}}
+\subsubsection[{Advertize\+Local}]{\setlength{\rightskip}{0pt plus 5cm}void Advertize\+Local (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Node} $\ast$}]{pnode}
+\end{DoxyParamCaption}
+)}\label{net_8cpp_a049abe300398a68bfbd8ec6afc6046a9}
+\hypertarget{net_8cpp_a9aace0157891faf517375c634647029a}{}\index{net.\+cpp@{net.\+cpp}!Bind\+Listen\+Port@{Bind\+Listen\+Port}}
+\index{Bind\+Listen\+Port@{Bind\+Listen\+Port}!net.\+cpp@{net.\+cpp}}
+\subsubsection[{Bind\+Listen\+Port}]{\setlength{\rightskip}{0pt plus 5cm}bool Bind\+Listen\+Port (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\+Service} \&}]{addr\+Bind, }
+\item[{string \&}]{str\+Error, }
+\item[{bool}]{f\+Whitelisted}
+\end{DoxyParamCaption}
+)}\label{net_8cpp_a9aace0157891faf517375c634647029a}
+\hypertarget{net_8cpp_a50fb6e457be5579fb51d3a2827b1cba5}{}\index{net.\+cpp@{net.\+cpp}!Connect\+Node@{Connect\+Node}}
+\index{Connect\+Node@{Connect\+Node}!net.\+cpp@{net.\+cpp}}
+\subsubsection[{Connect\+Node}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Node}$\ast$ Connect\+Node (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Address}}]{addr\+Connect, }
+\item[{const char $\ast$}]{psz\+Dest}
+\end{DoxyParamCaption}
+)}\label{net_8cpp_a50fb6e457be5579fb51d3a2827b1cba5}
+debug print \hypertarget{net_8cpp_ab8b5323f5ef61499582a5a6e53b49b6e}{}\index{net.\+cpp@{net.\+cpp}!Dump\+Addresses@{Dump\+Addresses}}
+\index{Dump\+Addresses@{Dump\+Addresses}!net.\+cpp@{net.\+cpp}}
+\subsubsection[{Dump\+Addresses}]{\setlength{\rightskip}{0pt plus 5cm}void Dump\+Addresses (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{net_8cpp_ab8b5323f5ef61499582a5a6e53b49b6e}
+\hypertarget{net_8cpp_a66a7371d8e724cac0b4495169cdf2859}{}\index{net.\+cpp@{net.\+cpp}!Find\+Node@{Find\+Node}}
+\index{Find\+Node@{Find\+Node}!net.\+cpp@{net.\+cpp}}
+\subsubsection[{Find\+Node}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Node}$\ast$ Find\+Node (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\+Net\+Addr} \&}]{ip}
+\end{DoxyParamCaption}
+)}\label{net_8cpp_a66a7371d8e724cac0b4495169cdf2859}
+\hypertarget{net_8cpp_abebbeb89006ec148ba3c184e123170c5}{}\index{net.\+cpp@{net.\+cpp}!Find\+Node@{Find\+Node}}
+\index{Find\+Node@{Find\+Node}!net.\+cpp@{net.\+cpp}}
+\subsubsection[{Find\+Node}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Node}$\ast$ Find\+Node (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{addr\+Name}
+\end{DoxyParamCaption}
+)}\label{net_8cpp_abebbeb89006ec148ba3c184e123170c5}
+\hypertarget{net_8cpp_aaef21dfcc9b267d3f4e698d7c2b60eed}{}\index{net.\+cpp@{net.\+cpp}!Find\+Node@{Find\+Node}}
+\index{Find\+Node@{Find\+Node}!net.\+cpp@{net.\+cpp}}
+\subsubsection[{Find\+Node}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Node}$\ast$ Find\+Node (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\+Service} \&}]{addr}
+\end{DoxyParamCaption}
+)}\label{net_8cpp_aaef21dfcc9b267d3f4e698d7c2b60eed}
+\hypertarget{net_8cpp_af6d341a24d761a509fca026458cf2f72}{}\index{net.\+cpp@{net.\+cpp}!Get\+Listen\+Port@{Get\+Listen\+Port}}
+\index{Get\+Listen\+Port@{Get\+Listen\+Port}!net.\+cpp@{net.\+cpp}}
+\subsubsection[{Get\+Listen\+Port}]{\setlength{\rightskip}{0pt plus 5cm}unsigned short Get\+Listen\+Port (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{net_8cpp_af6d341a24d761a509fca026458cf2f72}
+\hypertarget{net_8cpp_a51605827c953a7843f9b165eada26857}{}\index{net.\+cpp@{net.\+cpp}!Get\+Local@{Get\+Local}}
+\index{Get\+Local@{Get\+Local}!net.\+cpp@{net.\+cpp}}
+\subsubsection[{Get\+Local}]{\setlength{\rightskip}{0pt plus 5cm}bool Get\+Local (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Service} \&}]{addr, }
+\item[{const {\bf C\+Net\+Addr} $\ast$}]{paddr\+Peer}
+\end{DoxyParamCaption}
+)}\label{net_8cpp_a51605827c953a7843f9b165eada26857}
+\hypertarget{net_8cpp_a66f5f0bc1dad5cfe429157d5637a93dc}{}\index{net.\+cpp@{net.\+cpp}!Get\+Local\+Address@{Get\+Local\+Address}}
+\index{Get\+Local\+Address@{Get\+Local\+Address}!net.\+cpp@{net.\+cpp}}
+\subsubsection[{Get\+Local\+Address}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Address} Get\+Local\+Address (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\+Net\+Addr} $\ast$}]{paddr\+Peer}
+\end{DoxyParamCaption}
+)}\label{net_8cpp_a66f5f0bc1dad5cfe429157d5637a93dc}
+\hypertarget{net_8cpp_a475f2fc7d8f5cd7511db253cae8fe28a}{}\index{net.\+cpp@{net.\+cpp}!Get\+Node\+Signals@{Get\+Node\+Signals}}
+\index{Get\+Node\+Signals@{Get\+Node\+Signals}!net.\+cpp@{net.\+cpp}}
+\subsubsection[{Get\+Node\+Signals}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Node\+Signals}\& Get\+Node\+Signals (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{net_8cpp_a475f2fc7d8f5cd7511db253cae8fe28a}
+\hypertarget{net_8cpp_afa6b10687ddaa84fa7ba65b83ad1f069}{}\index{net.\+cpp@{net.\+cpp}!Getn\+Score@{Getn\+Score}}
+\index{Getn\+Score@{Getn\+Score}!net.\+cpp@{net.\+cpp}}
+\subsubsection[{Getn\+Score}]{\setlength{\rightskip}{0pt plus 5cm}int Getn\+Score (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\+Service} \&}]{addr}
+\end{DoxyParamCaption}
+)}\label{net_8cpp_afa6b10687ddaa84fa7ba65b83ad1f069}
+\hypertarget{net_8cpp_a96eb2fba6d80870802ac787b6ada4beb}{}\index{net.\+cpp@{net.\+cpp}!Is\+Limited@{Is\+Limited}}
+\index{Is\+Limited@{Is\+Limited}!net.\+cpp@{net.\+cpp}}
+\subsubsection[{Is\+Limited}]{\setlength{\rightskip}{0pt plus 5cm}bool Is\+Limited (
+\begin{DoxyParamCaption}
+\item[{enum {\bf Network}}]{net}
+\end{DoxyParamCaption}
+)}\label{net_8cpp_a96eb2fba6d80870802ac787b6ada4beb}
+\hypertarget{net_8cpp_a7f5f5a0bf934e49c7137ee4aa6eb8732}{}\index{net.\+cpp@{net.\+cpp}!Is\+Limited@{Is\+Limited}}
+\index{Is\+Limited@{Is\+Limited}!net.\+cpp@{net.\+cpp}}
+\subsubsection[{Is\+Limited}]{\setlength{\rightskip}{0pt plus 5cm}bool Is\+Limited (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\+Net\+Addr} \&}]{addr}
+\end{DoxyParamCaption}
+)}\label{net_8cpp_a7f5f5a0bf934e49c7137ee4aa6eb8732}
+\hypertarget{net_8cpp_a16fa1bd4d34c4c29c90903fc3cdf7517}{}\index{net.\+cpp@{net.\+cpp}!Is\+Local@{Is\+Local}}
+\index{Is\+Local@{Is\+Local}!net.\+cpp@{net.\+cpp}}
+\subsubsection[{Is\+Local}]{\setlength{\rightskip}{0pt plus 5cm}bool Is\+Local (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\+Service} \&}]{addr}
+\end{DoxyParamCaption}
+)}\label{net_8cpp_a16fa1bd4d34c4c29c90903fc3cdf7517}
+check whether a given address is potentially local \hypertarget{net_8cpp_a058b75c6fcc94a0643184c237ad6de93}{}\index{net.\+cpp@{net.\+cpp}!Is\+Peer\+Addr\+Local\+Good@{Is\+Peer\+Addr\+Local\+Good}}
+\index{Is\+Peer\+Addr\+Local\+Good@{Is\+Peer\+Addr\+Local\+Good}!net.\+cpp@{net.\+cpp}}
+\subsubsection[{Is\+Peer\+Addr\+Local\+Good}]{\setlength{\rightskip}{0pt plus 5cm}bool Is\+Peer\+Addr\+Local\+Good (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Node} $\ast$}]{pnode}
+\end{DoxyParamCaption}
+)}\label{net_8cpp_a058b75c6fcc94a0643184c237ad6de93}
+\hypertarget{net_8cpp_af6de8e47b01a96206402ddef734114f2}{}\index{net.\+cpp@{net.\+cpp}!Is\+Reachable@{Is\+Reachable}}
+\index{Is\+Reachable@{Is\+Reachable}!net.\+cpp@{net.\+cpp}}
+\subsubsection[{Is\+Reachable}]{\setlength{\rightskip}{0pt plus 5cm}bool Is\+Reachable (
+\begin{DoxyParamCaption}
+\item[{enum {\bf Network}}]{net}
+\end{DoxyParamCaption}
+)}\label{net_8cpp_af6de8e47b01a96206402ddef734114f2}
+check whether a given network is one we can probably connect to \hypertarget{net_8cpp_a0eb7db987ad1a1bf139d0cd46873ed29}{}\index{net.\+cpp@{net.\+cpp}!Is\+Reachable@{Is\+Reachable}}
+\index{Is\+Reachable@{Is\+Reachable}!net.\+cpp@{net.\+cpp}}
+\subsubsection[{Is\+Reachable}]{\setlength{\rightskip}{0pt plus 5cm}bool Is\+Reachable (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\+Net\+Addr} \&}]{addr}
+\end{DoxyParamCaption}
+)}\label{net_8cpp_a0eb7db987ad1a1bf139d0cd46873ed29}
+check whether a given address is in a network we can probably connect to \hypertarget{net_8cpp_a93e4e6fbe288b6e882e697918695f88e}{}\index{net.\+cpp@{net.\+cpp}!Map\+Port@{Map\+Port}}
+\index{Map\+Port@{Map\+Port}!net.\+cpp@{net.\+cpp}}
+\subsubsection[{Map\+Port}]{\setlength{\rightskip}{0pt plus 5cm}void Map\+Port (
+\begin{DoxyParamCaption}
+\item[{bool}]{}
+\end{DoxyParamCaption}
+)}\label{net_8cpp_a93e4e6fbe288b6e882e697918695f88e}
+\hypertarget{net_8cpp_ae2bcee201d33de468678ed615de41436}{}\index{net.\+cpp@{net.\+cpp}!Open\+Network\+Connection@{Open\+Network\+Connection}}
+\index{Open\+Network\+Connection@{Open\+Network\+Connection}!net.\+cpp@{net.\+cpp}}
+\subsubsection[{Open\+Network\+Connection}]{\setlength{\rightskip}{0pt plus 5cm}bool Open\+Network\+Connection (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\+Address} \&}]{addr\+Connect, }
+\item[{{\bf C\+Semaphore\+Grant} $\ast$}]{grant\+Outbound, }
+\item[{const char $\ast$}]{psz\+Dest, }
+\item[{bool}]{f\+One\+Shot}
+\end{DoxyParamCaption}
+)}\label{net_8cpp_ae2bcee201d33de468678ed615de41436}
+\hypertarget{net_8cpp_a7b020b8dc4437a88cf92570b82c55f25}{}\index{net.\+cpp@{net.\+cpp}!Receive\+Flood\+Size@{Receive\+Flood\+Size}}
+\index{Receive\+Flood\+Size@{Receive\+Flood\+Size}!net.\+cpp@{net.\+cpp}}
+\subsubsection[{Receive\+Flood\+Size}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Receive\+Flood\+Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{net_8cpp_a7b020b8dc4437a88cf92570b82c55f25}
+\hypertarget{net_8cpp_a35036853878d9ce5de4e386dcdba612d}{}\index{net.\+cpp@{net.\+cpp}!Relay\+Transaction@{Relay\+Transaction}}
+\index{Relay\+Transaction@{Relay\+Transaction}!net.\+cpp@{net.\+cpp}}
+\subsubsection[{Relay\+Transaction}]{\setlength{\rightskip}{0pt plus 5cm}void Relay\+Transaction (
+\begin{DoxyParamCaption}
+\item[{const C\+Transaction \&}]{tx}
+\end{DoxyParamCaption}
+)}\label{net_8cpp_a35036853878d9ce5de4e386dcdba612d}
+\hypertarget{net_8cpp_a9b1fd21b29b86ead3587731eeaf7b42c}{}\index{net.\+cpp@{net.\+cpp}!Relay\+Transaction@{Relay\+Transaction}}
+\index{Relay\+Transaction@{Relay\+Transaction}!net.\+cpp@{net.\+cpp}}
+\subsubsection[{Relay\+Transaction}]{\setlength{\rightskip}{0pt plus 5cm}void Relay\+Transaction (
+\begin{DoxyParamCaption}
+\item[{const C\+Transaction \&}]{tx, }
+\item[{const {\bf C\+Data\+Stream} \&}]{ss}
+\end{DoxyParamCaption}
+)}\label{net_8cpp_a9b1fd21b29b86ead3587731eeaf7b42c}
+\hypertarget{net_8cpp_af7487aacfc9d708b3db40c255ec070a8}{}\index{net.\+cpp@{net.\+cpp}!Seen\+Local@{Seen\+Local}}
+\index{Seen\+Local@{Seen\+Local}!net.\+cpp@{net.\+cpp}}
+\subsubsection[{Seen\+Local}]{\setlength{\rightskip}{0pt plus 5cm}bool Seen\+Local (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\+Service} \&}]{addr}
+\end{DoxyParamCaption}
+)}\label{net_8cpp_af7487aacfc9d708b3db40c255ec070a8}
+vote for a local address \hypertarget{net_8cpp_a13f289d6233bd32b78a38793f76bdccb}{}\index{net.\+cpp@{net.\+cpp}!Send\+Buffer\+Size@{Send\+Buffer\+Size}}
+\index{Send\+Buffer\+Size@{Send\+Buffer\+Size}!net.\+cpp@{net.\+cpp}}
+\subsubsection[{Send\+Buffer\+Size}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Send\+Buffer\+Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{net_8cpp_a13f289d6233bd32b78a38793f76bdccb}
+\hypertarget{net_8cpp_a2f6d62a9d456bf38003df3815b707f46}{}\index{net.\+cpp@{net.\+cpp}!Set\+Limited@{Set\+Limited}}
+\index{Set\+Limited@{Set\+Limited}!net.\+cpp@{net.\+cpp}}
+\subsubsection[{Set\+Limited}]{\setlength{\rightskip}{0pt plus 5cm}void Set\+Limited (
+\begin{DoxyParamCaption}
+\item[{enum {\bf Network}}]{net, }
+\item[{bool}]{f\+Limited}
+\end{DoxyParamCaption}
+)}\label{net_8cpp_a2f6d62a9d456bf38003df3815b707f46}
+Make a particular network entirely off-\/limits (no automatic connects to it) \hypertarget{net_8cpp_a89098b55df7d627a7a3c7f367cae24e6}{}\index{net.\+cpp@{net.\+cpp}!Set\+Reachable@{Set\+Reachable}}
+\index{Set\+Reachable@{Set\+Reachable}!net.\+cpp@{net.\+cpp}}
+\subsubsection[{Set\+Reachable}]{\setlength{\rightskip}{0pt plus 5cm}void Set\+Reachable (
+\begin{DoxyParamCaption}
+\item[{enum {\bf Network}}]{net, }
+\item[{bool}]{f\+Flag}
+\end{DoxyParamCaption}
+)}\label{net_8cpp_a89098b55df7d627a7a3c7f367cae24e6}
+\hypertarget{net_8cpp_aff6b7f2f213ce1e8d3aea65c41c99cb8}{}\index{net.\+cpp@{net.\+cpp}!Socket\+Send\+Data@{Socket\+Send\+Data}}
+\index{Socket\+Send\+Data@{Socket\+Send\+Data}!net.\+cpp@{net.\+cpp}}
+\subsubsection[{Socket\+Send\+Data}]{\setlength{\rightskip}{0pt plus 5cm}void Socket\+Send\+Data (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Node} $\ast$}]{pnode}
+\end{DoxyParamCaption}
+)}\label{net_8cpp_aff6b7f2f213ce1e8d3aea65c41c99cb8}
+\hypertarget{net_8cpp_a9396d8054e8f74959e9391871aaddde0}{}\index{net.\+cpp@{net.\+cpp}!Start\+Node@{Start\+Node}}
+\index{Start\+Node@{Start\+Node}!net.\+cpp@{net.\+cpp}}
+\subsubsection[{Start\+Node}]{\setlength{\rightskip}{0pt plus 5cm}void Start\+Node (
+\begin{DoxyParamCaption}
+\item[{boost\+::thread\+\_\+group \&}]{thread\+Group}
+\end{DoxyParamCaption}
+)}\label{net_8cpp_a9396d8054e8f74959e9391871aaddde0}
+\hypertarget{net_8cpp_ac9110488f45c160d58f3c7ab7197bcea}{}\index{net.\+cpp@{net.\+cpp}!Stop\+Node@{Stop\+Node}}
+\index{Stop\+Node@{Stop\+Node}!net.\+cpp@{net.\+cpp}}
+\subsubsection[{Stop\+Node}]{\setlength{\rightskip}{0pt plus 5cm}bool Stop\+Node (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{net_8cpp_ac9110488f45c160d58f3c7ab7197bcea}
+\hypertarget{net_8cpp_ab2d8883b5524ec7b80d3b9535e73a3ed}{}\index{net.\+cpp@{net.\+cpp}!Thread\+D\+N\+S\+Address\+Seed@{Thread\+D\+N\+S\+Address\+Seed}}
+\index{Thread\+D\+N\+S\+Address\+Seed@{Thread\+D\+N\+S\+Address\+Seed}!net.\+cpp@{net.\+cpp}}
+\subsubsection[{Thread\+D\+N\+S\+Address\+Seed}]{\setlength{\rightskip}{0pt plus 5cm}void Thread\+D\+N\+S\+Address\+Seed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{net_8cpp_ab2d8883b5524ec7b80d3b9535e73a3ed}
+\hypertarget{net_8cpp_a379b0d3521bdd62ac296f219d70c4e30}{}\index{net.\+cpp@{net.\+cpp}!Thread\+Message\+Handler@{Thread\+Message\+Handler}}
+\index{Thread\+Message\+Handler@{Thread\+Message\+Handler}!net.\+cpp@{net.\+cpp}}
+\subsubsection[{Thread\+Message\+Handler}]{\setlength{\rightskip}{0pt plus 5cm}void Thread\+Message\+Handler (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{net_8cpp_a379b0d3521bdd62ac296f219d70c4e30}
+\hypertarget{net_8cpp_a2d1ca95557ae336582b886a251e7fe94}{}\index{net.\+cpp@{net.\+cpp}!Thread\+Open\+Added\+Connections@{Thread\+Open\+Added\+Connections}}
+\index{Thread\+Open\+Added\+Connections@{Thread\+Open\+Added\+Connections}!net.\+cpp@{net.\+cpp}}
+\subsubsection[{Thread\+Open\+Added\+Connections}]{\setlength{\rightskip}{0pt plus 5cm}void Thread\+Open\+Added\+Connections (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{net_8cpp_a2d1ca95557ae336582b886a251e7fe94}
+\hypertarget{net_8cpp_a3b4720330e61127963a43df26b80f804}{}\index{net.\+cpp@{net.\+cpp}!Thread\+Open\+Connections@{Thread\+Open\+Connections}}
+\index{Thread\+Open\+Connections@{Thread\+Open\+Connections}!net.\+cpp@{net.\+cpp}}
+\subsubsection[{Thread\+Open\+Connections}]{\setlength{\rightskip}{0pt plus 5cm}void Thread\+Open\+Connections (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{net_8cpp_a3b4720330e61127963a43df26b80f804}
+\hypertarget{net_8cpp_aa1111c12121e039bbd8eedb556e4514a}{}\index{net.\+cpp@{net.\+cpp}!Thread\+Socket\+Handler@{Thread\+Socket\+Handler}}
+\index{Thread\+Socket\+Handler@{Thread\+Socket\+Handler}!net.\+cpp@{net.\+cpp}}
+\subsubsection[{Thread\+Socket\+Handler}]{\setlength{\rightskip}{0pt plus 5cm}void Thread\+Socket\+Handler (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{net_8cpp_aa1111c12121e039bbd8eedb556e4514a}
+
+
+\subsection{Variable Documentation}
+\hypertarget{net_8cpp_ac575e3335fd15a19b567026491f8f01a}{}\index{net.\+cpp@{net.\+cpp}!addrman@{addrman}}
+\index{addrman@{addrman}!net.\+cpp@{net.\+cpp}}
+\subsubsection[{addrman}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Addr\+Man} addrman}\label{net_8cpp_ac575e3335fd15a19b567026491f8f01a}
+\hypertarget{net_8cpp_a62111271618110807cc534e55c13cb70}{}\index{net.\+cpp@{net.\+cpp}!cs\+\_\+map\+Local\+Host@{cs\+\_\+map\+Local\+Host}}
+\index{cs\+\_\+map\+Local\+Host@{cs\+\_\+map\+Local\+Host}!net.\+cpp@{net.\+cpp}}
+\subsubsection[{cs\+\_\+map\+Local\+Host}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Critical\+Section} cs\+\_\+map\+Local\+Host}\label{net_8cpp_a62111271618110807cc534e55c13cb70}
+\hypertarget{net_8cpp_ae1ed86ae54e13fe5f0ae1c12e48e3a0e}{}\index{net.\+cpp@{net.\+cpp}!cs\+\_\+map\+Relay@{cs\+\_\+map\+Relay}}
+\index{cs\+\_\+map\+Relay@{cs\+\_\+map\+Relay}!net.\+cpp@{net.\+cpp}}
+\subsubsection[{cs\+\_\+map\+Relay}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Critical\+Section} cs\+\_\+map\+Relay}\label{net_8cpp_ae1ed86ae54e13fe5f0ae1c12e48e3a0e}
+\hypertarget{net_8cpp_a96f4c71f3c36f02b7edbdf04117e0e8c}{}\index{net.\+cpp@{net.\+cpp}!cs\+\_\+n\+Last\+Node\+Id@{cs\+\_\+n\+Last\+Node\+Id}}
+\index{cs\+\_\+n\+Last\+Node\+Id@{cs\+\_\+n\+Last\+Node\+Id}!net.\+cpp@{net.\+cpp}}
+\subsubsection[{cs\+\_\+n\+Last\+Node\+Id}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Critical\+Section} cs\+\_\+n\+Last\+Node\+Id}\label{net_8cpp_a96f4c71f3c36f02b7edbdf04117e0e8c}
+\hypertarget{net_8cpp_a670309f2c43b90009fc727bf9ed3be37}{}\index{net.\+cpp@{net.\+cpp}!cs\+\_\+setserv\+Add\+Node\+Addresses@{cs\+\_\+setserv\+Add\+Node\+Addresses}}
+\index{cs\+\_\+setserv\+Add\+Node\+Addresses@{cs\+\_\+setserv\+Add\+Node\+Addresses}!net.\+cpp@{net.\+cpp}}
+\subsubsection[{cs\+\_\+setserv\+Add\+Node\+Addresses}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Critical\+Section} cs\+\_\+setserv\+Add\+Node\+Addresses}\label{net_8cpp_a670309f2c43b90009fc727bf9ed3be37}
+\hypertarget{net_8cpp_a899fdfda20966914780d1937d7ab47a3}{}\index{net.\+cpp@{net.\+cpp}!cs\+\_\+v\+Added\+Nodes@{cs\+\_\+v\+Added\+Nodes}}
+\index{cs\+\_\+v\+Added\+Nodes@{cs\+\_\+v\+Added\+Nodes}!net.\+cpp@{net.\+cpp}}
+\subsubsection[{cs\+\_\+v\+Added\+Nodes}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Critical\+Section} cs\+\_\+v\+Added\+Nodes}\label{net_8cpp_a899fdfda20966914780d1937d7ab47a3}
+\hypertarget{net_8cpp_a8282e3a7948351ac96516573cd31f9d0}{}\index{net.\+cpp@{net.\+cpp}!cs\+\_\+v\+Nodes@{cs\+\_\+v\+Nodes}}
+\index{cs\+\_\+v\+Nodes@{cs\+\_\+v\+Nodes}!net.\+cpp@{net.\+cpp}}
+\subsubsection[{cs\+\_\+v\+Nodes}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Critical\+Section} cs\+\_\+v\+Nodes}\label{net_8cpp_a8282e3a7948351ac96516573cd31f9d0}
+\hypertarget{net_8cpp_a0600e532fa61e857559ac0327d5a5324}{}\index{net.\+cpp@{net.\+cpp}!cs\+\_\+v\+One\+Shots@{cs\+\_\+v\+One\+Shots}}
+\index{cs\+\_\+v\+One\+Shots@{cs\+\_\+v\+One\+Shots}!net.\+cpp@{net.\+cpp}}
+\subsubsection[{cs\+\_\+v\+One\+Shots}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Critical\+Section} cs\+\_\+v\+One\+Shots}\label{net_8cpp_a0600e532fa61e857559ac0327d5a5324}
+\hypertarget{net_8cpp_ac9dc57f371fefa8c8a63823b2d301f8d}{}\index{net.\+cpp@{net.\+cpp}!f\+Addresses\+Initialized@{f\+Addresses\+Initialized}}
+\index{f\+Addresses\+Initialized@{f\+Addresses\+Initialized}!net.\+cpp@{net.\+cpp}}
+\subsubsection[{f\+Addresses\+Initialized}]{\setlength{\rightskip}{0pt plus 5cm}bool f\+Addresses\+Initialized = false}\label{net_8cpp_ac9dc57f371fefa8c8a63823b2d301f8d}
+\hypertarget{net_8cpp_a37089835ec27ad8bf945a458708165b9}{}\index{net.\+cpp@{net.\+cpp}!f\+Discover@{f\+Discover}}
+\index{f\+Discover@{f\+Discover}!net.\+cpp@{net.\+cpp}}
+\subsubsection[{f\+Discover}]{\setlength{\rightskip}{0pt plus 5cm}bool f\+Discover = true}\label{net_8cpp_a37089835ec27ad8bf945a458708165b9}
+\hypertarget{net_8cpp_a5067f8b9215406011fa3461be92d819c}{}\index{net.\+cpp@{net.\+cpp}!f\+Listen@{f\+Listen}}
+\index{f\+Listen@{f\+Listen}!net.\+cpp@{net.\+cpp}}
+\subsubsection[{f\+Listen}]{\setlength{\rightskip}{0pt plus 5cm}bool f\+Listen = true}\label{net_8cpp_a5067f8b9215406011fa3461be92d819c}
+\hypertarget{net_8cpp_ae560d3fdf794873af9a1212644985fdd}{}\index{net.\+cpp@{net.\+cpp}!instance\+\_\+of\+\_\+cnetcleanup@{instance\+\_\+of\+\_\+cnetcleanup}}
+\index{instance\+\_\+of\+\_\+cnetcleanup@{instance\+\_\+of\+\_\+cnetcleanup}!net.\+cpp@{net.\+cpp}}
+\subsubsection[{instance\+\_\+of\+\_\+cnetcleanup}]{\setlength{\rightskip}{0pt plus 5cm}class {\bf C\+Net\+Cleanup}
+ instance\+\_\+of\+\_\+cnetcleanup}\label{net_8cpp_ae560d3fdf794873af9a1212644985fdd}
+\hypertarget{net_8cpp_a3ca4c22748ec77e179461ce20bcc4e8f}{}\index{net.\+cpp@{net.\+cpp}!map\+Already\+Asked\+For@{map\+Already\+Asked\+For}}
+\index{map\+Already\+Asked\+For@{map\+Already\+Asked\+For}!net.\+cpp@{net.\+cpp}}
+\subsubsection[{map\+Already\+Asked\+For}]{\setlength{\rightskip}{0pt plus 5cm}{\bf limitedmap}$<${\bf C\+Inv}, int64\+\_\+t$>$ map\+Already\+Asked\+For(M\+A\+X\+\_\+\+I\+N\+V\+\_\+\+S\+Z)}\label{net_8cpp_a3ca4c22748ec77e179461ce20bcc4e8f}
+\hypertarget{net_8cpp_ac585e737c081ba921335070264a93a79}{}\index{net.\+cpp@{net.\+cpp}!map\+Local\+Host@{map\+Local\+Host}}
+\index{map\+Local\+Host@{map\+Local\+Host}!net.\+cpp@{net.\+cpp}}
+\subsubsection[{map\+Local\+Host}]{\setlength{\rightskip}{0pt plus 5cm}map$<${\bf C\+Net\+Addr}, {\bf Local\+Service\+Info}$>$ map\+Local\+Host}\label{net_8cpp_ac585e737c081ba921335070264a93a79}
+\hypertarget{net_8cpp_a2c9eaa799e02fdf8a5c52eb9a5f750f6}{}\index{net.\+cpp@{net.\+cpp}!map\+Relay@{map\+Relay}}
+\index{map\+Relay@{map\+Relay}!net.\+cpp@{net.\+cpp}}
+\subsubsection[{map\+Relay}]{\setlength{\rightskip}{0pt plus 5cm}map$<${\bf C\+Inv}, {\bf C\+Data\+Stream}$>$ map\+Relay}\label{net_8cpp_a2c9eaa799e02fdf8a5c52eb9a5f750f6}
+\hypertarget{net_8cpp_aaac6c79794fcfc2d7f583ee12650f27f}{}\index{net.\+cpp@{net.\+cpp}!message\+Handler\+Condition@{message\+Handler\+Condition}}
+\index{message\+Handler\+Condition@{message\+Handler\+Condition}!net.\+cpp@{net.\+cpp}}
+\subsubsection[{message\+Handler\+Condition}]{\setlength{\rightskip}{0pt plus 5cm}boost\+::condition\+\_\+variable message\+Handler\+Condition}\label{net_8cpp_aaac6c79794fcfc2d7f583ee12650f27f}
+\hypertarget{net_8cpp_a5232bdb878735fcc15a65c964f29f2b7}{}\index{net.\+cpp@{net.\+cpp}!n\+Last\+Node\+Id@{n\+Last\+Node\+Id}}
+\index{n\+Last\+Node\+Id@{n\+Last\+Node\+Id}!net.\+cpp@{net.\+cpp}}
+\subsubsection[{n\+Last\+Node\+Id}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Node\+Id} n\+Last\+Node\+Id = 0}\label{net_8cpp_a5232bdb878735fcc15a65c964f29f2b7}
+\hypertarget{net_8cpp_a8c1a78575c0e397b5af7e6b4cc4493f2}{}\index{net.\+cpp@{net.\+cpp}!n\+Local\+Host\+Nonce@{n\+Local\+Host\+Nonce}}
+\index{n\+Local\+Host\+Nonce@{n\+Local\+Host\+Nonce}!net.\+cpp@{net.\+cpp}}
+\subsubsection[{n\+Local\+Host\+Nonce}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t n\+Local\+Host\+Nonce = 0}\label{net_8cpp_a8c1a78575c0e397b5af7e6b4cc4493f2}
+\hypertarget{net_8cpp_aac7a5df09042b8fc16272947ca022c2c}{}\index{net.\+cpp@{net.\+cpp}!n\+Local\+Services@{n\+Local\+Services}}
+\index{n\+Local\+Services@{n\+Local\+Services}!net.\+cpp@{net.\+cpp}}
+\subsubsection[{n\+Local\+Services}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t n\+Local\+Services = {\bf N\+O\+D\+E\+\_\+\+N\+E\+T\+W\+O\+R\+K}}\label{net_8cpp_aac7a5df09042b8fc16272947ca022c2c}
+\hypertarget{net_8cpp_ac6a6856c007126a1119dd879120e12a7}{}\index{net.\+cpp@{net.\+cpp}!n\+Max\+Connections@{n\+Max\+Connections}}
+\index{n\+Max\+Connections@{n\+Max\+Connections}!net.\+cpp@{net.\+cpp}}
+\subsubsection[{n\+Max\+Connections}]{\setlength{\rightskip}{0pt plus 5cm}int n\+Max\+Connections = 125}\label{net_8cpp_ac6a6856c007126a1119dd879120e12a7}
+\hypertarget{net_8cpp_adfc6e2c8b106da3807ca34d27577b37e}{}\index{net.\+cpp@{net.\+cpp}!setserv\+Add\+Node\+Addresses@{setserv\+Add\+Node\+Addresses}}
+\index{setserv\+Add\+Node\+Addresses@{setserv\+Add\+Node\+Addresses}!net.\+cpp@{net.\+cpp}}
+\subsubsection[{setserv\+Add\+Node\+Addresses}]{\setlength{\rightskip}{0pt plus 5cm}set$<${\bf C\+Net\+Addr}$>$ setserv\+Add\+Node\+Addresses}\label{net_8cpp_adfc6e2c8b106da3807ca34d27577b37e}
+\hypertarget{net_8cpp_aea576e413065756784b47d68d5051f72}{}\index{net.\+cpp@{net.\+cpp}!v\+Added\+Nodes@{v\+Added\+Nodes}}
+\index{v\+Added\+Nodes@{v\+Added\+Nodes}!net.\+cpp@{net.\+cpp}}
+\subsubsection[{v\+Added\+Nodes}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$std\+::string$>$ v\+Added\+Nodes}\label{net_8cpp_aea576e413065756784b47d68d5051f72}
+\hypertarget{net_8cpp_aa5a11f8873e230cea77bc7e91ee51918}{}\index{net.\+cpp@{net.\+cpp}!v\+Nodes@{v\+Nodes}}
+\index{v\+Nodes@{v\+Nodes}!net.\+cpp@{net.\+cpp}}
+\subsubsection[{v\+Nodes}]{\setlength{\rightskip}{0pt plus 5cm}vector$<${\bf C\+Node}$\ast$$>$ v\+Nodes}\label{net_8cpp_aa5a11f8873e230cea77bc7e91ee51918}
+\hypertarget{net_8cpp_aebaeae1f0ac40d20a7aa3dd851176ae8}{}\index{net.\+cpp@{net.\+cpp}!v\+Relay\+Expiration@{v\+Relay\+Expiration}}
+\index{v\+Relay\+Expiration@{v\+Relay\+Expiration}!net.\+cpp@{net.\+cpp}}
+\subsubsection[{v\+Relay\+Expiration}]{\setlength{\rightskip}{0pt plus 5cm}deque$<$pair$<$int64\+\_\+t, {\bf C\+Inv}$>$ $>$ v\+Relay\+Expiration}\label{net_8cpp_aebaeae1f0ac40d20a7aa3dd851176ae8}

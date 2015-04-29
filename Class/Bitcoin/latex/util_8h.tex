@@ -1,0 +1,514 @@
+\hypertarget{util_8h}{}\section{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/util.h File Reference}
+\label{util_8h}\index{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/util.\+h@{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/util.\+h}}
+{\ttfamily \#include \char`\"{}compat.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}tinyformat.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utiltime.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$exception$>$}\\*
+{\ttfamily \#include $<$map$>$}\\*
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include $<$boost/filesystem/path.\+hpp$>$}\\*
+{\ttfamily \#include $<$boost/thread/exceptions.\+hpp$>$}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{util_8h_afc02c0a4258fedfb316be612bb659ba8}{Log\+Printf}(...)~Log\+Print(N\+U\+L\+L, \+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+)
+\item 
+\#define \hyperlink{util_8h_a0ffe181147a216a8a4f51d8ebf5bd1eb}{M\+A\+K\+E\+\_\+\+E\+R\+R\+O\+R\+\_\+\+A\+N\+D\+\_\+\+L\+O\+G\+\_\+\+F\+U\+N\+C}(n)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{util_8h_a9ed616020f4ef9b1a261b222bbec78e2}{Setup\+Environment} ()
+\item 
+bool \hyperlink{util_8h_a343d2a13efe00125f78d25dafb0a8d98}{Log\+Accept\+Category} (const char $\ast$category)
+\item 
+int \hyperlink{util_8h_afd4c3002b2797c0560adddb6af3ca1da}{Log\+Print\+Str} (const std\+::string \&str)
+\item 
+void \hyperlink{util_8h_aaada8c5faa502eb0c33fc01294955db8}{Print\+Exception\+Continue} (const std\+::exception $\ast$pex, const char $\ast$psz\+Thread)
+\item 
+void \hyperlink{util_8h_a4cfc6f116964c12bc24442828c2da007}{Parse\+Parameters} (int argc, const char $\ast$const argv\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{util_8h_a7572b77c2a5191de8d40d4050322ab84}{File\+Commit} (F\+I\+L\+E $\ast$fileout)
+\item 
+bool \hyperlink{util_8h_acb8d6b822bc1bfa609bf43bbac1a0d44}{Truncate\+File} (F\+I\+L\+E $\ast$file, unsigned int length)
+\item 
+int \hyperlink{util_8h_a756a5c49a4bb607d16d9842f8f3ede4f}{Raise\+File\+Descriptor\+Limit} (int n\+Min\+F\+D)
+\item 
+void \hyperlink{util_8h_a91c763bffc49cf7ed8d45cc44870e55c}{Allocate\+File\+Range} (F\+I\+L\+E $\ast$file, unsigned int offset, unsigned int length)
+\item 
+bool \hyperlink{util_8h_ad8f8509a84cc6f53344a5ac76369c327}{Rename\+Over} (boost\+::filesystem\+::path src, boost\+::filesystem\+::path dest)
+\item 
+bool \hyperlink{util_8h_a4458ca67cacd593b21c8e1386d192064}{Try\+Create\+Directory} (const boost\+::filesystem\+::path \&p)
+\item 
+boost\+::filesystem\+::path \hyperlink{util_8h_ab272995de020a3bcbf743be630e485c6}{Get\+Default\+Data\+Dir} ()
+\item 
+const boost\+::filesystem\+::path \& \hyperlink{util_8h_a0d247b470b387d7cd3f039bd26166007}{Get\+Data\+Dir} (bool f\+Net\+Specific=true)
+\item 
+void \hyperlink{util_8h_abfb50dfe077aced7591f2aba601f605d}{Clear\+Datadir\+Cache} ()
+\item 
+boost\+::filesystem\+::path \hyperlink{util_8h_a7d86fadf98dfaba55f80b9be0ab0f978}{Get\+Config\+File} ()
+\item 
+boost\+::filesystem\+::path \hyperlink{util_8h_a91d2f3eb3a1bb92ab4eb1bd4b713a99e}{Get\+Pid\+File} ()
+\item 
+void \hyperlink{util_8h_a0ec1d8fc76760232b016335fdcf7c539}{Create\+Pid\+File} (const boost\+::filesystem\+::path \&path, pid\+\_\+t pid)
+\item 
+void \hyperlink{util_8h_a9e585b4be467fe1d3ee978214ceff5d2}{Read\+Config\+File} (std\+::map$<$ std\+::string, std\+::string $>$ \&map\+Settings\+Ret, std\+::map$<$ std\+::string, std\+::vector$<$ std\+::string $>$ $>$ \&map\+Multi\+Settings\+Ret)
+\item 
+boost\+::filesystem\+::path \hyperlink{util_8h_a8d9f92dcc9935f1f69cbfc5c3404fad3}{Get\+Temp\+Path} ()
+\item 
+void \hyperlink{util_8h_a37fca7e305fe0caa306b23fdb37f88e2}{Shrink\+Debug\+File} ()
+\item 
+void \hyperlink{util_8h_adf94c00a5ac719c92a2f1bb2f8b2167f}{run\+Command} (std\+::string str\+Command)
+\item 
+bool \hyperlink{util_8h_ac0165e18ce3be89a2e0731e27d54b478}{Is\+Switch\+Char} (char c)
+\item 
+std\+::string \hyperlink{util_8h_a24f685720bf40370e5bd2a192ad50cd8}{Get\+Arg} (const std\+::string \&str\+Arg, const std\+::string \&str\+Default)
+\item 
+int64\+\_\+t \hyperlink{util_8h_a1bade4f0fca4498b4911abdbe4227dc4}{Get\+Arg} (const std\+::string \&str\+Arg, int64\+\_\+t n\+Default)
+\item 
+bool \hyperlink{util_8h_a64d956f1dda7f9a80ab5d594532b906d}{Get\+Bool\+Arg} (const std\+::string \&str\+Arg, bool f\+Default)
+\item 
+bool \hyperlink{util_8h_a9d94ca9f7c1496626992d1873e3f69df}{Soft\+Set\+Arg} (const std\+::string \&str\+Arg, const std\+::string \&str\+Value)
+\item 
+bool \hyperlink{util_8h_acb3060cad083d342898b6055e43692ae}{Soft\+Set\+Bool\+Arg} (const std\+::string \&str\+Arg, bool f\+Value)
+\item 
+std\+::string \hyperlink{util_8h_aae6ceac1cd94a0e700783c733e60e970}{Help\+Message\+Group} (const std\+::string \&message)
+\item 
+std\+::string \hyperlink{util_8h_aec85bcd561766ad0362a8fc5cd4a8542}{Help\+Message\+Opt} (const std\+::string \&option, const std\+::string \&message)
+\item 
+void \hyperlink{util_8h_a8d620b8c9865456b925cd0eea4b2ffc1}{Set\+Thread\+Priority} (int n\+Priority)
+\item 
+void \hyperlink{util_8h_a85fc1244e0bd3c91ee7a1c05ed10ebbb}{Rename\+Thread} (const char $\ast$\hyperlink{rest_8cpp_a8f8f80d37794cde9472343e4487ba3eb}{name})
+\item 
+{\footnotesize template$<$typename Callable $>$ }\\void \hyperlink{util_8h_ac6be85b683de5d9b41dc3046e50d6acd}{Loop\+Forever} (const char $\ast$\hyperlink{rest_8cpp_a8f8f80d37794cde9472343e4487ba3eb}{name}, Callable func, int64\+\_\+t msecs)
+\item 
+{\footnotesize template$<$typename Callable $>$ }\\void \hyperlink{util_8h_ac481a378af0229bf71e3d9fee7b938ad}{Trace\+Thread} (const char $\ast$\hyperlink{rest_8cpp_a8f8f80d37794cde9472343e4487ba3eb}{name}, Callable func)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ std\+::string, std\+::string $>$ \hyperlink{util_8h_ac6e877d09800ef2f6ed5b4ddee4a202c}{map\+Args}
+\item 
+std\+::map$<$ std\+::string, std\+::vector$<$ std\+::string $>$ $>$ \hyperlink{util_8h_ad1aaac805f4fdc2da7dddf5aafaa8bac}{map\+Multi\+Args}
+\item 
+bool \hyperlink{util_8h_a2ba7badc843121dde40a6f109d224a42}{f\+Debug}
+\item 
+bool \hyperlink{util_8h_a9d6b03a0dcc515a84e620794e64b9547}{f\+Print\+To\+Console}
+\item 
+bool \hyperlink{util_8h_ae1c7830d95f75ba35fbc6bfa50509913}{f\+Print\+To\+Debug\+Log}
+\item 
+bool \hyperlink{util_8h_a2839c7c01ad9d90fbd3ce55d32b50c6f}{f\+Server}
+\item 
+std\+::string \hyperlink{util_8h_a41393eb45547527ac7cdaede34ab701e}{str\+Misc\+Warning}
+\item 
+bool \hyperlink{util_8h_aa5e7caf6936a9a94eb088f04bcc62b97}{f\+Log\+Timestamps}
+\item 
+bool \hyperlink{util_8h_a8e02420c2f7c53579ccb90acf301ae75}{f\+Log\+I\+Ps}
+\item 
+volatile bool \hyperlink{util_8h_aad5e5c200c78bd5bdec18c8707e63822}{f\+Reopen\+Debug\+Log}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{util_8h_afc02c0a4258fedfb316be612bb659ba8}{}\index{util.\+h@{util.\+h}!Log\+Printf@{Log\+Printf}}
+\index{Log\+Printf@{Log\+Printf}!util.\+h@{util.\+h}}
+\subsubsection[{Log\+Printf}]{\setlength{\rightskip}{0pt plus 5cm}\#define Log\+Printf(
+\begin{DoxyParamCaption}
+\item[{}]{...}
+\end{DoxyParamCaption}
+)~Log\+Print(N\+U\+L\+L, \+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+)}\label{util_8h_afc02c0a4258fedfb316be612bb659ba8}
+\hypertarget{util_8h_a0ffe181147a216a8a4f51d8ebf5bd1eb}{}\index{util.\+h@{util.\+h}!M\+A\+K\+E\+\_\+\+E\+R\+R\+O\+R\+\_\+\+A\+N\+D\+\_\+\+L\+O\+G\+\_\+\+F\+U\+N\+C@{M\+A\+K\+E\+\_\+\+E\+R\+R\+O\+R\+\_\+\+A\+N\+D\+\_\+\+L\+O\+G\+\_\+\+F\+U\+N\+C}}
+\index{M\+A\+K\+E\+\_\+\+E\+R\+R\+O\+R\+\_\+\+A\+N\+D\+\_\+\+L\+O\+G\+\_\+\+F\+U\+N\+C@{M\+A\+K\+E\+\_\+\+E\+R\+R\+O\+R\+\_\+\+A\+N\+D\+\_\+\+L\+O\+G\+\_\+\+F\+U\+N\+C}!util.\+h@{util.\+h}}
+\subsubsection[{M\+A\+K\+E\+\_\+\+E\+R\+R\+O\+R\+\_\+\+A\+N\+D\+\_\+\+L\+O\+G\+\_\+\+F\+U\+N\+C}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+K\+E\+\_\+\+E\+R\+R\+O\+R\+\_\+\+A\+N\+D\+\_\+\+L\+O\+G\+\_\+\+F\+U\+N\+C(
+\begin{DoxyParamCaption}
+\item[{}]{n}
+\end{DoxyParamCaption}
+)}\label{util_8h_a0ffe181147a216a8a4f51d8ebf5bd1eb}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+ \(\backslash\)
+    template<TINYFORMAT\_ARGTYPES(n)>                                          \(\backslash\)
+    static \textcolor{keyword}{inline} \textcolor{keywordtype}{int} LogPrint(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* category, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* \hyperlink{namespacetinyformat_1_1detail_aa4b0590b3e34562c2d252a2086cec7ba}{format}, 
+      \hyperlink{tinyformat_8h_adc183998bebc5b1304836a3e1c1a15ef}{TINYFORMAT\_VARARGS}(n))  \(\backslash\)
+    \{                                                                         \(\backslash\)
+        if(!\hyperlink{util_8h_a343d2a13efe00125f78d25dafb0a8d98}{LogAcceptCategory}(category)) return 0;                            \(\backslash\)
+        return \hyperlink{util_8h_afd4c3002b2797c0560adddb6af3ca1da}{LogPrintStr}(\hyperlink{namespacetinyformat}{tfm}::format(format, \hyperlink{tinyformat_8h_a082db58a9dbf56ce60ecc8fa7041f640}{TINYFORMAT\_PASSARGS}(n))); \(\backslash\)
+    \}                                                                         \(\backslash\)                            
+                  \(\backslash\)
+    template<\hyperlink{tinyformat_8h_a3002f76b13b5ca71ddd6dbe1fbdfdd24}{TINYFORMAT\_ARGTYPES}(n)>                                          \(\backslash\)
+    static inline \textcolor{keywordtype}{bool} error(const \textcolor{keywordtype}{char}* format, \hyperlink{tinyformat_8h_adc183998bebc5b1304836a3e1c1a15ef}{TINYFORMAT\_VARARGS}(n))                  
+         \(\backslash\)
+    \{                                                                         \hyperlink{util_8h_afd4c3002b2797c0560adddb6af3ca1da}{\(\backslash\)}
+\hyperlink{util_8h_afd4c3002b2797c0560adddb6af3ca1da}{        LogPrintStr}(\textcolor{stringliteral}{"ERROR: "} + \hyperlink{namespacetinyformat_1_1detail_aa4b0590b3e34562c2d252a2086cec7ba}{tfm::format}(format, 
+      \hyperlink{tinyformat_8h_a082db58a9dbf56ce60ecc8fa7041f640}{TINYFORMAT\_PASSARGS}(n)) + \textcolor{stringliteral}{"\(\backslash\)n"}); \(\backslash\)
+        return \textcolor{keyword}{false};                                                         \(\backslash\)
+    \}
+\end{DoxyCode}
+When we switch to C++11, this can be switched to variadic templates instead of this macro-\/based construction (see \hyperlink{tinyformat_8h}{tinyformat.\+h}). 
+
+\subsection{Function Documentation}
+\hypertarget{util_8h_a91c763bffc49cf7ed8d45cc44870e55c}{}\index{util.\+h@{util.\+h}!Allocate\+File\+Range@{Allocate\+File\+Range}}
+\index{Allocate\+File\+Range@{Allocate\+File\+Range}!util.\+h@{util.\+h}}
+\subsubsection[{Allocate\+File\+Range}]{\setlength{\rightskip}{0pt plus 5cm}void Allocate\+File\+Range (
+\begin{DoxyParamCaption}
+\item[{F\+I\+L\+E $\ast$}]{file, }
+\item[{unsigned int}]{offset, }
+\item[{unsigned int}]{length}
+\end{DoxyParamCaption}
+)}\label{util_8h_a91c763bffc49cf7ed8d45cc44870e55c}
+this function tries to make a particular range of a file allocated (corresponding to disk space) it is advisory, and the range specified in the arguments will never contain live data \hypertarget{util_8h_abfb50dfe077aced7591f2aba601f605d}{}\index{util.\+h@{util.\+h}!Clear\+Datadir\+Cache@{Clear\+Datadir\+Cache}}
+\index{Clear\+Datadir\+Cache@{Clear\+Datadir\+Cache}!util.\+h@{util.\+h}}
+\subsubsection[{Clear\+Datadir\+Cache}]{\setlength{\rightskip}{0pt plus 5cm}void Clear\+Datadir\+Cache (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{util_8h_abfb50dfe077aced7591f2aba601f605d}
+\hypertarget{util_8h_a0ec1d8fc76760232b016335fdcf7c539}{}\index{util.\+h@{util.\+h}!Create\+Pid\+File@{Create\+Pid\+File}}
+\index{Create\+Pid\+File@{Create\+Pid\+File}!util.\+h@{util.\+h}}
+\subsubsection[{Create\+Pid\+File}]{\setlength{\rightskip}{0pt plus 5cm}void Create\+Pid\+File (
+\begin{DoxyParamCaption}
+\item[{const boost\+::filesystem\+::path \&}]{path, }
+\item[{pid\+\_\+t}]{pid}
+\end{DoxyParamCaption}
+)}\label{util_8h_a0ec1d8fc76760232b016335fdcf7c539}
+\hypertarget{util_8h_a7572b77c2a5191de8d40d4050322ab84}{}\index{util.\+h@{util.\+h}!File\+Commit@{File\+Commit}}
+\index{File\+Commit@{File\+Commit}!util.\+h@{util.\+h}}
+\subsubsection[{File\+Commit}]{\setlength{\rightskip}{0pt plus 5cm}void File\+Commit (
+\begin{DoxyParamCaption}
+\item[{F\+I\+L\+E $\ast$}]{fileout}
+\end{DoxyParamCaption}
+)}\label{util_8h_a7572b77c2a5191de8d40d4050322ab84}
+\hypertarget{util_8h_a24f685720bf40370e5bd2a192ad50cd8}{}\index{util.\+h@{util.\+h}!Get\+Arg@{Get\+Arg}}
+\index{Get\+Arg@{Get\+Arg}!util.\+h@{util.\+h}}
+\subsubsection[{Get\+Arg}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Get\+Arg (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{str\+Arg, }
+\item[{const std\+::string \&}]{str\+Default}
+\end{DoxyParamCaption}
+)}\label{util_8h_a24f685720bf40370e5bd2a192ad50cd8}
+Return string argument or default value
+
+
+\begin{DoxyParams}{Parameters}
+{\em str\+Arg} & Argument to get (e.\+g. \char`\"{}-\/foo\char`\"{}) \\
+\hline
+{\em default} & (e.\+g. \char`\"{}1\char`\"{}) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+command-\/line argument or default value 
+\end{DoxyReturn}
+\hypertarget{util_8h_a1bade4f0fca4498b4911abdbe4227dc4}{}\index{util.\+h@{util.\+h}!Get\+Arg@{Get\+Arg}}
+\index{Get\+Arg@{Get\+Arg}!util.\+h@{util.\+h}}
+\subsubsection[{Get\+Arg}]{\setlength{\rightskip}{0pt plus 5cm}int64\+\_\+t Get\+Arg (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{str\+Arg, }
+\item[{int64\+\_\+t}]{n\+Default}
+\end{DoxyParamCaption}
+)}\label{util_8h_a1bade4f0fca4498b4911abdbe4227dc4}
+Return integer argument or default value
+
+
+\begin{DoxyParams}{Parameters}
+{\em str\+Arg} & Argument to get (e.\+g. \char`\"{}-\/foo\char`\"{}) \\
+\hline
+{\em default} & (e.\+g. 1) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+command-\/line argument (0 if invalid number) or default value 
+\end{DoxyReturn}
+\hypertarget{util_8h_a64d956f1dda7f9a80ab5d594532b906d}{}\index{util.\+h@{util.\+h}!Get\+Bool\+Arg@{Get\+Bool\+Arg}}
+\index{Get\+Bool\+Arg@{Get\+Bool\+Arg}!util.\+h@{util.\+h}}
+\subsubsection[{Get\+Bool\+Arg}]{\setlength{\rightskip}{0pt plus 5cm}bool Get\+Bool\+Arg (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{str\+Arg, }
+\item[{bool}]{f\+Default}
+\end{DoxyParamCaption}
+)}\label{util_8h_a64d956f1dda7f9a80ab5d594532b906d}
+Return boolean argument or default value
+
+
+\begin{DoxyParams}{Parameters}
+{\em str\+Arg} & Argument to get (e.\+g. \char`\"{}-\/foo\char`\"{}) \\
+\hline
+{\em default} & (true or false) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+command-\/line argument or default value 
+\end{DoxyReturn}
+\hypertarget{util_8h_a7d86fadf98dfaba55f80b9be0ab0f978}{}\index{util.\+h@{util.\+h}!Get\+Config\+File@{Get\+Config\+File}}
+\index{Get\+Config\+File@{Get\+Config\+File}!util.\+h@{util.\+h}}
+\subsubsection[{Get\+Config\+File}]{\setlength{\rightskip}{0pt plus 5cm}boost\+::filesystem\+::path Get\+Config\+File (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{util_8h_a7d86fadf98dfaba55f80b9be0ab0f978}
+\hypertarget{util_8h_a0d247b470b387d7cd3f039bd26166007}{}\index{util.\+h@{util.\+h}!Get\+Data\+Dir@{Get\+Data\+Dir}}
+\index{Get\+Data\+Dir@{Get\+Data\+Dir}!util.\+h@{util.\+h}}
+\subsubsection[{Get\+Data\+Dir}]{\setlength{\rightskip}{0pt plus 5cm}const boost\+::filesystem\+::path\& Get\+Data\+Dir (
+\begin{DoxyParamCaption}
+\item[{bool}]{f\+Net\+Specific = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}\label{util_8h_a0d247b470b387d7cd3f039bd26166007}
+\hypertarget{util_8h_ab272995de020a3bcbf743be630e485c6}{}\index{util.\+h@{util.\+h}!Get\+Default\+Data\+Dir@{Get\+Default\+Data\+Dir}}
+\index{Get\+Default\+Data\+Dir@{Get\+Default\+Data\+Dir}!util.\+h@{util.\+h}}
+\subsubsection[{Get\+Default\+Data\+Dir}]{\setlength{\rightskip}{0pt plus 5cm}boost\+::filesystem\+::path Get\+Default\+Data\+Dir (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{util_8h_ab272995de020a3bcbf743be630e485c6}
+\hypertarget{util_8h_a91d2f3eb3a1bb92ab4eb1bd4b713a99e}{}\index{util.\+h@{util.\+h}!Get\+Pid\+File@{Get\+Pid\+File}}
+\index{Get\+Pid\+File@{Get\+Pid\+File}!util.\+h@{util.\+h}}
+\subsubsection[{Get\+Pid\+File}]{\setlength{\rightskip}{0pt plus 5cm}boost\+::filesystem\+::path Get\+Pid\+File (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{util_8h_a91d2f3eb3a1bb92ab4eb1bd4b713a99e}
+\hypertarget{util_8h_a8d9f92dcc9935f1f69cbfc5c3404fad3}{}\index{util.\+h@{util.\+h}!Get\+Temp\+Path@{Get\+Temp\+Path}}
+\index{Get\+Temp\+Path@{Get\+Temp\+Path}!util.\+h@{util.\+h}}
+\subsubsection[{Get\+Temp\+Path}]{\setlength{\rightskip}{0pt plus 5cm}boost\+::filesystem\+::path Get\+Temp\+Path (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{util_8h_a8d9f92dcc9935f1f69cbfc5c3404fad3}
+\hypertarget{util_8h_aae6ceac1cd94a0e700783c733e60e970}{}\index{util.\+h@{util.\+h}!Help\+Message\+Group@{Help\+Message\+Group}}
+\index{Help\+Message\+Group@{Help\+Message\+Group}!util.\+h@{util.\+h}}
+\subsubsection[{Help\+Message\+Group}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Help\+Message\+Group (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{message}
+\end{DoxyParamCaption}
+)}\label{util_8h_aae6ceac1cd94a0e700783c733e60e970}
+Format a string to be used as group of options in help messages
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & Group name (e.\+g. \char`\"{}\+R\+P\+C server options\+:\char`\"{}) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the formatted string 
+\end{DoxyReturn}
+\hypertarget{util_8h_aec85bcd561766ad0362a8fc5cd4a8542}{}\index{util.\+h@{util.\+h}!Help\+Message\+Opt@{Help\+Message\+Opt}}
+\index{Help\+Message\+Opt@{Help\+Message\+Opt}!util.\+h@{util.\+h}}
+\subsubsection[{Help\+Message\+Opt}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Help\+Message\+Opt (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{option, }
+\item[{const std\+::string \&}]{message}
+\end{DoxyParamCaption}
+)}\label{util_8h_aec85bcd561766ad0362a8fc5cd4a8542}
+Format a string to be used as option description in help messages
+
+
+\begin{DoxyParams}{Parameters}
+{\em option} & Option message (e.\+g. \char`\"{}-\/rpcuser=$<$user$>$\char`\"{}) \\
+\hline
+{\em message} & Option description (e.\+g. \char`\"{}\+Username for J\+S\+O\+N-\/\+R\+P\+C connections\char`\"{}) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the formatted string 
+\end{DoxyReturn}
+\hypertarget{util_8h_ac0165e18ce3be89a2e0731e27d54b478}{}\index{util.\+h@{util.\+h}!Is\+Switch\+Char@{Is\+Switch\+Char}}
+\index{Is\+Switch\+Char@{Is\+Switch\+Char}!util.\+h@{util.\+h}}
+\subsubsection[{Is\+Switch\+Char}]{\setlength{\rightskip}{0pt plus 5cm}bool Is\+Switch\+Char (
+\begin{DoxyParamCaption}
+\item[{char}]{c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{util_8h_ac0165e18ce3be89a2e0731e27d54b478}
+\hypertarget{util_8h_a343d2a13efe00125f78d25dafb0a8d98}{}\index{util.\+h@{util.\+h}!Log\+Accept\+Category@{Log\+Accept\+Category}}
+\index{Log\+Accept\+Category@{Log\+Accept\+Category}!util.\+h@{util.\+h}}
+\subsubsection[{Log\+Accept\+Category}]{\setlength{\rightskip}{0pt plus 5cm}bool Log\+Accept\+Category (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{category}
+\end{DoxyParamCaption}
+)}\label{util_8h_a343d2a13efe00125f78d25dafb0a8d98}
+Return true if log accepts specified category \hypertarget{util_8h_afd4c3002b2797c0560adddb6af3ca1da}{}\index{util.\+h@{util.\+h}!Log\+Print\+Str@{Log\+Print\+Str}}
+\index{Log\+Print\+Str@{Log\+Print\+Str}!util.\+h@{util.\+h}}
+\subsubsection[{Log\+Print\+Str}]{\setlength{\rightskip}{0pt plus 5cm}int Log\+Print\+Str (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{str}
+\end{DoxyParamCaption}
+)}\label{util_8h_afd4c3002b2797c0560adddb6af3ca1da}
+Send a string to the log output \hypertarget{util_8h_ac6be85b683de5d9b41dc3046e50d6acd}{}\index{util.\+h@{util.\+h}!Loop\+Forever@{Loop\+Forever}}
+\index{Loop\+Forever@{Loop\+Forever}!util.\+h@{util.\+h}}
+\subsubsection[{Loop\+Forever}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Callable $>$ void Loop\+Forever (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name, }
+\item[{Callable}]{func, }
+\item[{int64\+\_\+t}]{msecs}
+\end{DoxyParamCaption}
+)}\label{util_8h_ac6be85b683de5d9b41dc3046e50d6acd}
+Standard wrapper for do-\/something-\/forever thread functions. \char`\"{}\+Forever\char`\"{} really means until the thread is interrupted. Use it like\+: new boost\+::thread(boost\+::bind(\&Loop\+Forever$<$void ($\ast$)()$>$, \char`\"{}dumpaddr\char`\"{}, \&Dump\+Addresses, 900000)); or maybe\+: boost\+::function$<$void()$>$ f = boost\+::bind(\&\+Function\+With\+Arg, argument); thread\+Group.\+create\+\_\+thread(boost\+::bind(\&Loop\+Forever$<$boost\+::function$<$void()$>$ $>$, \char`\"{}nothing\char`\"{}, f, milliseconds)); \hypertarget{util_8h_a4cfc6f116964c12bc24442828c2da007}{}\index{util.\+h@{util.\+h}!Parse\+Parameters@{Parse\+Parameters}}
+\index{Parse\+Parameters@{Parse\+Parameters}!util.\+h@{util.\+h}}
+\subsubsection[{Parse\+Parameters}]{\setlength{\rightskip}{0pt plus 5cm}void Parse\+Parameters (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{const char $\ast$const}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}\label{util_8h_a4cfc6f116964c12bc24442828c2da007}
+\hypertarget{util_8h_aaada8c5faa502eb0c33fc01294955db8}{}\index{util.\+h@{util.\+h}!Print\+Exception\+Continue@{Print\+Exception\+Continue}}
+\index{Print\+Exception\+Continue@{Print\+Exception\+Continue}!util.\+h@{util.\+h}}
+\subsubsection[{Print\+Exception\+Continue}]{\setlength{\rightskip}{0pt plus 5cm}void Print\+Exception\+Continue (
+\begin{DoxyParamCaption}
+\item[{const std\+::exception $\ast$}]{pex, }
+\item[{const char $\ast$}]{psz\+Thread}
+\end{DoxyParamCaption}
+)}\label{util_8h_aaada8c5faa502eb0c33fc01294955db8}
+\hypertarget{util_8h_a756a5c49a4bb607d16d9842f8f3ede4f}{}\index{util.\+h@{util.\+h}!Raise\+File\+Descriptor\+Limit@{Raise\+File\+Descriptor\+Limit}}
+\index{Raise\+File\+Descriptor\+Limit@{Raise\+File\+Descriptor\+Limit}!util.\+h@{util.\+h}}
+\subsubsection[{Raise\+File\+Descriptor\+Limit}]{\setlength{\rightskip}{0pt plus 5cm}int Raise\+File\+Descriptor\+Limit (
+\begin{DoxyParamCaption}
+\item[{int}]{n\+Min\+F\+D}
+\end{DoxyParamCaption}
+)}\label{util_8h_a756a5c49a4bb607d16d9842f8f3ede4f}
+this function tries to raise the file descriptor limit to the requested number. It returns the actual file descriptor limit (which may be more or less than n\+Min\+F\+D) \hypertarget{util_8h_a9e585b4be467fe1d3ee978214ceff5d2}{}\index{util.\+h@{util.\+h}!Read\+Config\+File@{Read\+Config\+File}}
+\index{Read\+Config\+File@{Read\+Config\+File}!util.\+h@{util.\+h}}
+\subsubsection[{Read\+Config\+File}]{\setlength{\rightskip}{0pt plus 5cm}void Read\+Config\+File (
+\begin{DoxyParamCaption}
+\item[{std\+::map$<$ std\+::string, std\+::string $>$ \&}]{map\+Settings\+Ret, }
+\item[{std\+::map$<$ std\+::string, std\+::vector$<$ std\+::string $>$ $>$ \&}]{map\+Multi\+Settings\+Ret}
+\end{DoxyParamCaption}
+)}\label{util_8h_a9e585b4be467fe1d3ee978214ceff5d2}
+\hypertarget{util_8h_ad8f8509a84cc6f53344a5ac76369c327}{}\index{util.\+h@{util.\+h}!Rename\+Over@{Rename\+Over}}
+\index{Rename\+Over@{Rename\+Over}!util.\+h@{util.\+h}}
+\subsubsection[{Rename\+Over}]{\setlength{\rightskip}{0pt plus 5cm}bool Rename\+Over (
+\begin{DoxyParamCaption}
+\item[{boost\+::filesystem\+::path}]{src, }
+\item[{boost\+::filesystem\+::path}]{dest}
+\end{DoxyParamCaption}
+)}\label{util_8h_ad8f8509a84cc6f53344a5ac76369c327}
+\hypertarget{util_8h_a85fc1244e0bd3c91ee7a1c05ed10ebbb}{}\index{util.\+h@{util.\+h}!Rename\+Thread@{Rename\+Thread}}
+\index{Rename\+Thread@{Rename\+Thread}!util.\+h@{util.\+h}}
+\subsubsection[{Rename\+Thread}]{\setlength{\rightskip}{0pt plus 5cm}void Rename\+Thread (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}\label{util_8h_a85fc1244e0bd3c91ee7a1c05ed10ebbb}
+\hypertarget{util_8h_adf94c00a5ac719c92a2f1bb2f8b2167f}{}\index{util.\+h@{util.\+h}!run\+Command@{run\+Command}}
+\index{run\+Command@{run\+Command}!util.\+h@{util.\+h}}
+\subsubsection[{run\+Command}]{\setlength{\rightskip}{0pt plus 5cm}void run\+Command (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{str\+Command}
+\end{DoxyParamCaption}
+)}\label{util_8h_adf94c00a5ac719c92a2f1bb2f8b2167f}
+\hypertarget{util_8h_a8d620b8c9865456b925cd0eea4b2ffc1}{}\index{util.\+h@{util.\+h}!Set\+Thread\+Priority@{Set\+Thread\+Priority}}
+\index{Set\+Thread\+Priority@{Set\+Thread\+Priority}!util.\+h@{util.\+h}}
+\subsubsection[{Set\+Thread\+Priority}]{\setlength{\rightskip}{0pt plus 5cm}void Set\+Thread\+Priority (
+\begin{DoxyParamCaption}
+\item[{int}]{n\+Priority}
+\end{DoxyParamCaption}
+)}\label{util_8h_a8d620b8c9865456b925cd0eea4b2ffc1}
+\hypertarget{util_8h_a9ed616020f4ef9b1a261b222bbec78e2}{}\index{util.\+h@{util.\+h}!Setup\+Environment@{Setup\+Environment}}
+\index{Setup\+Environment@{Setup\+Environment}!util.\+h@{util.\+h}}
+\subsubsection[{Setup\+Environment}]{\setlength{\rightskip}{0pt plus 5cm}void Setup\+Environment (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{util_8h_a9ed616020f4ef9b1a261b222bbec78e2}
+\hypertarget{util_8h_a37fca7e305fe0caa306b23fdb37f88e2}{}\index{util.\+h@{util.\+h}!Shrink\+Debug\+File@{Shrink\+Debug\+File}}
+\index{Shrink\+Debug\+File@{Shrink\+Debug\+File}!util.\+h@{util.\+h}}
+\subsubsection[{Shrink\+Debug\+File}]{\setlength{\rightskip}{0pt plus 5cm}void Shrink\+Debug\+File (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{util_8h_a37fca7e305fe0caa306b23fdb37f88e2}
+\hypertarget{util_8h_a9d94ca9f7c1496626992d1873e3f69df}{}\index{util.\+h@{util.\+h}!Soft\+Set\+Arg@{Soft\+Set\+Arg}}
+\index{Soft\+Set\+Arg@{Soft\+Set\+Arg}!util.\+h@{util.\+h}}
+\subsubsection[{Soft\+Set\+Arg}]{\setlength{\rightskip}{0pt plus 5cm}bool Soft\+Set\+Arg (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{str\+Arg, }
+\item[{const std\+::string \&}]{str\+Value}
+\end{DoxyParamCaption}
+)}\label{util_8h_a9d94ca9f7c1496626992d1873e3f69df}
+Set an argument if it doesn\textquotesingle{}t already have a value
+
+
+\begin{DoxyParams}{Parameters}
+{\em str\+Arg} & Argument to set (e.\+g. \char`\"{}-\/foo\char`\"{}) \\
+\hline
+{\em str\+Value} & Value (e.\+g. \char`\"{}1\char`\"{}) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if argument gets set, false if it already had a value 
+\end{DoxyReturn}
+\hypertarget{util_8h_acb3060cad083d342898b6055e43692ae}{}\index{util.\+h@{util.\+h}!Soft\+Set\+Bool\+Arg@{Soft\+Set\+Bool\+Arg}}
+\index{Soft\+Set\+Bool\+Arg@{Soft\+Set\+Bool\+Arg}!util.\+h@{util.\+h}}
+\subsubsection[{Soft\+Set\+Bool\+Arg}]{\setlength{\rightskip}{0pt plus 5cm}bool Soft\+Set\+Bool\+Arg (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{str\+Arg, }
+\item[{bool}]{f\+Value}
+\end{DoxyParamCaption}
+)}\label{util_8h_acb3060cad083d342898b6055e43692ae}
+Set a boolean argument if it doesn\textquotesingle{}t already have a value
+
+
+\begin{DoxyParams}{Parameters}
+{\em str\+Arg} & Argument to set (e.\+g. \char`\"{}-\/foo\char`\"{}) \\
+\hline
+{\em f\+Value} & Value (e.\+g. false) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if argument gets set, false if it already had a value 
+\end{DoxyReturn}
+\hypertarget{util_8h_ac481a378af0229bf71e3d9fee7b938ad}{}\index{util.\+h@{util.\+h}!Trace\+Thread@{Trace\+Thread}}
+\index{Trace\+Thread@{Trace\+Thread}!util.\+h@{util.\+h}}
+\subsubsection[{Trace\+Thread}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Callable $>$ void Trace\+Thread (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name, }
+\item[{Callable}]{func}
+\end{DoxyParamCaption}
+)}\label{util_8h_ac481a378af0229bf71e3d9fee7b938ad}
+.. and a wrapper that just calls func once \hypertarget{util_8h_acb8d6b822bc1bfa609bf43bbac1a0d44}{}\index{util.\+h@{util.\+h}!Truncate\+File@{Truncate\+File}}
+\index{Truncate\+File@{Truncate\+File}!util.\+h@{util.\+h}}
+\subsubsection[{Truncate\+File}]{\setlength{\rightskip}{0pt plus 5cm}bool Truncate\+File (
+\begin{DoxyParamCaption}
+\item[{F\+I\+L\+E $\ast$}]{file, }
+\item[{unsigned int}]{length}
+\end{DoxyParamCaption}
+)}\label{util_8h_acb8d6b822bc1bfa609bf43bbac1a0d44}
+\hypertarget{util_8h_a4458ca67cacd593b21c8e1386d192064}{}\index{util.\+h@{util.\+h}!Try\+Create\+Directory@{Try\+Create\+Directory}}
+\index{Try\+Create\+Directory@{Try\+Create\+Directory}!util.\+h@{util.\+h}}
+\subsubsection[{Try\+Create\+Directory}]{\setlength{\rightskip}{0pt plus 5cm}bool Try\+Create\+Directory (
+\begin{DoxyParamCaption}
+\item[{const boost\+::filesystem\+::path \&}]{p}
+\end{DoxyParamCaption}
+)}\label{util_8h_a4458ca67cacd593b21c8e1386d192064}
+Ignores exceptions thrown by Boost\textquotesingle{}s create\+\_\+directory if the requested directory exists. Specifically handles case where path p exists, but it wasn\textquotesingle{}t possible for the user to write to the parent directory. 
+
+\subsection{Variable Documentation}
+\hypertarget{util_8h_a2ba7badc843121dde40a6f109d224a42}{}\index{util.\+h@{util.\+h}!f\+Debug@{f\+Debug}}
+\index{f\+Debug@{f\+Debug}!util.\+h@{util.\+h}}
+\subsubsection[{f\+Debug}]{\setlength{\rightskip}{0pt plus 5cm}bool f\+Debug}\label{util_8h_a2ba7badc843121dde40a6f109d224a42}
+\hypertarget{util_8h_a8e02420c2f7c53579ccb90acf301ae75}{}\index{util.\+h@{util.\+h}!f\+Log\+I\+Ps@{f\+Log\+I\+Ps}}
+\index{f\+Log\+I\+Ps@{f\+Log\+I\+Ps}!util.\+h@{util.\+h}}
+\subsubsection[{f\+Log\+I\+Ps}]{\setlength{\rightskip}{0pt plus 5cm}bool f\+Log\+I\+Ps}\label{util_8h_a8e02420c2f7c53579ccb90acf301ae75}
+\hypertarget{util_8h_aa5e7caf6936a9a94eb088f04bcc62b97}{}\index{util.\+h@{util.\+h}!f\+Log\+Timestamps@{f\+Log\+Timestamps}}
+\index{f\+Log\+Timestamps@{f\+Log\+Timestamps}!util.\+h@{util.\+h}}
+\subsubsection[{f\+Log\+Timestamps}]{\setlength{\rightskip}{0pt plus 5cm}bool f\+Log\+Timestamps}\label{util_8h_aa5e7caf6936a9a94eb088f04bcc62b97}
+\hypertarget{util_8h_a9d6b03a0dcc515a84e620794e64b9547}{}\index{util.\+h@{util.\+h}!f\+Print\+To\+Console@{f\+Print\+To\+Console}}
+\index{f\+Print\+To\+Console@{f\+Print\+To\+Console}!util.\+h@{util.\+h}}
+\subsubsection[{f\+Print\+To\+Console}]{\setlength{\rightskip}{0pt plus 5cm}bool f\+Print\+To\+Console}\label{util_8h_a9d6b03a0dcc515a84e620794e64b9547}
+\hypertarget{util_8h_ae1c7830d95f75ba35fbc6bfa50509913}{}\index{util.\+h@{util.\+h}!f\+Print\+To\+Debug\+Log@{f\+Print\+To\+Debug\+Log}}
+\index{f\+Print\+To\+Debug\+Log@{f\+Print\+To\+Debug\+Log}!util.\+h@{util.\+h}}
+\subsubsection[{f\+Print\+To\+Debug\+Log}]{\setlength{\rightskip}{0pt plus 5cm}bool f\+Print\+To\+Debug\+Log}\label{util_8h_ae1c7830d95f75ba35fbc6bfa50509913}
+\hypertarget{util_8h_aad5e5c200c78bd5bdec18c8707e63822}{}\index{util.\+h@{util.\+h}!f\+Reopen\+Debug\+Log@{f\+Reopen\+Debug\+Log}}
+\index{f\+Reopen\+Debug\+Log@{f\+Reopen\+Debug\+Log}!util.\+h@{util.\+h}}
+\subsubsection[{f\+Reopen\+Debug\+Log}]{\setlength{\rightskip}{0pt plus 5cm}volatile bool f\+Reopen\+Debug\+Log}\label{util_8h_aad5e5c200c78bd5bdec18c8707e63822}
+\hypertarget{util_8h_a2839c7c01ad9d90fbd3ce55d32b50c6f}{}\index{util.\+h@{util.\+h}!f\+Server@{f\+Server}}
+\index{f\+Server@{f\+Server}!util.\+h@{util.\+h}}
+\subsubsection[{f\+Server}]{\setlength{\rightskip}{0pt plus 5cm}bool f\+Server}\label{util_8h_a2839c7c01ad9d90fbd3ce55d32b50c6f}
+\hypertarget{util_8h_ac6e877d09800ef2f6ed5b4ddee4a202c}{}\index{util.\+h@{util.\+h}!map\+Args@{map\+Args}}
+\index{map\+Args@{map\+Args}!util.\+h@{util.\+h}}
+\subsubsection[{map\+Args}]{\setlength{\rightskip}{0pt plus 5cm}std\+::map$<$std\+::string, std\+::string$>$ map\+Args}\label{util_8h_ac6e877d09800ef2f6ed5b4ddee4a202c}
+Server/client environment\+: argument handling, config file parsing, logging, thread wrappers \hypertarget{util_8h_ad1aaac805f4fdc2da7dddf5aafaa8bac}{}\index{util.\+h@{util.\+h}!map\+Multi\+Args@{map\+Multi\+Args}}
+\index{map\+Multi\+Args@{map\+Multi\+Args}!util.\+h@{util.\+h}}
+\subsubsection[{map\+Multi\+Args}]{\setlength{\rightskip}{0pt plus 5cm}std\+::map$<$std\+::string, std\+::vector$<$std\+::string$>$ $>$ map\+Multi\+Args}\label{util_8h_ad1aaac805f4fdc2da7dddf5aafaa8bac}
+\hypertarget{util_8h_a41393eb45547527ac7cdaede34ab701e}{}\index{util.\+h@{util.\+h}!str\+Misc\+Warning@{str\+Misc\+Warning}}
+\index{str\+Misc\+Warning@{str\+Misc\+Warning}!util.\+h@{util.\+h}}
+\subsubsection[{str\+Misc\+Warning}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string str\+Misc\+Warning}\label{util_8h_a41393eb45547527ac7cdaede34ab701e}

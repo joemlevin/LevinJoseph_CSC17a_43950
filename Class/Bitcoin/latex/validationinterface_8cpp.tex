@@ -1,0 +1,56 @@
+\hypertarget{validationinterface_8cpp}{}\section{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/validationinterface.cpp File Reference}
+\label{validationinterface_8cpp}\index{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/validationinterface.\+cpp@{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/validationinterface.\+cpp}}
+{\ttfamily \#include \char`\"{}validationinterface.\+h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_c_main_signals}{C\+Main\+Signals} \& \hyperlink{validationinterface_8cpp_a0aaad62c8654cb1868295e0682b05866}{Get\+Main\+Signals} ()
+\item 
+void \hyperlink{validationinterface_8cpp_ade8ef59282b5f7521ecfd870a8e3b137}{Register\+Validation\+Interface} (\hyperlink{class_c_validation_interface}{C\+Validation\+Interface} $\ast$pwallet\+In)
+\item 
+void \hyperlink{validationinterface_8cpp_a5e1776de1f87b4d045e9e2a198236b63}{Unregister\+Validation\+Interface} (\hyperlink{class_c_validation_interface}{C\+Validation\+Interface} $\ast$pwallet\+In)
+\item 
+void \hyperlink{validationinterface_8cpp_a8fe3fbf8c47cc0419fd7b9a14e8b140d}{Unregister\+All\+Validation\+Interfaces} ()
+\item 
+void \hyperlink{validationinterface_8cpp_a0d93ea8350a87c6193ae64a9823fa6e9}{Sync\+With\+Wallets} (const C\+Transaction \&tx, const C\+Block $\ast$pblock)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{validationinterface_8cpp_a0aaad62c8654cb1868295e0682b05866}{}\index{validationinterface.\+cpp@{validationinterface.\+cpp}!Get\+Main\+Signals@{Get\+Main\+Signals}}
+\index{Get\+Main\+Signals@{Get\+Main\+Signals}!validationinterface.\+cpp@{validationinterface.\+cpp}}
+\subsubsection[{Get\+Main\+Signals}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Main\+Signals}\& Get\+Main\+Signals (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{validationinterface_8cpp_a0aaad62c8654cb1868295e0682b05866}
+\hypertarget{validationinterface_8cpp_ade8ef59282b5f7521ecfd870a8e3b137}{}\index{validationinterface.\+cpp@{validationinterface.\+cpp}!Register\+Validation\+Interface@{Register\+Validation\+Interface}}
+\index{Register\+Validation\+Interface@{Register\+Validation\+Interface}!validationinterface.\+cpp@{validationinterface.\+cpp}}
+\subsubsection[{Register\+Validation\+Interface}]{\setlength{\rightskip}{0pt plus 5cm}void Register\+Validation\+Interface (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Validation\+Interface} $\ast$}]{pwallet\+In}
+\end{DoxyParamCaption}
+)}\label{validationinterface_8cpp_ade8ef59282b5f7521ecfd870a8e3b137}
+Register a wallet to receive updates from core \hypertarget{validationinterface_8cpp_a0d93ea8350a87c6193ae64a9823fa6e9}{}\index{validationinterface.\+cpp@{validationinterface.\+cpp}!Sync\+With\+Wallets@{Sync\+With\+Wallets}}
+\index{Sync\+With\+Wallets@{Sync\+With\+Wallets}!validationinterface.\+cpp@{validationinterface.\+cpp}}
+\subsubsection[{Sync\+With\+Wallets}]{\setlength{\rightskip}{0pt plus 5cm}void Sync\+With\+Wallets (
+\begin{DoxyParamCaption}
+\item[{const C\+Transaction \&}]{tx, }
+\item[{const C\+Block $\ast$}]{pblock = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{validationinterface_8cpp_a0d93ea8350a87c6193ae64a9823fa6e9}
+Push an updated transaction to all registered wallets \hypertarget{validationinterface_8cpp_a8fe3fbf8c47cc0419fd7b9a14e8b140d}{}\index{validationinterface.\+cpp@{validationinterface.\+cpp}!Unregister\+All\+Validation\+Interfaces@{Unregister\+All\+Validation\+Interfaces}}
+\index{Unregister\+All\+Validation\+Interfaces@{Unregister\+All\+Validation\+Interfaces}!validationinterface.\+cpp@{validationinterface.\+cpp}}
+\subsubsection[{Unregister\+All\+Validation\+Interfaces}]{\setlength{\rightskip}{0pt plus 5cm}void Unregister\+All\+Validation\+Interfaces (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{validationinterface_8cpp_a8fe3fbf8c47cc0419fd7b9a14e8b140d}
+Unregister all wallets from core \hypertarget{validationinterface_8cpp_a5e1776de1f87b4d045e9e2a198236b63}{}\index{validationinterface.\+cpp@{validationinterface.\+cpp}!Unregister\+Validation\+Interface@{Unregister\+Validation\+Interface}}
+\index{Unregister\+Validation\+Interface@{Unregister\+Validation\+Interface}!validationinterface.\+cpp@{validationinterface.\+cpp}}
+\subsubsection[{Unregister\+Validation\+Interface}]{\setlength{\rightskip}{0pt plus 5cm}void Unregister\+Validation\+Interface (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Validation\+Interface} $\ast$}]{pwallet\+In}
+\end{DoxyParamCaption}
+)}\label{validationinterface_8cpp_a5e1776de1f87b4d045e9e2a198236b63}
+Unregister a wallet from core 

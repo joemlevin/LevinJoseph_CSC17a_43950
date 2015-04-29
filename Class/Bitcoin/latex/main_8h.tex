@@ -1,0 +1,800 @@
+\hypertarget{main_8h}{}\section{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/main.h File Reference}
+\label{main_8h}\index{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/main.\+h@{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/main.\+h}}
+{\ttfamily \#include \char`\"{}amount.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}chain.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}chainparams.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}coins.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}consensus/consensus.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}net.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}primitives/block.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}primitives/transaction.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}script/script.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}script/sigcache.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}script/standard.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sync.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}tinyformat.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}txmempool.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}uint256.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$algorithm$>$}\\*
+{\ttfamily \#include $<$exception$>$}\\*
+{\ttfamily \#include $<$map$>$}\\*
+{\ttfamily \#include $<$set$>$}\\*
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$utility$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include $<$boost/unordered\+\_\+map.\+hpp$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_block_hasher}{Block\+Hasher}
+\item 
+struct \hyperlink{struct_c_node_state_stats}{C\+Node\+State\+Stats}
+\item 
+struct \hyperlink{struct_c_disk_tx_pos}{C\+Disk\+Tx\+Pos}
+\item 
+class \hyperlink{class_c_script_check}{C\+Script\+Check}
+\item 
+class \hyperlink{class_c_block_file_info}{C\+Block\+File\+Info}
+\item 
+class \hyperlink{class_c_validation_state}{C\+Validation\+State}
+\item 
+class \hyperlink{class_c_verify_d_b}{C\+Verify\+D\+B}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef boost\+::unordered\+\_\+map$<$ \hyperlink{classuint256}{uint256}, \hyperlink{class_c_block_index}{C\+Block\+Index} $\ast$, \hyperlink{struct_block_hasher}{Block\+Hasher} $>$ \hyperlink{main_8h_a476592333017c5835459fe2305351863}{Block\+Map}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{main_8h_ab02615ff65f91d69f8d786ec900baa8a}{Register\+Node\+Signals} (\hyperlink{struct_c_node_signals}{C\+Node\+Signals} \&node\+Signals)
+\item 
+void \hyperlink{main_8h_a3ef0cc6e9d9d6435ee2a5569244d6ebd}{Unregister\+Node\+Signals} (\hyperlink{struct_c_node_signals}{C\+Node\+Signals} \&node\+Signals)
+\item 
+bool \hyperlink{main_8h_abb32e71aca0c6a769d419194ada13851}{Process\+New\+Block} (\hyperlink{class_c_validation_state}{C\+Validation\+State} \&state, \hyperlink{class_c_node}{C\+Node} $\ast$pfrom, C\+Block $\ast$pblock, \hyperlink{struct_c_disk_block_pos}{C\+Disk\+Block\+Pos} $\ast$dbp=N\+U\+L\+L)
+\item 
+bool \hyperlink{main_8h_a6df609da0bad1550cbb2cdc781ad2904}{Check\+Disk\+Space} (uint64\+\_\+t n\+Additional\+Bytes=0)
+\item 
+F\+I\+L\+E $\ast$ \hyperlink{main_8h_a531eb79ff695289ac9a4f8daf292273c}{Open\+Block\+File} (const \hyperlink{struct_c_disk_block_pos}{C\+Disk\+Block\+Pos} \&pos, bool f\+Read\+Only=false)
+\item 
+F\+I\+L\+E $\ast$ \hyperlink{main_8h_addac9f89d64c9e26d36d1481da35877e}{Open\+Undo\+File} (const \hyperlink{struct_c_disk_block_pos}{C\+Disk\+Block\+Pos} \&pos, bool f\+Read\+Only=false)
+\item 
+boost\+::filesystem\+::path \hyperlink{main_8h_a2f26f074aac584c3398de1dcdac59de9}{Get\+Block\+Pos\+Filename} (const \hyperlink{struct_c_disk_block_pos}{C\+Disk\+Block\+Pos} \&pos, const char $\ast$\hyperlink{rest_8cpp_a5b41c5ae4505891e6c53e26df197e02b}{prefix})
+\item 
+bool \hyperlink{main_8h_a8641eccb4e5d174838adeea9b234a691}{Load\+External\+Block\+File} (F\+I\+L\+E $\ast$file\+In, \hyperlink{struct_c_disk_block_pos}{C\+Disk\+Block\+Pos} $\ast$dbp=N\+U\+L\+L)
+\item 
+bool \hyperlink{main_8h_a92e5e1fcbd56cc44c27d39b64da8a79a}{Init\+Block\+Index} ()
+\item 
+bool \hyperlink{main_8h_a4ef97794a0ba7a9181ec0ef2aa88491b}{Load\+Block\+Index} ()
+\item 
+void \hyperlink{main_8h_ac98b87e479f71b7be2b990a10c4ebc2d}{Unload\+Block\+Index} ()
+\item 
+bool \hyperlink{main_8h_a196f9318f02448b85b28d612698934fd}{Process\+Messages} (\hyperlink{class_c_node}{C\+Node} $\ast$pfrom)
+\item 
+bool \hyperlink{main_8h_a711a5bdb30c9c9bbdc83011b1cbbe2f3}{Send\+Messages} (\hyperlink{class_c_node}{C\+Node} $\ast$pto, bool f\+Send\+Trickle)
+\item 
+void \hyperlink{main_8h_a8b6fddfd4e56e9c3e73c5dc0cf4de80c}{Thread\+Script\+Check} ()
+\item 
+bool \hyperlink{main_8h_a5edcd96316574fd4a7f3ae0922a5cfd6}{Is\+Initial\+Block\+Download} ()
+\item 
+std\+::string \hyperlink{main_8h_a30cf1d6270f9040fc151d03b98027ab5}{Get\+Warnings} (std\+::string str\+For)
+\item 
+bool \hyperlink{main_8h_a74cc9659a06d35436a25b7ae56a15bcb}{Get\+Transaction} (const \hyperlink{classuint256}{uint256} \&hash, C\+Transaction \&tx, \hyperlink{classuint256}{uint256} \&hash\+Block, bool f\+Allow\+Slow=false)
+\item 
+bool \hyperlink{main_8h_aacd6dd141dff87cd743c6dfd0eb63605}{Activate\+Best\+Chain} (\hyperlink{class_c_validation_state}{C\+Validation\+State} \&state, C\+Block $\ast$pblock=N\+U\+L\+L)
+\item 
+\hyperlink{amount_8h_a4eaf3a5239714d8c45b851527f7cb564}{C\+Amount} \hyperlink{main_8h_a6c9c196c54faf50f7dab3542454b0394}{Get\+Block\+Value} (int n\+Height, const \hyperlink{amount_8h_a4eaf3a5239714d8c45b851527f7cb564}{C\+Amount} \&n\+Fees)
+\item 
+void \hyperlink{main_8h_abad53b0a8e35cd4e747de8f3dab76476}{Find\+Files\+To\+Prune} (std\+::set$<$ int $>$ \&set\+Files\+To\+Prune)
+\item 
+void \hyperlink{main_8h_ad4d57cfd8dd43ff8966e67735fc7032d}{Unlink\+Pruned\+Files} (std\+::set$<$ int $>$ \&set\+Files\+To\+Prune)
+\item 
+\hyperlink{class_c_block_index}{C\+Block\+Index} $\ast$ \hyperlink{main_8h_af3adfd64a90ee443bfa5fe16321aa2d7}{Insert\+Block\+Index} (\hyperlink{classuint256}{uint256} hash)
+\item 
+bool \hyperlink{main_8h_af573b79d097a9ffe6503869f838ccf42}{Abort\+Node} (const std\+::string \&msg, const std\+::string \&user\+Message=\char`\"{}\char`\"{})
+\item 
+bool \hyperlink{main_8h_af0793c7c14e94d2d642f4ac89067a429}{Get\+Node\+State\+Stats} (\hyperlink{net_8h_a954d746a58632565552615fd0a4ee660}{Node\+Id} nodeid, \hyperlink{struct_c_node_state_stats}{C\+Node\+State\+Stats} \&stats)
+\item 
+void \hyperlink{main_8h_a4b04650c6aa3e5b02921ba992658d647}{Misbehaving} (\hyperlink{net_8h_a954d746a58632565552615fd0a4ee660}{Node\+Id} nodeid, int howmuch)
+\item 
+void \hyperlink{main_8h_a0d01c135cc5a05475e3dc3910c9888da}{Flush\+State\+To\+Disk} ()
+\item 
+void \hyperlink{main_8h_afccc404d3f648d7834ee7522ca348b41}{Prune\+And\+Flush} ()
+\item 
+bool \hyperlink{main_8h_a686a31e1b4c727ed69f24430d75dce88}{Accept\+To\+Memory\+Pool} (\hyperlink{class_c_tx_mem_pool}{C\+Tx\+Mem\+Pool} \&pool, \hyperlink{class_c_validation_state}{C\+Validation\+State} \&state, const C\+Transaction \&tx, bool f\+Limit\+Free, bool $\ast$pf\+Missing\+Inputs, bool f\+Reject\+Absurd\+Fee=false)
+\item 
+\hyperlink{amount_8h_a4eaf3a5239714d8c45b851527f7cb564}{C\+Amount} \hyperlink{main_8h_a8d0d9b7e0d58d01f65b2d1f8babcb3da}{Get\+Min\+Relay\+Fee} (const C\+Transaction \&tx, unsigned int n\+Bytes, bool f\+Allow\+Free)
+\item 
+bool \hyperlink{main_8h_a791e33e18bea9861e449e6ebcfce8890}{Are\+Inputs\+Standard} (const C\+Transaction \&tx, const \hyperlink{class_c_coins_view_cache}{C\+Coins\+View\+Cache} \&map\+Inputs)
+\item 
+unsigned int \hyperlink{main_8h_ad2eaf4f8542c12ea9ee1183609cc6d1a}{Get\+Legacy\+Sig\+Op\+Count} (const C\+Transaction \&tx)
+\item 
+unsigned int \hyperlink{main_8h_a312fadbeec896d49437733e986f3df04}{Get\+P2\+S\+H\+Sig\+Op\+Count} (const C\+Transaction \&tx, const \hyperlink{class_c_coins_view_cache}{C\+Coins\+View\+Cache} \&map\+Inputs)
+\item 
+bool \hyperlink{main_8h_aec29d3e8abda6a014ca910e7c73b4df7}{Check\+Inputs} (const C\+Transaction \&tx, \hyperlink{class_c_validation_state}{C\+Validation\+State} \&state, const \hyperlink{class_c_coins_view_cache}{C\+Coins\+View\+Cache} \&view, bool f\+Script\+Checks, unsigned int \hyperlink{bitcoin-tx_8cpp_ac8bf36fe0577cba66bccda3a6f7e80a4}{flags}, bool cache\+Store, std\+::vector$<$ \hyperlink{class_c_script_check}{C\+Script\+Check} $>$ $\ast$pv\+Checks=N\+U\+L\+L)
+\item 
+void \hyperlink{main_8h_a1a3e0daa83014ce726095179753d5e01}{Update\+Coins} (const C\+Transaction \&tx, \hyperlink{class_c_validation_state}{C\+Validation\+State} \&state, \hyperlink{class_c_coins_view_cache}{C\+Coins\+View\+Cache} \&inputs, int n\+Height)
+\item 
+bool \hyperlink{main_8h_a3d8c4ba3a0c2b7a05cab21c95a886fbe}{Check\+Transaction} (const C\+Transaction \&tx, \hyperlink{class_c_validation_state}{C\+Validation\+State} \&state)
+\item 
+bool \hyperlink{main_8h_a74832d5d658916e73adb139fd60e2354}{Is\+Standard\+Tx} (const C\+Transaction \&tx, std\+::string \&reason)
+\item 
+bool \hyperlink{main_8h_aa7ca31ac11bff224c6b0ac27fccce7b5}{Is\+Final\+Tx} (const C\+Transaction \&tx, int n\+Block\+Height=0, int64\+\_\+t n\+Block\+Time=0)
+\item 
+bool \hyperlink{main_8h_ada76402fa869197c916231a42b011fd4}{Write\+Block\+To\+Disk} (C\+Block \&block, \hyperlink{struct_c_disk_block_pos}{C\+Disk\+Block\+Pos} \&pos)
+\item 
+bool \hyperlink{main_8h_a2dc350346749b7da7f4b40c114ee5147}{Read\+Block\+From\+Disk} (C\+Block \&block, const \hyperlink{struct_c_disk_block_pos}{C\+Disk\+Block\+Pos} \&pos)
+\item 
+bool \hyperlink{main_8h_a445ff051f3b0038c0b19b7e1156c9f95}{Read\+Block\+From\+Disk} (C\+Block \&block, const \hyperlink{class_c_block_index}{C\+Block\+Index} $\ast$pindex)
+\item 
+bool \hyperlink{main_8h_aa7213dfc13e3b470a5690b0b86c951c6}{Disconnect\+Block} (C\+Block \&block, \hyperlink{class_c_validation_state}{C\+Validation\+State} \&state, \hyperlink{class_c_block_index}{C\+Block\+Index} $\ast$pindex, \hyperlink{class_c_coins_view_cache}{C\+Coins\+View\+Cache} \&coins, bool $\ast$pf\+Clean=N\+U\+L\+L)
+\item 
+bool \hyperlink{main_8h_a063faa3c9fa2d1733a51fb14cae2a2c6}{Connect\+Block} (const C\+Block \&block, \hyperlink{class_c_validation_state}{C\+Validation\+State} \&state, \hyperlink{class_c_block_index}{C\+Block\+Index} $\ast$pindex, \hyperlink{class_c_coins_view_cache}{C\+Coins\+View\+Cache} \&coins, bool f\+Just\+Check=false)
+\item 
+bool \hyperlink{main_8h_a59e2328b990efdf325ec666bc3e64f8a}{Check\+Block\+Header} (const C\+Block\+Header \&block, \hyperlink{class_c_validation_state}{C\+Validation\+State} \&state, bool f\+Check\+P\+O\+W=true)
+\item 
+bool \hyperlink{main_8h_afbaa5058f820d623e6a36f39da4fe484}{Check\+Block} (const C\+Block \&block, \hyperlink{class_c_validation_state}{C\+Validation\+State} \&state, bool f\+Check\+P\+O\+W=true, bool f\+Check\+Merkle\+Root=true)
+\item 
+bool \hyperlink{main_8h_a0a37117b7eeff320e9b274af636703df}{Contextual\+Check\+Block\+Header} (const C\+Block\+Header \&block, \hyperlink{class_c_validation_state}{C\+Validation\+State} \&state, \hyperlink{class_c_block_index}{C\+Block\+Index} $\ast$pindex\+Prev)
+\item 
+bool \hyperlink{main_8h_ae390d092b83ef1b712414d684b479fea}{Contextual\+Check\+Block} (const C\+Block \&block, \hyperlink{class_c_validation_state}{C\+Validation\+State} \&state, \hyperlink{class_c_block_index}{C\+Block\+Index} $\ast$pindex\+Prev)
+\item 
+bool \hyperlink{main_8h_aa778166224b25355c113d1706df12ffd}{Test\+Block\+Validity} (\hyperlink{class_c_validation_state}{C\+Validation\+State} \&state, const C\+Block \&block, \hyperlink{class_c_block_index}{C\+Block\+Index} $\ast$pindex\+Prev, bool f\+Check\+P\+O\+W=true, bool f\+Check\+Merkle\+Root=true)
+\item 
+bool \hyperlink{main_8h_a19e5550d485671b88cf216370cfb73c6}{Accept\+Block} (C\+Block \&block, \hyperlink{class_c_validation_state}{C\+Validation\+State} \&state, \hyperlink{class_c_block_index}{C\+Block\+Index} $\ast$$\ast$pindex, \hyperlink{struct_c_disk_block_pos}{C\+Disk\+Block\+Pos} $\ast$dbp=N\+U\+L\+L)
+\item 
+bool \hyperlink{main_8h_a1b84df0bdfe2608b82c822cfcd07e204}{Accept\+Block\+Header} (const C\+Block\+Header \&block, \hyperlink{class_c_validation_state}{C\+Validation\+State} \&state, \hyperlink{class_c_block_index}{C\+Block\+Index} $\ast$$\ast$ppindex=N\+U\+L\+L)
+\item 
+\hyperlink{class_c_block_index}{C\+Block\+Index} $\ast$ \hyperlink{main_8h_af43d57aa8b46a53839777e8b670c9d66}{Find\+Fork\+In\+Global\+Index} (const \hyperlink{class_c_chain}{C\+Chain} \&chain, const C\+Block\+Locator \&locator)
+\item 
+bool \hyperlink{main_8h_ac142a65c99268796d4c235bb096b3c42}{Invalidate\+Block} (\hyperlink{class_c_validation_state}{C\+Validation\+State} \&state, \hyperlink{class_c_block_index}{C\+Block\+Index} $\ast$pindex)
+\item 
+bool \hyperlink{main_8h_a8302271cb4b4deed26c45b002ce2b4a0}{Reconsider\+Block} (\hyperlink{class_c_validation_state}{C\+Validation\+State} \&state, \hyperlink{class_c_block_index}{C\+Block\+Index} $\ast$pindex)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+C\+Script \hyperlink{main_8h_a5ed86cbbedb72d8fcec0524f2792ada8}{C\+O\+I\+N\+B\+A\+S\+E\+\_\+\+F\+L\+A\+G\+S}
+\item 
+\hyperlink{sync_8h_a37a4692b2d517f2843655ca11af7668a}{C\+Critical\+Section} \hyperlink{main_8h_a1ed8285f0fe3c6799c53265ce72552c8}{cs\+\_\+main}
+\item 
+\hyperlink{class_c_tx_mem_pool}{C\+Tx\+Mem\+Pool} \hyperlink{main_8h_abc71256f703e47c9254093e32ed2994c}{mempool}
+\item 
+\hyperlink{main_8h_a476592333017c5835459fe2305351863}{Block\+Map} \hyperlink{main_8h_a887b8e9f9fea0ea870c6987f1fd52eb6}{map\+Block\+Index}
+\item 
+uint64\+\_\+t \hyperlink{main_8h_a31f8b0d3c96670151ba997019820e0f4}{n\+Last\+Block\+Tx}
+\item 
+uint64\+\_\+t \hyperlink{main_8h_af8945f7f19ea7e938baab1bd4c226c2f}{n\+Last\+Block\+Size}
+\item 
+const std\+::string \hyperlink{main_8h_a2874c632b3b462164de12be5abcd9d43}{str\+Message\+Magic}
+\item 
+\hyperlink{sync_8h_a341e0aa38106c4dbcedbba878dceb1a5}{C\+Waitable\+Critical\+Section} \hyperlink{main_8h_ac3e42569e7f188c94a7a94e331b7ded1}{cs\+Best\+Block}
+\item 
+\hyperlink{sync_8h_acdd2020d08e99abd9504ea67d0190520}{C\+Condition\+Variable} \hyperlink{main_8h_ae2cc1d9c98e768ae18d1eb071e1feee4}{cv\+Block\+Change}
+\item 
+bool \hyperlink{main_8h_aaf87d0dd26c4a7c9bcc5bdd1127e8637}{f\+Importing}
+\item 
+bool \hyperlink{main_8h_a8e0eca589b2d4254a65f04c5d91888b2}{f\+Reindex}
+\item 
+int \hyperlink{main_8h_a255e9fc1ce92b27522640085d3a18494}{n\+Script\+Check\+Threads}
+\item 
+bool \hyperlink{main_8h_a6b569217f0bbb0a69a42c8769df06a06}{f\+Tx\+Index}
+\item 
+bool \hyperlink{main_8h_ac1c58e7ff985aa26a43c05aa802c1ed4}{f\+Is\+Bare\+Multisig\+Std}
+\item 
+bool \hyperlink{main_8h_a1eecd3058c45df997e0f3f9f0a1e13af}{f\+Check\+Block\+Index}
+\item 
+unsigned int \hyperlink{main_8h_a08b980f03b2fb15445e0ddc8bb4b3d73}{n\+Coin\+Cache\+Size}
+\item 
+\hyperlink{class_c_fee_rate}{C\+Fee\+Rate} \hyperlink{main_8h_a5925a10baeee7d4bdce1982bdcbd3bd0}{min\+Relay\+Tx\+Fee}
+\item 
+\hyperlink{class_c_block_index}{C\+Block\+Index} $\ast$ \hyperlink{main_8h_acfbdea59afc1824d0d1c1ff10f17fd53}{pindex\+Best\+Header}
+\item 
+bool \hyperlink{main_8h_a38bb6e0c3dcc21268fba23887bde2f4e}{f\+Have\+Pruned}
+\item 
+bool \hyperlink{main_8h_ab3d3252ad7773f86035217d3a08f16ba}{f\+Prune\+Mode}
+\item 
+uint64\+\_\+t \hyperlink{main_8h_a0da4d3bd457259c6128277ae599a5e97}{n\+Prune\+Target}
+\item 
+\hyperlink{class_c_chain}{C\+Chain} \hyperlink{main_8h_adb31995c443ae2aef1d2f1c350de0419}{chain\+Active}
+\item 
+\hyperlink{class_c_coins_view_cache}{C\+Coins\+View\+Cache} $\ast$ \hyperlink{main_8h_a1821834b8f7837b469f7f91a14c20042}{pcoins\+Tip}
+\item 
+\hyperlink{class_c_block_tree_d_b}{C\+Block\+Tree\+D\+B} $\ast$ \hyperlink{main_8h_a0023503503c358eda0c97a576ef53fde}{pblocktree}
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{main_8h_a476592333017c5835459fe2305351863}{}\index{main.\+h@{main.\+h}!Block\+Map@{Block\+Map}}
+\index{Block\+Map@{Block\+Map}!main.\+h@{main.\+h}}
+\subsubsection[{Block\+Map}]{\setlength{\rightskip}{0pt plus 5cm}typedef boost\+::unordered\+\_\+map$<${\bf uint256}, {\bf C\+Block\+Index}$\ast$, {\bf Block\+Hasher}$>$ {\bf Block\+Map}}\label{main_8h_a476592333017c5835459fe2305351863}
+
+
+\subsection{Function Documentation}
+\hypertarget{main_8h_af573b79d097a9ffe6503869f838ccf42}{}\index{main.\+h@{main.\+h}!Abort\+Node@{Abort\+Node}}
+\index{Abort\+Node@{Abort\+Node}!main.\+h@{main.\+h}}
+\subsubsection[{Abort\+Node}]{\setlength{\rightskip}{0pt plus 5cm}bool Abort\+Node (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{msg, }
+\item[{const std\+::string \&}]{user\+Message = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)}\label{main_8h_af573b79d097a9ffe6503869f838ccf42}
+Abort with a message \hypertarget{main_8h_a19e5550d485671b88cf216370cfb73c6}{}\index{main.\+h@{main.\+h}!Accept\+Block@{Accept\+Block}}
+\index{Accept\+Block@{Accept\+Block}!main.\+h@{main.\+h}}
+\subsubsection[{Accept\+Block}]{\setlength{\rightskip}{0pt plus 5cm}bool Accept\+Block (
+\begin{DoxyParamCaption}
+\item[{C\+Block \&}]{block, }
+\item[{{\bf C\+Validation\+State} \&}]{state, }
+\item[{{\bf C\+Block\+Index} $\ast$$\ast$}]{pindex, }
+\item[{{\bf C\+Disk\+Block\+Pos} $\ast$}]{dbp = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{main_8h_a19e5550d485671b88cf216370cfb73c6}
+Store block on disk. If dbp is provided, the file is known to already reside on disk \hypertarget{main_8h_a1b84df0bdfe2608b82c822cfcd07e204}{}\index{main.\+h@{main.\+h}!Accept\+Block\+Header@{Accept\+Block\+Header}}
+\index{Accept\+Block\+Header@{Accept\+Block\+Header}!main.\+h@{main.\+h}}
+\subsubsection[{Accept\+Block\+Header}]{\setlength{\rightskip}{0pt plus 5cm}bool Accept\+Block\+Header (
+\begin{DoxyParamCaption}
+\item[{const C\+Block\+Header \&}]{block, }
+\item[{{\bf C\+Validation\+State} \&}]{state, }
+\item[{{\bf C\+Block\+Index} $\ast$$\ast$}]{ppindex = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{main_8h_a1b84df0bdfe2608b82c822cfcd07e204}
+\hypertarget{main_8h_a686a31e1b4c727ed69f24430d75dce88}{}\index{main.\+h@{main.\+h}!Accept\+To\+Memory\+Pool@{Accept\+To\+Memory\+Pool}}
+\index{Accept\+To\+Memory\+Pool@{Accept\+To\+Memory\+Pool}!main.\+h@{main.\+h}}
+\subsubsection[{Accept\+To\+Memory\+Pool}]{\setlength{\rightskip}{0pt plus 5cm}bool Accept\+To\+Memory\+Pool (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Tx\+Mem\+Pool} \&}]{pool, }
+\item[{{\bf C\+Validation\+State} \&}]{state, }
+\item[{const C\+Transaction \&}]{tx, }
+\item[{bool}]{f\+Limit\+Free, }
+\item[{bool $\ast$}]{pf\+Missing\+Inputs, }
+\item[{bool}]{f\+Reject\+Absurd\+Fee = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}\label{main_8h_a686a31e1b4c727ed69f24430d75dce88}
+(try to) add transaction to memory pool \hypertarget{main_8h_aacd6dd141dff87cd743c6dfd0eb63605}{}\index{main.\+h@{main.\+h}!Activate\+Best\+Chain@{Activate\+Best\+Chain}}
+\index{Activate\+Best\+Chain@{Activate\+Best\+Chain}!main.\+h@{main.\+h}}
+\subsubsection[{Activate\+Best\+Chain}]{\setlength{\rightskip}{0pt plus 5cm}bool Activate\+Best\+Chain (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Validation\+State} \&}]{state, }
+\item[{C\+Block $\ast$}]{pblock}
+\end{DoxyParamCaption}
+)}\label{main_8h_aacd6dd141dff87cd743c6dfd0eb63605}
+Find the best known block, and make it the tip of the block chain
+
+Make the best chain active, in multiple steps. The result is either failure or an activated best chain. pblock is either N\+U\+L\+L or a pointer to a block that is already loaded (to avoid loading it again from disk). \hypertarget{main_8h_a791e33e18bea9861e449e6ebcfce8890}{}\index{main.\+h@{main.\+h}!Are\+Inputs\+Standard@{Are\+Inputs\+Standard}}
+\index{Are\+Inputs\+Standard@{Are\+Inputs\+Standard}!main.\+h@{main.\+h}}
+\subsubsection[{Are\+Inputs\+Standard}]{\setlength{\rightskip}{0pt plus 5cm}bool Are\+Inputs\+Standard (
+\begin{DoxyParamCaption}
+\item[{const C\+Transaction \&}]{tx, }
+\item[{const {\bf C\+Coins\+View\+Cache} \&}]{map\+Inputs}
+\end{DoxyParamCaption}
+)}\label{main_8h_a791e33e18bea9861e449e6ebcfce8890}
+Check transaction inputs, and make sure any pay-\/to-\/script-\/hash transactions are evaluating Is\+Standard scripts
+
+Why bother? To avoid denial-\/of-\/service attacks; an attacker can submit a standard H\+A\+S\+H... O\+P\+\_\+\+E\+Q\+U\+A\+L transaction, which will get accepted into blocks. The redemption script can be anything; an attacker could use a very expensive-\/to-\/check-\/upon-\/redemption script like\+: D\+U\+P C\+H\+E\+C\+K\+S\+I\+G D\+R\+O\+P ... repeated 100 times... O\+P\+\_\+1 Check for standard transaction types 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em map\+Inputs} & Map of previous transactions that have outputs we\textquotesingle{}re spending \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if all inputs (script\+Sigs) use only standard transaction forms
+\end{DoxyReturn}
+Check transaction inputs to mitigate two potential denial-\/of-\/service attacks\+:
+
+
+\begin{DoxyEnumerate}
+\item script\+Sigs with extra data stuffed into them, not consumed by script\+Pub\+Key (or P2\+S\+H script)
+\item P2\+S\+H scripts with a crazy number of expensive C\+H\+E\+C\+K\+S\+I\+G/\+C\+H\+E\+C\+K\+M\+U\+L\+T\+I\+S\+I\+G operations 
+\end{DoxyEnumerate}\hypertarget{main_8h_afbaa5058f820d623e6a36f39da4fe484}{}\index{main.\+h@{main.\+h}!Check\+Block@{Check\+Block}}
+\index{Check\+Block@{Check\+Block}!main.\+h@{main.\+h}}
+\subsubsection[{Check\+Block}]{\setlength{\rightskip}{0pt plus 5cm}bool Check\+Block (
+\begin{DoxyParamCaption}
+\item[{const C\+Block \&}]{block, }
+\item[{{\bf C\+Validation\+State} \&}]{state, }
+\item[{bool}]{f\+Check\+P\+O\+W = {\ttfamily true}, }
+\item[{bool}]{f\+Check\+Merkle\+Root = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}\label{main_8h_afbaa5058f820d623e6a36f39da4fe484}
+\hypertarget{main_8h_a59e2328b990efdf325ec666bc3e64f8a}{}\index{main.\+h@{main.\+h}!Check\+Block\+Header@{Check\+Block\+Header}}
+\index{Check\+Block\+Header@{Check\+Block\+Header}!main.\+h@{main.\+h}}
+\subsubsection[{Check\+Block\+Header}]{\setlength{\rightskip}{0pt plus 5cm}bool Check\+Block\+Header (
+\begin{DoxyParamCaption}
+\item[{const C\+Block\+Header \&}]{block, }
+\item[{{\bf C\+Validation\+State} \&}]{state, }
+\item[{bool}]{f\+Check\+P\+O\+W = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}\label{main_8h_a59e2328b990efdf325ec666bc3e64f8a}
+Context-\/independent validity checks \hypertarget{main_8h_a6df609da0bad1550cbb2cdc781ad2904}{}\index{main.\+h@{main.\+h}!Check\+Disk\+Space@{Check\+Disk\+Space}}
+\index{Check\+Disk\+Space@{Check\+Disk\+Space}!main.\+h@{main.\+h}}
+\subsubsection[{Check\+Disk\+Space}]{\setlength{\rightskip}{0pt plus 5cm}bool Check\+Disk\+Space (
+\begin{DoxyParamCaption}
+\item[{uint64\+\_\+t}]{n\+Additional\+Bytes = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}\label{main_8h_a6df609da0bad1550cbb2cdc781ad2904}
+Check whether enough disk space is available for an incoming block \hypertarget{main_8h_aec29d3e8abda6a014ca910e7c73b4df7}{}\index{main.\+h@{main.\+h}!Check\+Inputs@{Check\+Inputs}}
+\index{Check\+Inputs@{Check\+Inputs}!main.\+h@{main.\+h}}
+\subsubsection[{Check\+Inputs}]{\setlength{\rightskip}{0pt plus 5cm}bool Check\+Inputs (
+\begin{DoxyParamCaption}
+\item[{const C\+Transaction \&}]{tx, }
+\item[{{\bf C\+Validation\+State} \&}]{state, }
+\item[{const {\bf C\+Coins\+View\+Cache} \&}]{view, }
+\item[{bool}]{f\+Script\+Checks, }
+\item[{unsigned int}]{flags, }
+\item[{bool}]{cache\+Store, }
+\item[{std\+::vector$<$ {\bf C\+Script\+Check} $>$ $\ast$}]{pv\+Checks = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{main_8h_aec29d3e8abda6a014ca910e7c73b4df7}
+Check whether all inputs of this transaction are valid (no double spends, scripts \& sigs, amounts) This does not modify the U\+T\+X\+O set. If pv\+Checks is not N\+U\+L\+L, script checks are pushed onto it instead of being performed inline. \hypertarget{main_8h_a3d8c4ba3a0c2b7a05cab21c95a886fbe}{}\index{main.\+h@{main.\+h}!Check\+Transaction@{Check\+Transaction}}
+\index{Check\+Transaction@{Check\+Transaction}!main.\+h@{main.\+h}}
+\subsubsection[{Check\+Transaction}]{\setlength{\rightskip}{0pt plus 5cm}bool Check\+Transaction (
+\begin{DoxyParamCaption}
+\item[{const C\+Transaction \&}]{tx, }
+\item[{{\bf C\+Validation\+State} \&}]{state}
+\end{DoxyParamCaption}
+)}\label{main_8h_a3d8c4ba3a0c2b7a05cab21c95a886fbe}
+Context-\/independent validity checks \hypertarget{main_8h_a063faa3c9fa2d1733a51fb14cae2a2c6}{}\index{main.\+h@{main.\+h}!Connect\+Block@{Connect\+Block}}
+\index{Connect\+Block@{Connect\+Block}!main.\+h@{main.\+h}}
+\subsubsection[{Connect\+Block}]{\setlength{\rightskip}{0pt plus 5cm}bool Connect\+Block (
+\begin{DoxyParamCaption}
+\item[{const C\+Block \&}]{block, }
+\item[{{\bf C\+Validation\+State} \&}]{state, }
+\item[{{\bf C\+Block\+Index} $\ast$}]{pindex, }
+\item[{{\bf C\+Coins\+View\+Cache} \&}]{coins, }
+\item[{bool}]{f\+Just\+Check = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}\label{main_8h_a063faa3c9fa2d1733a51fb14cae2a2c6}
+Apply the effects of this block (with given index) on the U\+T\+X\+O set represented by coins \hypertarget{main_8h_ae390d092b83ef1b712414d684b479fea}{}\index{main.\+h@{main.\+h}!Contextual\+Check\+Block@{Contextual\+Check\+Block}}
+\index{Contextual\+Check\+Block@{Contextual\+Check\+Block}!main.\+h@{main.\+h}}
+\subsubsection[{Contextual\+Check\+Block}]{\setlength{\rightskip}{0pt plus 5cm}bool Contextual\+Check\+Block (
+\begin{DoxyParamCaption}
+\item[{const C\+Block \&}]{block, }
+\item[{{\bf C\+Validation\+State} \&}]{state, }
+\item[{{\bf C\+Block\+Index} $\ast$}]{pindex\+Prev}
+\end{DoxyParamCaption}
+)}\label{main_8h_ae390d092b83ef1b712414d684b479fea}
+\hypertarget{main_8h_a0a37117b7eeff320e9b274af636703df}{}\index{main.\+h@{main.\+h}!Contextual\+Check\+Block\+Header@{Contextual\+Check\+Block\+Header}}
+\index{Contextual\+Check\+Block\+Header@{Contextual\+Check\+Block\+Header}!main.\+h@{main.\+h}}
+\subsubsection[{Contextual\+Check\+Block\+Header}]{\setlength{\rightskip}{0pt plus 5cm}bool Contextual\+Check\+Block\+Header (
+\begin{DoxyParamCaption}
+\item[{const C\+Block\+Header \&}]{block, }
+\item[{{\bf C\+Validation\+State} \&}]{state, }
+\item[{{\bf C\+Block\+Index} $\ast$}]{pindex\+Prev}
+\end{DoxyParamCaption}
+)}\label{main_8h_a0a37117b7eeff320e9b274af636703df}
+Context-\/dependent validity checks \hypertarget{main_8h_aa7213dfc13e3b470a5690b0b86c951c6}{}\index{main.\+h@{main.\+h}!Disconnect\+Block@{Disconnect\+Block}}
+\index{Disconnect\+Block@{Disconnect\+Block}!main.\+h@{main.\+h}}
+\subsubsection[{Disconnect\+Block}]{\setlength{\rightskip}{0pt plus 5cm}bool Disconnect\+Block (
+\begin{DoxyParamCaption}
+\item[{C\+Block \&}]{block, }
+\item[{{\bf C\+Validation\+State} \&}]{state, }
+\item[{{\bf C\+Block\+Index} $\ast$}]{pindex, }
+\item[{{\bf C\+Coins\+View\+Cache} \&}]{coins, }
+\item[{bool $\ast$}]{pf\+Clean = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{main_8h_aa7213dfc13e3b470a5690b0b86c951c6}
+Functions for validating blocks and updating the block tree Undo the effects of this block (with given index) on the U\+T\+X\+O set represented by coins. In case pf\+Clean is provided, operation will try to be tolerant about errors, and $\ast$pf\+Clean will be true if no problems were found. Otherwise, the return value will be false in case of problems. Note that in any case, coins may be modified. \hypertarget{main_8h_abad53b0a8e35cd4e747de8f3dab76476}{}\index{main.\+h@{main.\+h}!Find\+Files\+To\+Prune@{Find\+Files\+To\+Prune}}
+\index{Find\+Files\+To\+Prune@{Find\+Files\+To\+Prune}!main.\+h@{main.\+h}}
+\subsubsection[{Find\+Files\+To\+Prune}]{\setlength{\rightskip}{0pt plus 5cm}void Find\+Files\+To\+Prune (
+\begin{DoxyParamCaption}
+\item[{std\+::set$<$ int $>$ \&}]{set\+Files\+To\+Prune}
+\end{DoxyParamCaption}
+)}\label{main_8h_abad53b0a8e35cd4e747de8f3dab76476}
+Prune block and undo files (blk???.dat and undo???.dat) so that the disk space used is less than a user-\/defined target. The user sets the target (in M\+B) on the command line or in config file. This will be run on startup and whenever new space is allocated in a block or undo file, staying below the target. Changing back to unpruned requires a reindex (which in this case means the blockchain must be re-\/downloaded.)
+
+Pruning functions are called from Flush\+State\+To\+Disk when the global f\+Check\+For\+Pruning flag has been set. Block and undo files are deleted in lock-\/step (when blk00003.\+dat is deleted, so is rev00003.\+dat.) Pruning cannot take place until the longest chain is at least a certain length (100000 on mainnet, 1000 on testnet, 10 on regtest). Pruning will never delete a block within a defined distance (currently 288) from the active chain\textquotesingle{}s tip. The block index is updated by unsetting H\+A\+V\+E\+\_\+\+D\+A\+T\+A and H\+A\+V\+E\+\_\+\+U\+N\+D\+O for any blocks that were stored in the deleted files. A db flag records the fact that at least some block files have been pruned.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em set\+Files\+To\+Prune} & The set of file indices that can be unlinked will be returned \\
+\hline
+\end{DoxyParams}
+\hypertarget{main_8h_af43d57aa8b46a53839777e8b670c9d66}{}\index{main.\+h@{main.\+h}!Find\+Fork\+In\+Global\+Index@{Find\+Fork\+In\+Global\+Index}}
+\index{Find\+Fork\+In\+Global\+Index@{Find\+Fork\+In\+Global\+Index}!main.\+h@{main.\+h}}
+\subsubsection[{Find\+Fork\+In\+Global\+Index}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Block\+Index}$\ast$ Find\+Fork\+In\+Global\+Index (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\+Chain} \&}]{chain, }
+\item[{const C\+Block\+Locator \&}]{locator}
+\end{DoxyParamCaption}
+)}\label{main_8h_af43d57aa8b46a53839777e8b670c9d66}
+Find the last common block between the parameter chain and a locator. \hypertarget{main_8h_a0d01c135cc5a05475e3dc3910c9888da}{}\index{main.\+h@{main.\+h}!Flush\+State\+To\+Disk@{Flush\+State\+To\+Disk}}
+\index{Flush\+State\+To\+Disk@{Flush\+State\+To\+Disk}!main.\+h@{main.\+h}}
+\subsubsection[{Flush\+State\+To\+Disk}]{\setlength{\rightskip}{0pt plus 5cm}void Flush\+State\+To\+Disk (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{main_8h_a0d01c135cc5a05475e3dc3910c9888da}
+Flush all state, indexes and buffers to disk. \hypertarget{main_8h_a2f26f074aac584c3398de1dcdac59de9}{}\index{main.\+h@{main.\+h}!Get\+Block\+Pos\+Filename@{Get\+Block\+Pos\+Filename}}
+\index{Get\+Block\+Pos\+Filename@{Get\+Block\+Pos\+Filename}!main.\+h@{main.\+h}}
+\subsubsection[{Get\+Block\+Pos\+Filename}]{\setlength{\rightskip}{0pt plus 5cm}boost\+::filesystem\+::path Get\+Block\+Pos\+Filename (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\+Disk\+Block\+Pos} \&}]{pos, }
+\item[{const char $\ast$}]{prefix}
+\end{DoxyParamCaption}
+)}\label{main_8h_a2f26f074aac584c3398de1dcdac59de9}
+Translation to a filesystem path \hypertarget{main_8h_a6c9c196c54faf50f7dab3542454b0394}{}\index{main.\+h@{main.\+h}!Get\+Block\+Value@{Get\+Block\+Value}}
+\index{Get\+Block\+Value@{Get\+Block\+Value}!main.\+h@{main.\+h}}
+\subsubsection[{Get\+Block\+Value}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Amount} Get\+Block\+Value (
+\begin{DoxyParamCaption}
+\item[{int}]{n\+Height, }
+\item[{const {\bf C\+Amount} \&}]{n\+Fees}
+\end{DoxyParamCaption}
+)}\label{main_8h_a6c9c196c54faf50f7dab3542454b0394}
+\hypertarget{main_8h_ad2eaf4f8542c12ea9ee1183609cc6d1a}{}\index{main.\+h@{main.\+h}!Get\+Legacy\+Sig\+Op\+Count@{Get\+Legacy\+Sig\+Op\+Count}}
+\index{Get\+Legacy\+Sig\+Op\+Count@{Get\+Legacy\+Sig\+Op\+Count}!main.\+h@{main.\+h}}
+\subsubsection[{Get\+Legacy\+Sig\+Op\+Count}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Get\+Legacy\+Sig\+Op\+Count (
+\begin{DoxyParamCaption}
+\item[{const C\+Transaction \&}]{tx}
+\end{DoxyParamCaption}
+)}\label{main_8h_ad2eaf4f8542c12ea9ee1183609cc6d1a}
+Count E\+C\+D\+S\+A signature operations the old-\/fashioned (pre-\/0.\+6) way \begin{DoxyReturn}{Returns}
+number of sigops this transaction\textquotesingle{}s outputs will produce when spent 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+C\+Transaction\+::\+Fetch\+Inputs 
+\end{DoxySeeAlso}
+\hypertarget{main_8h_a8d0d9b7e0d58d01f65b2d1f8babcb3da}{}\index{main.\+h@{main.\+h}!Get\+Min\+Relay\+Fee@{Get\+Min\+Relay\+Fee}}
+\index{Get\+Min\+Relay\+Fee@{Get\+Min\+Relay\+Fee}!main.\+h@{main.\+h}}
+\subsubsection[{Get\+Min\+Relay\+Fee}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Amount} Get\+Min\+Relay\+Fee (
+\begin{DoxyParamCaption}
+\item[{const C\+Transaction \&}]{tx, }
+\item[{unsigned int}]{n\+Bytes, }
+\item[{bool}]{f\+Allow\+Free}
+\end{DoxyParamCaption}
+)}\label{main_8h_a8d0d9b7e0d58d01f65b2d1f8babcb3da}
+\hypertarget{main_8h_af0793c7c14e94d2d642f4ac89067a429}{}\index{main.\+h@{main.\+h}!Get\+Node\+State\+Stats@{Get\+Node\+State\+Stats}}
+\index{Get\+Node\+State\+Stats@{Get\+Node\+State\+Stats}!main.\+h@{main.\+h}}
+\subsubsection[{Get\+Node\+State\+Stats}]{\setlength{\rightskip}{0pt plus 5cm}bool Get\+Node\+State\+Stats (
+\begin{DoxyParamCaption}
+\item[{{\bf Node\+Id}}]{nodeid, }
+\item[{{\bf C\+Node\+State\+Stats} \&}]{stats}
+\end{DoxyParamCaption}
+)}\label{main_8h_af0793c7c14e94d2d642f4ac89067a429}
+Get statistics from node state \hypertarget{main_8h_a312fadbeec896d49437733e986f3df04}{}\index{main.\+h@{main.\+h}!Get\+P2\+S\+H\+Sig\+Op\+Count@{Get\+P2\+S\+H\+Sig\+Op\+Count}}
+\index{Get\+P2\+S\+H\+Sig\+Op\+Count@{Get\+P2\+S\+H\+Sig\+Op\+Count}!main.\+h@{main.\+h}}
+\subsubsection[{Get\+P2\+S\+H\+Sig\+Op\+Count}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Get\+P2\+S\+H\+Sig\+Op\+Count (
+\begin{DoxyParamCaption}
+\item[{const C\+Transaction \&}]{tx, }
+\item[{const {\bf C\+Coins\+View\+Cache} \&}]{map\+Inputs}
+\end{DoxyParamCaption}
+)}\label{main_8h_a312fadbeec896d49437733e986f3df04}
+Count E\+C\+D\+S\+A signature operations in pay-\/to-\/script-\/hash inputs.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em map\+Inputs} & Map of previous transactions that have outputs we\textquotesingle{}re spending \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+maximum number of sigops required to validate this transaction\textquotesingle{}s inputs 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+C\+Transaction\+::\+Fetch\+Inputs 
+\end{DoxySeeAlso}
+\hypertarget{main_8h_a74cc9659a06d35436a25b7ae56a15bcb}{}\index{main.\+h@{main.\+h}!Get\+Transaction@{Get\+Transaction}}
+\index{Get\+Transaction@{Get\+Transaction}!main.\+h@{main.\+h}}
+\subsubsection[{Get\+Transaction}]{\setlength{\rightskip}{0pt plus 5cm}bool Get\+Transaction (
+\begin{DoxyParamCaption}
+\item[{const {\bf uint256} \&}]{hash, }
+\item[{C\+Transaction \&}]{tx\+Out, }
+\item[{{\bf uint256} \&}]{hash\+Block, }
+\item[{bool}]{f\+Allow\+Slow}
+\end{DoxyParamCaption}
+)}\label{main_8h_a74cc9659a06d35436a25b7ae56a15bcb}
+Retrieve a transaction (from memory pool, or from disk, if possible)
+
+Return transaction in tx, and if it was found inside a block, its hash is placed in hash\+Block \hypertarget{main_8h_a30cf1d6270f9040fc151d03b98027ab5}{}\index{main.\+h@{main.\+h}!Get\+Warnings@{Get\+Warnings}}
+\index{Get\+Warnings@{Get\+Warnings}!main.\+h@{main.\+h}}
+\subsubsection[{Get\+Warnings}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Get\+Warnings (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{str\+For}
+\end{DoxyParamCaption}
+)}\label{main_8h_a30cf1d6270f9040fc151d03b98027ab5}
+Format a string that describes several potential problems detected by the core \hypertarget{main_8h_a92e5e1fcbd56cc44c27d39b64da8a79a}{}\index{main.\+h@{main.\+h}!Init\+Block\+Index@{Init\+Block\+Index}}
+\index{Init\+Block\+Index@{Init\+Block\+Index}!main.\+h@{main.\+h}}
+\subsubsection[{Init\+Block\+Index}]{\setlength{\rightskip}{0pt plus 5cm}bool Init\+Block\+Index (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{main_8h_a92e5e1fcbd56cc44c27d39b64da8a79a}
+Initialize a new block tree database + block data on disk \hypertarget{main_8h_af3adfd64a90ee443bfa5fe16321aa2d7}{}\index{main.\+h@{main.\+h}!Insert\+Block\+Index@{Insert\+Block\+Index}}
+\index{Insert\+Block\+Index@{Insert\+Block\+Index}!main.\+h@{main.\+h}}
+\subsubsection[{Insert\+Block\+Index}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Block\+Index}$\ast$ Insert\+Block\+Index (
+\begin{DoxyParamCaption}
+\item[{{\bf uint256}}]{hash}
+\end{DoxyParamCaption}
+)}\label{main_8h_af3adfd64a90ee443bfa5fe16321aa2d7}
+Create a new block index entry for a given block hash \hypertarget{main_8h_ac142a65c99268796d4c235bb096b3c42}{}\index{main.\+h@{main.\+h}!Invalidate\+Block@{Invalidate\+Block}}
+\index{Invalidate\+Block@{Invalidate\+Block}!main.\+h@{main.\+h}}
+\subsubsection[{Invalidate\+Block}]{\setlength{\rightskip}{0pt plus 5cm}bool Invalidate\+Block (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Validation\+State} \&}]{state, }
+\item[{{\bf C\+Block\+Index} $\ast$}]{pindex}
+\end{DoxyParamCaption}
+)}\label{main_8h_ac142a65c99268796d4c235bb096b3c42}
+Mark a block as invalid. \hypertarget{main_8h_aa7ca31ac11bff224c6b0ac27fccce7b5}{}\index{main.\+h@{main.\+h}!Is\+Final\+Tx@{Is\+Final\+Tx}}
+\index{Is\+Final\+Tx@{Is\+Final\+Tx}!main.\+h@{main.\+h}}
+\subsubsection[{Is\+Final\+Tx}]{\setlength{\rightskip}{0pt plus 5cm}bool Is\+Final\+Tx (
+\begin{DoxyParamCaption}
+\item[{const C\+Transaction \&}]{tx, }
+\item[{int}]{n\+Block\+Height = {\ttfamily 0}, }
+\item[{int64\+\_\+t}]{n\+Block\+Time = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}\label{main_8h_aa7ca31ac11bff224c6b0ac27fccce7b5}
+\hypertarget{main_8h_a5edcd96316574fd4a7f3ae0922a5cfd6}{}\index{main.\+h@{main.\+h}!Is\+Initial\+Block\+Download@{Is\+Initial\+Block\+Download}}
+\index{Is\+Initial\+Block\+Download@{Is\+Initial\+Block\+Download}!main.\+h@{main.\+h}}
+\subsubsection[{Is\+Initial\+Block\+Download}]{\setlength{\rightskip}{0pt plus 5cm}bool Is\+Initial\+Block\+Download (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{main_8h_a5edcd96316574fd4a7f3ae0922a5cfd6}
+Check whether we are doing an initial block download (synchronizing from disk or network) \hypertarget{main_8h_a74832d5d658916e73adb139fd60e2354}{}\index{main.\+h@{main.\+h}!Is\+Standard\+Tx@{Is\+Standard\+Tx}}
+\index{Is\+Standard\+Tx@{Is\+Standard\+Tx}!main.\+h@{main.\+h}}
+\subsubsection[{Is\+Standard\+Tx}]{\setlength{\rightskip}{0pt plus 5cm}bool Is\+Standard\+Tx (
+\begin{DoxyParamCaption}
+\item[{const C\+Transaction \&}]{tx, }
+\item[{std\+::string \&}]{reason}
+\end{DoxyParamCaption}
+)}\label{main_8h_a74832d5d658916e73adb139fd60e2354}
+Check for standard transaction types \begin{DoxyReturn}{Returns}
+True if all outputs (script\+Pub\+Keys) use only standard transaction forms 
+\end{DoxyReturn}
+\hypertarget{main_8h_a4ef97794a0ba7a9181ec0ef2aa88491b}{}\index{main.\+h@{main.\+h}!Load\+Block\+Index@{Load\+Block\+Index}}
+\index{Load\+Block\+Index@{Load\+Block\+Index}!main.\+h@{main.\+h}}
+\subsubsection[{Load\+Block\+Index}]{\setlength{\rightskip}{0pt plus 5cm}bool Load\+Block\+Index (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{main_8h_a4ef97794a0ba7a9181ec0ef2aa88491b}
+Load the block tree and coins database from disk \hypertarget{main_8h_a8641eccb4e5d174838adeea9b234a691}{}\index{main.\+h@{main.\+h}!Load\+External\+Block\+File@{Load\+External\+Block\+File}}
+\index{Load\+External\+Block\+File@{Load\+External\+Block\+File}!main.\+h@{main.\+h}}
+\subsubsection[{Load\+External\+Block\+File}]{\setlength{\rightskip}{0pt plus 5cm}bool Load\+External\+Block\+File (
+\begin{DoxyParamCaption}
+\item[{F\+I\+L\+E $\ast$}]{file\+In, }
+\item[{{\bf C\+Disk\+Block\+Pos} $\ast$}]{dbp = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{main_8h_a8641eccb4e5d174838adeea9b234a691}
+Import blocks from an external file \hypertarget{main_8h_a4b04650c6aa3e5b02921ba992658d647}{}\index{main.\+h@{main.\+h}!Misbehaving@{Misbehaving}}
+\index{Misbehaving@{Misbehaving}!main.\+h@{main.\+h}}
+\subsubsection[{Misbehaving}]{\setlength{\rightskip}{0pt plus 5cm}void Misbehaving (
+\begin{DoxyParamCaption}
+\item[{{\bf Node\+Id}}]{nodeid, }
+\item[{int}]{howmuch}
+\end{DoxyParamCaption}
+)}\label{main_8h_a4b04650c6aa3e5b02921ba992658d647}
+Increase a node\textquotesingle{}s misbehavior score. \hypertarget{main_8h_a531eb79ff695289ac9a4f8daf292273c}{}\index{main.\+h@{main.\+h}!Open\+Block\+File@{Open\+Block\+File}}
+\index{Open\+Block\+File@{Open\+Block\+File}!main.\+h@{main.\+h}}
+\subsubsection[{Open\+Block\+File}]{\setlength{\rightskip}{0pt plus 5cm}F\+I\+L\+E$\ast$ Open\+Block\+File (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\+Disk\+Block\+Pos} \&}]{pos, }
+\item[{bool}]{f\+Read\+Only = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}\label{main_8h_a531eb79ff695289ac9a4f8daf292273c}
+Open a block file (blk?????.dat) \hypertarget{main_8h_addac9f89d64c9e26d36d1481da35877e}{}\index{main.\+h@{main.\+h}!Open\+Undo\+File@{Open\+Undo\+File}}
+\index{Open\+Undo\+File@{Open\+Undo\+File}!main.\+h@{main.\+h}}
+\subsubsection[{Open\+Undo\+File}]{\setlength{\rightskip}{0pt plus 5cm}F\+I\+L\+E$\ast$ Open\+Undo\+File (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\+Disk\+Block\+Pos} \&}]{pos, }
+\item[{bool}]{f\+Read\+Only = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}\label{main_8h_addac9f89d64c9e26d36d1481da35877e}
+Open an undo file (rev?????.dat) \hypertarget{main_8h_a196f9318f02448b85b28d612698934fd}{}\index{main.\+h@{main.\+h}!Process\+Messages@{Process\+Messages}}
+\index{Process\+Messages@{Process\+Messages}!main.\+h@{main.\+h}}
+\subsubsection[{Process\+Messages}]{\setlength{\rightskip}{0pt plus 5cm}bool Process\+Messages (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Node} $\ast$}]{pfrom}
+\end{DoxyParamCaption}
+)}\label{main_8h_a196f9318f02448b85b28d612698934fd}
+Process protocol messages received from a given node \hypertarget{main_8h_abb32e71aca0c6a769d419194ada13851}{}\index{main.\+h@{main.\+h}!Process\+New\+Block@{Process\+New\+Block}}
+\index{Process\+New\+Block@{Process\+New\+Block}!main.\+h@{main.\+h}}
+\subsubsection[{Process\+New\+Block}]{\setlength{\rightskip}{0pt plus 5cm}bool Process\+New\+Block (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Validation\+State} \&}]{state, }
+\item[{{\bf C\+Node} $\ast$}]{pfrom, }
+\item[{C\+Block $\ast$}]{pblock, }
+\item[{{\bf C\+Disk\+Block\+Pos} $\ast$}]{dbp = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{main_8h_abb32e71aca0c6a769d419194ada13851}
+Process an incoming block. This only returns after the best known valid block is made active. Note that it does not, however, guarantee that the specific block passed to it has been checked for validity!
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em state} & This may be set to an Error state if any error occurred processing it, including during validation/connection/etc of otherwise unrelated blocks during reorganisation; or it may be set to an Invalid state if pblock is itself invalid (but this is not guaranteed even when the block is checked). If you want to {\itshape possibly} get feedback on whether pblock is valid, you must also install a \hyperlink{class_c_validation_interface}{C\+Validation\+Interface} (see \hyperlink{validationinterface_8h}{validationinterface.\+h}) -\/ this will have its Block\+Checked method called whenever {\itshape any} block completes validation. \\
+\hline
+\mbox{\tt in}  & {\em pfrom} & The node which we are receiving the block from; it is added to map\+Block\+Source and may be penalised if the block is invalid. \\
+\hline
+\mbox{\tt in}  & {\em pblock} & The block we want to process. \\
+\hline
+\mbox{\tt out}  & {\em dbp} & If pblock is stored to disk (or already there), this will be set to its location. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if state.\+Is\+Valid() 
+\end{DoxyReturn}
+\hypertarget{main_8h_afccc404d3f648d7834ee7522ca348b41}{}\index{main.\+h@{main.\+h}!Prune\+And\+Flush@{Prune\+And\+Flush}}
+\index{Prune\+And\+Flush@{Prune\+And\+Flush}!main.\+h@{main.\+h}}
+\subsubsection[{Prune\+And\+Flush}]{\setlength{\rightskip}{0pt plus 5cm}void Prune\+And\+Flush (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{main_8h_afccc404d3f648d7834ee7522ca348b41}
+Prune block files and flush state to disk. \hypertarget{main_8h_a2dc350346749b7da7f4b40c114ee5147}{}\index{main.\+h@{main.\+h}!Read\+Block\+From\+Disk@{Read\+Block\+From\+Disk}}
+\index{Read\+Block\+From\+Disk@{Read\+Block\+From\+Disk}!main.\+h@{main.\+h}}
+\subsubsection[{Read\+Block\+From\+Disk}]{\setlength{\rightskip}{0pt plus 5cm}bool Read\+Block\+From\+Disk (
+\begin{DoxyParamCaption}
+\item[{C\+Block \&}]{block, }
+\item[{const {\bf C\+Disk\+Block\+Pos} \&}]{pos}
+\end{DoxyParamCaption}
+)}\label{main_8h_a2dc350346749b7da7f4b40c114ee5147}
+\hypertarget{main_8h_a445ff051f3b0038c0b19b7e1156c9f95}{}\index{main.\+h@{main.\+h}!Read\+Block\+From\+Disk@{Read\+Block\+From\+Disk}}
+\index{Read\+Block\+From\+Disk@{Read\+Block\+From\+Disk}!main.\+h@{main.\+h}}
+\subsubsection[{Read\+Block\+From\+Disk}]{\setlength{\rightskip}{0pt plus 5cm}bool Read\+Block\+From\+Disk (
+\begin{DoxyParamCaption}
+\item[{C\+Block \&}]{block, }
+\item[{const {\bf C\+Block\+Index} $\ast$}]{pindex}
+\end{DoxyParamCaption}
+)}\label{main_8h_a445ff051f3b0038c0b19b7e1156c9f95}
+\hypertarget{main_8h_a8302271cb4b4deed26c45b002ce2b4a0}{}\index{main.\+h@{main.\+h}!Reconsider\+Block@{Reconsider\+Block}}
+\index{Reconsider\+Block@{Reconsider\+Block}!main.\+h@{main.\+h}}
+\subsubsection[{Reconsider\+Block}]{\setlength{\rightskip}{0pt plus 5cm}bool Reconsider\+Block (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Validation\+State} \&}]{state, }
+\item[{{\bf C\+Block\+Index} $\ast$}]{pindex}
+\end{DoxyParamCaption}
+)}\label{main_8h_a8302271cb4b4deed26c45b002ce2b4a0}
+Remove invalidity status from a block and its descendants. \hypertarget{main_8h_ab02615ff65f91d69f8d786ec900baa8a}{}\index{main.\+h@{main.\+h}!Register\+Node\+Signals@{Register\+Node\+Signals}}
+\index{Register\+Node\+Signals@{Register\+Node\+Signals}!main.\+h@{main.\+h}}
+\subsubsection[{Register\+Node\+Signals}]{\setlength{\rightskip}{0pt plus 5cm}void Register\+Node\+Signals (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Node\+Signals} \&}]{node\+Signals}
+\end{DoxyParamCaption}
+)}\label{main_8h_ab02615ff65f91d69f8d786ec900baa8a}
+Register with a network node to receive its signals \hypertarget{main_8h_a711a5bdb30c9c9bbdc83011b1cbbe2f3}{}\index{main.\+h@{main.\+h}!Send\+Messages@{Send\+Messages}}
+\index{Send\+Messages@{Send\+Messages}!main.\+h@{main.\+h}}
+\subsubsection[{Send\+Messages}]{\setlength{\rightskip}{0pt plus 5cm}bool Send\+Messages (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Node} $\ast$}]{pto, }
+\item[{bool}]{f\+Send\+Trickle}
+\end{DoxyParamCaption}
+)}\label{main_8h_a711a5bdb30c9c9bbdc83011b1cbbe2f3}
+Send queued protocol messages to be sent to a give node.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pto} & The node which we are sending messages to. \\
+\hline
+\mbox{\tt in}  & {\em f\+Send\+Trickle} & When true send the trickled data, otherwise trickle the data until true. \\
+\hline
+\end{DoxyParams}
+\hypertarget{main_8h_aa778166224b25355c113d1706df12ffd}{}\index{main.\+h@{main.\+h}!Test\+Block\+Validity@{Test\+Block\+Validity}}
+\index{Test\+Block\+Validity@{Test\+Block\+Validity}!main.\+h@{main.\+h}}
+\subsubsection[{Test\+Block\+Validity}]{\setlength{\rightskip}{0pt plus 5cm}bool Test\+Block\+Validity (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Validation\+State} \&}]{state, }
+\item[{const C\+Block \&}]{block, }
+\item[{{\bf C\+Block\+Index} $\ast$}]{pindex\+Prev, }
+\item[{bool}]{f\+Check\+P\+O\+W = {\ttfamily true}, }
+\item[{bool}]{f\+Check\+Merkle\+Root = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}\label{main_8h_aa778166224b25355c113d1706df12ffd}
+Check a block is completely valid from start to finish (only works on top of our current best block, with cs\+\_\+main held) \hypertarget{main_8h_a8b6fddfd4e56e9c3e73c5dc0cf4de80c}{}\index{main.\+h@{main.\+h}!Thread\+Script\+Check@{Thread\+Script\+Check}}
+\index{Thread\+Script\+Check@{Thread\+Script\+Check}!main.\+h@{main.\+h}}
+\subsubsection[{Thread\+Script\+Check}]{\setlength{\rightskip}{0pt plus 5cm}void Thread\+Script\+Check (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{main_8h_a8b6fddfd4e56e9c3e73c5dc0cf4de80c}
+Run an instance of the script checking thread \hypertarget{main_8h_ad4d57cfd8dd43ff8966e67735fc7032d}{}\index{main.\+h@{main.\+h}!Unlink\+Pruned\+Files@{Unlink\+Pruned\+Files}}
+\index{Unlink\+Pruned\+Files@{Unlink\+Pruned\+Files}!main.\+h@{main.\+h}}
+\subsubsection[{Unlink\+Pruned\+Files}]{\setlength{\rightskip}{0pt plus 5cm}void Unlink\+Pruned\+Files (
+\begin{DoxyParamCaption}
+\item[{std\+::set$<$ int $>$ \&}]{set\+Files\+To\+Prune}
+\end{DoxyParamCaption}
+)}\label{main_8h_ad4d57cfd8dd43ff8966e67735fc7032d}
+Actually unlink the specified files \hypertarget{main_8h_ac98b87e479f71b7be2b990a10c4ebc2d}{}\index{main.\+h@{main.\+h}!Unload\+Block\+Index@{Unload\+Block\+Index}}
+\index{Unload\+Block\+Index@{Unload\+Block\+Index}!main.\+h@{main.\+h}}
+\subsubsection[{Unload\+Block\+Index}]{\setlength{\rightskip}{0pt plus 5cm}void Unload\+Block\+Index (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{main_8h_ac98b87e479f71b7be2b990a10c4ebc2d}
+Unload database information \hypertarget{main_8h_a3ef0cc6e9d9d6435ee2a5569244d6ebd}{}\index{main.\+h@{main.\+h}!Unregister\+Node\+Signals@{Unregister\+Node\+Signals}}
+\index{Unregister\+Node\+Signals@{Unregister\+Node\+Signals}!main.\+h@{main.\+h}}
+\subsubsection[{Unregister\+Node\+Signals}]{\setlength{\rightskip}{0pt plus 5cm}void Unregister\+Node\+Signals (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Node\+Signals} \&}]{node\+Signals}
+\end{DoxyParamCaption}
+)}\label{main_8h_a3ef0cc6e9d9d6435ee2a5569244d6ebd}
+Unregister a network node \hypertarget{main_8h_a1a3e0daa83014ce726095179753d5e01}{}\index{main.\+h@{main.\+h}!Update\+Coins@{Update\+Coins}}
+\index{Update\+Coins@{Update\+Coins}!main.\+h@{main.\+h}}
+\subsubsection[{Update\+Coins}]{\setlength{\rightskip}{0pt plus 5cm}void Update\+Coins (
+\begin{DoxyParamCaption}
+\item[{const C\+Transaction \&}]{tx, }
+\item[{{\bf C\+Validation\+State} \&}]{state, }
+\item[{{\bf C\+Coins\+View\+Cache} \&}]{inputs, }
+\item[{int}]{n\+Height}
+\end{DoxyParamCaption}
+)}\label{main_8h_a1a3e0daa83014ce726095179753d5e01}
+Apply the effects of this transaction on the U\+T\+X\+O set represented by view \hypertarget{main_8h_ada76402fa869197c916231a42b011fd4}{}\index{main.\+h@{main.\+h}!Write\+Block\+To\+Disk@{Write\+Block\+To\+Disk}}
+\index{Write\+Block\+To\+Disk@{Write\+Block\+To\+Disk}!main.\+h@{main.\+h}}
+\subsubsection[{Write\+Block\+To\+Disk}]{\setlength{\rightskip}{0pt plus 5cm}bool Write\+Block\+To\+Disk (
+\begin{DoxyParamCaption}
+\item[{C\+Block \&}]{block, }
+\item[{{\bf C\+Disk\+Block\+Pos} \&}]{pos}
+\end{DoxyParamCaption}
+)}\label{main_8h_ada76402fa869197c916231a42b011fd4}
+Functions for disk access for blocks 
+
+\subsection{Variable Documentation}
+\hypertarget{main_8h_adb31995c443ae2aef1d2f1c350de0419}{}\index{main.\+h@{main.\+h}!chain\+Active@{chain\+Active}}
+\index{chain\+Active@{chain\+Active}!main.\+h@{main.\+h}}
+\subsubsection[{chain\+Active}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Chain} chain\+Active}\label{main_8h_adb31995c443ae2aef1d2f1c350de0419}
+The currently-\/connected chain of blocks. \hypertarget{main_8h_a5ed86cbbedb72d8fcec0524f2792ada8}{}\index{main.\+h@{main.\+h}!C\+O\+I\+N\+B\+A\+S\+E\+\_\+\+F\+L\+A\+G\+S@{C\+O\+I\+N\+B\+A\+S\+E\+\_\+\+F\+L\+A\+G\+S}}
+\index{C\+O\+I\+N\+B\+A\+S\+E\+\_\+\+F\+L\+A\+G\+S@{C\+O\+I\+N\+B\+A\+S\+E\+\_\+\+F\+L\+A\+G\+S}!main.\+h@{main.\+h}}
+\subsubsection[{C\+O\+I\+N\+B\+A\+S\+E\+\_\+\+F\+L\+A\+G\+S}]{\setlength{\rightskip}{0pt plus 5cm}C\+Script C\+O\+I\+N\+B\+A\+S\+E\+\_\+\+F\+L\+A\+G\+S}\label{main_8h_a5ed86cbbedb72d8fcec0524f2792ada8}
+Constant stuff for coinbase transactions we create\+: \hypertarget{main_8h_a1ed8285f0fe3c6799c53265ce72552c8}{}\index{main.\+h@{main.\+h}!cs\+\_\+main@{cs\+\_\+main}}
+\index{cs\+\_\+main@{cs\+\_\+main}!main.\+h@{main.\+h}}
+\subsubsection[{cs\+\_\+main}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Critical\+Section} cs\+\_\+main}\label{main_8h_a1ed8285f0fe3c6799c53265ce72552c8}
+Global state \hypertarget{main_8h_ac3e42569e7f188c94a7a94e331b7ded1}{}\index{main.\+h@{main.\+h}!cs\+Best\+Block@{cs\+Best\+Block}}
+\index{cs\+Best\+Block@{cs\+Best\+Block}!main.\+h@{main.\+h}}
+\subsubsection[{cs\+Best\+Block}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Waitable\+Critical\+Section} cs\+Best\+Block}\label{main_8h_ac3e42569e7f188c94a7a94e331b7ded1}
+\hypertarget{main_8h_ae2cc1d9c98e768ae18d1eb071e1feee4}{}\index{main.\+h@{main.\+h}!cv\+Block\+Change@{cv\+Block\+Change}}
+\index{cv\+Block\+Change@{cv\+Block\+Change}!main.\+h@{main.\+h}}
+\subsubsection[{cv\+Block\+Change}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Condition\+Variable} cv\+Block\+Change}\label{main_8h_ae2cc1d9c98e768ae18d1eb071e1feee4}
+\hypertarget{main_8h_a1eecd3058c45df997e0f3f9f0a1e13af}{}\index{main.\+h@{main.\+h}!f\+Check\+Block\+Index@{f\+Check\+Block\+Index}}
+\index{f\+Check\+Block\+Index@{f\+Check\+Block\+Index}!main.\+h@{main.\+h}}
+\subsubsection[{f\+Check\+Block\+Index}]{\setlength{\rightskip}{0pt plus 5cm}bool f\+Check\+Block\+Index}\label{main_8h_a1eecd3058c45df997e0f3f9f0a1e13af}
+\hypertarget{main_8h_a38bb6e0c3dcc21268fba23887bde2f4e}{}\index{main.\+h@{main.\+h}!f\+Have\+Pruned@{f\+Have\+Pruned}}
+\index{f\+Have\+Pruned@{f\+Have\+Pruned}!main.\+h@{main.\+h}}
+\subsubsection[{f\+Have\+Pruned}]{\setlength{\rightskip}{0pt plus 5cm}bool f\+Have\+Pruned}\label{main_8h_a38bb6e0c3dcc21268fba23887bde2f4e}
+Pruning-\/related variables and constants True if any block files have ever been pruned. \hypertarget{main_8h_aaf87d0dd26c4a7c9bcc5bdd1127e8637}{}\index{main.\+h@{main.\+h}!f\+Importing@{f\+Importing}}
+\index{f\+Importing@{f\+Importing}!main.\+h@{main.\+h}}
+\subsubsection[{f\+Importing}]{\setlength{\rightskip}{0pt plus 5cm}bool f\+Importing}\label{main_8h_aaf87d0dd26c4a7c9bcc5bdd1127e8637}
+\hypertarget{main_8h_ac1c58e7ff985aa26a43c05aa802c1ed4}{}\index{main.\+h@{main.\+h}!f\+Is\+Bare\+Multisig\+Std@{f\+Is\+Bare\+Multisig\+Std}}
+\index{f\+Is\+Bare\+Multisig\+Std@{f\+Is\+Bare\+Multisig\+Std}!main.\+h@{main.\+h}}
+\subsubsection[{f\+Is\+Bare\+Multisig\+Std}]{\setlength{\rightskip}{0pt plus 5cm}bool f\+Is\+Bare\+Multisig\+Std}\label{main_8h_ac1c58e7ff985aa26a43c05aa802c1ed4}
+\hypertarget{main_8h_ab3d3252ad7773f86035217d3a08f16ba}{}\index{main.\+h@{main.\+h}!f\+Prune\+Mode@{f\+Prune\+Mode}}
+\index{f\+Prune\+Mode@{f\+Prune\+Mode}!main.\+h@{main.\+h}}
+\subsubsection[{f\+Prune\+Mode}]{\setlength{\rightskip}{0pt plus 5cm}bool f\+Prune\+Mode}\label{main_8h_ab3d3252ad7773f86035217d3a08f16ba}
+True if we\textquotesingle{}re running in -\/prune mode. \hypertarget{main_8h_a8e0eca589b2d4254a65f04c5d91888b2}{}\index{main.\+h@{main.\+h}!f\+Reindex@{f\+Reindex}}
+\index{f\+Reindex@{f\+Reindex}!main.\+h@{main.\+h}}
+\subsubsection[{f\+Reindex}]{\setlength{\rightskip}{0pt plus 5cm}bool f\+Reindex}\label{main_8h_a8e0eca589b2d4254a65f04c5d91888b2}
+\hypertarget{main_8h_a6b569217f0bbb0a69a42c8769df06a06}{}\index{main.\+h@{main.\+h}!f\+Tx\+Index@{f\+Tx\+Index}}
+\index{f\+Tx\+Index@{f\+Tx\+Index}!main.\+h@{main.\+h}}
+\subsubsection[{f\+Tx\+Index}]{\setlength{\rightskip}{0pt plus 5cm}bool f\+Tx\+Index}\label{main_8h_a6b569217f0bbb0a69a42c8769df06a06}
+\hypertarget{main_8h_a887b8e9f9fea0ea870c6987f1fd52eb6}{}\index{main.\+h@{main.\+h}!map\+Block\+Index@{map\+Block\+Index}}
+\index{map\+Block\+Index@{map\+Block\+Index}!main.\+h@{main.\+h}}
+\subsubsection[{map\+Block\+Index}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Block\+Map} map\+Block\+Index}\label{main_8h_a887b8e9f9fea0ea870c6987f1fd52eb6}
+\hypertarget{main_8h_abc71256f703e47c9254093e32ed2994c}{}\index{main.\+h@{main.\+h}!mempool@{mempool}}
+\index{mempool@{mempool}!main.\+h@{main.\+h}}
+\subsubsection[{mempool}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Tx\+Mem\+Pool} mempool}\label{main_8h_abc71256f703e47c9254093e32ed2994c}
+\hypertarget{main_8h_a5925a10baeee7d4bdce1982bdcbd3bd0}{}\index{main.\+h@{main.\+h}!min\+Relay\+Tx\+Fee@{min\+Relay\+Tx\+Fee}}
+\index{min\+Relay\+Tx\+Fee@{min\+Relay\+Tx\+Fee}!main.\+h@{main.\+h}}
+\subsubsection[{min\+Relay\+Tx\+Fee}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Fee\+Rate} min\+Relay\+Tx\+Fee}\label{main_8h_a5925a10baeee7d4bdce1982bdcbd3bd0}
+Fees smaller than this (in satoshi) are considered zero fee (for relaying and mining) \hypertarget{main_8h_a08b980f03b2fb15445e0ddc8bb4b3d73}{}\index{main.\+h@{main.\+h}!n\+Coin\+Cache\+Size@{n\+Coin\+Cache\+Size}}
+\index{n\+Coin\+Cache\+Size@{n\+Coin\+Cache\+Size}!main.\+h@{main.\+h}}
+\subsubsection[{n\+Coin\+Cache\+Size}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int n\+Coin\+Cache\+Size}\label{main_8h_a08b980f03b2fb15445e0ddc8bb4b3d73}
+\hypertarget{main_8h_af8945f7f19ea7e938baab1bd4c226c2f}{}\index{main.\+h@{main.\+h}!n\+Last\+Block\+Size@{n\+Last\+Block\+Size}}
+\index{n\+Last\+Block\+Size@{n\+Last\+Block\+Size}!main.\+h@{main.\+h}}
+\subsubsection[{n\+Last\+Block\+Size}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t n\+Last\+Block\+Size}\label{main_8h_af8945f7f19ea7e938baab1bd4c226c2f}
+\hypertarget{main_8h_a31f8b0d3c96670151ba997019820e0f4}{}\index{main.\+h@{main.\+h}!n\+Last\+Block\+Tx@{n\+Last\+Block\+Tx}}
+\index{n\+Last\+Block\+Tx@{n\+Last\+Block\+Tx}!main.\+h@{main.\+h}}
+\subsubsection[{n\+Last\+Block\+Tx}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t n\+Last\+Block\+Tx}\label{main_8h_a31f8b0d3c96670151ba997019820e0f4}
+\hypertarget{main_8h_a0da4d3bd457259c6128277ae599a5e97}{}\index{main.\+h@{main.\+h}!n\+Prune\+Target@{n\+Prune\+Target}}
+\index{n\+Prune\+Target@{n\+Prune\+Target}!main.\+h@{main.\+h}}
+\subsubsection[{n\+Prune\+Target}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t n\+Prune\+Target}\label{main_8h_a0da4d3bd457259c6128277ae599a5e97}
+Number of Mi\+B of block files that we\textquotesingle{}re trying to stay below. \hypertarget{main_8h_a255e9fc1ce92b27522640085d3a18494}{}\index{main.\+h@{main.\+h}!n\+Script\+Check\+Threads@{n\+Script\+Check\+Threads}}
+\index{n\+Script\+Check\+Threads@{n\+Script\+Check\+Threads}!main.\+h@{main.\+h}}
+\subsubsection[{n\+Script\+Check\+Threads}]{\setlength{\rightskip}{0pt plus 5cm}int n\+Script\+Check\+Threads}\label{main_8h_a255e9fc1ce92b27522640085d3a18494}
+\hypertarget{main_8h_a0023503503c358eda0c97a576ef53fde}{}\index{main.\+h@{main.\+h}!pblocktree@{pblocktree}}
+\index{pblocktree@{pblocktree}!main.\+h@{main.\+h}}
+\subsubsection[{pblocktree}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Block\+Tree\+D\+B}$\ast$ pblocktree}\label{main_8h_a0023503503c358eda0c97a576ef53fde}
+Global variable that points to the active block tree (protected by cs\+\_\+main) \hypertarget{main_8h_a1821834b8f7837b469f7f91a14c20042}{}\index{main.\+h@{main.\+h}!pcoins\+Tip@{pcoins\+Tip}}
+\index{pcoins\+Tip@{pcoins\+Tip}!main.\+h@{main.\+h}}
+\subsubsection[{pcoins\+Tip}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Coins\+View\+Cache}$\ast$ pcoins\+Tip}\label{main_8h_a1821834b8f7837b469f7f91a14c20042}
+Global variable that points to the active \hyperlink{class_c_coins_view}{C\+Coins\+View} (protected by cs\+\_\+main) \hypertarget{main_8h_acfbdea59afc1824d0d1c1ff10f17fd53}{}\index{main.\+h@{main.\+h}!pindex\+Best\+Header@{pindex\+Best\+Header}}
+\index{pindex\+Best\+Header@{pindex\+Best\+Header}!main.\+h@{main.\+h}}
+\subsubsection[{pindex\+Best\+Header}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Block\+Index}$\ast$ pindex\+Best\+Header}\label{main_8h_acfbdea59afc1824d0d1c1ff10f17fd53}
+Best header we\textquotesingle{}ve seen so far (used for getheaders queries\textquotesingle{} starting points). \hypertarget{main_8h_a2874c632b3b462164de12be5abcd9d43}{}\index{main.\+h@{main.\+h}!str\+Message\+Magic@{str\+Message\+Magic}}
+\index{str\+Message\+Magic@{str\+Message\+Magic}!main.\+h@{main.\+h}}
+\subsubsection[{str\+Message\+Magic}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string str\+Message\+Magic}\label{main_8h_a2874c632b3b462164de12be5abcd9d43}

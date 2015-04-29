@@ -1,0 +1,313 @@
+\hypertarget{class_c_coins}{}\section{C\+Coins Class Reference}
+\label{class_c_coins}\index{C\+Coins@{C\+Coins}}
+
+
+{\ttfamily \#include $<$coins.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_c_coins_abf67e501a1d207c892c1f52dd383956e}{From\+Tx} (const C\+Transaction \&tx, int n\+Height\+In)
+\item 
+\hyperlink{class_c_coins_a303f3b245c339c11a1ea4318b01ec290}{C\+Coins} (const C\+Transaction \&tx, int n\+Height\+In)
+\begin{DoxyCompactList}\small\item\em construct a \hyperlink{class_c_coins}{C\+Coins} from a C\+Transaction, at a given height \end{DoxyCompactList}\item 
+void \hyperlink{class_c_coins_a4d4197688436b752234bea95f0230b82}{Clear} ()
+\item 
+\hyperlink{class_c_coins_a543757065d6c77d23953a33eecb31a46}{C\+Coins} ()
+\begin{DoxyCompactList}\small\item\em empty constructor \end{DoxyCompactList}\item 
+void \hyperlink{class_c_coins_a7cfa2efc07f4d35785c9c75caa8bddcb}{Cleanup} ()
+\begin{DoxyCompactList}\small\item\em remove spent outputs at the end of vout \end{DoxyCompactList}\item 
+void \hyperlink{class_c_coins_ad8b649abb32bdba255adec6dcfd57fc5}{Clear\+Unspendable} ()
+\item 
+void \hyperlink{class_c_coins_a9581324a74e9500b3d2cad472c0a830f}{swap} (\hyperlink{class_c_coins}{C\+Coins} \&to)
+\item 
+void \hyperlink{class_c_coins_a3dab547bdbce1152a2375c5c6c017ad5}{Calc\+Mask\+Size} (unsigned int \&n\+Bytes, unsigned int \&n\+Nonzero\+Bytes) const 
+\item 
+bool \hyperlink{class_c_coins_a5dda8b622fd4ebd48d382ea6be0db3c6}{Is\+Coin\+Base} () const 
+\item 
+unsigned int \hyperlink{class_c_coins_a74ddd9230570c084ea56feaf4b9d7e06}{Get\+Serialize\+Size} (int n\+Type, int \hyperlink{class_c_coins_a96fea4ee8841e9ce32f60c2e7e3cf6b6}{n\+Version}) const 
+\item 
+{\footnotesize template$<$typename Stream $>$ }\\void \hyperlink{class_c_coins_a0932a94966083092cbceabec1ef65d73}{Serialize} (Stream \&s, int n\+Type, int \hyperlink{class_c_coins_a96fea4ee8841e9ce32f60c2e7e3cf6b6}{n\+Version}) const 
+\item 
+{\footnotesize template$<$typename Stream $>$ }\\void \hyperlink{class_c_coins_adaa98cb6d8da3a4d573cd799ddd11051}{Unserialize} (Stream \&s, int n\+Type, int \hyperlink{class_c_coins_a96fea4ee8841e9ce32f60c2e7e3cf6b6}{n\+Version})
+\item 
+bool \hyperlink{class_c_coins_a0acc5f3849c1c41386d9450a3ee3a3c8}{Spend} (uint32\+\_\+t n\+Pos)
+\begin{DoxyCompactList}\small\item\em mark a vout spent \end{DoxyCompactList}\item 
+bool \hyperlink{class_c_coins_a69bdcbac02e1644cb02b2645068777b5}{Is\+Available} (unsigned int n\+Pos) const 
+\begin{DoxyCompactList}\small\item\em check whether a particular output is still available \end{DoxyCompactList}\item 
+bool \hyperlink{class_c_coins_af28a2e44f0b41c3a4a6366607b4b8f81}{Is\+Pruned} () const 
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_c_coins_adeedfaef84ba39b6e295d5d1fb9d8f0b}{f\+Coin\+Base}
+\begin{DoxyCompactList}\small\item\em whether transaction is a coinbase \end{DoxyCompactList}\item 
+std\+::vector$<$ C\+Tx\+Out $>$ \hyperlink{class_c_coins_a1dcea1a6da9b25642337e286f9f59b03}{vout}
+\begin{DoxyCompactList}\small\item\em unspent transaction outputs; spent outputs are .Is\+Null(); spent outputs at the end of the array are dropped \end{DoxyCompactList}\item 
+int \hyperlink{class_c_coins_af7396dfad71367de46f21cf92e2c70ab}{n\+Height}
+\begin{DoxyCompactList}\small\item\em at which height this transaction was included in the active block chain \end{DoxyCompactList}\item 
+int \hyperlink{class_c_coins_a96fea4ee8841e9ce32f60c2e7e3cf6b6}{n\+Version}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_c_coins_a77593e3db3e4b369c21a91aad2afcc05}{operator==} (const \hyperlink{class_c_coins}{C\+Coins} \&a, const \hyperlink{class_c_coins}{C\+Coins} \&b)
+\begin{DoxyCompactList}\small\item\em equality test \end{DoxyCompactList}\item 
+bool \hyperlink{class_c_coins_a42ef9fcc8ca59916b5fb69904db1c9bd}{operator!=} (const \hyperlink{class_c_coins}{C\+Coins} \&a, const \hyperlink{class_c_coins}{C\+Coins} \&b)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Pruned version of C\+Transaction\+: only retains metadata and unspent transaction outputs
+
+Serialized format\+:
+\begin{DoxyItemize}
+\item \hyperlink{serialize_8h_a1383f2a4c22ffaeba9b2924d90459f76}{V\+A\+R\+I\+N\+T(n\+Version)}
+\item \hyperlink{serialize_8h_a1383f2a4c22ffaeba9b2924d90459f76}{V\+A\+R\+I\+N\+T(n\+Code)}
+\item unspentness bitvector, for vout\mbox{[}2\mbox{]} and further; least significant byte first
+\item the non-\/spent C\+Tx\+Outs (via \hyperlink{class_c_tx_out_compressor}{C\+Tx\+Out\+Compressor})
+\item \hyperlink{serialize_8h_a1383f2a4c22ffaeba9b2924d90459f76}{V\+A\+R\+I\+N\+T(n\+Height)}
+\end{DoxyItemize}
+
+The n\+Code value consists of\+:
+\begin{DoxyItemize}
+\item bit 1\+: \hyperlink{class_c_coins_a5dda8b622fd4ebd48d382ea6be0db3c6}{Is\+Coin\+Base()}
+\item bit 2\+: vout\mbox{[}0\mbox{]} is not spent
+\item bit 4\+: vout\mbox{[}1\mbox{]} is not spent
+\item The higher bits encode N, the number of non-\/zero bytes in the following bitvector.
+\begin{DoxyItemize}
+\item In case both bit 2 and bit 4 are unset, they encode N-\/1, as there must be at least one non-\/spent output).
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+Example\+: 0104835800816115944e077fe7c803cfa57f29b36bf87c1d358bb85e $<$$>$$<$$>$$<$-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/---$>$$<$-\/---$>$ $\vert$ \textbackslash{} $\vert$ / version code vout\mbox{[}1\mbox{]} height
+
+
+\begin{DoxyItemize}
+\item version = 1
+\item code = 4 (vout\mbox{[}1\mbox{]} is not spent, and 0 non-\/zero bytes of bitvector follow)
+\item unspentness bitvector\+: as 0 non-\/zero bytes follow, it has length 0
+\item vout\mbox{[}1\mbox{]}\+: 835800816115944e077fe7c803cfa57f29b36bf87c1d35
+\begin{DoxyItemize}
+\item 8358\+: compact amount representation for 60000000000 (600 B\+T\+C)
+\item 00\+: special txout type pay-\/to-\/pubkey-\/hash
+\item 816115944e077fe7c803cfa57f29b36bf87c1d35\+: address \hyperlink{classuint160}{uint160}
+\end{DoxyItemize}
+\item height = 203998
+\end{DoxyItemize}
+
+Example\+: 0109044086ef97d5790061b01caab50f1b8e9c50a5057eb43c2d9563a4eebbd123008c988f1a4a4de2161e0f50aac7f17e7f9555caa486af3b $<$$>$$<$$>$$<$--$>$$<$-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/---$>$$<$-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/---$>$$<$-\/---$>$ / \textbackslash{} \textbackslash{} $\vert$ $\vert$ / version code unspentness vout\mbox{[}4\mbox{]} vout\mbox{[}16\mbox{]} height
+
+
+\begin{DoxyItemize}
+\item version = 1
+\item code = 9 (coinbase, neither vout\mbox{[}0\mbox{]} or vout\mbox{[}1\mbox{]} are unspent, 2 (1, +1 because both bit 2 and bit 4 are unset) non-\/zero bitvector bytes follow)
+\item unspentness bitvector\+: bits 2 (0x04) and 14 (0x4000) are set, so vout\mbox{[}2+2\mbox{]} and vout\mbox{[}14+2\mbox{]} are unspent
+\item vout\mbox{[}4\mbox{]}\+: 86ef97d5790061b01caab50f1b8e9c50a5057eb43c2d9563a4ee
+\begin{DoxyItemize}
+\item 86ef97d579\+: compact amount representation for 234925952 (2.\+35 B\+T\+C)
+\item 00\+: special txout type pay-\/to-\/pubkey-\/hash
+\item 61b01caab50f1b8e9c50a5057eb43c2d9563a4ee\+: address \hyperlink{classuint160}{uint160}
+\end{DoxyItemize}
+\item vout\mbox{[}16\mbox{]}\+: bbd123008c988f1a4a4de2161e0f50aac7f17e7f9555caa4
+\begin{DoxyItemize}
+\item bbd123\+: compact amount representation for 110397 (0.\+001 B\+T\+C)
+\item 00\+: special txout type pay-\/to-\/pubkey-\/hash
+\item 8c988f1a4a4de2161e0f50aac7f17e7f9555caa4\+: address \hyperlink{classuint160}{uint160}
+\end{DoxyItemize}
+\item height = 120891 
+\end{DoxyItemize}
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_c_coins_a303f3b245c339c11a1ea4318b01ec290}{}\index{C\+Coins@{C\+Coins}!C\+Coins@{C\+Coins}}
+\index{C\+Coins@{C\+Coins}!C\+Coins@{C\+Coins}}
+\subsubsection[{C\+Coins}]{\setlength{\rightskip}{0pt plus 5cm}C\+Coins\+::\+C\+Coins (
+\begin{DoxyParamCaption}
+\item[{const C\+Transaction \&}]{tx, }
+\item[{int}]{n\+Height\+In}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_coins_a303f3b245c339c11a1ea4318b01ec290}
+
+
+construct a \hyperlink{class_c_coins}{C\+Coins} from a C\+Transaction, at a given height 
+
+\hypertarget{class_c_coins_a543757065d6c77d23953a33eecb31a46}{}\index{C\+Coins@{C\+Coins}!C\+Coins@{C\+Coins}}
+\index{C\+Coins@{C\+Coins}!C\+Coins@{C\+Coins}}
+\subsubsection[{C\+Coins}]{\setlength{\rightskip}{0pt plus 5cm}C\+Coins\+::\+C\+Coins (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_coins_a543757065d6c77d23953a33eecb31a46}
+
+
+empty constructor 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_c_coins_a3dab547bdbce1152a2375c5c6c017ad5}{}\index{C\+Coins@{C\+Coins}!Calc\+Mask\+Size@{Calc\+Mask\+Size}}
+\index{Calc\+Mask\+Size@{Calc\+Mask\+Size}!C\+Coins@{C\+Coins}}
+\subsubsection[{Calc\+Mask\+Size}]{\setlength{\rightskip}{0pt plus 5cm}void C\+Coins\+::\+Calc\+Mask\+Size (
+\begin{DoxyParamCaption}
+\item[{unsigned int \&}]{n\+Bytes, }
+\item[{unsigned int \&}]{n\+Nonzero\+Bytes}
+\end{DoxyParamCaption}
+) const}\label{class_c_coins_a3dab547bdbce1152a2375c5c6c017ad5}
+calculate number of bytes for the bitmask, and its number of non-\/zero bytes each bit in the bitmask represents the availability of one output, but the availabilities of the first two outputs are encoded separately \hypertarget{class_c_coins_a7cfa2efc07f4d35785c9c75caa8bddcb}{}\index{C\+Coins@{C\+Coins}!Cleanup@{Cleanup}}
+\index{Cleanup@{Cleanup}!C\+Coins@{C\+Coins}}
+\subsubsection[{Cleanup}]{\setlength{\rightskip}{0pt plus 5cm}void C\+Coins\+::\+Cleanup (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_coins_a7cfa2efc07f4d35785c9c75caa8bddcb}
+
+
+remove spent outputs at the end of vout 
+
+\hypertarget{class_c_coins_a4d4197688436b752234bea95f0230b82}{}\index{C\+Coins@{C\+Coins}!Clear@{Clear}}
+\index{Clear@{Clear}!C\+Coins@{C\+Coins}}
+\subsubsection[{Clear}]{\setlength{\rightskip}{0pt plus 5cm}void C\+Coins\+::\+Clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_coins_a4d4197688436b752234bea95f0230b82}
+\hypertarget{class_c_coins_ad8b649abb32bdba255adec6dcfd57fc5}{}\index{C\+Coins@{C\+Coins}!Clear\+Unspendable@{Clear\+Unspendable}}
+\index{Clear\+Unspendable@{Clear\+Unspendable}!C\+Coins@{C\+Coins}}
+\subsubsection[{Clear\+Unspendable}]{\setlength{\rightskip}{0pt plus 5cm}void C\+Coins\+::\+Clear\+Unspendable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_coins_ad8b649abb32bdba255adec6dcfd57fc5}
+\hypertarget{class_c_coins_abf67e501a1d207c892c1f52dd383956e}{}\index{C\+Coins@{C\+Coins}!From\+Tx@{From\+Tx}}
+\index{From\+Tx@{From\+Tx}!C\+Coins@{C\+Coins}}
+\subsubsection[{From\+Tx}]{\setlength{\rightskip}{0pt plus 5cm}void C\+Coins\+::\+From\+Tx (
+\begin{DoxyParamCaption}
+\item[{const C\+Transaction \&}]{tx, }
+\item[{int}]{n\+Height\+In}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_coins_abf67e501a1d207c892c1f52dd383956e}
+\hypertarget{class_c_coins_a74ddd9230570c084ea56feaf4b9d7e06}{}\index{C\+Coins@{C\+Coins}!Get\+Serialize\+Size@{Get\+Serialize\+Size}}
+\index{Get\+Serialize\+Size@{Get\+Serialize\+Size}!C\+Coins@{C\+Coins}}
+\subsubsection[{Get\+Serialize\+Size}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int C\+Coins\+::\+Get\+Serialize\+Size (
+\begin{DoxyParamCaption}
+\item[{int}]{n\+Type, }
+\item[{int}]{n\+Version}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_coins_a74ddd9230570c084ea56feaf4b9d7e06}
+\hypertarget{class_c_coins_a69bdcbac02e1644cb02b2645068777b5}{}\index{C\+Coins@{C\+Coins}!Is\+Available@{Is\+Available}}
+\index{Is\+Available@{Is\+Available}!C\+Coins@{C\+Coins}}
+\subsubsection[{Is\+Available}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+Coins\+::\+Is\+Available (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{n\+Pos}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_coins_a69bdcbac02e1644cb02b2645068777b5}
+
+
+check whether a particular output is still available 
+
+\hypertarget{class_c_coins_a5dda8b622fd4ebd48d382ea6be0db3c6}{}\index{C\+Coins@{C\+Coins}!Is\+Coin\+Base@{Is\+Coin\+Base}}
+\index{Is\+Coin\+Base@{Is\+Coin\+Base}!C\+Coins@{C\+Coins}}
+\subsubsection[{Is\+Coin\+Base}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+Coins\+::\+Is\+Coin\+Base (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_coins_a5dda8b622fd4ebd48d382ea6be0db3c6}
+\hypertarget{class_c_coins_af28a2e44f0b41c3a4a6366607b4b8f81}{}\index{C\+Coins@{C\+Coins}!Is\+Pruned@{Is\+Pruned}}
+\index{Is\+Pruned@{Is\+Pruned}!C\+Coins@{C\+Coins}}
+\subsubsection[{Is\+Pruned}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+Coins\+::\+Is\+Pruned (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_coins_af28a2e44f0b41c3a4a6366607b4b8f81}
+check whether the entire \hyperlink{class_c_coins}{C\+Coins} is spent note that only !\+Is\+Pruned() \hyperlink{class_c_coins}{C\+Coins} can be serialized \hypertarget{class_c_coins_a0932a94966083092cbceabec1ef65d73}{}\index{C\+Coins@{C\+Coins}!Serialize@{Serialize}}
+\index{Serialize@{Serialize}!C\+Coins@{C\+Coins}}
+\subsubsection[{Serialize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Stream $>$ void C\+Coins\+::\+Serialize (
+\begin{DoxyParamCaption}
+\item[{Stream \&}]{s, }
+\item[{int}]{n\+Type, }
+\item[{int}]{n\+Version}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_coins_a0932a94966083092cbceabec1ef65d73}
+\hypertarget{class_c_coins_a0acc5f3849c1c41386d9450a3ee3a3c8}{}\index{C\+Coins@{C\+Coins}!Spend@{Spend}}
+\index{Spend@{Spend}!C\+Coins@{C\+Coins}}
+\subsubsection[{Spend}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+Coins\+::\+Spend (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{n\+Pos}
+\end{DoxyParamCaption}
+)}\label{class_c_coins_a0acc5f3849c1c41386d9450a3ee3a3c8}
+
+
+mark a vout spent 
+
+\hypertarget{class_c_coins_a9581324a74e9500b3d2cad472c0a830f}{}\index{C\+Coins@{C\+Coins}!swap@{swap}}
+\index{swap@{swap}!C\+Coins@{C\+Coins}}
+\subsubsection[{swap}]{\setlength{\rightskip}{0pt plus 5cm}void C\+Coins\+::swap (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Coins} \&}]{to}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_coins_a9581324a74e9500b3d2cad472c0a830f}
+\hypertarget{class_c_coins_adaa98cb6d8da3a4d573cd799ddd11051}{}\index{C\+Coins@{C\+Coins}!Unserialize@{Unserialize}}
+\index{Unserialize@{Unserialize}!C\+Coins@{C\+Coins}}
+\subsubsection[{Unserialize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Stream $>$ void C\+Coins\+::\+Unserialize (
+\begin{DoxyParamCaption}
+\item[{Stream \&}]{s, }
+\item[{int}]{n\+Type, }
+\item[{int}]{n\+Version}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_coins_adaa98cb6d8da3a4d573cd799ddd11051}
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{class_c_coins_a42ef9fcc8ca59916b5fb69904db1c9bd}{}\index{C\+Coins@{C\+Coins}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!C\+Coins@{C\+Coins}}
+\subsubsection[{operator"!=}]{\setlength{\rightskip}{0pt plus 5cm}bool operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\+Coins} \&}]{a, }
+\item[{const {\bf C\+Coins} \&}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\label{class_c_coins_a42ef9fcc8ca59916b5fb69904db1c9bd}
+\hypertarget{class_c_coins_a77593e3db3e4b369c21a91aad2afcc05}{}\index{C\+Coins@{C\+Coins}!operator==@{operator==}}
+\index{operator==@{operator==}!C\+Coins@{C\+Coins}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\+Coins} \&}]{a, }
+\item[{const {\bf C\+Coins} \&}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\label{class_c_coins_a77593e3db3e4b369c21a91aad2afcc05}
+
+
+equality test 
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_c_coins_adeedfaef84ba39b6e295d5d1fb9d8f0b}{}\index{C\+Coins@{C\+Coins}!f\+Coin\+Base@{f\+Coin\+Base}}
+\index{f\+Coin\+Base@{f\+Coin\+Base}!C\+Coins@{C\+Coins}}
+\subsubsection[{f\+Coin\+Base}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+Coins\+::f\+Coin\+Base}\label{class_c_coins_adeedfaef84ba39b6e295d5d1fb9d8f0b}
+
+
+whether transaction is a coinbase 
+
+\hypertarget{class_c_coins_af7396dfad71367de46f21cf92e2c70ab}{}\index{C\+Coins@{C\+Coins}!n\+Height@{n\+Height}}
+\index{n\+Height@{n\+Height}!C\+Coins@{C\+Coins}}
+\subsubsection[{n\+Height}]{\setlength{\rightskip}{0pt plus 5cm}int C\+Coins\+::n\+Height}\label{class_c_coins_af7396dfad71367de46f21cf92e2c70ab}
+
+
+at which height this transaction was included in the active block chain 
+
+\hypertarget{class_c_coins_a96fea4ee8841e9ce32f60c2e7e3cf6b6}{}\index{C\+Coins@{C\+Coins}!n\+Version@{n\+Version}}
+\index{n\+Version@{n\+Version}!C\+Coins@{C\+Coins}}
+\subsubsection[{n\+Version}]{\setlength{\rightskip}{0pt plus 5cm}int C\+Coins\+::n\+Version}\label{class_c_coins_a96fea4ee8841e9ce32f60c2e7e3cf6b6}
+version of the C\+Transaction; accesses to this value should probably check for n\+Height as well, as new tx version will probably only be introduced at certain heights \hypertarget{class_c_coins_a1dcea1a6da9b25642337e286f9f59b03}{}\index{C\+Coins@{C\+Coins}!vout@{vout}}
+\index{vout@{vout}!C\+Coins@{C\+Coins}}
+\subsubsection[{vout}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$C\+Tx\+Out$>$ C\+Coins\+::vout}\label{class_c_coins_a1dcea1a6da9b25642337e286f9f59b03}
+
+
+unspent transaction outputs; spent outputs are .Is\+Null(); spent outputs at the end of the array are dropped 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/\hyperlink{coins_8h}{coins.\+h}\item 
+C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/\hyperlink{coins_8cpp}{coins.\+cpp}\end{DoxyCompactItemize}

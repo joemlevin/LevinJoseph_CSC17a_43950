@@ -1,0 +1,41 @@
+\hypertarget{utilmoneystr_8h}{}\section{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/utilmoneystr.h File Reference}
+\label{utilmoneystr_8h}\index{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/utilmoneystr.\+h@{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/utilmoneystr.\+h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include \char`\"{}amount.\+h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{utilmoneystr_8h_adee3e4fe76d08c7b524a8562b4b2fda8}{Format\+Money} (const \hyperlink{amount_8h_a4eaf3a5239714d8c45b851527f7cb564}{C\+Amount} \&n, bool f\+Plus=false)
+\item 
+bool \hyperlink{utilmoneystr_8h_a1de857cb71a01a4104d131dc7c7b6b76}{Parse\+Money} (const std\+::string \&str, \hyperlink{amount_8h_a4eaf3a5239714d8c45b851527f7cb564}{C\+Amount} \&n\+Ret)
+\item 
+bool \hyperlink{utilmoneystr_8h_a72faa2422b590d61f0d365e8f8877e57}{Parse\+Money} (const char $\ast$psz\+In, \hyperlink{amount_8h_a4eaf3a5239714d8c45b851527f7cb564}{C\+Amount} \&n\+Ret)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{utilmoneystr_8h_adee3e4fe76d08c7b524a8562b4b2fda8}{}\index{utilmoneystr.\+h@{utilmoneystr.\+h}!Format\+Money@{Format\+Money}}
+\index{Format\+Money@{Format\+Money}!utilmoneystr.\+h@{utilmoneystr.\+h}}
+\subsubsection[{Format\+Money}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Format\+Money (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\+Amount} \&}]{n, }
+\item[{bool}]{f\+Plus = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}\label{utilmoneystr_8h_adee3e4fe76d08c7b524a8562b4b2fda8}
+Money parsing/formatting utilities. \hypertarget{utilmoneystr_8h_a1de857cb71a01a4104d131dc7c7b6b76}{}\index{utilmoneystr.\+h@{utilmoneystr.\+h}!Parse\+Money@{Parse\+Money}}
+\index{Parse\+Money@{Parse\+Money}!utilmoneystr.\+h@{utilmoneystr.\+h}}
+\subsubsection[{Parse\+Money}]{\setlength{\rightskip}{0pt plus 5cm}bool Parse\+Money (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{str, }
+\item[{{\bf C\+Amount} \&}]{n\+Ret}
+\end{DoxyParamCaption}
+)}\label{utilmoneystr_8h_a1de857cb71a01a4104d131dc7c7b6b76}
+\hypertarget{utilmoneystr_8h_a72faa2422b590d61f0d365e8f8877e57}{}\index{utilmoneystr.\+h@{utilmoneystr.\+h}!Parse\+Money@{Parse\+Money}}
+\index{Parse\+Money@{Parse\+Money}!utilmoneystr.\+h@{utilmoneystr.\+h}}
+\subsubsection[{Parse\+Money}]{\setlength{\rightskip}{0pt plus 5cm}bool Parse\+Money (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{psz\+In, }
+\item[{{\bf C\+Amount} \&}]{n\+Ret}
+\end{DoxyParamCaption}
+)}\label{utilmoneystr_8h_a72faa2422b590d61f0d365e8f8877e57}

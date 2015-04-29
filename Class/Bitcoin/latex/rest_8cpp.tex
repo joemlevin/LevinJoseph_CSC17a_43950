@@ -1,0 +1,99 @@
+\hypertarget{rest_8cpp}{}\section{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/rest.cpp File Reference}
+\label{rest_8cpp}\index{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/rest.\+cpp@{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/rest.\+cpp}}
+{\ttfamily \#include \char`\"{}primitives/block.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}primitives/transaction.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}main.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}rpcserver.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}streams.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sync.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utilstrencodings.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}version.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$boost/algorithm/string.\+hpp$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_rest_err}{Rest\+Err}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{rest_8cpp_aae3901e6d15d9592fd2083926e783d7c}{Ret\+Format} \{ \hyperlink{rest_8cpp_aae3901e6d15d9592fd2083926e783d7ca2bd639c2ce4f55651bc7dd835a0924df}{R\+F\+\_\+\+U\+N\+D\+E\+F}, 
+\hyperlink{rest_8cpp_aae3901e6d15d9592fd2083926e783d7caddb090ab3a6cfe6ab6c0c3559c3d3248}{R\+F\+\_\+\+B\+I\+N\+A\+R\+Y}, 
+\hyperlink{rest_8cpp_aae3901e6d15d9592fd2083926e783d7ca0e0ee12d21032cc6140a2dfd4c3c78d5}{R\+F\+\_\+\+H\+E\+X}, 
+\hyperlink{rest_8cpp_aae3901e6d15d9592fd2083926e783d7cae475fd554927ee997910d2710f22b343}{R\+F\+\_\+\+J\+S\+O\+N}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{rest_8cpp_a366b04dae2aae86eee356cc85d759268}{Tx\+To\+J\+S\+O\+N} (const C\+Transaction \&tx, const \hyperlink{classuint256}{uint256} hash\+Block, Object \&entry)
+\item 
+Object \hyperlink{rest_8cpp_aa6f8ec37fdab49f359425ed095b99a2b}{block\+To\+J\+S\+O\+N} (const C\+Block \&block, const \hyperlink{class_c_block_index}{C\+Block\+Index} $\ast$blockindex, bool tx\+Details=false)
+\item 
+bool \hyperlink{rest_8cpp_a3b4ebb3671ed6622d75913101b296120}{H\+T\+T\+P\+Req\+\_\+\+R\+E\+S\+T} (\hyperlink{class_accepted_connection}{Accepted\+Connection} $\ast$conn, const std\+::string \&str\+U\+R\+I, const std\+::map$<$ std\+::string, std\+::string $>$ \&map\+Headers, bool f\+Run)
+\end{DoxyCompactItemize}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{rest_8cpp_aae3901e6d15d9592fd2083926e783d7c}{}\index{rest.\+cpp@{rest.\+cpp}!Ret\+Format@{Ret\+Format}}
+\index{Ret\+Format@{Ret\+Format}!rest.\+cpp@{rest.\+cpp}}
+\subsubsection[{Ret\+Format}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Ret\+Format}}\label{rest_8cpp_aae3901e6d15d9592fd2083926e783d7c}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{R\+F\+\_\+\+U\+N\+D\+E\+F@{R\+F\+\_\+\+U\+N\+D\+E\+F}!rest.\+cpp@{rest.\+cpp}}\index{rest.\+cpp@{rest.\+cpp}!R\+F\+\_\+\+U\+N\+D\+E\+F@{R\+F\+\_\+\+U\+N\+D\+E\+F}}\item[{\em 
+\hypertarget{rest_8cpp_aae3901e6d15d9592fd2083926e783d7ca2bd639c2ce4f55651bc7dd835a0924df}{}R\+F\+\_\+\+U\+N\+D\+E\+F\label{rest_8cpp_aae3901e6d15d9592fd2083926e783d7ca2bd639c2ce4f55651bc7dd835a0924df}
+}]\index{R\+F\+\_\+\+B\+I\+N\+A\+R\+Y@{R\+F\+\_\+\+B\+I\+N\+A\+R\+Y}!rest.\+cpp@{rest.\+cpp}}\index{rest.\+cpp@{rest.\+cpp}!R\+F\+\_\+\+B\+I\+N\+A\+R\+Y@{R\+F\+\_\+\+B\+I\+N\+A\+R\+Y}}\item[{\em 
+\hypertarget{rest_8cpp_aae3901e6d15d9592fd2083926e783d7caddb090ab3a6cfe6ab6c0c3559c3d3248}{}R\+F\+\_\+\+B\+I\+N\+A\+R\+Y\label{rest_8cpp_aae3901e6d15d9592fd2083926e783d7caddb090ab3a6cfe6ab6c0c3559c3d3248}
+}]\index{R\+F\+\_\+\+H\+E\+X@{R\+F\+\_\+\+H\+E\+X}!rest.\+cpp@{rest.\+cpp}}\index{rest.\+cpp@{rest.\+cpp}!R\+F\+\_\+\+H\+E\+X@{R\+F\+\_\+\+H\+E\+X}}\item[{\em 
+\hypertarget{rest_8cpp_aae3901e6d15d9592fd2083926e783d7ca0e0ee12d21032cc6140a2dfd4c3c78d5}{}R\+F\+\_\+\+H\+E\+X\label{rest_8cpp_aae3901e6d15d9592fd2083926e783d7ca0e0ee12d21032cc6140a2dfd4c3c78d5}
+}]\index{R\+F\+\_\+\+J\+S\+O\+N@{R\+F\+\_\+\+J\+S\+O\+N}!rest.\+cpp@{rest.\+cpp}}\index{rest.\+cpp@{rest.\+cpp}!R\+F\+\_\+\+J\+S\+O\+N@{R\+F\+\_\+\+J\+S\+O\+N}}\item[{\em 
+\hypertarget{rest_8cpp_aae3901e6d15d9592fd2083926e783d7cae475fd554927ee997910d2710f22b343}{}R\+F\+\_\+\+J\+S\+O\+N\label{rest_8cpp_aae3901e6d15d9592fd2083926e783d7cae475fd554927ee997910d2710f22b343}
+}]\end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{rest_8cpp_aa6f8ec37fdab49f359425ed095b99a2b}{}\index{rest.\+cpp@{rest.\+cpp}!block\+To\+J\+S\+O\+N@{block\+To\+J\+S\+O\+N}}
+\index{block\+To\+J\+S\+O\+N@{block\+To\+J\+S\+O\+N}!rest.\+cpp@{rest.\+cpp}}
+\subsubsection[{block\+To\+J\+S\+O\+N}]{\setlength{\rightskip}{0pt plus 5cm}Object block\+To\+J\+S\+O\+N (
+\begin{DoxyParamCaption}
+\item[{const C\+Block \&}]{block, }
+\item[{const {\bf C\+Block\+Index} $\ast$}]{blockindex, }
+\item[{bool}]{tx\+Details = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}\label{rest_8cpp_aa6f8ec37fdab49f359425ed095b99a2b}
+\hypertarget{rest_8cpp_a3b4ebb3671ed6622d75913101b296120}{}\index{rest.\+cpp@{rest.\+cpp}!H\+T\+T\+P\+Req\+\_\+\+R\+E\+S\+T@{H\+T\+T\+P\+Req\+\_\+\+R\+E\+S\+T}}
+\index{H\+T\+T\+P\+Req\+\_\+\+R\+E\+S\+T@{H\+T\+T\+P\+Req\+\_\+\+R\+E\+S\+T}!rest.\+cpp@{rest.\+cpp}}
+\subsubsection[{H\+T\+T\+P\+Req\+\_\+\+R\+E\+S\+T}]{\setlength{\rightskip}{0pt plus 5cm}bool H\+T\+T\+P\+Req\+\_\+\+R\+E\+S\+T (
+\begin{DoxyParamCaption}
+\item[{{\bf Accepted\+Connection} $\ast$}]{conn, }
+\item[{const std\+::string \&}]{str\+U\+R\+I, }
+\item[{const std\+::map$<$ std\+::string, std\+::string $>$ \&}]{map\+Headers, }
+\item[{bool}]{f\+Run}
+\end{DoxyParamCaption}
+)}\label{rest_8cpp_a3b4ebb3671ed6622d75913101b296120}
+\hypertarget{rest_8cpp_a366b04dae2aae86eee356cc85d759268}{}\index{rest.\+cpp@{rest.\+cpp}!Tx\+To\+J\+S\+O\+N@{Tx\+To\+J\+S\+O\+N}}
+\index{Tx\+To\+J\+S\+O\+N@{Tx\+To\+J\+S\+O\+N}!rest.\+cpp@{rest.\+cpp}}
+\subsubsection[{Tx\+To\+J\+S\+O\+N}]{\setlength{\rightskip}{0pt plus 5cm}void Tx\+To\+J\+S\+O\+N (
+\begin{DoxyParamCaption}
+\item[{const C\+Transaction \&}]{tx, }
+\item[{const {\bf uint256}}]{hash\+Block, }
+\item[{Object \&}]{entry}
+\end{DoxyParamCaption}
+)}\label{rest_8cpp_a366b04dae2aae86eee356cc85d759268}
+
+
+\subsection{Variable Documentation}
+\hypertarget{rest_8cpp_a9965227f27c43f6bd6ef799a29bdd52b}{}\index{rest.\+cpp@{rest.\+cpp}!handler@{handler}}
+\index{handler@{handler}!rest.\+cpp@{rest.\+cpp}}
+\subsubsection[{handler}]{\setlength{\rightskip}{0pt plus 5cm}bool($\ast$ handler) ({\bf Accepted\+Connection} $\ast$conn, const std\+::string \&str\+U\+R\+I, const std\+::map$<$ std\+::string, std\+::string $>$ \&map\+Headers, bool f\+Run)}\label{rest_8cpp_a9965227f27c43f6bd6ef799a29bdd52b}
+\hypertarget{rest_8cpp_a8f8f80d37794cde9472343e4487ba3eb}{}\index{rest.\+cpp@{rest.\+cpp}!name@{name}}
+\index{name@{name}!rest.\+cpp@{rest.\+cpp}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ name}\label{rest_8cpp_a8f8f80d37794cde9472343e4487ba3eb}
+\hypertarget{rest_8cpp_a5b41c5ae4505891e6c53e26df197e02b}{}\index{rest.\+cpp@{rest.\+cpp}!prefix@{prefix}}
+\index{prefix@{prefix}!rest.\+cpp@{rest.\+cpp}}
+\subsubsection[{prefix}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ prefix}\label{rest_8cpp_a5b41c5ae4505891e6c53e26df197e02b}
+\hypertarget{rest_8cpp_a40166e2edb2a2a020ca0ea57554686f5}{}\index{rest.\+cpp@{rest.\+cpp}!rf@{rf}}
+\index{rf@{rf}!rest.\+cpp@{rest.\+cpp}}
+\subsubsection[{rf}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Ret\+Format} rf}\label{rest_8cpp_a40166e2edb2a2a020ca0ea57554686f5}

@@ -27,36 +27,7 @@ int main(int argc, char** argv) {
         Answer *test=getAns(10,4);
     Guess *temp=new Guess;
     temp->code=new int[4];
-    for(int i=0;i<50000;i++){
-     
-   // cout<<"Answer: ";   
-    //for(int i=0;i<4;i++)
-        //cout<<test->code[i]<<" ";
-    //cout<<endl;
-    for(int i=0;i<4;i++)
-        temp->code[i]=rand()%8+1;
-    //cout<<"Guess: ";
-    //for(int i=0;i<4;i++)
-       // cout<<temp->code[i]<<" ";
-    //cout<<endl;
-    checkG(test,temp,4);
-    //cout<<"Correct numbers: "<<test->corNum<<" Correct position: "
-            //<<test->corPos<<endl;
-    if(test->corPos==4){
-        cout<<"found"<<endl;
-        cout<<"Try "<<i<<endl;
-         cout<<"Answer: ";   
-    for(int i=0;i<4;i++)
-        cout<<test->code[i]<<" ";
-         cout<<endl;
-             cout<<"Guess: ";
-    for(int i=0;i<4;i++)
-        cout<<temp->code[i]<<" ";
-    cout<<endl;
-    }
-    test->corNum=0;
-    test->corPos=0;
-    }
+    cin>>temp->code;
 
     return 0;
 }

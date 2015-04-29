@@ -1,0 +1,109 @@
+\hypertarget{rpcmining_8cpp}{}\section{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/rpcmining.cpp File Reference}
+\label{rpcmining_8cpp}\index{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/rpcmining.\+cpp@{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/rpcmining.\+cpp}}
+{\ttfamily \#include \char`\"{}amount.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}chainparams.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}consensus/consensus.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}core\+\_\+io.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}init.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}main.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}miner.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}net.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}pow.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}rpcserver.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}util.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}validationinterface.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include $<$boost/assign/list\+\_\+of.\+hpp$>$}\\*
+{\ttfamily \#include \char`\"{}json/json\+\_\+spirit\+\_\+utils.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}json/json\+\_\+spirit\+\_\+value.\+h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classsubmitblock___state_catcher}{submitblock\+\_\+\+State\+Catcher}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Value \hyperlink{rpcmining_8cpp_a0727ff0776708e62ed17b0ddc184d50e}{Get\+Network\+Hash\+P\+S} (int lookup, int height)
+\item 
+Value \hyperlink{rpcmining_8cpp_a6ccd12b4cf085555ab3528ad6661e75f}{getnetworkhashps} (const Array \&params, bool f\+Help)
+\item 
+Value \hyperlink{rpcmining_8cpp_a89c187faff7322c7d15134d13570ca1e}{getmininginfo} (const Array \&params, bool f\+Help)
+\item 
+Value \hyperlink{rpcmining_8cpp_aed287651120186f0898b41e4e5c11e5f}{prioritisetransaction} (const Array \&params, bool f\+Help)
+\item 
+Value \hyperlink{rpcmining_8cpp_a27347eecedd59156c914fcb5ce488f9a}{getblocktemplate} (const Array \&params, bool f\+Help)
+\item 
+Value \hyperlink{rpcmining_8cpp_a6fc1aa077add8cb1c74207056616134d}{submitblock} (const Array \&params, bool f\+Help)
+\item 
+Value \hyperlink{rpcmining_8cpp_aa8966fea852c9e1183cbe1c651f90d37}{estimatefee} (const Array \&params, bool f\+Help)
+\item 
+Value \hyperlink{rpcmining_8cpp_a6665a5f0485726c65bdb8b462a3ee645}{estimatepriority} (const Array \&params, bool f\+Help)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{rpcmining_8cpp_aa8966fea852c9e1183cbe1c651f90d37}{}\index{rpcmining.\+cpp@{rpcmining.\+cpp}!estimatefee@{estimatefee}}
+\index{estimatefee@{estimatefee}!rpcmining.\+cpp@{rpcmining.\+cpp}}
+\subsubsection[{estimatefee}]{\setlength{\rightskip}{0pt plus 5cm}Value estimatefee (
+\begin{DoxyParamCaption}
+\item[{const Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcmining_8cpp_aa8966fea852c9e1183cbe1c651f90d37}
+\hypertarget{rpcmining_8cpp_a6665a5f0485726c65bdb8b462a3ee645}{}\index{rpcmining.\+cpp@{rpcmining.\+cpp}!estimatepriority@{estimatepriority}}
+\index{estimatepriority@{estimatepriority}!rpcmining.\+cpp@{rpcmining.\+cpp}}
+\subsubsection[{estimatepriority}]{\setlength{\rightskip}{0pt plus 5cm}Value estimatepriority (
+\begin{DoxyParamCaption}
+\item[{const Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcmining_8cpp_a6665a5f0485726c65bdb8b462a3ee645}
+\hypertarget{rpcmining_8cpp_a27347eecedd59156c914fcb5ce488f9a}{}\index{rpcmining.\+cpp@{rpcmining.\+cpp}!getblocktemplate@{getblocktemplate}}
+\index{getblocktemplate@{getblocktemplate}!rpcmining.\+cpp@{rpcmining.\+cpp}}
+\subsubsection[{getblocktemplate}]{\setlength{\rightskip}{0pt plus 5cm}Value getblocktemplate (
+\begin{DoxyParamCaption}
+\item[{const Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcmining_8cpp_a27347eecedd59156c914fcb5ce488f9a}
+\hypertarget{rpcmining_8cpp_a89c187faff7322c7d15134d13570ca1e}{}\index{rpcmining.\+cpp@{rpcmining.\+cpp}!getmininginfo@{getmininginfo}}
+\index{getmininginfo@{getmininginfo}!rpcmining.\+cpp@{rpcmining.\+cpp}}
+\subsubsection[{getmininginfo}]{\setlength{\rightskip}{0pt plus 5cm}Value getmininginfo (
+\begin{DoxyParamCaption}
+\item[{const Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcmining_8cpp_a89c187faff7322c7d15134d13570ca1e}
+\hypertarget{rpcmining_8cpp_a0727ff0776708e62ed17b0ddc184d50e}{}\index{rpcmining.\+cpp@{rpcmining.\+cpp}!Get\+Network\+Hash\+P\+S@{Get\+Network\+Hash\+P\+S}}
+\index{Get\+Network\+Hash\+P\+S@{Get\+Network\+Hash\+P\+S}!rpcmining.\+cpp@{rpcmining.\+cpp}}
+\subsubsection[{Get\+Network\+Hash\+P\+S}]{\setlength{\rightskip}{0pt plus 5cm}Value Get\+Network\+Hash\+P\+S (
+\begin{DoxyParamCaption}
+\item[{int}]{lookup, }
+\item[{int}]{height}
+\end{DoxyParamCaption}
+)}\label{rpcmining_8cpp_a0727ff0776708e62ed17b0ddc184d50e}
+Return average network hashes per second based on the last \textquotesingle{}lookup\textquotesingle{} blocks, or from the last difficulty change if \textquotesingle{}lookup\textquotesingle{} is nonpositive. If \textquotesingle{}height\textquotesingle{} is nonnegative, compute the estimate at the time when a given block was found. \hypertarget{rpcmining_8cpp_a6ccd12b4cf085555ab3528ad6661e75f}{}\index{rpcmining.\+cpp@{rpcmining.\+cpp}!getnetworkhashps@{getnetworkhashps}}
+\index{getnetworkhashps@{getnetworkhashps}!rpcmining.\+cpp@{rpcmining.\+cpp}}
+\subsubsection[{getnetworkhashps}]{\setlength{\rightskip}{0pt plus 5cm}Value getnetworkhashps (
+\begin{DoxyParamCaption}
+\item[{const Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcmining_8cpp_a6ccd12b4cf085555ab3528ad6661e75f}
+\hypertarget{rpcmining_8cpp_aed287651120186f0898b41e4e5c11e5f}{}\index{rpcmining.\+cpp@{rpcmining.\+cpp}!prioritisetransaction@{prioritisetransaction}}
+\index{prioritisetransaction@{prioritisetransaction}!rpcmining.\+cpp@{rpcmining.\+cpp}}
+\subsubsection[{prioritisetransaction}]{\setlength{\rightskip}{0pt plus 5cm}Value prioritisetransaction (
+\begin{DoxyParamCaption}
+\item[{const Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcmining_8cpp_aed287651120186f0898b41e4e5c11e5f}
+\hypertarget{rpcmining_8cpp_a6fc1aa077add8cb1c74207056616134d}{}\index{rpcmining.\+cpp@{rpcmining.\+cpp}!submitblock@{submitblock}}
+\index{submitblock@{submitblock}!rpcmining.\+cpp@{rpcmining.\+cpp}}
+\subsubsection[{submitblock}]{\setlength{\rightskip}{0pt plus 5cm}Value submitblock (
+\begin{DoxyParamCaption}
+\item[{const Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcmining_8cpp_a6fc1aa077add8cb1c74207056616134d}

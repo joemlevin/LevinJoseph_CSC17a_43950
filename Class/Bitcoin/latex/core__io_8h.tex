@@ -1,0 +1,109 @@
+\hypertarget{core__io_8h}{}\section{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/core\+\_\+io.h File Reference}
+\label{core__io_8h}\index{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/core\+\_\+io.\+h@{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/core\+\_\+io.\+h}}
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+C\+Script \hyperlink{core__io_8h_a360605a787c2a0c8929399919f0474dc}{Parse\+Script} (std\+::string s)
+\item 
+bool \hyperlink{core__io_8h_adf3a8ae53f4e0af5832ce21fc581db0e}{Decode\+Hex\+Tx} (C\+Transaction \&tx, const std\+::string \&str\+Hex\+Tx)
+\item 
+bool \hyperlink{core__io_8h_a7db52cf960ddbcf9cee6427f0a002c70}{Decode\+Hex\+Blk} (C\+Block \&, const std\+::string \&str\+Hex\+Blk)
+\item 
+\hyperlink{classuint256}{uint256} \hyperlink{core__io_8h_acd21ab1ea0a5b55dbccb6c06f0d03b19}{Parse\+Hash\+U\+V} (const Uni\+Value \&v, const std\+::string \&str\+Name)
+\item 
+\hyperlink{classuint256}{uint256} \hyperlink{core__io_8h_ab23488fe652558cb495964627979fe7f}{Parse\+Hash\+Str} (const std\+::string \&, const std\+::string \&str\+Name)
+\item 
+std\+::vector$<$ unsigned char $>$ \hyperlink{core__io_8h_a78a4823e9ac3cb4e78cb6dddc868efff}{Parse\+Hex\+U\+V} (const Uni\+Value \&v, const std\+::string \&str\+Name)
+\item 
+std\+::string \hyperlink{core__io_8h_a3baef73fdbf49896ad4c68bc27fbd2b0}{Format\+Script} (const C\+Script \&script)
+\item 
+std\+::string \hyperlink{core__io_8h_a143951d3e5f8c1f57c9825187c426270}{Encode\+Hex\+Tx} (const C\+Transaction \&tx)
+\item 
+void \hyperlink{core__io_8h_a4a51bf7268adbdcd58e7af445ea4db61}{Script\+Pub\+Key\+To\+Univ} (const C\+Script \&script\+Pub\+Key, Uni\+Value \&out, bool f\+Include\+Hex)
+\item 
+void \hyperlink{core__io_8h_aeb901ca565e3df0e3bc0c9863ad8f53a}{Tx\+To\+Univ} (const C\+Transaction \&tx, const \hyperlink{classuint256}{uint256} \&hash\+Block, Uni\+Value \&entry)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{core__io_8h_a7db52cf960ddbcf9cee6427f0a002c70}{}\index{core\+\_\+io.\+h@{core\+\_\+io.\+h}!Decode\+Hex\+Blk@{Decode\+Hex\+Blk}}
+\index{Decode\+Hex\+Blk@{Decode\+Hex\+Blk}!core\+\_\+io.\+h@{core\+\_\+io.\+h}}
+\subsubsection[{Decode\+Hex\+Blk}]{\setlength{\rightskip}{0pt plus 5cm}bool Decode\+Hex\+Blk (
+\begin{DoxyParamCaption}
+\item[{C\+Block \&}]{, }
+\item[{const std\+::string \&}]{str\+Hex\+Blk}
+\end{DoxyParamCaption}
+)}\label{core__io_8h_a7db52cf960ddbcf9cee6427f0a002c70}
+\hypertarget{core__io_8h_adf3a8ae53f4e0af5832ce21fc581db0e}{}\index{core\+\_\+io.\+h@{core\+\_\+io.\+h}!Decode\+Hex\+Tx@{Decode\+Hex\+Tx}}
+\index{Decode\+Hex\+Tx@{Decode\+Hex\+Tx}!core\+\_\+io.\+h@{core\+\_\+io.\+h}}
+\subsubsection[{Decode\+Hex\+Tx}]{\setlength{\rightskip}{0pt plus 5cm}bool Decode\+Hex\+Tx (
+\begin{DoxyParamCaption}
+\item[{C\+Transaction \&}]{tx, }
+\item[{const std\+::string \&}]{str\+Hex\+Tx}
+\end{DoxyParamCaption}
+)}\label{core__io_8h_adf3a8ae53f4e0af5832ce21fc581db0e}
+\hypertarget{core__io_8h_a143951d3e5f8c1f57c9825187c426270}{}\index{core\+\_\+io.\+h@{core\+\_\+io.\+h}!Encode\+Hex\+Tx@{Encode\+Hex\+Tx}}
+\index{Encode\+Hex\+Tx@{Encode\+Hex\+Tx}!core\+\_\+io.\+h@{core\+\_\+io.\+h}}
+\subsubsection[{Encode\+Hex\+Tx}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Encode\+Hex\+Tx (
+\begin{DoxyParamCaption}
+\item[{const C\+Transaction \&}]{tx}
+\end{DoxyParamCaption}
+)}\label{core__io_8h_a143951d3e5f8c1f57c9825187c426270}
+\hypertarget{core__io_8h_a3baef73fdbf49896ad4c68bc27fbd2b0}{}\index{core\+\_\+io.\+h@{core\+\_\+io.\+h}!Format\+Script@{Format\+Script}}
+\index{Format\+Script@{Format\+Script}!core\+\_\+io.\+h@{core\+\_\+io.\+h}}
+\subsubsection[{Format\+Script}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Format\+Script (
+\begin{DoxyParamCaption}
+\item[{const C\+Script \&}]{script}
+\end{DoxyParamCaption}
+)}\label{core__io_8h_a3baef73fdbf49896ad4c68bc27fbd2b0}
+\hypertarget{core__io_8h_ab23488fe652558cb495964627979fe7f}{}\index{core\+\_\+io.\+h@{core\+\_\+io.\+h}!Parse\+Hash\+Str@{Parse\+Hash\+Str}}
+\index{Parse\+Hash\+Str@{Parse\+Hash\+Str}!core\+\_\+io.\+h@{core\+\_\+io.\+h}}
+\subsubsection[{Parse\+Hash\+Str}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint256} Parse\+Hash\+Str (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{, }
+\item[{const std\+::string \&}]{str\+Name}
+\end{DoxyParamCaption}
+)}\label{core__io_8h_ab23488fe652558cb495964627979fe7f}
+\hypertarget{core__io_8h_acd21ab1ea0a5b55dbccb6c06f0d03b19}{}\index{core\+\_\+io.\+h@{core\+\_\+io.\+h}!Parse\+Hash\+U\+V@{Parse\+Hash\+U\+V}}
+\index{Parse\+Hash\+U\+V@{Parse\+Hash\+U\+V}!core\+\_\+io.\+h@{core\+\_\+io.\+h}}
+\subsubsection[{Parse\+Hash\+U\+V}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint256} Parse\+Hash\+U\+V (
+\begin{DoxyParamCaption}
+\item[{const Uni\+Value \&}]{v, }
+\item[{const std\+::string \&}]{str\+Name}
+\end{DoxyParamCaption}
+)}\label{core__io_8h_acd21ab1ea0a5b55dbccb6c06f0d03b19}
+\hypertarget{core__io_8h_a78a4823e9ac3cb4e78cb6dddc868efff}{}\index{core\+\_\+io.\+h@{core\+\_\+io.\+h}!Parse\+Hex\+U\+V@{Parse\+Hex\+U\+V}}
+\index{Parse\+Hex\+U\+V@{Parse\+Hex\+U\+V}!core\+\_\+io.\+h@{core\+\_\+io.\+h}}
+\subsubsection[{Parse\+Hex\+U\+V}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$unsigned char$>$ Parse\+Hex\+U\+V (
+\begin{DoxyParamCaption}
+\item[{const Uni\+Value \&}]{v, }
+\item[{const std\+::string \&}]{str\+Name}
+\end{DoxyParamCaption}
+)}\label{core__io_8h_a78a4823e9ac3cb4e78cb6dddc868efff}
+\hypertarget{core__io_8h_a360605a787c2a0c8929399919f0474dc}{}\index{core\+\_\+io.\+h@{core\+\_\+io.\+h}!Parse\+Script@{Parse\+Script}}
+\index{Parse\+Script@{Parse\+Script}!core\+\_\+io.\+h@{core\+\_\+io.\+h}}
+\subsubsection[{Parse\+Script}]{\setlength{\rightskip}{0pt plus 5cm}C\+Script Parse\+Script (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{s}
+\end{DoxyParamCaption}
+)}\label{core__io_8h_a360605a787c2a0c8929399919f0474dc}
+\hypertarget{core__io_8h_a4a51bf7268adbdcd58e7af445ea4db61}{}\index{core\+\_\+io.\+h@{core\+\_\+io.\+h}!Script\+Pub\+Key\+To\+Univ@{Script\+Pub\+Key\+To\+Univ}}
+\index{Script\+Pub\+Key\+To\+Univ@{Script\+Pub\+Key\+To\+Univ}!core\+\_\+io.\+h@{core\+\_\+io.\+h}}
+\subsubsection[{Script\+Pub\+Key\+To\+Univ}]{\setlength{\rightskip}{0pt plus 5cm}void Script\+Pub\+Key\+To\+Univ (
+\begin{DoxyParamCaption}
+\item[{const C\+Script \&}]{script\+Pub\+Key, }
+\item[{Uni\+Value \&}]{out, }
+\item[{bool}]{f\+Include\+Hex}
+\end{DoxyParamCaption}
+)}\label{core__io_8h_a4a51bf7268adbdcd58e7af445ea4db61}
+\hypertarget{core__io_8h_aeb901ca565e3df0e3bc0c9863ad8f53a}{}\index{core\+\_\+io.\+h@{core\+\_\+io.\+h}!Tx\+To\+Univ@{Tx\+To\+Univ}}
+\index{Tx\+To\+Univ@{Tx\+To\+Univ}!core\+\_\+io.\+h@{core\+\_\+io.\+h}}
+\subsubsection[{Tx\+To\+Univ}]{\setlength{\rightskip}{0pt plus 5cm}void Tx\+To\+Univ (
+\begin{DoxyParamCaption}
+\item[{const C\+Transaction \&}]{tx, }
+\item[{const {\bf uint256} \&}]{hash\+Block, }
+\item[{Uni\+Value \&}]{entry}
+\end{DoxyParamCaption}
+)}\label{core__io_8h_aeb901ca565e3df0e3bc0c9863ad8f53a}

@@ -1,0 +1,107 @@
+\hypertarget{random_8cpp}{}\section{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/random.cpp File Reference}
+\label{random_8cpp}\index{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/random.\+cpp@{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/random.\+cpp}}
+{\ttfamily \#include \char`\"{}random.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}support/cleanse.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}serialize.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}util.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utilstrencodings.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$limits$>$}\\*
+{\ttfamily \#include $<$sys/time.\+h$>$}\\*
+{\ttfamily \#include $<$openssl/err.\+h$>$}\\*
+{\ttfamily \#include $<$openssl/rand.\+h$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{random_8cpp_ab699fbdf803610a4e2060fd87787f7e0}{Rand\+Add\+Seed} ()
+\item 
+void \hyperlink{random_8cpp_a786af12a87491f8dc24351d93b9833b6}{Rand\+Add\+Seed\+Perfmon} ()
+\item 
+void \hyperlink{random_8cpp_ada0c29949c4d1ac0cc027d93c4771423}{Get\+Rand\+Bytes} (unsigned char $\ast$buf, int num)
+\item 
+uint64\+\_\+t \hyperlink{random_8cpp_a27d9149d522b1fa87d84e5e9ca902aef}{Get\+Rand} (uint64\+\_\+t n\+Max)
+\item 
+int \hyperlink{random_8cpp_a0e44e088732172da6662db2d5e37d4b2}{Get\+Rand\+Int} (int n\+Max)
+\item 
+\hyperlink{classuint256}{uint256} \hyperlink{random_8cpp_af3aedae75efabb170337a497457f7ecf}{Get\+Rand\+Hash} ()
+\item 
+void \hyperlink{random_8cpp_aacea702dc3d4d2bcbbd5eb96d410417c}{seed\+\_\+insecure\+\_\+rand} (bool f\+Deterministic)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \hyperlink{random_8cpp_ad679dcd7cb4960c49a8d400bcc23b0d0}{insecure\+\_\+rand\+\_\+\+Rz} = 11
+\item 
+uint32\+\_\+t \hyperlink{random_8cpp_a45e4e024616db2e96c5ffc34928c553b}{insecure\+\_\+rand\+\_\+\+Rw} = 11
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{random_8cpp_a27d9149d522b1fa87d84e5e9ca902aef}{}\index{random.\+cpp@{random.\+cpp}!Get\+Rand@{Get\+Rand}}
+\index{Get\+Rand@{Get\+Rand}!random.\+cpp@{random.\+cpp}}
+\subsubsection[{Get\+Rand}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t Get\+Rand (
+\begin{DoxyParamCaption}
+\item[{uint64\+\_\+t}]{n\+Max}
+\end{DoxyParamCaption}
+)}\label{random_8cpp_a27d9149d522b1fa87d84e5e9ca902aef}
+\hypertarget{random_8cpp_ada0c29949c4d1ac0cc027d93c4771423}{}\index{random.\+cpp@{random.\+cpp}!Get\+Rand\+Bytes@{Get\+Rand\+Bytes}}
+\index{Get\+Rand\+Bytes@{Get\+Rand\+Bytes}!random.\+cpp@{random.\+cpp}}
+\subsubsection[{Get\+Rand\+Bytes}]{\setlength{\rightskip}{0pt plus 5cm}void Get\+Rand\+Bytes (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{buf, }
+\item[{int}]{num}
+\end{DoxyParamCaption}
+)}\label{random_8cpp_ada0c29949c4d1ac0cc027d93c4771423}
+Functions to gather random data via the Open\+S\+S\+L P\+R\+N\+G \hypertarget{random_8cpp_af3aedae75efabb170337a497457f7ecf}{}\index{random.\+cpp@{random.\+cpp}!Get\+Rand\+Hash@{Get\+Rand\+Hash}}
+\index{Get\+Rand\+Hash@{Get\+Rand\+Hash}!random.\+cpp@{random.\+cpp}}
+\subsubsection[{Get\+Rand\+Hash}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint256} Get\+Rand\+Hash (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{random_8cpp_af3aedae75efabb170337a497457f7ecf}
+\hypertarget{random_8cpp_a0e44e088732172da6662db2d5e37d4b2}{}\index{random.\+cpp@{random.\+cpp}!Get\+Rand\+Int@{Get\+Rand\+Int}}
+\index{Get\+Rand\+Int@{Get\+Rand\+Int}!random.\+cpp@{random.\+cpp}}
+\subsubsection[{Get\+Rand\+Int}]{\setlength{\rightskip}{0pt plus 5cm}int Get\+Rand\+Int (
+\begin{DoxyParamCaption}
+\item[{int}]{n\+Max}
+\end{DoxyParamCaption}
+)}\label{random_8cpp_a0e44e088732172da6662db2d5e37d4b2}
+\hypertarget{random_8cpp_ab699fbdf803610a4e2060fd87787f7e0}{}\index{random.\+cpp@{random.\+cpp}!Rand\+Add\+Seed@{Rand\+Add\+Seed}}
+\index{Rand\+Add\+Seed@{Rand\+Add\+Seed}!random.\+cpp@{random.\+cpp}}
+\subsubsection[{Rand\+Add\+Seed}]{\setlength{\rightskip}{0pt plus 5cm}void Rand\+Add\+Seed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{random_8cpp_ab699fbdf803610a4e2060fd87787f7e0}
+Seed Open\+S\+S\+L P\+R\+N\+G with additional entropy data \hypertarget{random_8cpp_a786af12a87491f8dc24351d93b9833b6}{}\index{random.\+cpp@{random.\+cpp}!Rand\+Add\+Seed\+Perfmon@{Rand\+Add\+Seed\+Perfmon}}
+\index{Rand\+Add\+Seed\+Perfmon@{Rand\+Add\+Seed\+Perfmon}!random.\+cpp@{random.\+cpp}}
+\subsubsection[{Rand\+Add\+Seed\+Perfmon}]{\setlength{\rightskip}{0pt plus 5cm}void Rand\+Add\+Seed\+Perfmon (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{random_8cpp_a786af12a87491f8dc24351d93b9833b6}
+\hypertarget{random_8cpp_aacea702dc3d4d2bcbbd5eb96d410417c}{}\index{random.\+cpp@{random.\+cpp}!seed\+\_\+insecure\+\_\+rand@{seed\+\_\+insecure\+\_\+rand}}
+\index{seed\+\_\+insecure\+\_\+rand@{seed\+\_\+insecure\+\_\+rand}!random.\+cpp@{random.\+cpp}}
+\subsubsection[{seed\+\_\+insecure\+\_\+rand}]{\setlength{\rightskip}{0pt plus 5cm}void seed\+\_\+insecure\+\_\+rand (
+\begin{DoxyParamCaption}
+\item[{bool}]{f\+Deterministic = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}\label{random_8cpp_aacea702dc3d4d2bcbbd5eb96d410417c}
+Seed insecure\+\_\+rand using the random pool. 
+\begin{DoxyParams}{Parameters}
+{\em Deterministic} & Use a deterministic seed \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Variable Documentation}
+\hypertarget{random_8cpp_a45e4e024616db2e96c5ffc34928c553b}{}\index{random.\+cpp@{random.\+cpp}!insecure\+\_\+rand\+\_\+\+Rw@{insecure\+\_\+rand\+\_\+\+Rw}}
+\index{insecure\+\_\+rand\+\_\+\+Rw@{insecure\+\_\+rand\+\_\+\+Rw}!random.\+cpp@{random.\+cpp}}
+\subsubsection[{insecure\+\_\+rand\+\_\+\+Rw}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t insecure\+\_\+rand\+\_\+\+Rw = 11}\label{random_8cpp_a45e4e024616db2e96c5ffc34928c553b}
+\hypertarget{random_8cpp_ad679dcd7cb4960c49a8d400bcc23b0d0}{}\index{random.\+cpp@{random.\+cpp}!insecure\+\_\+rand\+\_\+\+Rz@{insecure\+\_\+rand\+\_\+\+Rz}}
+\index{insecure\+\_\+rand\+\_\+\+Rz@{insecure\+\_\+rand\+\_\+\+Rz}!random.\+cpp@{random.\+cpp}}
+\subsubsection[{insecure\+\_\+rand\+\_\+\+Rz}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t insecure\+\_\+rand\+\_\+\+Rz = 11}\label{random_8cpp_ad679dcd7cb4960c49a8d400bcc23b0d0}
+M\+W\+C R\+N\+G of George Marsaglia This is intended to be fast. It has a period of 2$^\wedge$59.3, though the least significant 16 bits only have a period of about 2$^\wedge$30.1.
+
+\begin{DoxyReturn}{Returns}
+random value 
+\end{DoxyReturn}

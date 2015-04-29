@@ -1,0 +1,119 @@
+\hypertarget{class_c_validation_interface}{}\section{C\+Validation\+Interface Class Reference}
+\label{class_c_validation_interface}\index{C\+Validation\+Interface@{C\+Validation\+Interface}}
+
+
+{\ttfamily \#include $<$validationinterface.\+h$>$}
+
+Inheritance diagram for C\+Validation\+Interface\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_c_validation_interface}
+\end{center}
+\end{figure}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_c_validation_interface_a1d255ed08bf26dbd6ad5924cabfdfae4}{Sync\+Transaction} (const C\+Transaction \&tx, const C\+Block $\ast$pblock)
+\item 
+virtual void \hyperlink{class_c_validation_interface_af8120f64ec6569dcf765fdf14acef31f}{Erase\+From\+Wallet} (const \hyperlink{classuint256}{uint256} \&hash)
+\item 
+virtual void \hyperlink{class_c_validation_interface_a8684492d9878120ce8c6c760a790f9ea}{Set\+Best\+Chain} (const C\+Block\+Locator \&locator)
+\item 
+virtual void \hyperlink{class_c_validation_interface_a8058fc107d993641df615abbb35a4c27}{Updated\+Transaction} (const \hyperlink{classuint256}{uint256} \&hash)
+\item 
+virtual void \hyperlink{class_c_validation_interface_a981f5160a2370db0cd616c00d8bd5270}{Inventory} (const \hyperlink{classuint256}{uint256} \&hash)
+\item 
+virtual void \hyperlink{class_c_validation_interface_af501da6f06bccb5e4bfbe66ae1bf6c9d}{Resend\+Wallet\+Transactions} (int64\+\_\+t n\+Best\+Block\+Time)
+\item 
+virtual void \hyperlink{class_c_validation_interface_aeb34ef6814685cabc29062ed7be25441}{Block\+Checked} (const C\+Block \&, const \hyperlink{class_c_validation_state}{C\+Validation\+State} \&)
+\item 
+friend \hyperlink{class_c_validation_interface_abba7a6c393df5b63bfd659c452446f96}{void\+::\+Register\+Validation\+Interface} (\hyperlink{class_c_validation_interface}{C\+Validation\+Interface} $\ast$)
+\item 
+friend \hyperlink{class_c_validation_interface_a30225070f6758f32aa041ccba519f1a8}{void\+::\+Unregister\+Validation\+Interface} (\hyperlink{class_c_validation_interface}{C\+Validation\+Interface} $\ast$)
+\item 
+friend \hyperlink{class_c_validation_interface_a31a772eec90ebb6407728f58f4bf098e}{void\+::\+Unregister\+All\+Validation\+Interfaces} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_c_validation_interface_aeb34ef6814685cabc29062ed7be25441}{}\index{C\+Validation\+Interface@{C\+Validation\+Interface}!Block\+Checked@{Block\+Checked}}
+\index{Block\+Checked@{Block\+Checked}!C\+Validation\+Interface@{C\+Validation\+Interface}}
+\subsubsection[{Block\+Checked}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\+Validation\+Interface\+::\+Block\+Checked (
+\begin{DoxyParamCaption}
+\item[{const C\+Block \&}]{, }
+\item[{const {\bf C\+Validation\+State} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}\label{class_c_validation_interface_aeb34ef6814685cabc29062ed7be25441}
+
+
+Reimplemented in \hyperlink{classsubmitblock___state_catcher_a7c7174ac1a54c80c572b115114aa2ee6}{submitblock\+\_\+\+State\+Catcher}.
+
+\hypertarget{class_c_validation_interface_af8120f64ec6569dcf765fdf14acef31f}{}\index{C\+Validation\+Interface@{C\+Validation\+Interface}!Erase\+From\+Wallet@{Erase\+From\+Wallet}}
+\index{Erase\+From\+Wallet@{Erase\+From\+Wallet}!C\+Validation\+Interface@{C\+Validation\+Interface}}
+\subsubsection[{Erase\+From\+Wallet}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\+Validation\+Interface\+::\+Erase\+From\+Wallet (
+\begin{DoxyParamCaption}
+\item[{const {\bf uint256} \&}]{hash}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}\label{class_c_validation_interface_af8120f64ec6569dcf765fdf14acef31f}
+\hypertarget{class_c_validation_interface_a981f5160a2370db0cd616c00d8bd5270}{}\index{C\+Validation\+Interface@{C\+Validation\+Interface}!Inventory@{Inventory}}
+\index{Inventory@{Inventory}!C\+Validation\+Interface@{C\+Validation\+Interface}}
+\subsubsection[{Inventory}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\+Validation\+Interface\+::\+Inventory (
+\begin{DoxyParamCaption}
+\item[{const {\bf uint256} \&}]{hash}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}\label{class_c_validation_interface_a981f5160a2370db0cd616c00d8bd5270}
+\hypertarget{class_c_validation_interface_af501da6f06bccb5e4bfbe66ae1bf6c9d}{}\index{C\+Validation\+Interface@{C\+Validation\+Interface}!Resend\+Wallet\+Transactions@{Resend\+Wallet\+Transactions}}
+\index{Resend\+Wallet\+Transactions@{Resend\+Wallet\+Transactions}!C\+Validation\+Interface@{C\+Validation\+Interface}}
+\subsubsection[{Resend\+Wallet\+Transactions}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\+Validation\+Interface\+::\+Resend\+Wallet\+Transactions (
+\begin{DoxyParamCaption}
+\item[{int64\+\_\+t}]{n\+Best\+Block\+Time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}\label{class_c_validation_interface_af501da6f06bccb5e4bfbe66ae1bf6c9d}
+\hypertarget{class_c_validation_interface_a8684492d9878120ce8c6c760a790f9ea}{}\index{C\+Validation\+Interface@{C\+Validation\+Interface}!Set\+Best\+Chain@{Set\+Best\+Chain}}
+\index{Set\+Best\+Chain@{Set\+Best\+Chain}!C\+Validation\+Interface@{C\+Validation\+Interface}}
+\subsubsection[{Set\+Best\+Chain}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\+Validation\+Interface\+::\+Set\+Best\+Chain (
+\begin{DoxyParamCaption}
+\item[{const C\+Block\+Locator \&}]{locator}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}\label{class_c_validation_interface_a8684492d9878120ce8c6c760a790f9ea}
+\hypertarget{class_c_validation_interface_a1d255ed08bf26dbd6ad5924cabfdfae4}{}\index{C\+Validation\+Interface@{C\+Validation\+Interface}!Sync\+Transaction@{Sync\+Transaction}}
+\index{Sync\+Transaction@{Sync\+Transaction}!C\+Validation\+Interface@{C\+Validation\+Interface}}
+\subsubsection[{Sync\+Transaction}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\+Validation\+Interface\+::\+Sync\+Transaction (
+\begin{DoxyParamCaption}
+\item[{const C\+Transaction \&}]{tx, }
+\item[{const C\+Block $\ast$}]{pblock}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}\label{class_c_validation_interface_a1d255ed08bf26dbd6ad5924cabfdfae4}
+\hypertarget{class_c_validation_interface_a8058fc107d993641df615abbb35a4c27}{}\index{C\+Validation\+Interface@{C\+Validation\+Interface}!Updated\+Transaction@{Updated\+Transaction}}
+\index{Updated\+Transaction@{Updated\+Transaction}!C\+Validation\+Interface@{C\+Validation\+Interface}}
+\subsubsection[{Updated\+Transaction}]{\setlength{\rightskip}{0pt plus 5cm}virtual void C\+Validation\+Interface\+::\+Updated\+Transaction (
+\begin{DoxyParamCaption}
+\item[{const {\bf uint256} \&}]{hash}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}\label{class_c_validation_interface_a8058fc107d993641df615abbb35a4c27}
+\hypertarget{class_c_validation_interface_abba7a6c393df5b63bfd659c452446f96}{}\index{C\+Validation\+Interface@{C\+Validation\+Interface}!void\+::\+Register\+Validation\+Interface@{void\+::\+Register\+Validation\+Interface}}
+\index{void\+::\+Register\+Validation\+Interface@{void\+::\+Register\+Validation\+Interface}!C\+Validation\+Interface@{C\+Validation\+Interface}}
+\subsubsection[{void\+::\+Register\+Validation\+Interface}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Validation\+Interface\+::void\+::\+Register\+Validation\+Interface} (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Validation\+Interface} $\ast$}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_validation_interface_abba7a6c393df5b63bfd659c452446f96}
+\hypertarget{class_c_validation_interface_a31a772eec90ebb6407728f58f4bf098e}{}\index{C\+Validation\+Interface@{C\+Validation\+Interface}!void\+::\+Unregister\+All\+Validation\+Interfaces@{void\+::\+Unregister\+All\+Validation\+Interfaces}}
+\index{void\+::\+Unregister\+All\+Validation\+Interfaces@{void\+::\+Unregister\+All\+Validation\+Interfaces}!C\+Validation\+Interface@{C\+Validation\+Interface}}
+\subsubsection[{void\+::\+Unregister\+All\+Validation\+Interfaces}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Validation\+Interface\+::void\+::\+Unregister\+All\+Validation\+Interfaces} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_validation_interface_a31a772eec90ebb6407728f58f4bf098e}
+\hypertarget{class_c_validation_interface_a30225070f6758f32aa041ccba519f1a8}{}\index{C\+Validation\+Interface@{C\+Validation\+Interface}!void\+::\+Unregister\+Validation\+Interface@{void\+::\+Unregister\+Validation\+Interface}}
+\index{void\+::\+Unregister\+Validation\+Interface@{void\+::\+Unregister\+Validation\+Interface}!C\+Validation\+Interface@{C\+Validation\+Interface}}
+\subsubsection[{void\+::\+Unregister\+Validation\+Interface}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Validation\+Interface\+::void\+::\+Unregister\+Validation\+Interface} (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Validation\+Interface} $\ast$}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_validation_interface_a30225070f6758f32aa041ccba519f1a8}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/\hyperlink{validationinterface_8h}{validationinterface.\+h}\end{DoxyCompactItemize}

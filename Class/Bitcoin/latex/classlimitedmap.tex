@@ -1,0 +1,199 @@
+\hypertarget{classlimitedmap}{}\section{limitedmap$<$ K, V $>$ Class Template Reference}
+\label{classlimitedmap}\index{limitedmap$<$ K, V $>$@{limitedmap$<$ K, V $>$}}
+
+
+{\ttfamily \#include $<$limitedmap.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef K \hyperlink{classlimitedmap_aebf71255c65df699225cdcefe88717b9}{key\+\_\+type}
+\item 
+typedef V \hyperlink{classlimitedmap_a8bd6b8e7f91f0a141c91c382b492c03c}{mapped\+\_\+type}
+\item 
+typedef std\+::pair$<$ const \hyperlink{classlimitedmap_aebf71255c65df699225cdcefe88717b9}{key\+\_\+type}, \hyperlink{classlimitedmap_a8bd6b8e7f91f0a141c91c382b492c03c}{mapped\+\_\+type} $>$ \hyperlink{classlimitedmap_a8a6c4972e628b71bf43eeb757dafdce5}{value\+\_\+type}
+\item 
+typedef std\+::map$<$ K, V $>$\+::\hyperlink{classlimitedmap_ab0a3e4f2ec7c82359300c83a35ae2500}{const\+\_\+iterator} \hyperlink{classlimitedmap_ab0a3e4f2ec7c82359300c83a35ae2500}{const\+\_\+iterator}
+\item 
+typedef std\+::map$<$ K, V $>$\+::\hyperlink{classlimitedmap_a1c564b323f94e182e56aa27975e5f9d1}{size\+\_\+type} \hyperlink{classlimitedmap_a1c564b323f94e182e56aa27975e5f9d1}{size\+\_\+type}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classlimitedmap_a6670d7a262af3551de75658123b7cb60}{limitedmap} (\hyperlink{classlimitedmap_a1c564b323f94e182e56aa27975e5f9d1}{size\+\_\+type} n\+Max\+Size\+In=0)
+\item 
+\hyperlink{classlimitedmap_ab0a3e4f2ec7c82359300c83a35ae2500}{const\+\_\+iterator} \hyperlink{classlimitedmap_ac62161ce45bdbea636d30d1274cb2dc4}{begin} () const 
+\item 
+\hyperlink{classlimitedmap_ab0a3e4f2ec7c82359300c83a35ae2500}{const\+\_\+iterator} \hyperlink{classlimitedmap_ae5d896ca3733c0931ee21e6d0e9058de}{end} () const 
+\item 
+\hyperlink{classlimitedmap_a1c564b323f94e182e56aa27975e5f9d1}{size\+\_\+type} \hyperlink{classlimitedmap_a7eb0ffdae9db112f1d6f8cc757caae64}{size} () const 
+\item 
+bool \hyperlink{classlimitedmap_a982ef21b08ed6c74a1771a9253b4260a}{empty} () const 
+\item 
+\hyperlink{classlimitedmap_ab0a3e4f2ec7c82359300c83a35ae2500}{const\+\_\+iterator} \hyperlink{classlimitedmap_a4888d5aedd039a552a2fa663a5889bf5}{find} (const \hyperlink{classlimitedmap_aebf71255c65df699225cdcefe88717b9}{key\+\_\+type} \&k) const 
+\item 
+\hyperlink{classlimitedmap_a1c564b323f94e182e56aa27975e5f9d1}{size\+\_\+type} \hyperlink{classlimitedmap_a4ae35b60eacecac30ecf156382e663af}{count} (const \hyperlink{classlimitedmap_aebf71255c65df699225cdcefe88717b9}{key\+\_\+type} \&k) const 
+\item 
+void \hyperlink{classlimitedmap_af68570a54d74e1b168908be6e8cfb85c}{insert} (const \hyperlink{classlimitedmap_a8a6c4972e628b71bf43eeb757dafdce5}{value\+\_\+type} \&x)
+\item 
+void \hyperlink{classlimitedmap_aaf2fa41d8f7591d93e5010cf8c351de6}{erase} (const \hyperlink{classlimitedmap_aebf71255c65df699225cdcefe88717b9}{key\+\_\+type} \&k)
+\item 
+void \hyperlink{classlimitedmap_af29154e7161f1deeea268d0dcea464ab}{update} (\hyperlink{classlimitedmap_ab0a3e4f2ec7c82359300c83a35ae2500}{const\+\_\+iterator} it\+In, const \hyperlink{classlimitedmap_a8bd6b8e7f91f0a141c91c382b492c03c}{mapped\+\_\+type} \&v)
+\item 
+\hyperlink{classlimitedmap_a1c564b323f94e182e56aa27975e5f9d1}{size\+\_\+type} \hyperlink{classlimitedmap_a3a7d50647833bb8a60bb644f5525b9e0}{max\+\_\+size} () const 
+\item 
+\hyperlink{classlimitedmap_a1c564b323f94e182e56aa27975e5f9d1}{size\+\_\+type} \hyperlink{classlimitedmap_a97e3deba25cf9a59658cfc317507d45d}{max\+\_\+size} (\hyperlink{classlimitedmap_a1c564b323f94e182e56aa27975e5f9d1}{size\+\_\+type} s)
+\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::map$<$ K, V $>$\+::\hyperlink{classlimitedmap_aea661213ab6f699e9667bea25bf99821}{iterator} \hyperlink{classlimitedmap_aea661213ab6f699e9667bea25bf99821}{iterator}
+\item 
+typedef std\+::multimap$<$ V, \hyperlink{classlimitedmap_aea661213ab6f699e9667bea25bf99821}{iterator} $>$\+::\hyperlink{classlimitedmap_aea661213ab6f699e9667bea25bf99821}{iterator} \hyperlink{classlimitedmap_ad3d926b1f365d819073ddaed8daa4400}{rmap\+\_\+iterator}
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ K, V $>$ \hyperlink{classlimitedmap_a66e668a5286b7b82061c6867548897a0}{map}
+\item 
+std\+::multimap$<$ V, \hyperlink{classlimitedmap_aea661213ab6f699e9667bea25bf99821}{iterator} $>$ \hyperlink{classlimitedmap_ab4a6f5b1572ee3754d53f7773b381eb2}{rmap}
+\item 
+\hyperlink{classlimitedmap_a1c564b323f94e182e56aa27975e5f9d1}{size\+\_\+type} \hyperlink{classlimitedmap_a3ff20a34a489085042060796d44a644e}{n\+Max\+Size}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename K, typename V$>$class limitedmap$<$ K, V $>$}
+
+S\+T\+L-\/like map container that only keeps the N elements with the highest value. 
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classlimitedmap_ab0a3e4f2ec7c82359300c83a35ae2500}{}\index{limitedmap@{limitedmap}!const\+\_\+iterator@{const\+\_\+iterator}}
+\index{const\+\_\+iterator@{const\+\_\+iterator}!limitedmap@{limitedmap}}
+\subsubsection[{const\+\_\+iterator}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K, typename V$>$ typedef std\+::map$<$K, V$>$\+::{\bf const\+\_\+iterator} {\bf limitedmap}$<$ K, V $>$\+::{\bf const\+\_\+iterator}}\label{classlimitedmap_ab0a3e4f2ec7c82359300c83a35ae2500}
+\hypertarget{classlimitedmap_aea661213ab6f699e9667bea25bf99821}{}\index{limitedmap@{limitedmap}!iterator@{iterator}}
+\index{iterator@{iterator}!limitedmap@{limitedmap}}
+\subsubsection[{iterator}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K, typename V$>$ typedef std\+::map$<$K, V$>$\+::{\bf iterator} {\bf limitedmap}$<$ K, V $>$\+::{\bf iterator}\hspace{0.3cm}{\ttfamily [protected]}}\label{classlimitedmap_aea661213ab6f699e9667bea25bf99821}
+\hypertarget{classlimitedmap_aebf71255c65df699225cdcefe88717b9}{}\index{limitedmap@{limitedmap}!key\+\_\+type@{key\+\_\+type}}
+\index{key\+\_\+type@{key\+\_\+type}!limitedmap@{limitedmap}}
+\subsubsection[{key\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K, typename V$>$ typedef K {\bf limitedmap}$<$ K, V $>$\+::{\bf key\+\_\+type}}\label{classlimitedmap_aebf71255c65df699225cdcefe88717b9}
+\hypertarget{classlimitedmap_a8bd6b8e7f91f0a141c91c382b492c03c}{}\index{limitedmap@{limitedmap}!mapped\+\_\+type@{mapped\+\_\+type}}
+\index{mapped\+\_\+type@{mapped\+\_\+type}!limitedmap@{limitedmap}}
+\subsubsection[{mapped\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K, typename V$>$ typedef V {\bf limitedmap}$<$ K, V $>$\+::{\bf mapped\+\_\+type}}\label{classlimitedmap_a8bd6b8e7f91f0a141c91c382b492c03c}
+\hypertarget{classlimitedmap_ad3d926b1f365d819073ddaed8daa4400}{}\index{limitedmap@{limitedmap}!rmap\+\_\+iterator@{rmap\+\_\+iterator}}
+\index{rmap\+\_\+iterator@{rmap\+\_\+iterator}!limitedmap@{limitedmap}}
+\subsubsection[{rmap\+\_\+iterator}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K, typename V$>$ typedef std\+::multimap$<$V, {\bf iterator}$>$\+::{\bf iterator} {\bf limitedmap}$<$ K, V $>$\+::{\bf rmap\+\_\+iterator}\hspace{0.3cm}{\ttfamily [protected]}}\label{classlimitedmap_ad3d926b1f365d819073ddaed8daa4400}
+\hypertarget{classlimitedmap_a1c564b323f94e182e56aa27975e5f9d1}{}\index{limitedmap@{limitedmap}!size\+\_\+type@{size\+\_\+type}}
+\index{size\+\_\+type@{size\+\_\+type}!limitedmap@{limitedmap}}
+\subsubsection[{size\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K, typename V$>$ typedef std\+::map$<$K, V$>$\+::{\bf size\+\_\+type} {\bf limitedmap}$<$ K, V $>$\+::{\bf size\+\_\+type}}\label{classlimitedmap_a1c564b323f94e182e56aa27975e5f9d1}
+\hypertarget{classlimitedmap_a8a6c4972e628b71bf43eeb757dafdce5}{}\index{limitedmap@{limitedmap}!value\+\_\+type@{value\+\_\+type}}
+\index{value\+\_\+type@{value\+\_\+type}!limitedmap@{limitedmap}}
+\subsubsection[{value\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K, typename V$>$ typedef std\+::pair$<$const {\bf key\+\_\+type}, {\bf mapped\+\_\+type}$>$ {\bf limitedmap}$<$ K, V $>$\+::{\bf value\+\_\+type}}\label{classlimitedmap_a8a6c4972e628b71bf43eeb757dafdce5}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classlimitedmap_a6670d7a262af3551de75658123b7cb60}{}\index{limitedmap@{limitedmap}!limitedmap@{limitedmap}}
+\index{limitedmap@{limitedmap}!limitedmap@{limitedmap}}
+\subsubsection[{limitedmap}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K, typename V$>$ {\bf limitedmap}$<$ K, V $>$\+::{\bf limitedmap} (
+\begin{DoxyParamCaption}
+\item[{{\bf size\+\_\+type}}]{n\+Max\+Size\+In = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classlimitedmap_a6670d7a262af3551de75658123b7cb60}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classlimitedmap_ac62161ce45bdbea636d30d1274cb2dc4}{}\index{limitedmap@{limitedmap}!begin@{begin}}
+\index{begin@{begin}!limitedmap@{limitedmap}}
+\subsubsection[{begin}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K, typename V$>$ {\bf const\+\_\+iterator} {\bf limitedmap}$<$ K, V $>$\+::begin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classlimitedmap_ac62161ce45bdbea636d30d1274cb2dc4}
+\hypertarget{classlimitedmap_a4ae35b60eacecac30ecf156382e663af}{}\index{limitedmap@{limitedmap}!count@{count}}
+\index{count@{count}!limitedmap@{limitedmap}}
+\subsubsection[{count}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K, typename V$>$ {\bf size\+\_\+type} {\bf limitedmap}$<$ K, V $>$\+::count (
+\begin{DoxyParamCaption}
+\item[{const {\bf key\+\_\+type} \&}]{k}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classlimitedmap_a4ae35b60eacecac30ecf156382e663af}
+\hypertarget{classlimitedmap_a982ef21b08ed6c74a1771a9253b4260a}{}\index{limitedmap@{limitedmap}!empty@{empty}}
+\index{empty@{empty}!limitedmap@{limitedmap}}
+\subsubsection[{empty}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K, typename V$>$ bool {\bf limitedmap}$<$ K, V $>$\+::empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classlimitedmap_a982ef21b08ed6c74a1771a9253b4260a}
+\hypertarget{classlimitedmap_ae5d896ca3733c0931ee21e6d0e9058de}{}\index{limitedmap@{limitedmap}!end@{end}}
+\index{end@{end}!limitedmap@{limitedmap}}
+\subsubsection[{end}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K, typename V$>$ {\bf const\+\_\+iterator} {\bf limitedmap}$<$ K, V $>$\+::end (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classlimitedmap_ae5d896ca3733c0931ee21e6d0e9058de}
+\hypertarget{classlimitedmap_aaf2fa41d8f7591d93e5010cf8c351de6}{}\index{limitedmap@{limitedmap}!erase@{erase}}
+\index{erase@{erase}!limitedmap@{limitedmap}}
+\subsubsection[{erase}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K, typename V$>$ void {\bf limitedmap}$<$ K, V $>$\+::erase (
+\begin{DoxyParamCaption}
+\item[{const {\bf key\+\_\+type} \&}]{k}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classlimitedmap_aaf2fa41d8f7591d93e5010cf8c351de6}
+\hypertarget{classlimitedmap_a4888d5aedd039a552a2fa663a5889bf5}{}\index{limitedmap@{limitedmap}!find@{find}}
+\index{find@{find}!limitedmap@{limitedmap}}
+\subsubsection[{find}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K, typename V$>$ {\bf const\+\_\+iterator} {\bf limitedmap}$<$ K, V $>$\+::find (
+\begin{DoxyParamCaption}
+\item[{const {\bf key\+\_\+type} \&}]{k}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classlimitedmap_a4888d5aedd039a552a2fa663a5889bf5}
+\hypertarget{classlimitedmap_af68570a54d74e1b168908be6e8cfb85c}{}\index{limitedmap@{limitedmap}!insert@{insert}}
+\index{insert@{insert}!limitedmap@{limitedmap}}
+\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K, typename V$>$ void {\bf limitedmap}$<$ K, V $>$\+::insert (
+\begin{DoxyParamCaption}
+\item[{const {\bf value\+\_\+type} \&}]{x}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classlimitedmap_af68570a54d74e1b168908be6e8cfb85c}
+\hypertarget{classlimitedmap_a3a7d50647833bb8a60bb644f5525b9e0}{}\index{limitedmap@{limitedmap}!max\+\_\+size@{max\+\_\+size}}
+\index{max\+\_\+size@{max\+\_\+size}!limitedmap@{limitedmap}}
+\subsubsection[{max\+\_\+size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K, typename V$>$ {\bf size\+\_\+type} {\bf limitedmap}$<$ K, V $>$\+::max\+\_\+size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classlimitedmap_a3a7d50647833bb8a60bb644f5525b9e0}
+\hypertarget{classlimitedmap_a97e3deba25cf9a59658cfc317507d45d}{}\index{limitedmap@{limitedmap}!max\+\_\+size@{max\+\_\+size}}
+\index{max\+\_\+size@{max\+\_\+size}!limitedmap@{limitedmap}}
+\subsubsection[{max\+\_\+size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K, typename V$>$ {\bf size\+\_\+type} {\bf limitedmap}$<$ K, V $>$\+::max\+\_\+size (
+\begin{DoxyParamCaption}
+\item[{{\bf size\+\_\+type}}]{s}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classlimitedmap_a97e3deba25cf9a59658cfc317507d45d}
+\hypertarget{classlimitedmap_a7eb0ffdae9db112f1d6f8cc757caae64}{}\index{limitedmap@{limitedmap}!size@{size}}
+\index{size@{size}!limitedmap@{limitedmap}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K, typename V$>$ {\bf size\+\_\+type} {\bf limitedmap}$<$ K, V $>$\+::size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classlimitedmap_a7eb0ffdae9db112f1d6f8cc757caae64}
+\hypertarget{classlimitedmap_af29154e7161f1deeea268d0dcea464ab}{}\index{limitedmap@{limitedmap}!update@{update}}
+\index{update@{update}!limitedmap@{limitedmap}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K, typename V$>$ void {\bf limitedmap}$<$ K, V $>$\+::update (
+\begin{DoxyParamCaption}
+\item[{{\bf const\+\_\+iterator}}]{it\+In, }
+\item[{const {\bf mapped\+\_\+type} \&}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classlimitedmap_af29154e7161f1deeea268d0dcea464ab}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classlimitedmap_a66e668a5286b7b82061c6867548897a0}{}\index{limitedmap@{limitedmap}!map@{map}}
+\index{map@{map}!limitedmap@{limitedmap}}
+\subsubsection[{map}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K, typename V$>$ std\+::map$<$K, V$>$ {\bf limitedmap}$<$ K, V $>$\+::map\hspace{0.3cm}{\ttfamily [protected]}}\label{classlimitedmap_a66e668a5286b7b82061c6867548897a0}
+\hypertarget{classlimitedmap_a3ff20a34a489085042060796d44a644e}{}\index{limitedmap@{limitedmap}!n\+Max\+Size@{n\+Max\+Size}}
+\index{n\+Max\+Size@{n\+Max\+Size}!limitedmap@{limitedmap}}
+\subsubsection[{n\+Max\+Size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K, typename V$>$ {\bf size\+\_\+type} {\bf limitedmap}$<$ K, V $>$\+::n\+Max\+Size\hspace{0.3cm}{\ttfamily [protected]}}\label{classlimitedmap_a3ff20a34a489085042060796d44a644e}
+\hypertarget{classlimitedmap_ab4a6f5b1572ee3754d53f7773b381eb2}{}\index{limitedmap@{limitedmap}!rmap@{rmap}}
+\index{rmap@{rmap}!limitedmap@{limitedmap}}
+\subsubsection[{rmap}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename K, typename V$>$ std\+::multimap$<$V, {\bf iterator}$>$ {\bf limitedmap}$<$ K, V $>$\+::rmap\hspace{0.3cm}{\ttfamily [protected]}}\label{classlimitedmap_ab4a6f5b1572ee3754d53f7773b381eb2}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/\hyperlink{limitedmap_8h}{limitedmap.\+h}\end{DoxyCompactItemize}

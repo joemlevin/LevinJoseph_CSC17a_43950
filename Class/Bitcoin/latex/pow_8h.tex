@@ -1,0 +1,64 @@
+\hypertarget{pow_8h}{}\section{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/pow.h File Reference}
+\label{pow_8h}\index{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/pow.\+h@{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/pow.\+h}}
+{\ttfamily \#include \char`\"{}consensus/params.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \hyperlink{pow_8h_a4f7bb22f6a188117b401966decb048b5}{Get\+Next\+Work\+Required} (const \hyperlink{class_c_block_index}{C\+Block\+Index} $\ast$pindex\+Last, const C\+Block\+Header $\ast$pblock, const \hyperlink{chainparams_8h_a5e1ca1b35c3dd1a4e20f18445f28dd9c}{Consensus\+::\+Params} \&)
+\item 
+unsigned int \hyperlink{pow_8h_ae040e051ee33e04c33124b0742480f0c}{Calculate\+Next\+Work\+Required} (const \hyperlink{class_c_block_index}{C\+Block\+Index} $\ast$pindex\+Last, int64\+\_\+t n\+First\+Block\+Time, const \hyperlink{chainparams_8h_a5e1ca1b35c3dd1a4e20f18445f28dd9c}{Consensus\+::\+Params} \&)
+\item 
+bool \hyperlink{pow_8h_a8d60d8d6ddca0963bb51f6436aaee3fd}{Check\+Proof\+Of\+Work} (\hyperlink{classuint256}{uint256} hash, unsigned int n\+Bits, const \hyperlink{chainparams_8h_a5e1ca1b35c3dd1a4e20f18445f28dd9c}{Consensus\+::\+Params} \&)
+\item 
+\hyperlink{classarith__uint256}{arith\+\_\+uint256} \hyperlink{pow_8h_a334aa8015cc7185f7fdf484783e40f38}{Get\+Block\+Proof} (const \hyperlink{class_c_block_index}{C\+Block\+Index} \&block)
+\item 
+int64\+\_\+t \hyperlink{pow_8h_a6f922f61b23b0fc46182f8ab457af736}{Get\+Block\+Proof\+Equivalent\+Time} (const \hyperlink{class_c_block_index}{C\+Block\+Index} \&to, const \hyperlink{class_c_block_index}{C\+Block\+Index} \&from, const \hyperlink{class_c_block_index}{C\+Block\+Index} \&tip, const \hyperlink{chainparams_8h_a5e1ca1b35c3dd1a4e20f18445f28dd9c}{Consensus\+::\+Params} \&)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{pow_8h_ae040e051ee33e04c33124b0742480f0c}{}\index{pow.\+h@{pow.\+h}!Calculate\+Next\+Work\+Required@{Calculate\+Next\+Work\+Required}}
+\index{Calculate\+Next\+Work\+Required@{Calculate\+Next\+Work\+Required}!pow.\+h@{pow.\+h}}
+\subsubsection[{Calculate\+Next\+Work\+Required}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Calculate\+Next\+Work\+Required (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\+Block\+Index} $\ast$}]{pindex\+Last, }
+\item[{int64\+\_\+t}]{n\+First\+Block\+Time, }
+\item[{const {\bf Consensus\+::\+Params} \&}]{}
+\end{DoxyParamCaption}
+)}\label{pow_8h_ae040e051ee33e04c33124b0742480f0c}
+debug print \hypertarget{pow_8h_a8d60d8d6ddca0963bb51f6436aaee3fd}{}\index{pow.\+h@{pow.\+h}!Check\+Proof\+Of\+Work@{Check\+Proof\+Of\+Work}}
+\index{Check\+Proof\+Of\+Work@{Check\+Proof\+Of\+Work}!pow.\+h@{pow.\+h}}
+\subsubsection[{Check\+Proof\+Of\+Work}]{\setlength{\rightskip}{0pt plus 5cm}bool Check\+Proof\+Of\+Work (
+\begin{DoxyParamCaption}
+\item[{{\bf uint256}}]{hash, }
+\item[{unsigned int}]{n\+Bits, }
+\item[{const {\bf Consensus\+::\+Params} \&}]{}
+\end{DoxyParamCaption}
+)}\label{pow_8h_a8d60d8d6ddca0963bb51f6436aaee3fd}
+Check whether a block hash satisfies the proof-\/of-\/work requirement specified by n\+Bits \hypertarget{pow_8h_a334aa8015cc7185f7fdf484783e40f38}{}\index{pow.\+h@{pow.\+h}!Get\+Block\+Proof@{Get\+Block\+Proof}}
+\index{Get\+Block\+Proof@{Get\+Block\+Proof}!pow.\+h@{pow.\+h}}
+\subsubsection[{Get\+Block\+Proof}]{\setlength{\rightskip}{0pt plus 5cm}{\bf arith\+\_\+uint256} Get\+Block\+Proof (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\+Block\+Index} \&}]{block}
+\end{DoxyParamCaption}
+)}\label{pow_8h_a334aa8015cc7185f7fdf484783e40f38}
+\hypertarget{pow_8h_a6f922f61b23b0fc46182f8ab457af736}{}\index{pow.\+h@{pow.\+h}!Get\+Block\+Proof\+Equivalent\+Time@{Get\+Block\+Proof\+Equivalent\+Time}}
+\index{Get\+Block\+Proof\+Equivalent\+Time@{Get\+Block\+Proof\+Equivalent\+Time}!pow.\+h@{pow.\+h}}
+\subsubsection[{Get\+Block\+Proof\+Equivalent\+Time}]{\setlength{\rightskip}{0pt plus 5cm}int64\+\_\+t Get\+Block\+Proof\+Equivalent\+Time (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\+Block\+Index} \&}]{to, }
+\item[{const {\bf C\+Block\+Index} \&}]{from, }
+\item[{const {\bf C\+Block\+Index} \&}]{tip, }
+\item[{const {\bf Consensus\+::\+Params} \&}]{}
+\end{DoxyParamCaption}
+)}\label{pow_8h_a6f922f61b23b0fc46182f8ab457af736}
+Return the time it would take to redo the work difference between from and to, assuming the current hashrate corresponds to the difficulty at tip, in seconds. \hypertarget{pow_8h_a4f7bb22f6a188117b401966decb048b5}{}\index{pow.\+h@{pow.\+h}!Get\+Next\+Work\+Required@{Get\+Next\+Work\+Required}}
+\index{Get\+Next\+Work\+Required@{Get\+Next\+Work\+Required}!pow.\+h@{pow.\+h}}
+\subsubsection[{Get\+Next\+Work\+Required}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Get\+Next\+Work\+Required (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\+Block\+Index} $\ast$}]{pindex\+Last, }
+\item[{const C\+Block\+Header $\ast$}]{pblock, }
+\item[{const {\bf Consensus\+::\+Params} \&}]{}
+\end{DoxyParamCaption}
+)}\label{pow_8h_a4f7bb22f6a188117b401966decb048b5}

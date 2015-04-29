@@ -1,0 +1,37 @@
+\hypertarget{bloom_8h}{}\section{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/bloom.h File Reference}
+\label{bloom_8h}\index{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/bloom.\+h@{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/bloom.\+h}}
+{\ttfamily \#include \char`\"{}serialize.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_c_bloom_filter}{C\+Bloom\+Filter}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{bloom_8h_ae0c811497258d060d8ff9528c035be09}{bloomflags} \{ \hyperlink{bloom_8h_ae0c811497258d060d8ff9528c035be09a8686825058e0b8aa91ea020e80a60a04}{B\+L\+O\+O\+M\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+N\+O\+N\+E} = 0, 
+\hyperlink{bloom_8h_ae0c811497258d060d8ff9528c035be09aed5526280b431353a2a07c283d031c62}{B\+L\+O\+O\+M\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+A\+L\+L} = 1, 
+\hyperlink{bloom_8h_ae0c811497258d060d8ff9528c035be09abdca27a84b11b8f22eba4b9e59e9269e}{B\+L\+O\+O\+M\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+P2\+P\+U\+B\+K\+E\+Y\+\_\+\+O\+N\+L\+Y} = 2, 
+\hyperlink{bloom_8h_ae0c811497258d060d8ff9528c035be09af0d00b6b6880502a7f11c3745607651c}{B\+L\+O\+O\+M\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+M\+A\+S\+K} = 3
+ \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{bloom_8h_ae0c811497258d060d8ff9528c035be09}{}\index{bloom.\+h@{bloom.\+h}!bloomflags@{bloomflags}}
+\index{bloomflags@{bloomflags}!bloom.\+h@{bloom.\+h}}
+\subsubsection[{bloomflags}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf bloomflags}}\label{bloom_8h_ae0c811497258d060d8ff9528c035be09}
+First two bits of n\+Flags control how much Is\+Relevant\+And\+Update actually updates The remaining bits are reserved \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{B\+L\+O\+O\+M\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+N\+O\+N\+E@{B\+L\+O\+O\+M\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+N\+O\+N\+E}!bloom.\+h@{bloom.\+h}}\index{bloom.\+h@{bloom.\+h}!B\+L\+O\+O\+M\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+N\+O\+N\+E@{B\+L\+O\+O\+M\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+N\+O\+N\+E}}\item[{\em 
+\hypertarget{bloom_8h_ae0c811497258d060d8ff9528c035be09a8686825058e0b8aa91ea020e80a60a04}{}B\+L\+O\+O\+M\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+N\+O\+N\+E\label{bloom_8h_ae0c811497258d060d8ff9528c035be09a8686825058e0b8aa91ea020e80a60a04}
+}]\index{B\+L\+O\+O\+M\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+A\+L\+L@{B\+L\+O\+O\+M\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+A\+L\+L}!bloom.\+h@{bloom.\+h}}\index{bloom.\+h@{bloom.\+h}!B\+L\+O\+O\+M\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+A\+L\+L@{B\+L\+O\+O\+M\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+A\+L\+L}}\item[{\em 
+\hypertarget{bloom_8h_ae0c811497258d060d8ff9528c035be09aed5526280b431353a2a07c283d031c62}{}B\+L\+O\+O\+M\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+A\+L\+L\label{bloom_8h_ae0c811497258d060d8ff9528c035be09aed5526280b431353a2a07c283d031c62}
+}]\index{B\+L\+O\+O\+M\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+P2\+P\+U\+B\+K\+E\+Y\+\_\+\+O\+N\+L\+Y@{B\+L\+O\+O\+M\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+P2\+P\+U\+B\+K\+E\+Y\+\_\+\+O\+N\+L\+Y}!bloom.\+h@{bloom.\+h}}\index{bloom.\+h@{bloom.\+h}!B\+L\+O\+O\+M\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+P2\+P\+U\+B\+K\+E\+Y\+\_\+\+O\+N\+L\+Y@{B\+L\+O\+O\+M\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+P2\+P\+U\+B\+K\+E\+Y\+\_\+\+O\+N\+L\+Y}}\item[{\em 
+\hypertarget{bloom_8h_ae0c811497258d060d8ff9528c035be09abdca27a84b11b8f22eba4b9e59e9269e}{}B\+L\+O\+O\+M\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+P2\+P\+U\+B\+K\+E\+Y\+\_\+\+O\+N\+L\+Y\label{bloom_8h_ae0c811497258d060d8ff9528c035be09abdca27a84b11b8f22eba4b9e59e9269e}
+}]\index{B\+L\+O\+O\+M\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+M\+A\+S\+K@{B\+L\+O\+O\+M\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+M\+A\+S\+K}!bloom.\+h@{bloom.\+h}}\index{bloom.\+h@{bloom.\+h}!B\+L\+O\+O\+M\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+M\+A\+S\+K@{B\+L\+O\+O\+M\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+M\+A\+S\+K}}\item[{\em 
+\hypertarget{bloom_8h_ae0c811497258d060d8ff9528c035be09af0d00b6b6880502a7f11c3745607651c}{}B\+L\+O\+O\+M\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+M\+A\+S\+K\label{bloom_8h_ae0c811497258d060d8ff9528c035be09af0d00b6b6880502a7f11c3745607651c}
+}]\end{description}
+\end{Desc}

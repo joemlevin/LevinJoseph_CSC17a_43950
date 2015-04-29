@@ -1,0 +1,71 @@
+\hypertarget{miner_8h}{}\section{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/miner.h File Reference}
+\label{miner_8h}\index{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/miner.\+h@{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/miner.\+h}}
+{\ttfamily \#include \char`\"{}primitives/block.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_c_block_template}{C\+Block\+Template}
+\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespace_consensus}{Consensus}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{miner_8h_a68f26f8b17696398b2768e8c358d3a0e}{Generate\+Bitcoins} (bool f\+Generate, C\+Wallet $\ast$pwallet, int n\+Threads)
+\item 
+\hyperlink{struct_c_block_template}{C\+Block\+Template} $\ast$ \hyperlink{miner_8h_af441d1c1899839f4e3cc0ee1367914a5}{Create\+New\+Block} (const C\+Script \&script\+Pub\+Key\+In)
+\item 
+\hyperlink{struct_c_block_template}{C\+Block\+Template} $\ast$ \hyperlink{miner_8h_a03254f8ceadbdf1f22349f2a82e342c5}{Create\+New\+Block\+With\+Key} (C\+Reserve\+Key \&reservekey)
+\item 
+void \hyperlink{miner_8h_a6f07c738a8aadffe748358e985b43d3f}{Increment\+Extra\+Nonce} (C\+Block $\ast$pblock, \hyperlink{class_c_block_index}{C\+Block\+Index} $\ast$pindex\+Prev, unsigned int \&n\+Extra\+Nonce)
+\item 
+void \hyperlink{miner_8h_ae4d310e10a4e595bb33362d5801fd0d8}{Update\+Time} (C\+Block\+Header $\ast$pblock, const \hyperlink{chainparams_8h_a5e1ca1b35c3dd1a4e20f18445f28dd9c}{Consensus\+::\+Params} \&consensus\+Params, const \hyperlink{class_c_block_index}{C\+Block\+Index} $\ast$pindex\+Prev)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{miner_8h_af441d1c1899839f4e3cc0ee1367914a5}{}\index{miner.\+h@{miner.\+h}!Create\+New\+Block@{Create\+New\+Block}}
+\index{Create\+New\+Block@{Create\+New\+Block}!miner.\+h@{miner.\+h}}
+\subsubsection[{Create\+New\+Block}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Block\+Template}$\ast$ Create\+New\+Block (
+\begin{DoxyParamCaption}
+\item[{const C\+Script \&}]{script\+Pub\+Key\+In}
+\end{DoxyParamCaption}
+)}\label{miner_8h_af441d1c1899839f4e3cc0ee1367914a5}
+Generate a new block, without valid proof-\/of-\/work \hypertarget{miner_8h_a03254f8ceadbdf1f22349f2a82e342c5}{}\index{miner.\+h@{miner.\+h}!Create\+New\+Block\+With\+Key@{Create\+New\+Block\+With\+Key}}
+\index{Create\+New\+Block\+With\+Key@{Create\+New\+Block\+With\+Key}!miner.\+h@{miner.\+h}}
+\subsubsection[{Create\+New\+Block\+With\+Key}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Block\+Template}$\ast$ Create\+New\+Block\+With\+Key (
+\begin{DoxyParamCaption}
+\item[{C\+Reserve\+Key \&}]{reservekey}
+\end{DoxyParamCaption}
+)}\label{miner_8h_a03254f8ceadbdf1f22349f2a82e342c5}
+\hypertarget{miner_8h_a68f26f8b17696398b2768e8c358d3a0e}{}\index{miner.\+h@{miner.\+h}!Generate\+Bitcoins@{Generate\+Bitcoins}}
+\index{Generate\+Bitcoins@{Generate\+Bitcoins}!miner.\+h@{miner.\+h}}
+\subsubsection[{Generate\+Bitcoins}]{\setlength{\rightskip}{0pt plus 5cm}void Generate\+Bitcoins (
+\begin{DoxyParamCaption}
+\item[{bool}]{f\+Generate, }
+\item[{C\+Wallet $\ast$}]{pwallet, }
+\item[{int}]{n\+Threads}
+\end{DoxyParamCaption}
+)}\label{miner_8h_a68f26f8b17696398b2768e8c358d3a0e}
+Run the miner threads \hypertarget{miner_8h_a6f07c738a8aadffe748358e985b43d3f}{}\index{miner.\+h@{miner.\+h}!Increment\+Extra\+Nonce@{Increment\+Extra\+Nonce}}
+\index{Increment\+Extra\+Nonce@{Increment\+Extra\+Nonce}!miner.\+h@{miner.\+h}}
+\subsubsection[{Increment\+Extra\+Nonce}]{\setlength{\rightskip}{0pt plus 5cm}void Increment\+Extra\+Nonce (
+\begin{DoxyParamCaption}
+\item[{C\+Block $\ast$}]{pblock, }
+\item[{{\bf C\+Block\+Index} $\ast$}]{pindex\+Prev, }
+\item[{unsigned int \&}]{n\+Extra\+Nonce}
+\end{DoxyParamCaption}
+)}\label{miner_8h_a6f07c738a8aadffe748358e985b43d3f}
+Modify the extranonce in a block \hypertarget{miner_8h_ae4d310e10a4e595bb33362d5801fd0d8}{}\index{miner.\+h@{miner.\+h}!Update\+Time@{Update\+Time}}
+\index{Update\+Time@{Update\+Time}!miner.\+h@{miner.\+h}}
+\subsubsection[{Update\+Time}]{\setlength{\rightskip}{0pt plus 5cm}void Update\+Time (
+\begin{DoxyParamCaption}
+\item[{C\+Block\+Header $\ast$}]{pblock, }
+\item[{const {\bf Consensus\+::\+Params} \&}]{consensus\+Params, }
+\item[{const {\bf C\+Block\+Index} $\ast$}]{pindex\+Prev}
+\end{DoxyParamCaption}
+)}\label{miner_8h_ae4d310e10a4e595bb33362d5801fd0d8}

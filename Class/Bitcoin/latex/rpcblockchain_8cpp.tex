@@ -1,0 +1,202 @@
+\hypertarget{rpcblockchain_8cpp}{}\section{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/rpcblockchain.cpp File Reference}
+\label{rpcblockchain_8cpp}\index{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/rpcblockchain.\+cpp@{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/rpcblockchain.\+cpp}}
+{\ttfamily \#include \char`\"{}checkpoints.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}main.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}rpcserver.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sync.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}util.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}json/json\+\_\+spirit\+\_\+value.\+h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_compare_blocks_by_height}{Compare\+Blocks\+By\+Height}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{rpcblockchain_8cpp_a366b04dae2aae86eee356cc85d759268}{Tx\+To\+J\+S\+O\+N} (const C\+Transaction \&tx, const \hyperlink{classuint256}{uint256} hash\+Block, Object \&entry)
+\item 
+void \hyperlink{rpcblockchain_8cpp_acb6efc0d76394e3858fe7451148069c2}{Script\+Pub\+Key\+To\+J\+S\+O\+N} (const C\+Script \&script\+Pub\+Key, Object \&out, bool f\+Include\+Hex)
+\item 
+double \hyperlink{rpcblockchain_8cpp_a65a78b16d228932a6142656509a8bce4}{Get\+Difficulty} (const \hyperlink{class_c_block_index}{C\+Block\+Index} $\ast$blockindex)
+\item 
+Object \hyperlink{rpcblockchain_8cpp_aa6f8ec37fdab49f359425ed095b99a2b}{block\+To\+J\+S\+O\+N} (const C\+Block \&block, const \hyperlink{class_c_block_index}{C\+Block\+Index} $\ast$blockindex, bool tx\+Details=false)
+\item 
+Value \hyperlink{rpcblockchain_8cpp_a2874a1c1a24cfa6b9f5f33755e4d5318}{getblockcount} (const Array \&params, bool f\+Help)
+\item 
+Value \hyperlink{rpcblockchain_8cpp_a76d9bad30031c6da5454ca8fdc99f8ea}{getbestblockhash} (const Array \&params, bool f\+Help)
+\item 
+Value \hyperlink{rpcblockchain_8cpp_a273d24288c722f1ba2013cc5576b4321}{getdifficulty} (const Array \&params, bool f\+Help)
+\item 
+Value \hyperlink{rpcblockchain_8cpp_a6ba5d2c76833bd2f10be0e95ded53037}{getrawmempool} (const Array \&params, bool f\+Help)
+\item 
+Value \hyperlink{rpcblockchain_8cpp_a6aec96723852fde932c01159a66a9911}{getblockhash} (const Array \&params, bool f\+Help)
+\item 
+Value \hyperlink{rpcblockchain_8cpp_a63608cf1bb275120194c3b4e070af3d7}{getblock} (const Array \&params, bool f\+Help)
+\item 
+Value \hyperlink{rpcblockchain_8cpp_a25c26963ef956b1497ed3ce9dc9f9f7e}{gettxoutsetinfo} (const Array \&params, bool f\+Help)
+\item 
+Value \hyperlink{rpcblockchain_8cpp_a1982f7877ed6e83102671c67c4ec6450}{gettxout} (const Array \&params, bool f\+Help)
+\item 
+Value \hyperlink{rpcblockchain_8cpp_a0b1dd8862fc7292c243ad9489f96a3c8}{verifychain} (const Array \&params, bool f\+Help)
+\item 
+Value \hyperlink{rpcblockchain_8cpp_ab1e71b6e17e11c519ea593776365a0a7}{getblockchaininfo} (const Array \&params, bool f\+Help)
+\item 
+Value \hyperlink{rpcblockchain_8cpp_a1075c2ee1de1658c351332c76237dea0}{getchaintips} (const Array \&params, bool f\+Help)
+\item 
+Value \hyperlink{rpcblockchain_8cpp_a5afb04f7e8353afaf27cdceca514df52}{getmempoolinfo} (const Array \&params, bool f\+Help)
+\item 
+Value \hyperlink{rpcblockchain_8cpp_aad7d6af4efa7bf90262450c0dd5998da}{invalidateblock} (const Array \&params, bool f\+Help)
+\item 
+Value \hyperlink{rpcblockchain_8cpp_a2188d4f05e6f6176e49da2a1d41b55e3}{reconsiderblock} (const Array \&params, bool f\+Help)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{rpcblockchain_8cpp_aa6f8ec37fdab49f359425ed095b99a2b}{}\index{rpcblockchain.\+cpp@{rpcblockchain.\+cpp}!block\+To\+J\+S\+O\+N@{block\+To\+J\+S\+O\+N}}
+\index{block\+To\+J\+S\+O\+N@{block\+To\+J\+S\+O\+N}!rpcblockchain.\+cpp@{rpcblockchain.\+cpp}}
+\subsubsection[{block\+To\+J\+S\+O\+N}]{\setlength{\rightskip}{0pt plus 5cm}Object block\+To\+J\+S\+O\+N (
+\begin{DoxyParamCaption}
+\item[{const C\+Block \&}]{block, }
+\item[{const {\bf C\+Block\+Index} $\ast$}]{blockindex, }
+\item[{bool}]{tx\+Details = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}\label{rpcblockchain_8cpp_aa6f8ec37fdab49f359425ed095b99a2b}
+\hypertarget{rpcblockchain_8cpp_a76d9bad30031c6da5454ca8fdc99f8ea}{}\index{rpcblockchain.\+cpp@{rpcblockchain.\+cpp}!getbestblockhash@{getbestblockhash}}
+\index{getbestblockhash@{getbestblockhash}!rpcblockchain.\+cpp@{rpcblockchain.\+cpp}}
+\subsubsection[{getbestblockhash}]{\setlength{\rightskip}{0pt plus 5cm}Value getbestblockhash (
+\begin{DoxyParamCaption}
+\item[{const Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcblockchain_8cpp_a76d9bad30031c6da5454ca8fdc99f8ea}
+\hypertarget{rpcblockchain_8cpp_a63608cf1bb275120194c3b4e070af3d7}{}\index{rpcblockchain.\+cpp@{rpcblockchain.\+cpp}!getblock@{getblock}}
+\index{getblock@{getblock}!rpcblockchain.\+cpp@{rpcblockchain.\+cpp}}
+\subsubsection[{getblock}]{\setlength{\rightskip}{0pt plus 5cm}Value getblock (
+\begin{DoxyParamCaption}
+\item[{const Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcblockchain_8cpp_a63608cf1bb275120194c3b4e070af3d7}
+\hypertarget{rpcblockchain_8cpp_ab1e71b6e17e11c519ea593776365a0a7}{}\index{rpcblockchain.\+cpp@{rpcblockchain.\+cpp}!getblockchaininfo@{getblockchaininfo}}
+\index{getblockchaininfo@{getblockchaininfo}!rpcblockchain.\+cpp@{rpcblockchain.\+cpp}}
+\subsubsection[{getblockchaininfo}]{\setlength{\rightskip}{0pt plus 5cm}Value getblockchaininfo (
+\begin{DoxyParamCaption}
+\item[{const Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcblockchain_8cpp_ab1e71b6e17e11c519ea593776365a0a7}
+\hypertarget{rpcblockchain_8cpp_a2874a1c1a24cfa6b9f5f33755e4d5318}{}\index{rpcblockchain.\+cpp@{rpcblockchain.\+cpp}!getblockcount@{getblockcount}}
+\index{getblockcount@{getblockcount}!rpcblockchain.\+cpp@{rpcblockchain.\+cpp}}
+\subsubsection[{getblockcount}]{\setlength{\rightskip}{0pt plus 5cm}Value getblockcount (
+\begin{DoxyParamCaption}
+\item[{const Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcblockchain_8cpp_a2874a1c1a24cfa6b9f5f33755e4d5318}
+\hypertarget{rpcblockchain_8cpp_a6aec96723852fde932c01159a66a9911}{}\index{rpcblockchain.\+cpp@{rpcblockchain.\+cpp}!getblockhash@{getblockhash}}
+\index{getblockhash@{getblockhash}!rpcblockchain.\+cpp@{rpcblockchain.\+cpp}}
+\subsubsection[{getblockhash}]{\setlength{\rightskip}{0pt plus 5cm}Value getblockhash (
+\begin{DoxyParamCaption}
+\item[{const Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcblockchain_8cpp_a6aec96723852fde932c01159a66a9911}
+\hypertarget{rpcblockchain_8cpp_a1075c2ee1de1658c351332c76237dea0}{}\index{rpcblockchain.\+cpp@{rpcblockchain.\+cpp}!getchaintips@{getchaintips}}
+\index{getchaintips@{getchaintips}!rpcblockchain.\+cpp@{rpcblockchain.\+cpp}}
+\subsubsection[{getchaintips}]{\setlength{\rightskip}{0pt plus 5cm}Value getchaintips (
+\begin{DoxyParamCaption}
+\item[{const Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcblockchain_8cpp_a1075c2ee1de1658c351332c76237dea0}
+\hypertarget{rpcblockchain_8cpp_a65a78b16d228932a6142656509a8bce4}{}\index{rpcblockchain.\+cpp@{rpcblockchain.\+cpp}!Get\+Difficulty@{Get\+Difficulty}}
+\index{Get\+Difficulty@{Get\+Difficulty}!rpcblockchain.\+cpp@{rpcblockchain.\+cpp}}
+\subsubsection[{Get\+Difficulty}]{\setlength{\rightskip}{0pt plus 5cm}double Get\+Difficulty (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\+Block\+Index} $\ast$}]{blockindex}
+\end{DoxyParamCaption}
+)}\label{rpcblockchain_8cpp_a65a78b16d228932a6142656509a8bce4}
+\hypertarget{rpcblockchain_8cpp_a273d24288c722f1ba2013cc5576b4321}{}\index{rpcblockchain.\+cpp@{rpcblockchain.\+cpp}!getdifficulty@{getdifficulty}}
+\index{getdifficulty@{getdifficulty}!rpcblockchain.\+cpp@{rpcblockchain.\+cpp}}
+\subsubsection[{getdifficulty}]{\setlength{\rightskip}{0pt plus 5cm}Value getdifficulty (
+\begin{DoxyParamCaption}
+\item[{const Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcblockchain_8cpp_a273d24288c722f1ba2013cc5576b4321}
+\hypertarget{rpcblockchain_8cpp_a5afb04f7e8353afaf27cdceca514df52}{}\index{rpcblockchain.\+cpp@{rpcblockchain.\+cpp}!getmempoolinfo@{getmempoolinfo}}
+\index{getmempoolinfo@{getmempoolinfo}!rpcblockchain.\+cpp@{rpcblockchain.\+cpp}}
+\subsubsection[{getmempoolinfo}]{\setlength{\rightskip}{0pt plus 5cm}Value getmempoolinfo (
+\begin{DoxyParamCaption}
+\item[{const Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcblockchain_8cpp_a5afb04f7e8353afaf27cdceca514df52}
+\hypertarget{rpcblockchain_8cpp_a6ba5d2c76833bd2f10be0e95ded53037}{}\index{rpcblockchain.\+cpp@{rpcblockchain.\+cpp}!getrawmempool@{getrawmempool}}
+\index{getrawmempool@{getrawmempool}!rpcblockchain.\+cpp@{rpcblockchain.\+cpp}}
+\subsubsection[{getrawmempool}]{\setlength{\rightskip}{0pt plus 5cm}Value getrawmempool (
+\begin{DoxyParamCaption}
+\item[{const Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcblockchain_8cpp_a6ba5d2c76833bd2f10be0e95ded53037}
+\hypertarget{rpcblockchain_8cpp_a1982f7877ed6e83102671c67c4ec6450}{}\index{rpcblockchain.\+cpp@{rpcblockchain.\+cpp}!gettxout@{gettxout}}
+\index{gettxout@{gettxout}!rpcblockchain.\+cpp@{rpcblockchain.\+cpp}}
+\subsubsection[{gettxout}]{\setlength{\rightskip}{0pt plus 5cm}Value gettxout (
+\begin{DoxyParamCaption}
+\item[{const Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcblockchain_8cpp_a1982f7877ed6e83102671c67c4ec6450}
+\hypertarget{rpcblockchain_8cpp_a25c26963ef956b1497ed3ce9dc9f9f7e}{}\index{rpcblockchain.\+cpp@{rpcblockchain.\+cpp}!gettxoutsetinfo@{gettxoutsetinfo}}
+\index{gettxoutsetinfo@{gettxoutsetinfo}!rpcblockchain.\+cpp@{rpcblockchain.\+cpp}}
+\subsubsection[{gettxoutsetinfo}]{\setlength{\rightskip}{0pt plus 5cm}Value gettxoutsetinfo (
+\begin{DoxyParamCaption}
+\item[{const Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcblockchain_8cpp_a25c26963ef956b1497ed3ce9dc9f9f7e}
+\hypertarget{rpcblockchain_8cpp_aad7d6af4efa7bf90262450c0dd5998da}{}\index{rpcblockchain.\+cpp@{rpcblockchain.\+cpp}!invalidateblock@{invalidateblock}}
+\index{invalidateblock@{invalidateblock}!rpcblockchain.\+cpp@{rpcblockchain.\+cpp}}
+\subsubsection[{invalidateblock}]{\setlength{\rightskip}{0pt plus 5cm}Value invalidateblock (
+\begin{DoxyParamCaption}
+\item[{const Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcblockchain_8cpp_aad7d6af4efa7bf90262450c0dd5998da}
+\hypertarget{rpcblockchain_8cpp_a2188d4f05e6f6176e49da2a1d41b55e3}{}\index{rpcblockchain.\+cpp@{rpcblockchain.\+cpp}!reconsiderblock@{reconsiderblock}}
+\index{reconsiderblock@{reconsiderblock}!rpcblockchain.\+cpp@{rpcblockchain.\+cpp}}
+\subsubsection[{reconsiderblock}]{\setlength{\rightskip}{0pt plus 5cm}Value reconsiderblock (
+\begin{DoxyParamCaption}
+\item[{const Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcblockchain_8cpp_a2188d4f05e6f6176e49da2a1d41b55e3}
+\hypertarget{rpcblockchain_8cpp_acb6efc0d76394e3858fe7451148069c2}{}\index{rpcblockchain.\+cpp@{rpcblockchain.\+cpp}!Script\+Pub\+Key\+To\+J\+S\+O\+N@{Script\+Pub\+Key\+To\+J\+S\+O\+N}}
+\index{Script\+Pub\+Key\+To\+J\+S\+O\+N@{Script\+Pub\+Key\+To\+J\+S\+O\+N}!rpcblockchain.\+cpp@{rpcblockchain.\+cpp}}
+\subsubsection[{Script\+Pub\+Key\+To\+J\+S\+O\+N}]{\setlength{\rightskip}{0pt plus 5cm}void Script\+Pub\+Key\+To\+J\+S\+O\+N (
+\begin{DoxyParamCaption}
+\item[{const C\+Script \&}]{script\+Pub\+Key, }
+\item[{Object \&}]{out, }
+\item[{bool}]{f\+Include\+Hex}
+\end{DoxyParamCaption}
+)}\label{rpcblockchain_8cpp_acb6efc0d76394e3858fe7451148069c2}
+\hypertarget{rpcblockchain_8cpp_a366b04dae2aae86eee356cc85d759268}{}\index{rpcblockchain.\+cpp@{rpcblockchain.\+cpp}!Tx\+To\+J\+S\+O\+N@{Tx\+To\+J\+S\+O\+N}}
+\index{Tx\+To\+J\+S\+O\+N@{Tx\+To\+J\+S\+O\+N}!rpcblockchain.\+cpp@{rpcblockchain.\+cpp}}
+\subsubsection[{Tx\+To\+J\+S\+O\+N}]{\setlength{\rightskip}{0pt plus 5cm}void Tx\+To\+J\+S\+O\+N (
+\begin{DoxyParamCaption}
+\item[{const C\+Transaction \&}]{tx, }
+\item[{const {\bf uint256}}]{hash\+Block, }
+\item[{Object \&}]{entry}
+\end{DoxyParamCaption}
+)}\label{rpcblockchain_8cpp_a366b04dae2aae86eee356cc85d759268}
+\hypertarget{rpcblockchain_8cpp_a0b1dd8862fc7292c243ad9489f96a3c8}{}\index{rpcblockchain.\+cpp@{rpcblockchain.\+cpp}!verifychain@{verifychain}}
+\index{verifychain@{verifychain}!rpcblockchain.\+cpp@{rpcblockchain.\+cpp}}
+\subsubsection[{verifychain}]{\setlength{\rightskip}{0pt plus 5cm}Value verifychain (
+\begin{DoxyParamCaption}
+\item[{const Array \&}]{params, }
+\item[{bool}]{f\+Help}
+\end{DoxyParamCaption}
+)}\label{rpcblockchain_8cpp_a0b1dd8862fc7292c243ad9489f96a3c8}

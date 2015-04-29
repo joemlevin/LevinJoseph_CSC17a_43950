@@ -1,0 +1,44 @@
+\hypertarget{hash_8cpp}{}\section{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/hash.cpp File Reference}
+\label{hash_8cpp}\index{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/hash.\+cpp@{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/hash.\+cpp}}
+{\ttfamily \#include \char`\"{}hash.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}crypto/common.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}crypto/hmac\+\_\+sha512.\+h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \hyperlink{hash_8cpp_aa8045f521ac28bee04e4980f93272dc0}{R\+O\+T\+L32} (uint32\+\_\+t x, int8\+\_\+t r)
+\item 
+unsigned int \hyperlink{hash_8cpp_a3cf0406d24590eaad9a3163c552e9730}{Murmur\+Hash3} (unsigned int n\+Hash\+Seed, const std\+::vector$<$ unsigned char $>$ \&v\+Data\+To\+Hash)
+\item 
+void \hyperlink{hash_8cpp_af81a4d88d7eaba27c63313aec22b01a4}{B\+I\+P32\+Hash} (const unsigned char chain\+Code\mbox{[}32\mbox{]}, unsigned int n\+Child, unsigned char header, const unsigned char data\mbox{[}32\mbox{]}, unsigned char output\mbox{[}64\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{hash_8cpp_af81a4d88d7eaba27c63313aec22b01a4}{}\index{hash.\+cpp@{hash.\+cpp}!B\+I\+P32\+Hash@{B\+I\+P32\+Hash}}
+\index{B\+I\+P32\+Hash@{B\+I\+P32\+Hash}!hash.\+cpp@{hash.\+cpp}}
+\subsubsection[{B\+I\+P32\+Hash}]{\setlength{\rightskip}{0pt plus 5cm}void B\+I\+P32\+Hash (
+\begin{DoxyParamCaption}
+\item[{const unsigned char}]{chain\+Code\mbox{[}32\mbox{]}, }
+\item[{unsigned int}]{n\+Child, }
+\item[{unsigned char}]{header, }
+\item[{const unsigned char}]{data\mbox{[}32\mbox{]}, }
+\item[{unsigned char}]{output\mbox{[}64\mbox{]}}
+\end{DoxyParamCaption}
+)}\label{hash_8cpp_af81a4d88d7eaba27c63313aec22b01a4}
+\hypertarget{hash_8cpp_a3cf0406d24590eaad9a3163c552e9730}{}\index{hash.\+cpp@{hash.\+cpp}!Murmur\+Hash3@{Murmur\+Hash3}}
+\index{Murmur\+Hash3@{Murmur\+Hash3}!hash.\+cpp@{hash.\+cpp}}
+\subsubsection[{Murmur\+Hash3}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Murmur\+Hash3 (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{n\+Hash\+Seed, }
+\item[{const std\+::vector$<$ unsigned char $>$ \&}]{v\+Data\+To\+Hash}
+\end{DoxyParamCaption}
+)}\label{hash_8cpp_a3cf0406d24590eaad9a3163c552e9730}
+\hypertarget{hash_8cpp_aa8045f521ac28bee04e4980f93272dc0}{}\index{hash.\+cpp@{hash.\+cpp}!R\+O\+T\+L32@{R\+O\+T\+L32}}
+\index{R\+O\+T\+L32@{R\+O\+T\+L32}!hash.\+cpp@{hash.\+cpp}}
+\subsubsection[{R\+O\+T\+L32}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t R\+O\+T\+L32 (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{x, }
+\item[{int8\+\_\+t}]{r}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{hash_8cpp_aa8045f521ac28bee04e4980f93272dc0}

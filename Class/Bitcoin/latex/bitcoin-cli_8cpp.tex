@@ -1,0 +1,74 @@
+\hypertarget{bitcoin-cli_8cpp}{}\section{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/bitcoin-\/cli.cpp File Reference}
+\label{bitcoin-cli_8cpp}\index{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/bitcoin-\/cli.\+cpp@{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/bitcoin-\/cli.\+cpp}}
+{\ttfamily \#include \char`\"{}chainparamsbase.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}clientversion.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}rpcclient.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}rpcprotocol.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}util.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utilstrencodings.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$boost/filesystem/operations.\+hpp$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_c_connection_failed}{C\+Connection\+Failed}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{bitcoin-cli_8cpp_af20b8d139279b360b0fdeae71f8f43bc}{\+\_\+}(x)~std\+::string(x) /$\ast$ Keep the \+\_\+() around in case gettext or such will be used later to translate non-\/U\+I $\ast$/
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{bitcoin-cli_8cpp_a1132a90be0b486a0c670ea50e2bf4c17}{Help\+Message\+Cli} ()
+\item 
+Object \hyperlink{bitcoin-cli_8cpp_ae0b4394f271db49671cf894dbe94c484}{Call\+R\+P\+C} (const string \&str\+Method, const Array \&params)
+\item 
+int \hyperlink{bitcoin-cli_8cpp_a4ee23259648a971c9c05aeff8b545a6d}{Command\+Line\+R\+P\+C} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\item 
+int \hyperlink{bitcoin-cli_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{bitcoin-cli_8cpp_af20b8d139279b360b0fdeae71f8f43bc}{}\index{bitcoin-\/cli.\+cpp@{bitcoin-\/cli.\+cpp}!\+\_\+@{\+\_\+}}
+\index{\+\_\+@{\+\_\+}!bitcoin-\/cli.\+cpp@{bitcoin-\/cli.\+cpp}}
+\subsubsection[{\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~std\+::string(x) /$\ast$ Keep the \+\_\+() around in case gettext or such will be used later to translate non-\/U\+I $\ast$/}\label{bitcoin-cli_8cpp_af20b8d139279b360b0fdeae71f8f43bc}
+
+
+\subsection{Function Documentation}
+\hypertarget{bitcoin-cli_8cpp_ae0b4394f271db49671cf894dbe94c484}{}\index{bitcoin-\/cli.\+cpp@{bitcoin-\/cli.\+cpp}!Call\+R\+P\+C@{Call\+R\+P\+C}}
+\index{Call\+R\+P\+C@{Call\+R\+P\+C}!bitcoin-\/cli.\+cpp@{bitcoin-\/cli.\+cpp}}
+\subsubsection[{Call\+R\+P\+C}]{\setlength{\rightskip}{0pt plus 5cm}Object Call\+R\+P\+C (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{str\+Method, }
+\item[{const Array \&}]{params}
+\end{DoxyParamCaption}
+)}\label{bitcoin-cli_8cpp_ae0b4394f271db49671cf894dbe94c484}
+\hypertarget{bitcoin-cli_8cpp_a4ee23259648a971c9c05aeff8b545a6d}{}\index{bitcoin-\/cli.\+cpp@{bitcoin-\/cli.\+cpp}!Command\+Line\+R\+P\+C@{Command\+Line\+R\+P\+C}}
+\index{Command\+Line\+R\+P\+C@{Command\+Line\+R\+P\+C}!bitcoin-\/cli.\+cpp@{bitcoin-\/cli.\+cpp}}
+\subsubsection[{Command\+Line\+R\+P\+C}]{\setlength{\rightskip}{0pt plus 5cm}int Command\+Line\+R\+P\+C (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}\label{bitcoin-cli_8cpp_a4ee23259648a971c9c05aeff8b545a6d}
+\hypertarget{bitcoin-cli_8cpp_a1132a90be0b486a0c670ea50e2bf4c17}{}\index{bitcoin-\/cli.\+cpp@{bitcoin-\/cli.\+cpp}!Help\+Message\+Cli@{Help\+Message\+Cli}}
+\index{Help\+Message\+Cli@{Help\+Message\+Cli}!bitcoin-\/cli.\+cpp@{bitcoin-\/cli.\+cpp}}
+\subsubsection[{Help\+Message\+Cli}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Help\+Message\+Cli (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{bitcoin-cli_8cpp_a1132a90be0b486a0c670ea50e2bf4c17}
+\hypertarget{bitcoin-cli_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{}\index{bitcoin-\/cli.\+cpp@{bitcoin-\/cli.\+cpp}!main@{main}}
+\index{main@{main}!bitcoin-\/cli.\+cpp@{bitcoin-\/cli.\+cpp}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}\label{bitcoin-cli_8cpp_a0ddf1224851353fc92bfbff6f499fa97}

@@ -1,0 +1,87 @@
+\hypertarget{miner_8cpp}{}\section{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/miner.cpp File Reference}
+\label{miner_8cpp}\index{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/miner.\+cpp@{C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/miner.\+cpp}}
+{\ttfamily \#include \char`\"{}miner.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}amount.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}chainparams.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}consensus/consensus.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}hash.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}main.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}net.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}pow.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}primitives/transaction.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}timedata.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}util.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utilmoneystr.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$boost/thread.\+hpp$>$}\\*
+{\ttfamily \#include $<$boost/tuple/tuple.\+hpp$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_c_orphan}{C\+Orphan}
+\item 
+class \hyperlink{class_tx_priority_compare}{Tx\+Priority\+Compare}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef boost\+::tuple$<$ double, \hyperlink{class_c_fee_rate}{C\+Fee\+Rate}, const C\+Transaction $\ast$ $>$ \hyperlink{miner_8cpp_a978fa41d50b6f9b1ee69c34d243ea1c7}{Tx\+Priority}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{miner_8cpp_ae4d310e10a4e595bb33362d5801fd0d8}{Update\+Time} (C\+Block\+Header $\ast$pblock, const \hyperlink{chainparams_8h_a5e1ca1b35c3dd1a4e20f18445f28dd9c}{Consensus\+::\+Params} \&consensus\+Params, const \hyperlink{class_c_block_index}{C\+Block\+Index} $\ast$pindex\+Prev)
+\item 
+\hyperlink{struct_c_block_template}{C\+Block\+Template} $\ast$ \hyperlink{miner_8cpp_af441d1c1899839f4e3cc0ee1367914a5}{Create\+New\+Block} (const C\+Script \&script\+Pub\+Key\+In)
+\item 
+void \hyperlink{miner_8cpp_a6f07c738a8aadffe748358e985b43d3f}{Increment\+Extra\+Nonce} (C\+Block $\ast$pblock, \hyperlink{class_c_block_index}{C\+Block\+Index} $\ast$pindex\+Prev, unsigned int \&n\+Extra\+Nonce)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint64\+\_\+t \hyperlink{miner_8cpp_a31f8b0d3c96670151ba997019820e0f4}{n\+Last\+Block\+Tx} = 0
+\item 
+uint64\+\_\+t \hyperlink{miner_8cpp_af8945f7f19ea7e938baab1bd4c226c2f}{n\+Last\+Block\+Size} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{miner_8cpp_a978fa41d50b6f9b1ee69c34d243ea1c7}{}\index{miner.\+cpp@{miner.\+cpp}!Tx\+Priority@{Tx\+Priority}}
+\index{Tx\+Priority@{Tx\+Priority}!miner.\+cpp@{miner.\+cpp}}
+\subsubsection[{Tx\+Priority}]{\setlength{\rightskip}{0pt plus 5cm}typedef boost\+::tuple$<$double, {\bf C\+Fee\+Rate}, const C\+Transaction$\ast$$>$ {\bf Tx\+Priority}}\label{miner_8cpp_a978fa41d50b6f9b1ee69c34d243ea1c7}
+
+
+\subsection{Function Documentation}
+\hypertarget{miner_8cpp_af441d1c1899839f4e3cc0ee1367914a5}{}\index{miner.\+cpp@{miner.\+cpp}!Create\+New\+Block@{Create\+New\+Block}}
+\index{Create\+New\+Block@{Create\+New\+Block}!miner.\+cpp@{miner.\+cpp}}
+\subsubsection[{Create\+New\+Block}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Block\+Template}$\ast$ Create\+New\+Block (
+\begin{DoxyParamCaption}
+\item[{const C\+Script \&}]{script\+Pub\+Key\+In}
+\end{DoxyParamCaption}
+)}\label{miner_8cpp_af441d1c1899839f4e3cc0ee1367914a5}
+Generate a new block, without valid proof-\/of-\/work \hypertarget{miner_8cpp_a6f07c738a8aadffe748358e985b43d3f}{}\index{miner.\+cpp@{miner.\+cpp}!Increment\+Extra\+Nonce@{Increment\+Extra\+Nonce}}
+\index{Increment\+Extra\+Nonce@{Increment\+Extra\+Nonce}!miner.\+cpp@{miner.\+cpp}}
+\subsubsection[{Increment\+Extra\+Nonce}]{\setlength{\rightskip}{0pt plus 5cm}void Increment\+Extra\+Nonce (
+\begin{DoxyParamCaption}
+\item[{C\+Block $\ast$}]{pblock, }
+\item[{{\bf C\+Block\+Index} $\ast$}]{pindex\+Prev, }
+\item[{unsigned int \&}]{n\+Extra\+Nonce}
+\end{DoxyParamCaption}
+)}\label{miner_8cpp_a6f07c738a8aadffe748358e985b43d3f}
+Modify the extranonce in a block \hypertarget{miner_8cpp_ae4d310e10a4e595bb33362d5801fd0d8}{}\index{miner.\+cpp@{miner.\+cpp}!Update\+Time@{Update\+Time}}
+\index{Update\+Time@{Update\+Time}!miner.\+cpp@{miner.\+cpp}}
+\subsubsection[{Update\+Time}]{\setlength{\rightskip}{0pt plus 5cm}void Update\+Time (
+\begin{DoxyParamCaption}
+\item[{C\+Block\+Header $\ast$}]{pblock, }
+\item[{const {\bf Consensus\+::\+Params} \&}]{consensus\+Params, }
+\item[{const {\bf C\+Block\+Index} $\ast$}]{pindex\+Prev}
+\end{DoxyParamCaption}
+)}\label{miner_8cpp_ae4d310e10a4e595bb33362d5801fd0d8}
+
+
+\subsection{Variable Documentation}
+\hypertarget{miner_8cpp_af8945f7f19ea7e938baab1bd4c226c2f}{}\index{miner.\+cpp@{miner.\+cpp}!n\+Last\+Block\+Size@{n\+Last\+Block\+Size}}
+\index{n\+Last\+Block\+Size@{n\+Last\+Block\+Size}!miner.\+cpp@{miner.\+cpp}}
+\subsubsection[{n\+Last\+Block\+Size}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t n\+Last\+Block\+Size = 0}\label{miner_8cpp_af8945f7f19ea7e938baab1bd4c226c2f}
+\hypertarget{miner_8cpp_a31f8b0d3c96670151ba997019820e0f4}{}\index{miner.\+cpp@{miner.\+cpp}!n\+Last\+Block\+Tx@{n\+Last\+Block\+Tx}}
+\index{n\+Last\+Block\+Tx@{n\+Last\+Block\+Tx}!miner.\+cpp@{miner.\+cpp}}
+\subsubsection[{n\+Last\+Block\+Tx}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t n\+Last\+Block\+Tx = 0}\label{miner_8cpp_a31f8b0d3c96670151ba997019820e0f4}

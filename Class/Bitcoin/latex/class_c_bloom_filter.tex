@@ -1,0 +1,175 @@
+\hypertarget{class_c_bloom_filter}{}\section{C\+Bloom\+Filter Class Reference}
+\label{class_c_bloom_filter}\index{C\+Bloom\+Filter@{C\+Bloom\+Filter}}
+
+
+{\ttfamily \#include $<$bloom.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_bloom_filter_a6395cfcb278ed9cf4ae873549c996f83}{C\+Bloom\+Filter} (unsigned int n\+Elements, double n\+F\+P\+Rate, unsigned int n\+Tweak, unsigned char n\+Flags\+In)
+\item 
+\hyperlink{class_c_bloom_filter_ab38a984b1020bc4afd85c06e90353b28}{C\+Bloom\+Filter} ()
+\item 
+{\footnotesize template$<$typename Stream , typename Operation $>$ }\\void \hyperlink{class_c_bloom_filter_a2d12234d7febc6197a7349d609733cca}{Serialization\+Op} (Stream \&s, Operation ser\+\_\+action, int n\+Type, int n\+Version)
+\item 
+void \hyperlink{class_c_bloom_filter_abba52843c7c691ef7deb07d9a645dcc2}{insert} (const std\+::vector$<$ unsigned char $>$ \&v\+Key)
+\item 
+void \hyperlink{class_c_bloom_filter_aa77e023fc94fd17a0532bf17906e2146}{insert} (const C\+Out\+Point \&outpoint)
+\item 
+void \hyperlink{class_c_bloom_filter_ac86479ac4ac157a7f0188baaa93202cb}{insert} (const \hyperlink{classuint256}{uint256} \&hash)
+\item 
+bool \hyperlink{class_c_bloom_filter_ac86c47e17a6e3d1cae4f581accc70e72}{contains} (const std\+::vector$<$ unsigned char $>$ \&v\+Key) const 
+\item 
+bool \hyperlink{class_c_bloom_filter_a962136f96fb6b237613259b18b34ba6d}{contains} (const C\+Out\+Point \&outpoint) const 
+\item 
+bool \hyperlink{class_c_bloom_filter_a7b4d06836a811a7282fb60f0697b2e1c}{contains} (const \hyperlink{classuint256}{uint256} \&hash) const 
+\item 
+void \hyperlink{class_c_bloom_filter_abf30228c0b24c57530f6b6734cd40252}{clear} ()
+\item 
+bool \hyperlink{class_c_bloom_filter_a9f206ba4f552b62d4a0cd9a1bbe3b48c}{Is\+Within\+Size\+Constraints} () const 
+\item 
+bool \hyperlink{class_c_bloom_filter_aec420a9b66ab133090c2b4b8ed286f79}{Is\+Relevant\+And\+Update} (const C\+Transaction \&tx)
+\begin{DoxyCompactList}\small\item\em Also adds any outputs which match the filter to the filter (to match their spending txes) \end{DoxyCompactList}\item 
+void \hyperlink{class_c_bloom_filter_af98b43e91c82a1e4afc7454e8c5672c2}{Update\+Empty\+Full} ()
+\begin{DoxyCompactList}\small\item\em Checks for empty and full filters to avoid wasting cpu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_bloom_filter_aac1b6a065059e07177ec836929190ad0}{A\+D\+D\+\_\+\+S\+E\+R\+I\+A\+L\+I\+Z\+E\+\_\+\+M\+E\+T\+H\+O\+D\+S}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Bloom\+Filter is a probabilistic filter which S\+P\+V clients provide so that we can filter the transactions we sends them.
+
+This allows for significantly more efficient transaction and block downloads.
+
+Because bloom filters are probabilistic, an S\+P\+V node can increase the false-\/ positive rate, making us send them transactions which aren\textquotesingle{}t actually theirs, allowing clients to trade more bandwidth for more privacy by obfuscating which keys are owned by them. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_c_bloom_filter_a6395cfcb278ed9cf4ae873549c996f83}{}\index{C\+Bloom\+Filter@{C\+Bloom\+Filter}!C\+Bloom\+Filter@{C\+Bloom\+Filter}}
+\index{C\+Bloom\+Filter@{C\+Bloom\+Filter}!C\+Bloom\+Filter@{C\+Bloom\+Filter}}
+\subsubsection[{C\+Bloom\+Filter}]{\setlength{\rightskip}{0pt plus 5cm}C\+Bloom\+Filter\+::\+C\+Bloom\+Filter (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{n\+Elements, }
+\item[{double}]{n\+F\+P\+Rate, }
+\item[{unsigned int}]{n\+Tweak\+In, }
+\item[{unsigned char}]{n\+Flags\+In}
+\end{DoxyParamCaption}
+)}\label{class_c_bloom_filter_a6395cfcb278ed9cf4ae873549c996f83}
+Creates a new bloom filter which will provide the given fp rate when filled with the given number of elements Note that if the given parameters will result in a filter outside the bounds of the protocol limits, the filter created will be as close to the given parameters as possible within the protocol limits. This will apply if n\+F\+P\+Rate is very low or n\+Elements is unreasonably high. n\+Tweak is a constant which is added to the seed value passed to the hash function It should generally always be a random value (and is largely only exposed for unit testing) n\+Flags should be one of the B\+L\+O\+O\+M\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+$\ast$ enums (not \+\_\+\+M\+A\+S\+K)
+
+The ideal size for a bloom filter with a given number of elements and false positive rate is\+:
+\begin{DoxyItemize}
+\item n\+Elements $\ast$ log(fp rate) / ln(2)$^\wedge$2 We ignore filter parameters which will create a bloom filter larger than the protocol limits The ideal number of hash functions is filter size $\ast$ ln(2) / number of elements Again, we ignore filter parameters which will create a bloom filter with more hash functions than the protocol limits See \href{https://en.wikipedia.org/wiki/Bloom_filter}{\tt https\+://en.\+wikipedia.\+org/wiki/\+Bloom\+\_\+filter} for an explanation of these formulas 
+\end{DoxyItemize}\hypertarget{class_c_bloom_filter_ab38a984b1020bc4afd85c06e90353b28}{}\index{C\+Bloom\+Filter@{C\+Bloom\+Filter}!C\+Bloom\+Filter@{C\+Bloom\+Filter}}
+\index{C\+Bloom\+Filter@{C\+Bloom\+Filter}!C\+Bloom\+Filter@{C\+Bloom\+Filter}}
+\subsubsection[{C\+Bloom\+Filter}]{\setlength{\rightskip}{0pt plus 5cm}C\+Bloom\+Filter\+::\+C\+Bloom\+Filter (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_bloom_filter_ab38a984b1020bc4afd85c06e90353b28}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_c_bloom_filter_abf30228c0b24c57530f6b6734cd40252}{}\index{C\+Bloom\+Filter@{C\+Bloom\+Filter}!clear@{clear}}
+\index{clear@{clear}!C\+Bloom\+Filter@{C\+Bloom\+Filter}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}void C\+Bloom\+Filter\+::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_c_bloom_filter_abf30228c0b24c57530f6b6734cd40252}
+\hypertarget{class_c_bloom_filter_ac86c47e17a6e3d1cae4f581accc70e72}{}\index{C\+Bloom\+Filter@{C\+Bloom\+Filter}!contains@{contains}}
+\index{contains@{contains}!C\+Bloom\+Filter@{C\+Bloom\+Filter}}
+\subsubsection[{contains}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+Bloom\+Filter\+::contains (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ unsigned char $>$ \&}]{v\+Key}
+\end{DoxyParamCaption}
+) const}\label{class_c_bloom_filter_ac86c47e17a6e3d1cae4f581accc70e72}
+\hypertarget{class_c_bloom_filter_a962136f96fb6b237613259b18b34ba6d}{}\index{C\+Bloom\+Filter@{C\+Bloom\+Filter}!contains@{contains}}
+\index{contains@{contains}!C\+Bloom\+Filter@{C\+Bloom\+Filter}}
+\subsubsection[{contains}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+Bloom\+Filter\+::contains (
+\begin{DoxyParamCaption}
+\item[{const C\+Out\+Point \&}]{outpoint}
+\end{DoxyParamCaption}
+) const}\label{class_c_bloom_filter_a962136f96fb6b237613259b18b34ba6d}
+\hypertarget{class_c_bloom_filter_a7b4d06836a811a7282fb60f0697b2e1c}{}\index{C\+Bloom\+Filter@{C\+Bloom\+Filter}!contains@{contains}}
+\index{contains@{contains}!C\+Bloom\+Filter@{C\+Bloom\+Filter}}
+\subsubsection[{contains}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+Bloom\+Filter\+::contains (
+\begin{DoxyParamCaption}
+\item[{const {\bf uint256} \&}]{hash}
+\end{DoxyParamCaption}
+) const}\label{class_c_bloom_filter_a7b4d06836a811a7282fb60f0697b2e1c}
+\hypertarget{class_c_bloom_filter_abba52843c7c691ef7deb07d9a645dcc2}{}\index{C\+Bloom\+Filter@{C\+Bloom\+Filter}!insert@{insert}}
+\index{insert@{insert}!C\+Bloom\+Filter@{C\+Bloom\+Filter}}
+\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}void C\+Bloom\+Filter\+::insert (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ unsigned char $>$ \&}]{v\+Key}
+\end{DoxyParamCaption}
+)}\label{class_c_bloom_filter_abba52843c7c691ef7deb07d9a645dcc2}
+\hypertarget{class_c_bloom_filter_aa77e023fc94fd17a0532bf17906e2146}{}\index{C\+Bloom\+Filter@{C\+Bloom\+Filter}!insert@{insert}}
+\index{insert@{insert}!C\+Bloom\+Filter@{C\+Bloom\+Filter}}
+\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}void C\+Bloom\+Filter\+::insert (
+\begin{DoxyParamCaption}
+\item[{const C\+Out\+Point \&}]{outpoint}
+\end{DoxyParamCaption}
+)}\label{class_c_bloom_filter_aa77e023fc94fd17a0532bf17906e2146}
+\hypertarget{class_c_bloom_filter_ac86479ac4ac157a7f0188baaa93202cb}{}\index{C\+Bloom\+Filter@{C\+Bloom\+Filter}!insert@{insert}}
+\index{insert@{insert}!C\+Bloom\+Filter@{C\+Bloom\+Filter}}
+\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}void C\+Bloom\+Filter\+::insert (
+\begin{DoxyParamCaption}
+\item[{const {\bf uint256} \&}]{hash}
+\end{DoxyParamCaption}
+)}\label{class_c_bloom_filter_ac86479ac4ac157a7f0188baaa93202cb}
+\hypertarget{class_c_bloom_filter_aec420a9b66ab133090c2b4b8ed286f79}{}\index{C\+Bloom\+Filter@{C\+Bloom\+Filter}!Is\+Relevant\+And\+Update@{Is\+Relevant\+And\+Update}}
+\index{Is\+Relevant\+And\+Update@{Is\+Relevant\+And\+Update}!C\+Bloom\+Filter@{C\+Bloom\+Filter}}
+\subsubsection[{Is\+Relevant\+And\+Update}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+Bloom\+Filter\+::\+Is\+Relevant\+And\+Update (
+\begin{DoxyParamCaption}
+\item[{const C\+Transaction \&}]{tx}
+\end{DoxyParamCaption}
+)}\label{class_c_bloom_filter_aec420a9b66ab133090c2b4b8ed286f79}
+
+
+Also adds any outputs which match the filter to the filter (to match their spending txes) 
+
+\hypertarget{class_c_bloom_filter_a9f206ba4f552b62d4a0cd9a1bbe3b48c}{}\index{C\+Bloom\+Filter@{C\+Bloom\+Filter}!Is\+Within\+Size\+Constraints@{Is\+Within\+Size\+Constraints}}
+\index{Is\+Within\+Size\+Constraints@{Is\+Within\+Size\+Constraints}!C\+Bloom\+Filter@{C\+Bloom\+Filter}}
+\subsubsection[{Is\+Within\+Size\+Constraints}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+Bloom\+Filter\+::\+Is\+Within\+Size\+Constraints (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_c_bloom_filter_a9f206ba4f552b62d4a0cd9a1bbe3b48c}
+True if the size is $<$= M\+A\+X\+\_\+\+B\+L\+O\+O\+M\+\_\+\+F\+I\+L\+T\+E\+R\+\_\+\+S\+I\+Z\+E and the number of hash functions is $<$= M\+A\+X\+\_\+\+H\+A\+S\+H\+\_\+\+F\+U\+N\+C\+S (catch a filter which was just deserialized which was too big) \hypertarget{class_c_bloom_filter_a2d12234d7febc6197a7349d609733cca}{}\index{C\+Bloom\+Filter@{C\+Bloom\+Filter}!Serialization\+Op@{Serialization\+Op}}
+\index{Serialization\+Op@{Serialization\+Op}!C\+Bloom\+Filter@{C\+Bloom\+Filter}}
+\subsubsection[{Serialization\+Op}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Stream , typename Operation $>$ void C\+Bloom\+Filter\+::\+Serialization\+Op (
+\begin{DoxyParamCaption}
+\item[{Stream \&}]{s, }
+\item[{Operation}]{ser\+\_\+action, }
+\item[{int}]{n\+Type, }
+\item[{int}]{n\+Version}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_bloom_filter_a2d12234d7febc6197a7349d609733cca}
+\hypertarget{class_c_bloom_filter_af98b43e91c82a1e4afc7454e8c5672c2}{}\index{C\+Bloom\+Filter@{C\+Bloom\+Filter}!Update\+Empty\+Full@{Update\+Empty\+Full}}
+\index{Update\+Empty\+Full@{Update\+Empty\+Full}!C\+Bloom\+Filter@{C\+Bloom\+Filter}}
+\subsubsection[{Update\+Empty\+Full}]{\setlength{\rightskip}{0pt plus 5cm}void C\+Bloom\+Filter\+::\+Update\+Empty\+Full (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_c_bloom_filter_af98b43e91c82a1e4afc7454e8c5672c2}
+
+
+Checks for empty and full filters to avoid wasting cpu. 
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_c_bloom_filter_aac1b6a065059e07177ec836929190ad0}{}\index{C\+Bloom\+Filter@{C\+Bloom\+Filter}!A\+D\+D\+\_\+\+S\+E\+R\+I\+A\+L\+I\+Z\+E\+\_\+\+M\+E\+T\+H\+O\+D\+S@{A\+D\+D\+\_\+\+S\+E\+R\+I\+A\+L\+I\+Z\+E\+\_\+\+M\+E\+T\+H\+O\+D\+S}}
+\index{A\+D\+D\+\_\+\+S\+E\+R\+I\+A\+L\+I\+Z\+E\+\_\+\+M\+E\+T\+H\+O\+D\+S@{A\+D\+D\+\_\+\+S\+E\+R\+I\+A\+L\+I\+Z\+E\+\_\+\+M\+E\+T\+H\+O\+D\+S}!C\+Bloom\+Filter@{C\+Bloom\+Filter}}
+\subsubsection[{A\+D\+D\+\_\+\+S\+E\+R\+I\+A\+L\+I\+Z\+E\+\_\+\+M\+E\+T\+H\+O\+D\+S}]{\setlength{\rightskip}{0pt plus 5cm}C\+Bloom\+Filter\+::\+A\+D\+D\+\_\+\+S\+E\+R\+I\+A\+L\+I\+Z\+E\+\_\+\+M\+E\+T\+H\+O\+D\+S}\label{class_c_bloom_filter_aac1b6a065059e07177ec836929190ad0}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/\hyperlink{bloom_8h}{bloom.\+h}\item 
+C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/\hyperlink{bloom_8cpp}{bloom.\+cpp}\end{DoxyCompactItemize}

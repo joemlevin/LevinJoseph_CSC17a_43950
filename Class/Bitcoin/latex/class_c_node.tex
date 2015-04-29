@@ -1,0 +1,718 @@
+\hypertarget{class_c_node}{}\section{C\+Node Class Reference}
+\label{class_c_node}\index{C\+Node@{C\+Node}}
+
+
+{\ttfamily \#include $<$net.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_node_a51556705550511146245b9fb2fec09c1}{C\+Node} (\hyperlink{compat_8h_a26ef1173e2f2c0d3db27eca28397d723}{S\+O\+C\+K\+E\+T} h\+Socket\+In, \hyperlink{class_c_address}{C\+Address} addr\+In, std\+::string addr\+Name\+In=\char`\"{}\char`\"{}, bool f\+Inbound\+In=false)
+\item 
+\hyperlink{class_c_node_ac9b30cb93e91a48dacc58821abfc44f0}{$\sim$\+C\+Node} ()
+\item 
+\hyperlink{net_8h_a954d746a58632565552615fd0a4ee660}{Node\+Id} \hyperlink{class_c_node_ac0f1a22fa938e84138536308e2001340}{Get\+Id} () const 
+\item 
+int \hyperlink{class_c_node_a72211aaf51af2e981e6b8a1deb73c836}{Get\+Ref\+Count} ()
+\item 
+unsigned int \hyperlink{class_c_node_a2cff79a034258ba032257e993fc42e62}{Get\+Total\+Recv\+Size} ()
+\item 
+bool \hyperlink{class_c_node_a84a10eb3aec7fdddafeb354527b50b75}{Receive\+Msg\+Bytes} (const char $\ast$pch, unsigned int n\+Bytes)
+\item 
+void \hyperlink{class_c_node_a94438c6285d1635c62ccff10593780e6}{Set\+Recv\+Version} (int n\+Version\+In)
+\item 
+\hyperlink{class_c_node}{C\+Node} $\ast$ \hyperlink{class_c_node_afb65ed679f7bda59aab89e0f5afae292}{Add\+Ref} ()
+\item 
+void \hyperlink{class_c_node_af804bf7c7f9794e80a3b916e1befece9}{Release} ()
+\item 
+void \hyperlink{class_c_node_a1d2cecdd03c9da642d292f6a81ac6ed8}{Add\+Address\+Known} (const \hyperlink{class_c_address}{C\+Address} \&\hyperlink{class_c_node_a3993ecb1de2a2135a3cf0904346a6f88}{addr})
+\item 
+void \hyperlink{class_c_node_a06950a5ce265a1d4df1aad7f28e6fde8}{Push\+Address} (const \hyperlink{class_c_address}{C\+Address} \&\hyperlink{class_c_node_a3993ecb1de2a2135a3cf0904346a6f88}{addr})
+\item 
+void \hyperlink{class_c_node_ac3054eb6ade84e8968f032ce3e700f6a}{Add\+Inventory\+Known} (const \hyperlink{class_c_inv}{C\+Inv} \&inv)
+\item 
+void \hyperlink{class_c_node_a7cef2333aa8776127a7e7fcab659eb6a}{Push\+Inventory} (const \hyperlink{class_c_inv}{C\+Inv} \&inv)
+\item 
+void \hyperlink{class_c_node_ae0def1498409407d1612833a7d38c875}{Ask\+For} (const \hyperlink{class_c_inv}{C\+Inv} \&inv)
+\item 
+void \hyperlink{class_c_node_af76d193027757002321d0d674290b955}{Begin\+Message} (const char $\ast$psz\+Command) \hyperlink{threadsafety_8h_a77729163b7f6867da40ad5daa5f926f3}{E\+X\+C\+L\+U\+S\+I\+V\+E\+\_\+\+L\+O\+C\+K\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N}(\hyperlink{class_c_node_a79edcac83fc5067567c7b41c26fcc56f}{cs\+\_\+v\+Send})
+\item 
+void \hyperlink{class_c_node_aae0fdfe555001a60bab8f216c3bc3978}{Abort\+Message} () \hyperlink{threadsafety_8h_abd56e19f9b4781b1a5212a46951cf5c3}{U\+N\+L\+O\+C\+K\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N}(\hyperlink{class_c_node_a79edcac83fc5067567c7b41c26fcc56f}{cs\+\_\+v\+Send})
+\item 
+void \hyperlink{class_c_node_af8d4b8c0f883afffcb62d906c31b2cdf}{End\+Message} () \hyperlink{threadsafety_8h_abd56e19f9b4781b1a5212a46951cf5c3}{U\+N\+L\+O\+C\+K\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N}(\hyperlink{class_c_node_a79edcac83fc5067567c7b41c26fcc56f}{cs\+\_\+v\+Send})
+\item 
+void \hyperlink{class_c_node_a4dbfe4f6c1fd162aaa905e4bd201d536}{Push\+Version} ()
+\item 
+void \hyperlink{class_c_node_a204fda3d33404cb37698c085b1583ab2}{Push\+Message} (const char $\ast$psz\+Command)
+\item 
+{\footnotesize template$<$typename T1 $>$ }\\void \hyperlink{class_c_node_a07f897794e362a214a1d4d2aa3d68939}{Push\+Message} (const char $\ast$psz\+Command, const T1 \&a1)
+\item 
+{\footnotesize template$<$typename T1 , typename T2 $>$ }\\void \hyperlink{class_c_node_a67b985781651b8806d7f9976f6fb85a9}{Push\+Message} (const char $\ast$psz\+Command, const T1 \&a1, const T2 \&a2)
+\item 
+{\footnotesize template$<$typename T1 , typename T2 , typename T3 $>$ }\\void \hyperlink{class_c_node_a79355956a00c38d855b986a34e7ba444}{Push\+Message} (const char $\ast$psz\+Command, const T1 \&a1, const T2 \&a2, const T3 \&a3)
+\item 
+{\footnotesize template$<$typename T1 , typename T2 , typename T3 , typename T4 $>$ }\\void \hyperlink{class_c_node_a2958ee10e2c96ef647787bce80196079}{Push\+Message} (const char $\ast$psz\+Command, const T1 \&a1, const T2 \&a2, const T3 \&a3, const T4 \&a4)
+\item 
+{\footnotesize template$<$typename T1 , typename T2 , typename T3 , typename T4 , typename T5 $>$ }\\void \hyperlink{class_c_node_a1f58deeed29baf57c49dae177f8be826}{Push\+Message} (const char $\ast$psz\+Command, const T1 \&a1, const T2 \&a2, const T3 \&a3, const T4 \&a4, const T5 \&a5)
+\item 
+{\footnotesize template$<$typename T1 , typename T2 , typename T3 , typename T4 , typename T5 , typename T6 $>$ }\\void \hyperlink{class_c_node_a4addbff355c502fb2f8c10451e76373d}{Push\+Message} (const char $\ast$psz\+Command, const T1 \&a1, const T2 \&a2, const T3 \&a3, const T4 \&a4, const T5 \&a5, const T6 \&a6)
+\item 
+{\footnotesize template$<$typename T1 , typename T2 , typename T3 , typename T4 , typename T5 , typename T6 , typename T7 $>$ }\\void \hyperlink{class_c_node_ab3611cdb08d5f25a4da05fe140e48625}{Push\+Message} (const char $\ast$psz\+Command, const T1 \&a1, const T2 \&a2, const T3 \&a3, const T4 \&a4, const T5 \&a5, const T6 \&a6, const T7 \&a7)
+\item 
+{\footnotesize template$<$typename T1 , typename T2 , typename T3 , typename T4 , typename T5 , typename T6 , typename T7 , typename T8 $>$ }\\void \hyperlink{class_c_node_af91d09012aa7e879be4b488b0bba903d}{Push\+Message} (const char $\ast$psz\+Command, const T1 \&a1, const T2 \&a2, const T3 \&a3, const T4 \&a4, const T5 \&a5, const T6 \&a6, const T7 \&a7, const T8 \&a8)
+\item 
+{\footnotesize template$<$typename T1 , typename T2 , typename T3 , typename T4 , typename T5 , typename T6 , typename T7 , typename T8 , typename T9 $>$ }\\void \hyperlink{class_c_node_a1af04d8219e8e6aafe5b6446000cd9ff}{Push\+Message} (const char $\ast$psz\+Command, const T1 \&a1, const T2 \&a2, const T3 \&a3, const T4 \&a4, const T5 \&a5, const T6 \&a6, const T7 \&a7, const T8 \&a8, const T9 \&a9)
+\item 
+void \hyperlink{class_c_node_a63a6091a0b0fc0987d9436e1ec708423}{Close\+Socket\+Disconnect} ()
+\item 
+void \hyperlink{class_c_node_aaa77188d9df85b80e3f8a30292acf6a9}{copy\+Stats} (\hyperlink{class_c_node_stats}{C\+Node\+Stats} \&stats)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{class_c_node_ad75b43ab81213b74446163211c24246a}{Clear\+Banned} ()
+\item 
+static bool \hyperlink{class_c_node_aefa8b81afa53b4c6635dc4c6c024211a}{Is\+Banned} (\hyperlink{class_c_net_addr}{C\+Net\+Addr} ip)
+\item 
+static bool \hyperlink{class_c_node_a7d5dd8d7531bfbe069092be583569956}{Ban} (const \hyperlink{class_c_net_addr}{C\+Net\+Addr} \&ip)
+\item 
+static bool \hyperlink{class_c_node_ad2ccd5d22994f338c9b55ebe7528ea55}{Is\+Whitelisted\+Range} (const \hyperlink{class_c_net_addr}{C\+Net\+Addr} \&ip)
+\item 
+static void \hyperlink{class_c_node_ad2c1f955ec23851bd87a6bb144d85d03}{Add\+Whitelisted\+Range} (const \hyperlink{class_c_sub_net}{C\+Sub\+Net} \&subnet)
+\item 
+static void \hyperlink{class_c_node_af72b4b6e454c743af071896019ae1c69}{Record\+Bytes\+Recv} (uint64\+\_\+t bytes)
+\item 
+static void \hyperlink{class_c_node_a945c993a84eaa9d6bca18284befaccbe}{Record\+Bytes\+Sent} (uint64\+\_\+t bytes)
+\item 
+static uint64\+\_\+t \hyperlink{class_c_node_a1988b63b48fdc9b72014bdf9588b0168}{Get\+Total\+Bytes\+Recv} ()
+\item 
+static uint64\+\_\+t \hyperlink{class_c_node_af318a64e7ddad50d1e1b6fc123a5f0b9}{Get\+Total\+Bytes\+Sent} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint64\+\_\+t \hyperlink{class_c_node_a8259db81211f6837585c6f82f89414ff}{n\+Services}
+\item 
+\hyperlink{compat_8h_a26ef1173e2f2c0d3db27eca28397d723}{S\+O\+C\+K\+E\+T} \hyperlink{class_c_node_a7cda6efa6a9ef9db3eebe70fc3bdd45a}{h\+Socket}
+\item 
+\hyperlink{class_c_data_stream}{C\+Data\+Stream} \hyperlink{class_c_node_a6174b5a3d8d8f6a2daf02be3cf04dc63}{ss\+Send}
+\item 
+size\+\_\+t \hyperlink{class_c_node_a3c99b7e2b0e53feb58f6859453456f74}{n\+Send\+Size}
+\item 
+size\+\_\+t \hyperlink{class_c_node_a090bda86de6b84c3db83e1f029d4f453}{n\+Send\+Offset}
+\item 
+uint64\+\_\+t \hyperlink{class_c_node_a33e24a9544df3c60f9e1ec05b5e91051}{n\+Send\+Bytes}
+\item 
+std\+::deque$<$ C\+Serialize\+Data $>$ \hyperlink{class_c_node_a68e5fb1a80fe4247aa577a3c9a74b399}{v\+Send\+Msg}
+\item 
+\hyperlink{sync_8h_a37a4692b2d517f2843655ca11af7668a}{C\+Critical\+Section} \hyperlink{class_c_node_a79edcac83fc5067567c7b41c26fcc56f}{cs\+\_\+v\+Send}
+\item 
+std\+::deque$<$ \hyperlink{class_c_inv}{C\+Inv} $>$ \hyperlink{class_c_node_a9649c1f27ff0d8f0ba89eb1ea5bee139}{v\+Recv\+Get\+Data}
+\item 
+std\+::deque$<$ \hyperlink{class_c_net_message}{C\+Net\+Message} $>$ \hyperlink{class_c_node_a015361812daa5b6ebb9a5692ddf67a54}{v\+Recv\+Msg}
+\item 
+\hyperlink{sync_8h_a37a4692b2d517f2843655ca11af7668a}{C\+Critical\+Section} \hyperlink{class_c_node_abaebfaf8fff7e2e99366ae2bc69af6cd}{cs\+\_\+v\+Recv\+Msg}
+\item 
+uint64\+\_\+t \hyperlink{class_c_node_a8bbe2a7052476d62acf7f0a5a9c5981b}{n\+Recv\+Bytes}
+\item 
+int \hyperlink{class_c_node_ab7494353448b922accfb645bd26ac271}{n\+Recv\+Version}
+\item 
+int64\+\_\+t \hyperlink{class_c_node_af39253ad525733ca64ab3fc785dfc4eb}{n\+Last\+Send}
+\item 
+int64\+\_\+t \hyperlink{class_c_node_afb40f43a51ba686de93256727351af07}{n\+Last\+Recv}
+\item 
+int64\+\_\+t \hyperlink{class_c_node_abb39393ef08cb5668ded6cb14cdbc147}{n\+Time\+Connected}
+\item 
+int64\+\_\+t \hyperlink{class_c_node_a3079fadef397abbf7e8d444f4426ebe7}{n\+Time\+Offset}
+\item 
+\hyperlink{class_c_address}{C\+Address} \hyperlink{class_c_node_a3993ecb1de2a2135a3cf0904346a6f88}{addr}
+\item 
+std\+::string \hyperlink{class_c_node_a3155cd313d85ec3ff691f8259a5f5345}{addr\+Name}
+\item 
+\hyperlink{class_c_service}{C\+Service} \hyperlink{class_c_node_a1b6517682efa0709f44780a95384c4ec}{addr\+Local}
+\item 
+int \hyperlink{class_c_node_a99173eb3cef17e699ba21a5249ac33d2}{n\+Version}
+\item 
+std\+::string \hyperlink{class_c_node_afb24fb33019af5c4085412fe3898cf01}{str\+Sub\+Ver}
+\item 
+std\+::string \hyperlink{class_c_node_a05f0401427c5ffebd1ca404848e83ff7}{clean\+Sub\+Ver}
+\item 
+bool \hyperlink{class_c_node_ad3096c14b54aa39a02edb63a4a734c3e}{f\+Whitelisted}
+\item 
+bool \hyperlink{class_c_node_a2bb91c9968a9f855c05b1121100a8797}{f\+One\+Shot}
+\item 
+bool \hyperlink{class_c_node_a721e2470c2c961b7599768a14be68781}{f\+Client}
+\item 
+bool \hyperlink{class_c_node_a64b2550ec558b6106ebc122d450ad35b}{f\+Inbound}
+\item 
+bool \hyperlink{class_c_node_a933adb2b192939545a01d602b1d7b53a}{f\+Network\+Node}
+\item 
+bool \hyperlink{class_c_node_ab58c1772b2698e348d86002f34254119}{f\+Successfully\+Connected}
+\item 
+bool \hyperlink{class_c_node_af2f7ea958313974e8a948292f060922e}{f\+Disconnect}
+\item 
+bool \hyperlink{class_c_node_ab387bb0c4ffd42e3f0aea233dca0e301}{f\+Relay\+Txes}
+\item 
+\hyperlink{class_c_semaphore_grant}{C\+Semaphore\+Grant} \hyperlink{class_c_node_a4bb25f8bdeeaff5e8cb08abc97bbc44d}{grant\+Outbound}
+\item 
+\hyperlink{sync_8h_a37a4692b2d517f2843655ca11af7668a}{C\+Critical\+Section} \hyperlink{class_c_node_a66aeed3b6534635d031dff3eee9538de}{cs\+\_\+filter}
+\item 
+\hyperlink{class_c_bloom_filter}{C\+Bloom\+Filter} $\ast$ \hyperlink{class_c_node_a2e28bf088e56fc9d30e99e9de6587743}{pfilter}
+\item 
+int \hyperlink{class_c_node_a01f8cac776bef676651f9b8f3f80ae98}{n\+Ref\+Count}
+\item 
+\hyperlink{net_8h_a954d746a58632565552615fd0a4ee660}{Node\+Id} \hyperlink{class_c_node_af99591c635f495fc1e6c14745a2a4203}{id}
+\item 
+\hyperlink{classuint256}{uint256} \hyperlink{class_c_node_a1a1c0d94de0197c5c4abf5a8d13364f3}{hash\+Continue}
+\item 
+int \hyperlink{class_c_node_a597b41bd64e2ac9391b7211e65aeb52a}{n\+Starting\+Height}
+\item 
+std\+::vector$<$ \hyperlink{class_c_address}{C\+Address} $>$ \hyperlink{class_c_node_a9b2d9b9182ff111c79f704594c4aa2e1}{v\+Addr\+To\+Send}
+\item 
+\hyperlink{classmruset}{mruset}$<$ \hyperlink{class_c_address}{C\+Address} $>$ \hyperlink{class_c_node_ac21266ce880bd36b98ba7cfcc447a30f}{set\+Addr\+Known}
+\item 
+bool \hyperlink{class_c_node_a3da9c559959e182aff8439cd004ff624}{f\+Get\+Addr}
+\item 
+std\+::set$<$ \hyperlink{classuint256}{uint256} $>$ \hyperlink{class_c_node_ab1b30fa8e48005752f6b0bcf43eca478}{set\+Known}
+\item 
+\hyperlink{classmruset}{mruset}$<$ \hyperlink{class_c_inv}{C\+Inv} $>$ \hyperlink{class_c_node_ae15aa9a971040800c26bc87b1250220f}{set\+Inventory\+Known}
+\item 
+std\+::vector$<$ \hyperlink{class_c_inv}{C\+Inv} $>$ \hyperlink{class_c_node_abcd24c9478bc1ab5ba6de6b369080cec}{v\+Inventory\+To\+Send}
+\item 
+\hyperlink{sync_8h_a37a4692b2d517f2843655ca11af7668a}{C\+Critical\+Section} \hyperlink{class_c_node_a1e8b0784cc82f33edc2dc4e2834d1ff0}{cs\+\_\+inventory}
+\item 
+std\+::multimap$<$ int64\+\_\+t, \hyperlink{class_c_inv}{C\+Inv} $>$ \hyperlink{class_c_node_a7593dfbd76c34a81169e3fb2aa0e0cf7}{map\+Ask\+For}
+\item 
+uint64\+\_\+t \hyperlink{class_c_node_a9a077fbd09ddee1d81f027bc01a4ec68}{n\+Ping\+Nonce\+Sent}
+\item 
+int64\+\_\+t \hyperlink{class_c_node_a8352aa332af726ff117fb890c4dd3869}{n\+Ping\+Usec\+Start}
+\item 
+int64\+\_\+t \hyperlink{class_c_node_ada34ffe1700a5dafb57de7c4d2491844}{n\+Ping\+Usec\+Time}
+\item 
+bool \hyperlink{class_c_node_aa1e9c1dc1d5cf806b9be0af155c0bf90}{f\+Ping\+Queued}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_c_node_a39512c4e2c788fb7a09e629b79a69e47}{Fuzz} (int n\+Chance)
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::map$<$ \hyperlink{class_c_net_addr}{C\+Net\+Addr}, int64\+\_\+t $>$ \hyperlink{class_c_node_adf22d1873c1012ab3edb8a52253b203e}{set\+Banned}
+\item 
+static \hyperlink{sync_8h_a37a4692b2d517f2843655ca11af7668a}{C\+Critical\+Section} \hyperlink{class_c_node_a9ff9a6f07a280aa07d77713ae43d383a}{cs\+\_\+set\+Banned}
+\item 
+static std\+::vector$<$ \hyperlink{class_c_sub_net}{C\+Sub\+Net} $>$ \hyperlink{class_c_node_afaac354c1226990e4e9407ba2ee4cbf9}{v\+Whitelisted\+Range}
+\item 
+static \hyperlink{sync_8h_a37a4692b2d517f2843655ca11af7668a}{C\+Critical\+Section} \hyperlink{class_c_node_a4a79c02f5024b57ca9e6a1f8d103f363}{cs\+\_\+v\+Whitelisted\+Range}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Information about a peer 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_c_node_a51556705550511146245b9fb2fec09c1}{}\index{C\+Node@{C\+Node}!C\+Node@{C\+Node}}
+\index{C\+Node@{C\+Node}!C\+Node@{C\+Node}}
+\subsubsection[{C\+Node}]{\setlength{\rightskip}{0pt plus 5cm}C\+Node\+::\+C\+Node (
+\begin{DoxyParamCaption}
+\item[{{\bf S\+O\+C\+K\+E\+T}}]{h\+Socket\+In, }
+\item[{{\bf C\+Address}}]{addr\+In, }
+\item[{std\+::string}]{addr\+Name\+In = {\ttfamily \char`\"{}\char`\"{}}, }
+\item[{bool}]{f\+Inbound\+In = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}\label{class_c_node_a51556705550511146245b9fb2fec09c1}
+\hypertarget{class_c_node_ac9b30cb93e91a48dacc58821abfc44f0}{}\index{C\+Node@{C\+Node}!````~C\+Node@{$\sim$\+C\+Node}}
+\index{````~C\+Node@{$\sim$\+C\+Node}!C\+Node@{C\+Node}}
+\subsubsection[{$\sim$\+C\+Node}]{\setlength{\rightskip}{0pt plus 5cm}C\+Node\+::$\sim$\+C\+Node (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_c_node_ac9b30cb93e91a48dacc58821abfc44f0}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_c_node_aae0fdfe555001a60bab8f216c3bc3978}{}\index{C\+Node@{C\+Node}!Abort\+Message@{Abort\+Message}}
+\index{Abort\+Message@{Abort\+Message}!C\+Node@{C\+Node}}
+\subsubsection[{Abort\+Message}]{\setlength{\rightskip}{0pt plus 5cm}void C\+Node\+::\+Abort\+Message (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_c_node_aae0fdfe555001a60bab8f216c3bc3978}
+\hypertarget{class_c_node_a1d2cecdd03c9da642d292f6a81ac6ed8}{}\index{C\+Node@{C\+Node}!Add\+Address\+Known@{Add\+Address\+Known}}
+\index{Add\+Address\+Known@{Add\+Address\+Known}!C\+Node@{C\+Node}}
+\subsubsection[{Add\+Address\+Known}]{\setlength{\rightskip}{0pt plus 5cm}void C\+Node\+::\+Add\+Address\+Known (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\+Address} \&}]{addr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_node_a1d2cecdd03c9da642d292f6a81ac6ed8}
+\hypertarget{class_c_node_ac3054eb6ade84e8968f032ce3e700f6a}{}\index{C\+Node@{C\+Node}!Add\+Inventory\+Known@{Add\+Inventory\+Known}}
+\index{Add\+Inventory\+Known@{Add\+Inventory\+Known}!C\+Node@{C\+Node}}
+\subsubsection[{Add\+Inventory\+Known}]{\setlength{\rightskip}{0pt plus 5cm}void C\+Node\+::\+Add\+Inventory\+Known (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\+Inv} \&}]{inv}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_node_ac3054eb6ade84e8968f032ce3e700f6a}
+\hypertarget{class_c_node_afb65ed679f7bda59aab89e0f5afae292}{}\index{C\+Node@{C\+Node}!Add\+Ref@{Add\+Ref}}
+\index{Add\+Ref@{Add\+Ref}!C\+Node@{C\+Node}}
+\subsubsection[{Add\+Ref}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Node}$\ast$ C\+Node\+::\+Add\+Ref (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_node_afb65ed679f7bda59aab89e0f5afae292}
+\hypertarget{class_c_node_ad2c1f955ec23851bd87a6bb144d85d03}{}\index{C\+Node@{C\+Node}!Add\+Whitelisted\+Range@{Add\+Whitelisted\+Range}}
+\index{Add\+Whitelisted\+Range@{Add\+Whitelisted\+Range}!C\+Node@{C\+Node}}
+\subsubsection[{Add\+Whitelisted\+Range}]{\setlength{\rightskip}{0pt plus 5cm}void C\+Node\+::\+Add\+Whitelisted\+Range (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\+Sub\+Net} \&}]{subnet}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_c_node_ad2c1f955ec23851bd87a6bb144d85d03}
+\hypertarget{class_c_node_ae0def1498409407d1612833a7d38c875}{}\index{C\+Node@{C\+Node}!Ask\+For@{Ask\+For}}
+\index{Ask\+For@{Ask\+For}!C\+Node@{C\+Node}}
+\subsubsection[{Ask\+For}]{\setlength{\rightskip}{0pt plus 5cm}void C\+Node\+::\+Ask\+For (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\+Inv} \&}]{inv}
+\end{DoxyParamCaption}
+)}\label{class_c_node_ae0def1498409407d1612833a7d38c875}
+\hypertarget{class_c_node_a7d5dd8d7531bfbe069092be583569956}{}\index{C\+Node@{C\+Node}!Ban@{Ban}}
+\index{Ban@{Ban}!C\+Node@{C\+Node}}
+\subsubsection[{Ban}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+Node\+::\+Ban (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\+Net\+Addr} \&}]{ip}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_c_node_a7d5dd8d7531bfbe069092be583569956}
+\hypertarget{class_c_node_af76d193027757002321d0d674290b955}{}\index{C\+Node@{C\+Node}!Begin\+Message@{Begin\+Message}}
+\index{Begin\+Message@{Begin\+Message}!C\+Node@{C\+Node}}
+\subsubsection[{Begin\+Message}]{\setlength{\rightskip}{0pt plus 5cm}void C\+Node\+::\+Begin\+Message (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{psz\+Command}
+\end{DoxyParamCaption}
+)}\label{class_c_node_af76d193027757002321d0d674290b955}
+\hypertarget{class_c_node_ad75b43ab81213b74446163211c24246a}{}\index{C\+Node@{C\+Node}!Clear\+Banned@{Clear\+Banned}}
+\index{Clear\+Banned@{Clear\+Banned}!C\+Node@{C\+Node}}
+\subsubsection[{Clear\+Banned}]{\setlength{\rightskip}{0pt plus 5cm}void C\+Node\+::\+Clear\+Banned (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_c_node_ad75b43ab81213b74446163211c24246a}
+\hypertarget{class_c_node_a63a6091a0b0fc0987d9436e1ec708423}{}\index{C\+Node@{C\+Node}!Close\+Socket\+Disconnect@{Close\+Socket\+Disconnect}}
+\index{Close\+Socket\+Disconnect@{Close\+Socket\+Disconnect}!C\+Node@{C\+Node}}
+\subsubsection[{Close\+Socket\+Disconnect}]{\setlength{\rightskip}{0pt plus 5cm}void C\+Node\+::\+Close\+Socket\+Disconnect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_c_node_a63a6091a0b0fc0987d9436e1ec708423}
+\hypertarget{class_c_node_aaa77188d9df85b80e3f8a30292acf6a9}{}\index{C\+Node@{C\+Node}!copy\+Stats@{copy\+Stats}}
+\index{copy\+Stats@{copy\+Stats}!C\+Node@{C\+Node}}
+\subsubsection[{copy\+Stats}]{\setlength{\rightskip}{0pt plus 5cm}void C\+Node\+::copy\+Stats (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Node\+Stats} \&}]{stats}
+\end{DoxyParamCaption}
+)}\label{class_c_node_aaa77188d9df85b80e3f8a30292acf6a9}
+\hypertarget{class_c_node_af8d4b8c0f883afffcb62d906c31b2cdf}{}\index{C\+Node@{C\+Node}!End\+Message@{End\+Message}}
+\index{End\+Message@{End\+Message}!C\+Node@{C\+Node}}
+\subsubsection[{End\+Message}]{\setlength{\rightskip}{0pt plus 5cm}void C\+Node\+::\+End\+Message (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_c_node_af8d4b8c0f883afffcb62d906c31b2cdf}
+\hypertarget{class_c_node_a39512c4e2c788fb7a09e629b79a69e47}{}\index{C\+Node@{C\+Node}!Fuzz@{Fuzz}}
+\index{Fuzz@{Fuzz}!C\+Node@{C\+Node}}
+\subsubsection[{Fuzz}]{\setlength{\rightskip}{0pt plus 5cm}void C\+Node\+::\+Fuzz (
+\begin{DoxyParamCaption}
+\item[{int}]{n\+Chance}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_c_node_a39512c4e2c788fb7a09e629b79a69e47}
+\hypertarget{class_c_node_ac0f1a22fa938e84138536308e2001340}{}\index{C\+Node@{C\+Node}!Get\+Id@{Get\+Id}}
+\index{Get\+Id@{Get\+Id}!C\+Node@{C\+Node}}
+\subsubsection[{Get\+Id}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Node\+Id} C\+Node\+::\+Get\+Id (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_node_ac0f1a22fa938e84138536308e2001340}
+\hypertarget{class_c_node_a72211aaf51af2e981e6b8a1deb73c836}{}\index{C\+Node@{C\+Node}!Get\+Ref\+Count@{Get\+Ref\+Count}}
+\index{Get\+Ref\+Count@{Get\+Ref\+Count}!C\+Node@{C\+Node}}
+\subsubsection[{Get\+Ref\+Count}]{\setlength{\rightskip}{0pt plus 5cm}int C\+Node\+::\+Get\+Ref\+Count (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_node_a72211aaf51af2e981e6b8a1deb73c836}
+\hypertarget{class_c_node_a1988b63b48fdc9b72014bdf9588b0168}{}\index{C\+Node@{C\+Node}!Get\+Total\+Bytes\+Recv@{Get\+Total\+Bytes\+Recv}}
+\index{Get\+Total\+Bytes\+Recv@{Get\+Total\+Bytes\+Recv}!C\+Node@{C\+Node}}
+\subsubsection[{Get\+Total\+Bytes\+Recv}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t C\+Node\+::\+Get\+Total\+Bytes\+Recv (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_c_node_a1988b63b48fdc9b72014bdf9588b0168}
+\hypertarget{class_c_node_af318a64e7ddad50d1e1b6fc123a5f0b9}{}\index{C\+Node@{C\+Node}!Get\+Total\+Bytes\+Sent@{Get\+Total\+Bytes\+Sent}}
+\index{Get\+Total\+Bytes\+Sent@{Get\+Total\+Bytes\+Sent}!C\+Node@{C\+Node}}
+\subsubsection[{Get\+Total\+Bytes\+Sent}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t C\+Node\+::\+Get\+Total\+Bytes\+Sent (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_c_node_af318a64e7ddad50d1e1b6fc123a5f0b9}
+\hypertarget{class_c_node_a2cff79a034258ba032257e993fc42e62}{}\index{C\+Node@{C\+Node}!Get\+Total\+Recv\+Size@{Get\+Total\+Recv\+Size}}
+\index{Get\+Total\+Recv\+Size@{Get\+Total\+Recv\+Size}!C\+Node@{C\+Node}}
+\subsubsection[{Get\+Total\+Recv\+Size}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int C\+Node\+::\+Get\+Total\+Recv\+Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_node_a2cff79a034258ba032257e993fc42e62}
+\hypertarget{class_c_node_aefa8b81afa53b4c6635dc4c6c024211a}{}\index{C\+Node@{C\+Node}!Is\+Banned@{Is\+Banned}}
+\index{Is\+Banned@{Is\+Banned}!C\+Node@{C\+Node}}
+\subsubsection[{Is\+Banned}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+Node\+::\+Is\+Banned (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Net\+Addr}}]{ip}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_c_node_aefa8b81afa53b4c6635dc4c6c024211a}
+\hypertarget{class_c_node_ad2ccd5d22994f338c9b55ebe7528ea55}{}\index{C\+Node@{C\+Node}!Is\+Whitelisted\+Range@{Is\+Whitelisted\+Range}}
+\index{Is\+Whitelisted\+Range@{Is\+Whitelisted\+Range}!C\+Node@{C\+Node}}
+\subsubsection[{Is\+Whitelisted\+Range}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+Node\+::\+Is\+Whitelisted\+Range (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\+Net\+Addr} \&}]{ip}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_c_node_ad2ccd5d22994f338c9b55ebe7528ea55}
+\hypertarget{class_c_node_a06950a5ce265a1d4df1aad7f28e6fde8}{}\index{C\+Node@{C\+Node}!Push\+Address@{Push\+Address}}
+\index{Push\+Address@{Push\+Address}!C\+Node@{C\+Node}}
+\subsubsection[{Push\+Address}]{\setlength{\rightskip}{0pt plus 5cm}void C\+Node\+::\+Push\+Address (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\+Address} \&}]{addr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_node_a06950a5ce265a1d4df1aad7f28e6fde8}
+\hypertarget{class_c_node_a7cef2333aa8776127a7e7fcab659eb6a}{}\index{C\+Node@{C\+Node}!Push\+Inventory@{Push\+Inventory}}
+\index{Push\+Inventory@{Push\+Inventory}!C\+Node@{C\+Node}}
+\subsubsection[{Push\+Inventory}]{\setlength{\rightskip}{0pt plus 5cm}void C\+Node\+::\+Push\+Inventory (
+\begin{DoxyParamCaption}
+\item[{const {\bf C\+Inv} \&}]{inv}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_node_a7cef2333aa8776127a7e7fcab659eb6a}
+\hypertarget{class_c_node_a204fda3d33404cb37698c085b1583ab2}{}\index{C\+Node@{C\+Node}!Push\+Message@{Push\+Message}}
+\index{Push\+Message@{Push\+Message}!C\+Node@{C\+Node}}
+\subsubsection[{Push\+Message}]{\setlength{\rightskip}{0pt plus 5cm}void C\+Node\+::\+Push\+Message (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{psz\+Command}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_node_a204fda3d33404cb37698c085b1583ab2}
+\hypertarget{class_c_node_a07f897794e362a214a1d4d2aa3d68939}{}\index{C\+Node@{C\+Node}!Push\+Message@{Push\+Message}}
+\index{Push\+Message@{Push\+Message}!C\+Node@{C\+Node}}
+\subsubsection[{Push\+Message}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T1 $>$ void C\+Node\+::\+Push\+Message (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{psz\+Command, }
+\item[{const T1 \&}]{a1}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_node_a07f897794e362a214a1d4d2aa3d68939}
+\hypertarget{class_c_node_a67b985781651b8806d7f9976f6fb85a9}{}\index{C\+Node@{C\+Node}!Push\+Message@{Push\+Message}}
+\index{Push\+Message@{Push\+Message}!C\+Node@{C\+Node}}
+\subsubsection[{Push\+Message}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T1 , typename T2 $>$ void C\+Node\+::\+Push\+Message (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{psz\+Command, }
+\item[{const T1 \&}]{a1, }
+\item[{const T2 \&}]{a2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_node_a67b985781651b8806d7f9976f6fb85a9}
+\hypertarget{class_c_node_a79355956a00c38d855b986a34e7ba444}{}\index{C\+Node@{C\+Node}!Push\+Message@{Push\+Message}}
+\index{Push\+Message@{Push\+Message}!C\+Node@{C\+Node}}
+\subsubsection[{Push\+Message}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T1 , typename T2 , typename T3 $>$ void C\+Node\+::\+Push\+Message (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{psz\+Command, }
+\item[{const T1 \&}]{a1, }
+\item[{const T2 \&}]{a2, }
+\item[{const T3 \&}]{a3}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_node_a79355956a00c38d855b986a34e7ba444}
+\hypertarget{class_c_node_a2958ee10e2c96ef647787bce80196079}{}\index{C\+Node@{C\+Node}!Push\+Message@{Push\+Message}}
+\index{Push\+Message@{Push\+Message}!C\+Node@{C\+Node}}
+\subsubsection[{Push\+Message}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T1 , typename T2 , typename T3 , typename T4 $>$ void C\+Node\+::\+Push\+Message (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{psz\+Command, }
+\item[{const T1 \&}]{a1, }
+\item[{const T2 \&}]{a2, }
+\item[{const T3 \&}]{a3, }
+\item[{const T4 \&}]{a4}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_node_a2958ee10e2c96ef647787bce80196079}
+\hypertarget{class_c_node_a1f58deeed29baf57c49dae177f8be826}{}\index{C\+Node@{C\+Node}!Push\+Message@{Push\+Message}}
+\index{Push\+Message@{Push\+Message}!C\+Node@{C\+Node}}
+\subsubsection[{Push\+Message}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T1 , typename T2 , typename T3 , typename T4 , typename T5 $>$ void C\+Node\+::\+Push\+Message (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{psz\+Command, }
+\item[{const T1 \&}]{a1, }
+\item[{const T2 \&}]{a2, }
+\item[{const T3 \&}]{a3, }
+\item[{const T4 \&}]{a4, }
+\item[{const T5 \&}]{a5}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_node_a1f58deeed29baf57c49dae177f8be826}
+\hypertarget{class_c_node_a4addbff355c502fb2f8c10451e76373d}{}\index{C\+Node@{C\+Node}!Push\+Message@{Push\+Message}}
+\index{Push\+Message@{Push\+Message}!C\+Node@{C\+Node}}
+\subsubsection[{Push\+Message}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T1 , typename T2 , typename T3 , typename T4 , typename T5 , typename T6 $>$ void C\+Node\+::\+Push\+Message (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{psz\+Command, }
+\item[{const T1 \&}]{a1, }
+\item[{const T2 \&}]{a2, }
+\item[{const T3 \&}]{a3, }
+\item[{const T4 \&}]{a4, }
+\item[{const T5 \&}]{a5, }
+\item[{const T6 \&}]{a6}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_node_a4addbff355c502fb2f8c10451e76373d}
+\hypertarget{class_c_node_ab3611cdb08d5f25a4da05fe140e48625}{}\index{C\+Node@{C\+Node}!Push\+Message@{Push\+Message}}
+\index{Push\+Message@{Push\+Message}!C\+Node@{C\+Node}}
+\subsubsection[{Push\+Message}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T1 , typename T2 , typename T3 , typename T4 , typename T5 , typename T6 , typename T7 $>$ void C\+Node\+::\+Push\+Message (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{psz\+Command, }
+\item[{const T1 \&}]{a1, }
+\item[{const T2 \&}]{a2, }
+\item[{const T3 \&}]{a3, }
+\item[{const T4 \&}]{a4, }
+\item[{const T5 \&}]{a5, }
+\item[{const T6 \&}]{a6, }
+\item[{const T7 \&}]{a7}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_node_ab3611cdb08d5f25a4da05fe140e48625}
+\hypertarget{class_c_node_af91d09012aa7e879be4b488b0bba903d}{}\index{C\+Node@{C\+Node}!Push\+Message@{Push\+Message}}
+\index{Push\+Message@{Push\+Message}!C\+Node@{C\+Node}}
+\subsubsection[{Push\+Message}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T1 , typename T2 , typename T3 , typename T4 , typename T5 , typename T6 , typename T7 , typename T8 $>$ void C\+Node\+::\+Push\+Message (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{psz\+Command, }
+\item[{const T1 \&}]{a1, }
+\item[{const T2 \&}]{a2, }
+\item[{const T3 \&}]{a3, }
+\item[{const T4 \&}]{a4, }
+\item[{const T5 \&}]{a5, }
+\item[{const T6 \&}]{a6, }
+\item[{const T7 \&}]{a7, }
+\item[{const T8 \&}]{a8}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_node_af91d09012aa7e879be4b488b0bba903d}
+\hypertarget{class_c_node_a1af04d8219e8e6aafe5b6446000cd9ff}{}\index{C\+Node@{C\+Node}!Push\+Message@{Push\+Message}}
+\index{Push\+Message@{Push\+Message}!C\+Node@{C\+Node}}
+\subsubsection[{Push\+Message}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T1 , typename T2 , typename T3 , typename T4 , typename T5 , typename T6 , typename T7 , typename T8 , typename T9 $>$ void C\+Node\+::\+Push\+Message (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{psz\+Command, }
+\item[{const T1 \&}]{a1, }
+\item[{const T2 \&}]{a2, }
+\item[{const T3 \&}]{a3, }
+\item[{const T4 \&}]{a4, }
+\item[{const T5 \&}]{a5, }
+\item[{const T6 \&}]{a6, }
+\item[{const T7 \&}]{a7, }
+\item[{const T8 \&}]{a8, }
+\item[{const T9 \&}]{a9}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_node_a1af04d8219e8e6aafe5b6446000cd9ff}
+\hypertarget{class_c_node_a4dbfe4f6c1fd162aaa905e4bd201d536}{}\index{C\+Node@{C\+Node}!Push\+Version@{Push\+Version}}
+\index{Push\+Version@{Push\+Version}!C\+Node@{C\+Node}}
+\subsubsection[{Push\+Version}]{\setlength{\rightskip}{0pt plus 5cm}void C\+Node\+::\+Push\+Version (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_c_node_a4dbfe4f6c1fd162aaa905e4bd201d536}
+\hypertarget{class_c_node_a84a10eb3aec7fdddafeb354527b50b75}{}\index{C\+Node@{C\+Node}!Receive\+Msg\+Bytes@{Receive\+Msg\+Bytes}}
+\index{Receive\+Msg\+Bytes@{Receive\+Msg\+Bytes}!C\+Node@{C\+Node}}
+\subsubsection[{Receive\+Msg\+Bytes}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+Node\+::\+Receive\+Msg\+Bytes (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{pch, }
+\item[{unsigned int}]{n\+Bytes}
+\end{DoxyParamCaption}
+)}\label{class_c_node_a84a10eb3aec7fdddafeb354527b50b75}
+\hypertarget{class_c_node_af72b4b6e454c743af071896019ae1c69}{}\index{C\+Node@{C\+Node}!Record\+Bytes\+Recv@{Record\+Bytes\+Recv}}
+\index{Record\+Bytes\+Recv@{Record\+Bytes\+Recv}!C\+Node@{C\+Node}}
+\subsubsection[{Record\+Bytes\+Recv}]{\setlength{\rightskip}{0pt plus 5cm}void C\+Node\+::\+Record\+Bytes\+Recv (
+\begin{DoxyParamCaption}
+\item[{uint64\+\_\+t}]{bytes}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_c_node_af72b4b6e454c743af071896019ae1c69}
+\hypertarget{class_c_node_a945c993a84eaa9d6bca18284befaccbe}{}\index{C\+Node@{C\+Node}!Record\+Bytes\+Sent@{Record\+Bytes\+Sent}}
+\index{Record\+Bytes\+Sent@{Record\+Bytes\+Sent}!C\+Node@{C\+Node}}
+\subsubsection[{Record\+Bytes\+Sent}]{\setlength{\rightskip}{0pt plus 5cm}void C\+Node\+::\+Record\+Bytes\+Sent (
+\begin{DoxyParamCaption}
+\item[{uint64\+\_\+t}]{bytes}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_c_node_a945c993a84eaa9d6bca18284befaccbe}
+\hypertarget{class_c_node_af804bf7c7f9794e80a3b916e1befece9}{}\index{C\+Node@{C\+Node}!Release@{Release}}
+\index{Release@{Release}!C\+Node@{C\+Node}}
+\subsubsection[{Release}]{\setlength{\rightskip}{0pt plus 5cm}void C\+Node\+::\+Release (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_node_af804bf7c7f9794e80a3b916e1befece9}
+\hypertarget{class_c_node_a94438c6285d1635c62ccff10593780e6}{}\index{C\+Node@{C\+Node}!Set\+Recv\+Version@{Set\+Recv\+Version}}
+\index{Set\+Recv\+Version@{Set\+Recv\+Version}!C\+Node@{C\+Node}}
+\subsubsection[{Set\+Recv\+Version}]{\setlength{\rightskip}{0pt plus 5cm}void C\+Node\+::\+Set\+Recv\+Version (
+\begin{DoxyParamCaption}
+\item[{int}]{n\+Version\+In}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_node_a94438c6285d1635c62ccff10593780e6}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_c_node_a3993ecb1de2a2135a3cf0904346a6f88}{}\index{C\+Node@{C\+Node}!addr@{addr}}
+\index{addr@{addr}!C\+Node@{C\+Node}}
+\subsubsection[{addr}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Address} C\+Node\+::addr}\label{class_c_node_a3993ecb1de2a2135a3cf0904346a6f88}
+\hypertarget{class_c_node_a1b6517682efa0709f44780a95384c4ec}{}\index{C\+Node@{C\+Node}!addr\+Local@{addr\+Local}}
+\index{addr\+Local@{addr\+Local}!C\+Node@{C\+Node}}
+\subsubsection[{addr\+Local}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Service} C\+Node\+::addr\+Local}\label{class_c_node_a1b6517682efa0709f44780a95384c4ec}
+\hypertarget{class_c_node_a3155cd313d85ec3ff691f8259a5f5345}{}\index{C\+Node@{C\+Node}!addr\+Name@{addr\+Name}}
+\index{addr\+Name@{addr\+Name}!C\+Node@{C\+Node}}
+\subsubsection[{addr\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string C\+Node\+::addr\+Name}\label{class_c_node_a3155cd313d85ec3ff691f8259a5f5345}
+\hypertarget{class_c_node_a05f0401427c5ffebd1ca404848e83ff7}{}\index{C\+Node@{C\+Node}!clean\+Sub\+Ver@{clean\+Sub\+Ver}}
+\index{clean\+Sub\+Ver@{clean\+Sub\+Ver}!C\+Node@{C\+Node}}
+\subsubsection[{clean\+Sub\+Ver}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string C\+Node\+::clean\+Sub\+Ver}\label{class_c_node_a05f0401427c5ffebd1ca404848e83ff7}
+\hypertarget{class_c_node_a66aeed3b6534635d031dff3eee9538de}{}\index{C\+Node@{C\+Node}!cs\+\_\+filter@{cs\+\_\+filter}}
+\index{cs\+\_\+filter@{cs\+\_\+filter}!C\+Node@{C\+Node}}
+\subsubsection[{cs\+\_\+filter}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Critical\+Section} C\+Node\+::cs\+\_\+filter}\label{class_c_node_a66aeed3b6534635d031dff3eee9538de}
+\hypertarget{class_c_node_a1e8b0784cc82f33edc2dc4e2834d1ff0}{}\index{C\+Node@{C\+Node}!cs\+\_\+inventory@{cs\+\_\+inventory}}
+\index{cs\+\_\+inventory@{cs\+\_\+inventory}!C\+Node@{C\+Node}}
+\subsubsection[{cs\+\_\+inventory}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Critical\+Section} C\+Node\+::cs\+\_\+inventory}\label{class_c_node_a1e8b0784cc82f33edc2dc4e2834d1ff0}
+\hypertarget{class_c_node_a9ff9a6f07a280aa07d77713ae43d383a}{}\index{C\+Node@{C\+Node}!cs\+\_\+set\+Banned@{cs\+\_\+set\+Banned}}
+\index{cs\+\_\+set\+Banned@{cs\+\_\+set\+Banned}!C\+Node@{C\+Node}}
+\subsubsection[{cs\+\_\+set\+Banned}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Critical\+Section} C\+Node\+::cs\+\_\+set\+Banned\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\label{class_c_node_a9ff9a6f07a280aa07d77713ae43d383a}
+\hypertarget{class_c_node_abaebfaf8fff7e2e99366ae2bc69af6cd}{}\index{C\+Node@{C\+Node}!cs\+\_\+v\+Recv\+Msg@{cs\+\_\+v\+Recv\+Msg}}
+\index{cs\+\_\+v\+Recv\+Msg@{cs\+\_\+v\+Recv\+Msg}!C\+Node@{C\+Node}}
+\subsubsection[{cs\+\_\+v\+Recv\+Msg}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Critical\+Section} C\+Node\+::cs\+\_\+v\+Recv\+Msg}\label{class_c_node_abaebfaf8fff7e2e99366ae2bc69af6cd}
+\hypertarget{class_c_node_a79edcac83fc5067567c7b41c26fcc56f}{}\index{C\+Node@{C\+Node}!cs\+\_\+v\+Send@{cs\+\_\+v\+Send}}
+\index{cs\+\_\+v\+Send@{cs\+\_\+v\+Send}!C\+Node@{C\+Node}}
+\subsubsection[{cs\+\_\+v\+Send}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Critical\+Section} C\+Node\+::cs\+\_\+v\+Send}\label{class_c_node_a79edcac83fc5067567c7b41c26fcc56f}
+\hypertarget{class_c_node_a4a79c02f5024b57ca9e6a1f8d103f363}{}\index{C\+Node@{C\+Node}!cs\+\_\+v\+Whitelisted\+Range@{cs\+\_\+v\+Whitelisted\+Range}}
+\index{cs\+\_\+v\+Whitelisted\+Range@{cs\+\_\+v\+Whitelisted\+Range}!C\+Node@{C\+Node}}
+\subsubsection[{cs\+\_\+v\+Whitelisted\+Range}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Critical\+Section} C\+Node\+::cs\+\_\+v\+Whitelisted\+Range\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\label{class_c_node_a4a79c02f5024b57ca9e6a1f8d103f363}
+\hypertarget{class_c_node_a721e2470c2c961b7599768a14be68781}{}\index{C\+Node@{C\+Node}!f\+Client@{f\+Client}}
+\index{f\+Client@{f\+Client}!C\+Node@{C\+Node}}
+\subsubsection[{f\+Client}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+Node\+::f\+Client}\label{class_c_node_a721e2470c2c961b7599768a14be68781}
+\hypertarget{class_c_node_af2f7ea958313974e8a948292f060922e}{}\index{C\+Node@{C\+Node}!f\+Disconnect@{f\+Disconnect}}
+\index{f\+Disconnect@{f\+Disconnect}!C\+Node@{C\+Node}}
+\subsubsection[{f\+Disconnect}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+Node\+::f\+Disconnect}\label{class_c_node_af2f7ea958313974e8a948292f060922e}
+\hypertarget{class_c_node_a3da9c559959e182aff8439cd004ff624}{}\index{C\+Node@{C\+Node}!f\+Get\+Addr@{f\+Get\+Addr}}
+\index{f\+Get\+Addr@{f\+Get\+Addr}!C\+Node@{C\+Node}}
+\subsubsection[{f\+Get\+Addr}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+Node\+::f\+Get\+Addr}\label{class_c_node_a3da9c559959e182aff8439cd004ff624}
+\hypertarget{class_c_node_a64b2550ec558b6106ebc122d450ad35b}{}\index{C\+Node@{C\+Node}!f\+Inbound@{f\+Inbound}}
+\index{f\+Inbound@{f\+Inbound}!C\+Node@{C\+Node}}
+\subsubsection[{f\+Inbound}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+Node\+::f\+Inbound}\label{class_c_node_a64b2550ec558b6106ebc122d450ad35b}
+\hypertarget{class_c_node_a933adb2b192939545a01d602b1d7b53a}{}\index{C\+Node@{C\+Node}!f\+Network\+Node@{f\+Network\+Node}}
+\index{f\+Network\+Node@{f\+Network\+Node}!C\+Node@{C\+Node}}
+\subsubsection[{f\+Network\+Node}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+Node\+::f\+Network\+Node}\label{class_c_node_a933adb2b192939545a01d602b1d7b53a}
+\hypertarget{class_c_node_a2bb91c9968a9f855c05b1121100a8797}{}\index{C\+Node@{C\+Node}!f\+One\+Shot@{f\+One\+Shot}}
+\index{f\+One\+Shot@{f\+One\+Shot}!C\+Node@{C\+Node}}
+\subsubsection[{f\+One\+Shot}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+Node\+::f\+One\+Shot}\label{class_c_node_a2bb91c9968a9f855c05b1121100a8797}
+\hypertarget{class_c_node_aa1e9c1dc1d5cf806b9be0af155c0bf90}{}\index{C\+Node@{C\+Node}!f\+Ping\+Queued@{f\+Ping\+Queued}}
+\index{f\+Ping\+Queued@{f\+Ping\+Queued}!C\+Node@{C\+Node}}
+\subsubsection[{f\+Ping\+Queued}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+Node\+::f\+Ping\+Queued}\label{class_c_node_aa1e9c1dc1d5cf806b9be0af155c0bf90}
+\hypertarget{class_c_node_ab387bb0c4ffd42e3f0aea233dca0e301}{}\index{C\+Node@{C\+Node}!f\+Relay\+Txes@{f\+Relay\+Txes}}
+\index{f\+Relay\+Txes@{f\+Relay\+Txes}!C\+Node@{C\+Node}}
+\subsubsection[{f\+Relay\+Txes}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+Node\+::f\+Relay\+Txes}\label{class_c_node_ab387bb0c4ffd42e3f0aea233dca0e301}
+\hypertarget{class_c_node_ab58c1772b2698e348d86002f34254119}{}\index{C\+Node@{C\+Node}!f\+Successfully\+Connected@{f\+Successfully\+Connected}}
+\index{f\+Successfully\+Connected@{f\+Successfully\+Connected}!C\+Node@{C\+Node}}
+\subsubsection[{f\+Successfully\+Connected}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+Node\+::f\+Successfully\+Connected}\label{class_c_node_ab58c1772b2698e348d86002f34254119}
+\hypertarget{class_c_node_ad3096c14b54aa39a02edb63a4a734c3e}{}\index{C\+Node@{C\+Node}!f\+Whitelisted@{f\+Whitelisted}}
+\index{f\+Whitelisted@{f\+Whitelisted}!C\+Node@{C\+Node}}
+\subsubsection[{f\+Whitelisted}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+Node\+::f\+Whitelisted}\label{class_c_node_ad3096c14b54aa39a02edb63a4a734c3e}
+\hypertarget{class_c_node_a4bb25f8bdeeaff5e8cb08abc97bbc44d}{}\index{C\+Node@{C\+Node}!grant\+Outbound@{grant\+Outbound}}
+\index{grant\+Outbound@{grant\+Outbound}!C\+Node@{C\+Node}}
+\subsubsection[{grant\+Outbound}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Semaphore\+Grant} C\+Node\+::grant\+Outbound}\label{class_c_node_a4bb25f8bdeeaff5e8cb08abc97bbc44d}
+\hypertarget{class_c_node_a1a1c0d94de0197c5c4abf5a8d13364f3}{}\index{C\+Node@{C\+Node}!hash\+Continue@{hash\+Continue}}
+\index{hash\+Continue@{hash\+Continue}!C\+Node@{C\+Node}}
+\subsubsection[{hash\+Continue}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uint256} C\+Node\+::hash\+Continue}\label{class_c_node_a1a1c0d94de0197c5c4abf5a8d13364f3}
+\hypertarget{class_c_node_a7cda6efa6a9ef9db3eebe70fc3bdd45a}{}\index{C\+Node@{C\+Node}!h\+Socket@{h\+Socket}}
+\index{h\+Socket@{h\+Socket}!C\+Node@{C\+Node}}
+\subsubsection[{h\+Socket}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\+O\+C\+K\+E\+T} C\+Node\+::h\+Socket}\label{class_c_node_a7cda6efa6a9ef9db3eebe70fc3bdd45a}
+\hypertarget{class_c_node_af99591c635f495fc1e6c14745a2a4203}{}\index{C\+Node@{C\+Node}!id@{id}}
+\index{id@{id}!C\+Node@{C\+Node}}
+\subsubsection[{id}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Node\+Id} C\+Node\+::id}\label{class_c_node_af99591c635f495fc1e6c14745a2a4203}
+\hypertarget{class_c_node_a7593dfbd76c34a81169e3fb2aa0e0cf7}{}\index{C\+Node@{C\+Node}!map\+Ask\+For@{map\+Ask\+For}}
+\index{map\+Ask\+For@{map\+Ask\+For}!C\+Node@{C\+Node}}
+\subsubsection[{map\+Ask\+For}]{\setlength{\rightskip}{0pt plus 5cm}std\+::multimap$<$int64\+\_\+t, {\bf C\+Inv}$>$ C\+Node\+::map\+Ask\+For}\label{class_c_node_a7593dfbd76c34a81169e3fb2aa0e0cf7}
+\hypertarget{class_c_node_afb40f43a51ba686de93256727351af07}{}\index{C\+Node@{C\+Node}!n\+Last\+Recv@{n\+Last\+Recv}}
+\index{n\+Last\+Recv@{n\+Last\+Recv}!C\+Node@{C\+Node}}
+\subsubsection[{n\+Last\+Recv}]{\setlength{\rightskip}{0pt plus 5cm}int64\+\_\+t C\+Node\+::n\+Last\+Recv}\label{class_c_node_afb40f43a51ba686de93256727351af07}
+\hypertarget{class_c_node_af39253ad525733ca64ab3fc785dfc4eb}{}\index{C\+Node@{C\+Node}!n\+Last\+Send@{n\+Last\+Send}}
+\index{n\+Last\+Send@{n\+Last\+Send}!C\+Node@{C\+Node}}
+\subsubsection[{n\+Last\+Send}]{\setlength{\rightskip}{0pt plus 5cm}int64\+\_\+t C\+Node\+::n\+Last\+Send}\label{class_c_node_af39253ad525733ca64ab3fc785dfc4eb}
+\hypertarget{class_c_node_a9a077fbd09ddee1d81f027bc01a4ec68}{}\index{C\+Node@{C\+Node}!n\+Ping\+Nonce\+Sent@{n\+Ping\+Nonce\+Sent}}
+\index{n\+Ping\+Nonce\+Sent@{n\+Ping\+Nonce\+Sent}!C\+Node@{C\+Node}}
+\subsubsection[{n\+Ping\+Nonce\+Sent}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t C\+Node\+::n\+Ping\+Nonce\+Sent}\label{class_c_node_a9a077fbd09ddee1d81f027bc01a4ec68}
+\hypertarget{class_c_node_a8352aa332af726ff117fb890c4dd3869}{}\index{C\+Node@{C\+Node}!n\+Ping\+Usec\+Start@{n\+Ping\+Usec\+Start}}
+\index{n\+Ping\+Usec\+Start@{n\+Ping\+Usec\+Start}!C\+Node@{C\+Node}}
+\subsubsection[{n\+Ping\+Usec\+Start}]{\setlength{\rightskip}{0pt plus 5cm}int64\+\_\+t C\+Node\+::n\+Ping\+Usec\+Start}\label{class_c_node_a8352aa332af726ff117fb890c4dd3869}
+\hypertarget{class_c_node_ada34ffe1700a5dafb57de7c4d2491844}{}\index{C\+Node@{C\+Node}!n\+Ping\+Usec\+Time@{n\+Ping\+Usec\+Time}}
+\index{n\+Ping\+Usec\+Time@{n\+Ping\+Usec\+Time}!C\+Node@{C\+Node}}
+\subsubsection[{n\+Ping\+Usec\+Time}]{\setlength{\rightskip}{0pt plus 5cm}int64\+\_\+t C\+Node\+::n\+Ping\+Usec\+Time}\label{class_c_node_ada34ffe1700a5dafb57de7c4d2491844}
+\hypertarget{class_c_node_a8bbe2a7052476d62acf7f0a5a9c5981b}{}\index{C\+Node@{C\+Node}!n\+Recv\+Bytes@{n\+Recv\+Bytes}}
+\index{n\+Recv\+Bytes@{n\+Recv\+Bytes}!C\+Node@{C\+Node}}
+\subsubsection[{n\+Recv\+Bytes}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t C\+Node\+::n\+Recv\+Bytes}\label{class_c_node_a8bbe2a7052476d62acf7f0a5a9c5981b}
+\hypertarget{class_c_node_ab7494353448b922accfb645bd26ac271}{}\index{C\+Node@{C\+Node}!n\+Recv\+Version@{n\+Recv\+Version}}
+\index{n\+Recv\+Version@{n\+Recv\+Version}!C\+Node@{C\+Node}}
+\subsubsection[{n\+Recv\+Version}]{\setlength{\rightskip}{0pt plus 5cm}int C\+Node\+::n\+Recv\+Version}\label{class_c_node_ab7494353448b922accfb645bd26ac271}
+\hypertarget{class_c_node_a01f8cac776bef676651f9b8f3f80ae98}{}\index{C\+Node@{C\+Node}!n\+Ref\+Count@{n\+Ref\+Count}}
+\index{n\+Ref\+Count@{n\+Ref\+Count}!C\+Node@{C\+Node}}
+\subsubsection[{n\+Ref\+Count}]{\setlength{\rightskip}{0pt plus 5cm}int C\+Node\+::n\+Ref\+Count}\label{class_c_node_a01f8cac776bef676651f9b8f3f80ae98}
+\hypertarget{class_c_node_a33e24a9544df3c60f9e1ec05b5e91051}{}\index{C\+Node@{C\+Node}!n\+Send\+Bytes@{n\+Send\+Bytes}}
+\index{n\+Send\+Bytes@{n\+Send\+Bytes}!C\+Node@{C\+Node}}
+\subsubsection[{n\+Send\+Bytes}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t C\+Node\+::n\+Send\+Bytes}\label{class_c_node_a33e24a9544df3c60f9e1ec05b5e91051}
+\hypertarget{class_c_node_a090bda86de6b84c3db83e1f029d4f453}{}\index{C\+Node@{C\+Node}!n\+Send\+Offset@{n\+Send\+Offset}}
+\index{n\+Send\+Offset@{n\+Send\+Offset}!C\+Node@{C\+Node}}
+\subsubsection[{n\+Send\+Offset}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t C\+Node\+::n\+Send\+Offset}\label{class_c_node_a090bda86de6b84c3db83e1f029d4f453}
+\hypertarget{class_c_node_a3c99b7e2b0e53feb58f6859453456f74}{}\index{C\+Node@{C\+Node}!n\+Send\+Size@{n\+Send\+Size}}
+\index{n\+Send\+Size@{n\+Send\+Size}!C\+Node@{C\+Node}}
+\subsubsection[{n\+Send\+Size}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t C\+Node\+::n\+Send\+Size}\label{class_c_node_a3c99b7e2b0e53feb58f6859453456f74}
+\hypertarget{class_c_node_a8259db81211f6837585c6f82f89414ff}{}\index{C\+Node@{C\+Node}!n\+Services@{n\+Services}}
+\index{n\+Services@{n\+Services}!C\+Node@{C\+Node}}
+\subsubsection[{n\+Services}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t C\+Node\+::n\+Services}\label{class_c_node_a8259db81211f6837585c6f82f89414ff}
+\hypertarget{class_c_node_a597b41bd64e2ac9391b7211e65aeb52a}{}\index{C\+Node@{C\+Node}!n\+Starting\+Height@{n\+Starting\+Height}}
+\index{n\+Starting\+Height@{n\+Starting\+Height}!C\+Node@{C\+Node}}
+\subsubsection[{n\+Starting\+Height}]{\setlength{\rightskip}{0pt plus 5cm}int C\+Node\+::n\+Starting\+Height}\label{class_c_node_a597b41bd64e2ac9391b7211e65aeb52a}
+\hypertarget{class_c_node_abb39393ef08cb5668ded6cb14cdbc147}{}\index{C\+Node@{C\+Node}!n\+Time\+Connected@{n\+Time\+Connected}}
+\index{n\+Time\+Connected@{n\+Time\+Connected}!C\+Node@{C\+Node}}
+\subsubsection[{n\+Time\+Connected}]{\setlength{\rightskip}{0pt plus 5cm}int64\+\_\+t C\+Node\+::n\+Time\+Connected}\label{class_c_node_abb39393ef08cb5668ded6cb14cdbc147}
+\hypertarget{class_c_node_a3079fadef397abbf7e8d444f4426ebe7}{}\index{C\+Node@{C\+Node}!n\+Time\+Offset@{n\+Time\+Offset}}
+\index{n\+Time\+Offset@{n\+Time\+Offset}!C\+Node@{C\+Node}}
+\subsubsection[{n\+Time\+Offset}]{\setlength{\rightskip}{0pt plus 5cm}int64\+\_\+t C\+Node\+::n\+Time\+Offset}\label{class_c_node_a3079fadef397abbf7e8d444f4426ebe7}
+\hypertarget{class_c_node_a99173eb3cef17e699ba21a5249ac33d2}{}\index{C\+Node@{C\+Node}!n\+Version@{n\+Version}}
+\index{n\+Version@{n\+Version}!C\+Node@{C\+Node}}
+\subsubsection[{n\+Version}]{\setlength{\rightskip}{0pt plus 5cm}int C\+Node\+::n\+Version}\label{class_c_node_a99173eb3cef17e699ba21a5249ac33d2}
+\hypertarget{class_c_node_a2e28bf088e56fc9d30e99e9de6587743}{}\index{C\+Node@{C\+Node}!pfilter@{pfilter}}
+\index{pfilter@{pfilter}!C\+Node@{C\+Node}}
+\subsubsection[{pfilter}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Bloom\+Filter}$\ast$ C\+Node\+::pfilter}\label{class_c_node_a2e28bf088e56fc9d30e99e9de6587743}
+\hypertarget{class_c_node_ac21266ce880bd36b98ba7cfcc447a30f}{}\index{C\+Node@{C\+Node}!set\+Addr\+Known@{set\+Addr\+Known}}
+\index{set\+Addr\+Known@{set\+Addr\+Known}!C\+Node@{C\+Node}}
+\subsubsection[{set\+Addr\+Known}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mruset}$<${\bf C\+Address}$>$ C\+Node\+::set\+Addr\+Known}\label{class_c_node_ac21266ce880bd36b98ba7cfcc447a30f}
+\hypertarget{class_c_node_adf22d1873c1012ab3edb8a52253b203e}{}\index{C\+Node@{C\+Node}!set\+Banned@{set\+Banned}}
+\index{set\+Banned@{set\+Banned}!C\+Node@{C\+Node}}
+\subsubsection[{set\+Banned}]{\setlength{\rightskip}{0pt plus 5cm}std\+::map$<$ {\bf C\+Net\+Addr}, int64\+\_\+t $>$ C\+Node\+::set\+Banned\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\label{class_c_node_adf22d1873c1012ab3edb8a52253b203e}
+\hypertarget{class_c_node_ae15aa9a971040800c26bc87b1250220f}{}\index{C\+Node@{C\+Node}!set\+Inventory\+Known@{set\+Inventory\+Known}}
+\index{set\+Inventory\+Known@{set\+Inventory\+Known}!C\+Node@{C\+Node}}
+\subsubsection[{set\+Inventory\+Known}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mruset}$<${\bf C\+Inv}$>$ C\+Node\+::set\+Inventory\+Known}\label{class_c_node_ae15aa9a971040800c26bc87b1250220f}
+\hypertarget{class_c_node_ab1b30fa8e48005752f6b0bcf43eca478}{}\index{C\+Node@{C\+Node}!set\+Known@{set\+Known}}
+\index{set\+Known@{set\+Known}!C\+Node@{C\+Node}}
+\subsubsection[{set\+Known}]{\setlength{\rightskip}{0pt plus 5cm}std\+::set$<${\bf uint256}$>$ C\+Node\+::set\+Known}\label{class_c_node_ab1b30fa8e48005752f6b0bcf43eca478}
+\hypertarget{class_c_node_a6174b5a3d8d8f6a2daf02be3cf04dc63}{}\index{C\+Node@{C\+Node}!ss\+Send@{ss\+Send}}
+\index{ss\+Send@{ss\+Send}!C\+Node@{C\+Node}}
+\subsubsection[{ss\+Send}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Data\+Stream} C\+Node\+::ss\+Send}\label{class_c_node_a6174b5a3d8d8f6a2daf02be3cf04dc63}
+\hypertarget{class_c_node_afb24fb33019af5c4085412fe3898cf01}{}\index{C\+Node@{C\+Node}!str\+Sub\+Ver@{str\+Sub\+Ver}}
+\index{str\+Sub\+Ver@{str\+Sub\+Ver}!C\+Node@{C\+Node}}
+\subsubsection[{str\+Sub\+Ver}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string C\+Node\+::str\+Sub\+Ver}\label{class_c_node_afb24fb33019af5c4085412fe3898cf01}
+\hypertarget{class_c_node_a9b2d9b9182ff111c79f704594c4aa2e1}{}\index{C\+Node@{C\+Node}!v\+Addr\+To\+Send@{v\+Addr\+To\+Send}}
+\index{v\+Addr\+To\+Send@{v\+Addr\+To\+Send}!C\+Node@{C\+Node}}
+\subsubsection[{v\+Addr\+To\+Send}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<${\bf C\+Address}$>$ C\+Node\+::v\+Addr\+To\+Send}\label{class_c_node_a9b2d9b9182ff111c79f704594c4aa2e1}
+\hypertarget{class_c_node_abcd24c9478bc1ab5ba6de6b369080cec}{}\index{C\+Node@{C\+Node}!v\+Inventory\+To\+Send@{v\+Inventory\+To\+Send}}
+\index{v\+Inventory\+To\+Send@{v\+Inventory\+To\+Send}!C\+Node@{C\+Node}}
+\subsubsection[{v\+Inventory\+To\+Send}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<${\bf C\+Inv}$>$ C\+Node\+::v\+Inventory\+To\+Send}\label{class_c_node_abcd24c9478bc1ab5ba6de6b369080cec}
+\hypertarget{class_c_node_a9649c1f27ff0d8f0ba89eb1ea5bee139}{}\index{C\+Node@{C\+Node}!v\+Recv\+Get\+Data@{v\+Recv\+Get\+Data}}
+\index{v\+Recv\+Get\+Data@{v\+Recv\+Get\+Data}!C\+Node@{C\+Node}}
+\subsubsection[{v\+Recv\+Get\+Data}]{\setlength{\rightskip}{0pt plus 5cm}std\+::deque$<${\bf C\+Inv}$>$ C\+Node\+::v\+Recv\+Get\+Data}\label{class_c_node_a9649c1f27ff0d8f0ba89eb1ea5bee139}
+\hypertarget{class_c_node_a015361812daa5b6ebb9a5692ddf67a54}{}\index{C\+Node@{C\+Node}!v\+Recv\+Msg@{v\+Recv\+Msg}}
+\index{v\+Recv\+Msg@{v\+Recv\+Msg}!C\+Node@{C\+Node}}
+\subsubsection[{v\+Recv\+Msg}]{\setlength{\rightskip}{0pt plus 5cm}std\+::deque$<${\bf C\+Net\+Message}$>$ C\+Node\+::v\+Recv\+Msg}\label{class_c_node_a015361812daa5b6ebb9a5692ddf67a54}
+\hypertarget{class_c_node_a68e5fb1a80fe4247aa577a3c9a74b399}{}\index{C\+Node@{C\+Node}!v\+Send\+Msg@{v\+Send\+Msg}}
+\index{v\+Send\+Msg@{v\+Send\+Msg}!C\+Node@{C\+Node}}
+\subsubsection[{v\+Send\+Msg}]{\setlength{\rightskip}{0pt plus 5cm}std\+::deque$<$C\+Serialize\+Data$>$ C\+Node\+::v\+Send\+Msg}\label{class_c_node_a68e5fb1a80fe4247aa577a3c9a74b399}
+\hypertarget{class_c_node_afaac354c1226990e4e9407ba2ee4cbf9}{}\index{C\+Node@{C\+Node}!v\+Whitelisted\+Range@{v\+Whitelisted\+Range}}
+\index{v\+Whitelisted\+Range@{v\+Whitelisted\+Range}!C\+Node@{C\+Node}}
+\subsubsection[{v\+Whitelisted\+Range}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ {\bf C\+Sub\+Net} $>$ C\+Node\+::v\+Whitelisted\+Range\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\label{class_c_node_afaac354c1226990e4e9407ba2ee4cbf9}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/\hyperlink{net_8h}{net.\+h}\item 
+C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/\hyperlink{net_8cpp}{net.\+cpp}\end{DoxyCompactItemize}

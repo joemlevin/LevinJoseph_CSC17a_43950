@@ -1,0 +1,52 @@
+\hypertarget{struct_c_main_signals}{}\section{C\+Main\+Signals Struct Reference}
+\label{struct_c_main_signals}\index{C\+Main\+Signals@{C\+Main\+Signals}}
+
+
+{\ttfamily \#include $<$validationinterface.\+h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+boost\+::signals2\+::signal$<$ void(const C\+Transaction \&, const C\+Block $\ast$)$>$ \hyperlink{struct_c_main_signals_a7ced7f332ed90d57110a78ad50d5a60f}{Sync\+Transaction}
+\item 
+boost\+::signals2\+::signal$<$ void(const \hyperlink{classuint256}{uint256} \&)$>$ \hyperlink{struct_c_main_signals_a1bb8e6808c2086e4045ecd8f356a12e4}{Erase\+Transaction}
+\item 
+boost\+::signals2\+::signal$<$ void(const \hyperlink{classuint256}{uint256} \&)$>$ \hyperlink{struct_c_main_signals_a460e5e468e8e4a9493fe1685b77c57e0}{Updated\+Transaction}
+\item 
+boost\+::signals2\+::signal$<$ void(const C\+Block\+Locator \&)$>$ \hyperlink{struct_c_main_signals_a11f2f18522ff7aa672eb5cc8c1f397b2}{Set\+Best\+Chain}
+\item 
+boost\+::signals2\+::signal$<$ void(const \hyperlink{classuint256}{uint256} \&)$>$ \hyperlink{struct_c_main_signals_a2f8f94d91265dc946e97614042698a7b}{Inventory}
+\item 
+boost\+::signals2\+::signal$<$ void(int64\+\_\+t n\+Best\+Block\+Time)$>$ \hyperlink{struct_c_main_signals_a57ba54e641838bc03d0bbda30796c0c9}{Broadcast}
+\item 
+boost\+::signals2\+::signal$<$ void(const C\+Block \&, const \hyperlink{class_c_validation_state}{C\+Validation\+State} \&)$>$ \hyperlink{struct_c_main_signals_a9419bb09211f46bdc7f214e9d94f1bd7}{Block\+Checked}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{struct_c_main_signals_a9419bb09211f46bdc7f214e9d94f1bd7}{}\index{C\+Main\+Signals@{C\+Main\+Signals}!Block\+Checked@{Block\+Checked}}
+\index{Block\+Checked@{Block\+Checked}!C\+Main\+Signals@{C\+Main\+Signals}}
+\subsubsection[{Block\+Checked}]{\setlength{\rightskip}{0pt plus 5cm}boost\+::signals2\+::signal$<$void (const C\+Block\&, const {\bf C\+Validation\+State}\&)$>$ C\+Main\+Signals\+::\+Block\+Checked}\label{struct_c_main_signals_a9419bb09211f46bdc7f214e9d94f1bd7}
+Notifies listeners of a block validation result \hypertarget{struct_c_main_signals_a57ba54e641838bc03d0bbda30796c0c9}{}\index{C\+Main\+Signals@{C\+Main\+Signals}!Broadcast@{Broadcast}}
+\index{Broadcast@{Broadcast}!C\+Main\+Signals@{C\+Main\+Signals}}
+\subsubsection[{Broadcast}]{\setlength{\rightskip}{0pt plus 5cm}boost\+::signals2\+::signal$<$void (int64\+\_\+t n\+Best\+Block\+Time)$>$ C\+Main\+Signals\+::\+Broadcast}\label{struct_c_main_signals_a57ba54e641838bc03d0bbda30796c0c9}
+Tells listeners to broadcast their data. \hypertarget{struct_c_main_signals_a1bb8e6808c2086e4045ecd8f356a12e4}{}\index{C\+Main\+Signals@{C\+Main\+Signals}!Erase\+Transaction@{Erase\+Transaction}}
+\index{Erase\+Transaction@{Erase\+Transaction}!C\+Main\+Signals@{C\+Main\+Signals}}
+\subsubsection[{Erase\+Transaction}]{\setlength{\rightskip}{0pt plus 5cm}boost\+::signals2\+::signal$<$void (const {\bf uint256} \&)$>$ C\+Main\+Signals\+::\+Erase\+Transaction}\label{struct_c_main_signals_a1bb8e6808c2086e4045ecd8f356a12e4}
+Notifies listeners of an erased transaction (currently disabled, requires transaction replacement). \hypertarget{struct_c_main_signals_a2f8f94d91265dc946e97614042698a7b}{}\index{C\+Main\+Signals@{C\+Main\+Signals}!Inventory@{Inventory}}
+\index{Inventory@{Inventory}!C\+Main\+Signals@{C\+Main\+Signals}}
+\subsubsection[{Inventory}]{\setlength{\rightskip}{0pt plus 5cm}boost\+::signals2\+::signal$<$void (const {\bf uint256} \&)$>$ C\+Main\+Signals\+::\+Inventory}\label{struct_c_main_signals_a2f8f94d91265dc946e97614042698a7b}
+Notifies listeners about an inventory item being seen on the network. \hypertarget{struct_c_main_signals_a11f2f18522ff7aa672eb5cc8c1f397b2}{}\index{C\+Main\+Signals@{C\+Main\+Signals}!Set\+Best\+Chain@{Set\+Best\+Chain}}
+\index{Set\+Best\+Chain@{Set\+Best\+Chain}!C\+Main\+Signals@{C\+Main\+Signals}}
+\subsubsection[{Set\+Best\+Chain}]{\setlength{\rightskip}{0pt plus 5cm}boost\+::signals2\+::signal$<$void (const C\+Block\+Locator \&)$>$ C\+Main\+Signals\+::\+Set\+Best\+Chain}\label{struct_c_main_signals_a11f2f18522ff7aa672eb5cc8c1f397b2}
+Notifies listeners of a new active block chain. \hypertarget{struct_c_main_signals_a7ced7f332ed90d57110a78ad50d5a60f}{}\index{C\+Main\+Signals@{C\+Main\+Signals}!Sync\+Transaction@{Sync\+Transaction}}
+\index{Sync\+Transaction@{Sync\+Transaction}!C\+Main\+Signals@{C\+Main\+Signals}}
+\subsubsection[{Sync\+Transaction}]{\setlength{\rightskip}{0pt plus 5cm}boost\+::signals2\+::signal$<$void (const C\+Transaction \&, const C\+Block $\ast$)$>$ C\+Main\+Signals\+::\+Sync\+Transaction}\label{struct_c_main_signals_a7ced7f332ed90d57110a78ad50d5a60f}
+Notifies listeners of updated transaction data (transaction, and optionally the block it is found in. \hypertarget{struct_c_main_signals_a460e5e468e8e4a9493fe1685b77c57e0}{}\index{C\+Main\+Signals@{C\+Main\+Signals}!Updated\+Transaction@{Updated\+Transaction}}
+\index{Updated\+Transaction@{Updated\+Transaction}!C\+Main\+Signals@{C\+Main\+Signals}}
+\subsubsection[{Updated\+Transaction}]{\setlength{\rightskip}{0pt plus 5cm}boost\+::signals2\+::signal$<$void (const {\bf uint256} \&)$>$ C\+Main\+Signals\+::\+Updated\+Transaction}\label{struct_c_main_signals_a460e5e468e8e4a9493fe1685b77c57e0}
+Notifies listeners of an updated transaction without new data (for now\+: a coinbase potentially becoming visible). 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/\hyperlink{validationinterface_8h}{validationinterface.\+h}\end{DoxyCompactItemize}

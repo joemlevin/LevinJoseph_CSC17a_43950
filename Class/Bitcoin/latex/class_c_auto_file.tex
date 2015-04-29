@@ -1,0 +1,188 @@
+\hypertarget{class_c_auto_file}{}\section{C\+Auto\+File Class Reference}
+\label{class_c_auto_file}\index{C\+Auto\+File@{C\+Auto\+File}}
+
+
+{\ttfamily \#include $<$streams.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_auto_file_a52613083aaeab4c9238c649ae471783f}{C\+Auto\+File} (F\+I\+L\+E $\ast$filenew, int n\+Type\+In, int n\+Version\+In)
+\item 
+\hyperlink{class_c_auto_file_ab1362f4cb52c819c25cff4598e0f28da}{$\sim$\+C\+Auto\+File} ()
+\item 
+void \hyperlink{class_c_auto_file_abcbafe943bfe392c09363078fa8a4e77}{fclose} ()
+\item 
+F\+I\+L\+E $\ast$ \hyperlink{class_c_auto_file_a25b51d94dc85c4140da0b15494ac9f8a}{release} ()
+\item 
+F\+I\+L\+E $\ast$ \hyperlink{class_c_auto_file_aea31c0348f31ea40f592e2b7af6c2045}{Get} () const 
+\item 
+bool \hyperlink{class_c_auto_file_a78d666b1ef5dff5fd3f4ee33692b6d1d}{Is\+Null} () const 
+\item 
+void \hyperlink{class_c_auto_file_ac1a3986f191fe81384f58fc5fa073820}{Set\+Type} (int n)
+\item 
+int \hyperlink{class_c_auto_file_a774f2aad2c462d4ff47125ceec2ebab0}{Get\+Type} ()
+\item 
+void \hyperlink{class_c_auto_file_a51f805bc470a95c9948250503b587aec}{Set\+Version} (int n)
+\item 
+int \hyperlink{class_c_auto_file_a976ab8e5477aedd3a531fc49b01153ce}{Get\+Version} ()
+\item 
+void \hyperlink{class_c_auto_file_a9511060b5c971cff532faeab60c7d88b}{Read\+Version} ()
+\item 
+void \hyperlink{class_c_auto_file_a23d6f22c3aff80be7665bfc5a77a01ff}{Write\+Version} ()
+\item 
+\hyperlink{class_c_auto_file}{C\+Auto\+File} \& \hyperlink{class_c_auto_file_a87e670f3dd03055264c05b25335babb4}{read} (char $\ast$pch, size\+\_\+t n\+Size)
+\item 
+\hyperlink{class_c_auto_file}{C\+Auto\+File} \& \hyperlink{class_c_auto_file_a7b2852b345b75835f883be3732cf826a}{write} (const char $\ast$pch, size\+\_\+t n\+Size)
+\item 
+{\footnotesize template$<$typename T $>$ }\\unsigned int \hyperlink{class_c_auto_file_a883a261f0d7d0320f72152ff2167fd24}{Get\+Serialize\+Size} (const T \&obj)
+\item 
+{\footnotesize template$<$typename T $>$ }\\\hyperlink{class_c_auto_file}{C\+Auto\+File} \& \hyperlink{class_c_auto_file_a8e194596d1f8f64059247724b25df82c}{operator$<$$<$} (const T \&obj)
+\item 
+{\footnotesize template$<$typename T $>$ }\\\hyperlink{class_c_auto_file}{C\+Auto\+File} \& \hyperlink{class_c_auto_file_ae6826219322626d2ac8229e022c41dd7}{operator$>$$>$} (T \&obj)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Non-\/refcounted R\+A\+I\+I wrapper for F\+I\+L\+E$\ast$
+
+Will automatically close the file when it goes out of scope if not null. If you\textquotesingle{}re returning the file pointer, return file.\+release(). If you need to close the file early, use file.\+fclose() instead of fclose(file). 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_c_auto_file_a52613083aaeab4c9238c649ae471783f}{}\index{C\+Auto\+File@{C\+Auto\+File}!C\+Auto\+File@{C\+Auto\+File}}
+\index{C\+Auto\+File@{C\+Auto\+File}!C\+Auto\+File@{C\+Auto\+File}}
+\subsubsection[{C\+Auto\+File}]{\setlength{\rightskip}{0pt plus 5cm}C\+Auto\+File\+::\+C\+Auto\+File (
+\begin{DoxyParamCaption}
+\item[{F\+I\+L\+E $\ast$}]{filenew, }
+\item[{int}]{n\+Type\+In, }
+\item[{int}]{n\+Version\+In}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_auto_file_a52613083aaeab4c9238c649ae471783f}
+\hypertarget{class_c_auto_file_ab1362f4cb52c819c25cff4598e0f28da}{}\index{C\+Auto\+File@{C\+Auto\+File}!````~C\+Auto\+File@{$\sim$\+C\+Auto\+File}}
+\index{````~C\+Auto\+File@{$\sim$\+C\+Auto\+File}!C\+Auto\+File@{C\+Auto\+File}}
+\subsubsection[{$\sim$\+C\+Auto\+File}]{\setlength{\rightskip}{0pt plus 5cm}C\+Auto\+File\+::$\sim$\+C\+Auto\+File (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_auto_file_ab1362f4cb52c819c25cff4598e0f28da}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_c_auto_file_abcbafe943bfe392c09363078fa8a4e77}{}\index{C\+Auto\+File@{C\+Auto\+File}!fclose@{fclose}}
+\index{fclose@{fclose}!C\+Auto\+File@{C\+Auto\+File}}
+\subsubsection[{fclose}]{\setlength{\rightskip}{0pt plus 5cm}void C\+Auto\+File\+::fclose (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_auto_file_abcbafe943bfe392c09363078fa8a4e77}
+\hypertarget{class_c_auto_file_aea31c0348f31ea40f592e2b7af6c2045}{}\index{C\+Auto\+File@{C\+Auto\+File}!Get@{Get}}
+\index{Get@{Get}!C\+Auto\+File@{C\+Auto\+File}}
+\subsubsection[{Get}]{\setlength{\rightskip}{0pt plus 5cm}F\+I\+L\+E$\ast$ C\+Auto\+File\+::\+Get (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_auto_file_aea31c0348f31ea40f592e2b7af6c2045}
+Get wrapped F\+I\+L\+E$\ast$ without transfer of ownership. \begin{DoxyNote}{Note}
+Ownership of the F\+I\+L\+E$\ast$ will remain with this class. Use this only if the scope of the \hyperlink{class_c_auto_file}{C\+Auto\+File} outlives use of the passed pointer. 
+\end{DoxyNote}
+\hypertarget{class_c_auto_file_a883a261f0d7d0320f72152ff2167fd24}{}\index{C\+Auto\+File@{C\+Auto\+File}!Get\+Serialize\+Size@{Get\+Serialize\+Size}}
+\index{Get\+Serialize\+Size@{Get\+Serialize\+Size}!C\+Auto\+File@{C\+Auto\+File}}
+\subsubsection[{Get\+Serialize\+Size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ unsigned int C\+Auto\+File\+::\+Get\+Serialize\+Size (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{obj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_auto_file_a883a261f0d7d0320f72152ff2167fd24}
+\hypertarget{class_c_auto_file_a774f2aad2c462d4ff47125ceec2ebab0}{}\index{C\+Auto\+File@{C\+Auto\+File}!Get\+Type@{Get\+Type}}
+\index{Get\+Type@{Get\+Type}!C\+Auto\+File@{C\+Auto\+File}}
+\subsubsection[{Get\+Type}]{\setlength{\rightskip}{0pt plus 5cm}int C\+Auto\+File\+::\+Get\+Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_auto_file_a774f2aad2c462d4ff47125ceec2ebab0}
+\hypertarget{class_c_auto_file_a976ab8e5477aedd3a531fc49b01153ce}{}\index{C\+Auto\+File@{C\+Auto\+File}!Get\+Version@{Get\+Version}}
+\index{Get\+Version@{Get\+Version}!C\+Auto\+File@{C\+Auto\+File}}
+\subsubsection[{Get\+Version}]{\setlength{\rightskip}{0pt plus 5cm}int C\+Auto\+File\+::\+Get\+Version (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_auto_file_a976ab8e5477aedd3a531fc49b01153ce}
+\hypertarget{class_c_auto_file_a78d666b1ef5dff5fd3f4ee33692b6d1d}{}\index{C\+Auto\+File@{C\+Auto\+File}!Is\+Null@{Is\+Null}}
+\index{Is\+Null@{Is\+Null}!C\+Auto\+File@{C\+Auto\+File}}
+\subsubsection[{Is\+Null}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+Auto\+File\+::\+Is\+Null (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_auto_file_a78d666b1ef5dff5fd3f4ee33692b6d1d}
+Return true if the wrapped F\+I\+L\+E$\ast$ is N\+U\+L\+L, false otherwise. \hypertarget{class_c_auto_file_a8e194596d1f8f64059247724b25df82c}{}\index{C\+Auto\+File@{C\+Auto\+File}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!C\+Auto\+File@{C\+Auto\+File}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf C\+Auto\+File}\& C\+Auto\+File\+::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{obj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_auto_file_a8e194596d1f8f64059247724b25df82c}
+\hypertarget{class_c_auto_file_ae6826219322626d2ac8229e022c41dd7}{}\index{C\+Auto\+File@{C\+Auto\+File}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!C\+Auto\+File@{C\+Auto\+File}}
+\subsubsection[{operator$>$$>$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf C\+Auto\+File}\& C\+Auto\+File\+::operator$>$$>$ (
+\begin{DoxyParamCaption}
+\item[{T \&}]{obj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_auto_file_ae6826219322626d2ac8229e022c41dd7}
+\hypertarget{class_c_auto_file_a87e670f3dd03055264c05b25335babb4}{}\index{C\+Auto\+File@{C\+Auto\+File}!read@{read}}
+\index{read@{read}!C\+Auto\+File@{C\+Auto\+File}}
+\subsubsection[{read}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Auto\+File}\& C\+Auto\+File\+::read (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{pch, }
+\item[{size\+\_\+t}]{n\+Size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_auto_file_a87e670f3dd03055264c05b25335babb4}
+\hypertarget{class_c_auto_file_a9511060b5c971cff532faeab60c7d88b}{}\index{C\+Auto\+File@{C\+Auto\+File}!Read\+Version@{Read\+Version}}
+\index{Read\+Version@{Read\+Version}!C\+Auto\+File@{C\+Auto\+File}}
+\subsubsection[{Read\+Version}]{\setlength{\rightskip}{0pt plus 5cm}void C\+Auto\+File\+::\+Read\+Version (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_auto_file_a9511060b5c971cff532faeab60c7d88b}
+\hypertarget{class_c_auto_file_a25b51d94dc85c4140da0b15494ac9f8a}{}\index{C\+Auto\+File@{C\+Auto\+File}!release@{release}}
+\index{release@{release}!C\+Auto\+File@{C\+Auto\+File}}
+\subsubsection[{release}]{\setlength{\rightskip}{0pt plus 5cm}F\+I\+L\+E$\ast$ C\+Auto\+File\+::release (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_auto_file_a25b51d94dc85c4140da0b15494ac9f8a}
+Get wrapped F\+I\+L\+E$\ast$ with transfer of ownership. \begin{DoxyNote}{Note}
+This will invalidate the \hyperlink{class_c_auto_file}{C\+Auto\+File} object, and makes it the responsibility of the caller of this function to clean up the returned F\+I\+L\+E$\ast$. 
+\end{DoxyNote}
+\hypertarget{class_c_auto_file_ac1a3986f191fe81384f58fc5fa073820}{}\index{C\+Auto\+File@{C\+Auto\+File}!Set\+Type@{Set\+Type}}
+\index{Set\+Type@{Set\+Type}!C\+Auto\+File@{C\+Auto\+File}}
+\subsubsection[{Set\+Type}]{\setlength{\rightskip}{0pt plus 5cm}void C\+Auto\+File\+::\+Set\+Type (
+\begin{DoxyParamCaption}
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_auto_file_ac1a3986f191fe81384f58fc5fa073820}
+\hypertarget{class_c_auto_file_a51f805bc470a95c9948250503b587aec}{}\index{C\+Auto\+File@{C\+Auto\+File}!Set\+Version@{Set\+Version}}
+\index{Set\+Version@{Set\+Version}!C\+Auto\+File@{C\+Auto\+File}}
+\subsubsection[{Set\+Version}]{\setlength{\rightskip}{0pt plus 5cm}void C\+Auto\+File\+::\+Set\+Version (
+\begin{DoxyParamCaption}
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_auto_file_a51f805bc470a95c9948250503b587aec}
+\hypertarget{class_c_auto_file_a7b2852b345b75835f883be3732cf826a}{}\index{C\+Auto\+File@{C\+Auto\+File}!write@{write}}
+\index{write@{write}!C\+Auto\+File@{C\+Auto\+File}}
+\subsubsection[{write}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Auto\+File}\& C\+Auto\+File\+::write (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{pch, }
+\item[{size\+\_\+t}]{n\+Size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_auto_file_a7b2852b345b75835f883be3732cf826a}
+\hypertarget{class_c_auto_file_a23d6f22c3aff80be7665bfc5a77a01ff}{}\index{C\+Auto\+File@{C\+Auto\+File}!Write\+Version@{Write\+Version}}
+\index{Write\+Version@{Write\+Version}!C\+Auto\+File@{C\+Auto\+File}}
+\subsubsection[{Write\+Version}]{\setlength{\rightskip}{0pt plus 5cm}void C\+Auto\+File\+::\+Write\+Version (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_auto_file_a23d6f22c3aff80be7665bfc5a77a01ff}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/\hyperlink{streams_8h}{streams.\+h}\end{DoxyCompactItemize}

@@ -1,0 +1,97 @@
+\hypertarget{class_c_check_queue}{}\section{C\+Check\+Queue$<$ T $>$ Class Template Reference}
+\label{class_c_check_queue}\index{C\+Check\+Queue$<$ T $>$@{C\+Check\+Queue$<$ T $>$}}
+
+
+{\ttfamily \#include $<$checkqueue.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_check_queue_ad0e6a979f8433c05770350bc6b90a849}{C\+Check\+Queue} (unsigned int n\+Batch\+Size\+In)
+\begin{DoxyCompactList}\small\item\em Create a new check queue. \end{DoxyCompactList}\item 
+void \hyperlink{class_c_check_queue_ad3602cd305b07612e634363b31c1d46c}{Thread} ()
+\begin{DoxyCompactList}\small\item\em Worker thread. \end{DoxyCompactList}\item 
+bool \hyperlink{class_c_check_queue_a4ff3e0e8241491efa1803eeb3a53e7fa}{Wait} ()
+\begin{DoxyCompactList}\small\item\em Wait until execution finishes, and return whether all evaluations where successful. \end{DoxyCompactList}\item 
+void \hyperlink{class_c_check_queue_aee8e83bcdeef17740937e6c1dc84c478}{Add} (std\+::vector$<$ T $>$ \&v\+Checks)
+\begin{DoxyCompactList}\small\item\em Add a batch of checks to the queue. \end{DoxyCompactList}\item 
+\hyperlink{class_c_check_queue_a05820838bd337f6e882ad21ac590d524}{$\sim$\+C\+Check\+Queue} ()
+\item 
+bool \hyperlink{class_c_check_queue_a3c091928859b0936331341edeb977325}{Is\+Idle} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$class C\+Check\+Queue$<$ T $>$}
+
+Queue for verifications that have to be performed. The verifications are represented by a type T, which must provide an operator(), returning a bool.
+
+One thread (the master) is assumed to push batches of verifications onto the queue, where they are processed by N-\/1 worker threads. When the master is done adding work, it temporarily joins the worker pool as an N\textquotesingle{}th worker, until all jobs are done. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_c_check_queue_ad0e6a979f8433c05770350bc6b90a849}{}\index{C\+Check\+Queue@{C\+Check\+Queue}!C\+Check\+Queue@{C\+Check\+Queue}}
+\index{C\+Check\+Queue@{C\+Check\+Queue}!C\+Check\+Queue@{C\+Check\+Queue}}
+\subsubsection[{C\+Check\+Queue}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf C\+Check\+Queue}$<$ T $>$\+::{\bf C\+Check\+Queue} (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{n\+Batch\+Size\+In}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_check_queue_ad0e6a979f8433c05770350bc6b90a849}
+
+
+Create a new check queue. 
+
+\hypertarget{class_c_check_queue_a05820838bd337f6e882ad21ac590d524}{}\index{C\+Check\+Queue@{C\+Check\+Queue}!````~C\+Check\+Queue@{$\sim$\+C\+Check\+Queue}}
+\index{````~C\+Check\+Queue@{$\sim$\+C\+Check\+Queue}!C\+Check\+Queue@{C\+Check\+Queue}}
+\subsubsection[{$\sim$\+C\+Check\+Queue}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf C\+Check\+Queue}$<$ T $>$\+::$\sim${\bf C\+Check\+Queue} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_check_queue_a05820838bd337f6e882ad21ac590d524}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_c_check_queue_aee8e83bcdeef17740937e6c1dc84c478}{}\index{C\+Check\+Queue@{C\+Check\+Queue}!Add@{Add}}
+\index{Add@{Add}!C\+Check\+Queue@{C\+Check\+Queue}}
+\subsubsection[{Add}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ void {\bf C\+Check\+Queue}$<$ T $>$\+::Add (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ T $>$ \&}]{v\+Checks}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_check_queue_aee8e83bcdeef17740937e6c1dc84c478}
+
+
+Add a batch of checks to the queue. 
+
+\hypertarget{class_c_check_queue_a3c091928859b0936331341edeb977325}{}\index{C\+Check\+Queue@{C\+Check\+Queue}!Is\+Idle@{Is\+Idle}}
+\index{Is\+Idle@{Is\+Idle}!C\+Check\+Queue@{C\+Check\+Queue}}
+\subsubsection[{Is\+Idle}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ bool {\bf C\+Check\+Queue}$<$ T $>$\+::Is\+Idle (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_check_queue_a3c091928859b0936331341edeb977325}
+\hypertarget{class_c_check_queue_ad3602cd305b07612e634363b31c1d46c}{}\index{C\+Check\+Queue@{C\+Check\+Queue}!Thread@{Thread}}
+\index{Thread@{Thread}!C\+Check\+Queue@{C\+Check\+Queue}}
+\subsubsection[{Thread}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ void {\bf C\+Check\+Queue}$<$ T $>$\+::Thread (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_check_queue_ad3602cd305b07612e634363b31c1d46c}
+
+
+Worker thread. 
+
+\hypertarget{class_c_check_queue_a4ff3e0e8241491efa1803eeb3a53e7fa}{}\index{C\+Check\+Queue@{C\+Check\+Queue}!Wait@{Wait}}
+\index{Wait@{Wait}!C\+Check\+Queue@{C\+Check\+Queue}}
+\subsubsection[{Wait}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ bool {\bf C\+Check\+Queue}$<$ T $>$\+::Wait (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_check_queue_a4ff3e0e8241491efa1803eeb3a53e7fa}
+
+
+Wait until execution finishes, and return whether all evaluations where successful. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/\hyperlink{checkqueue_8h}{checkqueue.\+h}\end{DoxyCompactItemize}

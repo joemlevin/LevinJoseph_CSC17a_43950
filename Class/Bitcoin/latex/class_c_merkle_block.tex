@@ -1,0 +1,91 @@
+\hypertarget{class_c_merkle_block}{}\section{C\+Merkle\+Block Class Reference}
+\label{class_c_merkle_block}\index{C\+Merkle\+Block@{C\+Merkle\+Block}}
+
+
+{\ttfamily \#include $<$merkleblock.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_merkle_block_a5d08ce7034216ca25b0f9eab6bf8c389}{C\+Merkle\+Block} (const C\+Block \&block, \hyperlink{class_c_bloom_filter}{C\+Bloom\+Filter} \&filter)
+\item 
+\hyperlink{class_c_merkle_block_a720f9e78e80b415cf6b607b189eec31b}{C\+Merkle\+Block} (const C\+Block \&block, const std\+::set$<$ \hyperlink{classuint256}{uint256} $>$ \&txids)
+\item 
+\hyperlink{class_c_merkle_block_a0f02da9fc9fda85f7f292f2c2874ed39}{C\+Merkle\+Block} ()
+\item 
+{\footnotesize template$<$typename Stream , typename Operation $>$ }\\void \hyperlink{class_c_merkle_block_ab803bbe1d359d6b377adf75dc526da92}{Serialization\+Op} (Stream \&s, Operation ser\+\_\+action, int n\+Type, int n\+Version)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+C\+Block\+Header \hyperlink{class_c_merkle_block_a3c1fcef77eee1b476b3f3fd52055748a}{header}
+\item 
+\hyperlink{class_c_partial_merkle_tree}{C\+Partial\+Merkle\+Tree} \hyperlink{class_c_merkle_block_ac2174e9e8ea6e429328deb5a69a05558}{txn}
+\item 
+std\+::vector$<$ std\+::pair$<$ unsigned int, \hyperlink{classuint256}{uint256} $>$ $>$ \hyperlink{class_c_merkle_block_a73bbbdcb5d83588b15461c02d0228999}{v\+Matched\+Txn}
+\item 
+\hyperlink{class_c_merkle_block_aa57b1f8bfa7d3adb65dc71e479889194}{A\+D\+D\+\_\+\+S\+E\+R\+I\+A\+L\+I\+Z\+E\+\_\+\+M\+E\+T\+H\+O\+D\+S}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Used to relay blocks as header + vector$<$merkle branch$>$ to filtered nodes. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_c_merkle_block_a5d08ce7034216ca25b0f9eab6bf8c389}{}\index{C\+Merkle\+Block@{C\+Merkle\+Block}!C\+Merkle\+Block@{C\+Merkle\+Block}}
+\index{C\+Merkle\+Block@{C\+Merkle\+Block}!C\+Merkle\+Block@{C\+Merkle\+Block}}
+\subsubsection[{C\+Merkle\+Block}]{\setlength{\rightskip}{0pt plus 5cm}C\+Merkle\+Block\+::\+C\+Merkle\+Block (
+\begin{DoxyParamCaption}
+\item[{const C\+Block \&}]{block, }
+\item[{{\bf C\+Bloom\+Filter} \&}]{filter}
+\end{DoxyParamCaption}
+)}\label{class_c_merkle_block_a5d08ce7034216ca25b0f9eab6bf8c389}
+Create from a C\+Block, filtering transactions according to filter Note that this will call Is\+Relevant\+And\+Update on the filter for each transaction, thus the filter will likely be modified. \hypertarget{class_c_merkle_block_a720f9e78e80b415cf6b607b189eec31b}{}\index{C\+Merkle\+Block@{C\+Merkle\+Block}!C\+Merkle\+Block@{C\+Merkle\+Block}}
+\index{C\+Merkle\+Block@{C\+Merkle\+Block}!C\+Merkle\+Block@{C\+Merkle\+Block}}
+\subsubsection[{C\+Merkle\+Block}]{\setlength{\rightskip}{0pt plus 5cm}C\+Merkle\+Block\+::\+C\+Merkle\+Block (
+\begin{DoxyParamCaption}
+\item[{const C\+Block \&}]{block, }
+\item[{const std\+::set$<$ {\bf uint256} $>$ \&}]{txids}
+\end{DoxyParamCaption}
+)}\label{class_c_merkle_block_a720f9e78e80b415cf6b607b189eec31b}
+\hypertarget{class_c_merkle_block_a0f02da9fc9fda85f7f292f2c2874ed39}{}\index{C\+Merkle\+Block@{C\+Merkle\+Block}!C\+Merkle\+Block@{C\+Merkle\+Block}}
+\index{C\+Merkle\+Block@{C\+Merkle\+Block}!C\+Merkle\+Block@{C\+Merkle\+Block}}
+\subsubsection[{C\+Merkle\+Block}]{\setlength{\rightskip}{0pt plus 5cm}C\+Merkle\+Block\+::\+C\+Merkle\+Block (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_merkle_block_a0f02da9fc9fda85f7f292f2c2874ed39}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_c_merkle_block_ab803bbe1d359d6b377adf75dc526da92}{}\index{C\+Merkle\+Block@{C\+Merkle\+Block}!Serialization\+Op@{Serialization\+Op}}
+\index{Serialization\+Op@{Serialization\+Op}!C\+Merkle\+Block@{C\+Merkle\+Block}}
+\subsubsection[{Serialization\+Op}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Stream , typename Operation $>$ void C\+Merkle\+Block\+::\+Serialization\+Op (
+\begin{DoxyParamCaption}
+\item[{Stream \&}]{s, }
+\item[{Operation}]{ser\+\_\+action, }
+\item[{int}]{n\+Type, }
+\item[{int}]{n\+Version}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_c_merkle_block_ab803bbe1d359d6b377adf75dc526da92}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_c_merkle_block_aa57b1f8bfa7d3adb65dc71e479889194}{}\index{C\+Merkle\+Block@{C\+Merkle\+Block}!A\+D\+D\+\_\+\+S\+E\+R\+I\+A\+L\+I\+Z\+E\+\_\+\+M\+E\+T\+H\+O\+D\+S@{A\+D\+D\+\_\+\+S\+E\+R\+I\+A\+L\+I\+Z\+E\+\_\+\+M\+E\+T\+H\+O\+D\+S}}
+\index{A\+D\+D\+\_\+\+S\+E\+R\+I\+A\+L\+I\+Z\+E\+\_\+\+M\+E\+T\+H\+O\+D\+S@{A\+D\+D\+\_\+\+S\+E\+R\+I\+A\+L\+I\+Z\+E\+\_\+\+M\+E\+T\+H\+O\+D\+S}!C\+Merkle\+Block@{C\+Merkle\+Block}}
+\subsubsection[{A\+D\+D\+\_\+\+S\+E\+R\+I\+A\+L\+I\+Z\+E\+\_\+\+M\+E\+T\+H\+O\+D\+S}]{\setlength{\rightskip}{0pt plus 5cm}C\+Merkle\+Block\+::\+A\+D\+D\+\_\+\+S\+E\+R\+I\+A\+L\+I\+Z\+E\+\_\+\+M\+E\+T\+H\+O\+D\+S}\label{class_c_merkle_block_aa57b1f8bfa7d3adb65dc71e479889194}
+\hypertarget{class_c_merkle_block_a3c1fcef77eee1b476b3f3fd52055748a}{}\index{C\+Merkle\+Block@{C\+Merkle\+Block}!header@{header}}
+\index{header@{header}!C\+Merkle\+Block@{C\+Merkle\+Block}}
+\subsubsection[{header}]{\setlength{\rightskip}{0pt plus 5cm}C\+Block\+Header C\+Merkle\+Block\+::header}\label{class_c_merkle_block_a3c1fcef77eee1b476b3f3fd52055748a}
+Public only for unit testing \hypertarget{class_c_merkle_block_ac2174e9e8ea6e429328deb5a69a05558}{}\index{C\+Merkle\+Block@{C\+Merkle\+Block}!txn@{txn}}
+\index{txn@{txn}!C\+Merkle\+Block@{C\+Merkle\+Block}}
+\subsubsection[{txn}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Partial\+Merkle\+Tree} C\+Merkle\+Block\+::txn}\label{class_c_merkle_block_ac2174e9e8ea6e429328deb5a69a05558}
+\hypertarget{class_c_merkle_block_a73bbbdcb5d83588b15461c02d0228999}{}\index{C\+Merkle\+Block@{C\+Merkle\+Block}!v\+Matched\+Txn@{v\+Matched\+Txn}}
+\index{v\+Matched\+Txn@{v\+Matched\+Txn}!C\+Merkle\+Block@{C\+Merkle\+Block}}
+\subsubsection[{v\+Matched\+Txn}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$std\+::pair$<$unsigned int, {\bf uint256}$>$ $>$ C\+Merkle\+Block\+::v\+Matched\+Txn}\label{class_c_merkle_block_a73bbbdcb5d83588b15461c02d0228999}
+Public only for unit testing and relay testing (not relayed) 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/\hyperlink{merkleblock_8h}{merkleblock.\+h}\item 
+C\+:/\+Users/\+Joe/\+Documents/\+School/\+C\+S\+C17\+A/bitcoin/src/\hyperlink{merkleblock_8cpp}{merkleblock.\+cpp}\end{DoxyCompactItemize}
