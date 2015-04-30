@@ -28,10 +28,10 @@ int *getG(int);//gets guess from user
 //Begin
 int main(int argc, char** argv) {
     
-//    srand(time(0));
-//        Answer *test=getAns(10,4);
-//    Guess *temp=new Guess;
-//    temp->code=new int[4];
+    int *g=getG(4);
+    for(int i=0;i<4;i++)
+        cout<<g[i]<<" ";
+    cout<<endl;
     
     return 0;
 }
@@ -104,25 +104,40 @@ int *getG(int row){
             <<" digit combination (1-8) separated by spaces."<<endl;
     do{
         check=true;
-        cin>>guess;
+        getline(cin,guess);
         if(guess.size()!=2*row-1){//row digits plus spaces between
             cout<<"You must enter "<<row<<" digits separated by spaces."
-                    <<"Try again."<<endl;
-            bool check=false;
+                    <<"Try again!"<<endl;
+            check=false;;
         }
         else{
+            //every odd must be 1-8, and every even must be space
             for(int i=0;i<2*row-1;i++){
-                if(i%2!=0&&!isdigit(guess[i]))//every odd must be digit
+                //check odds for all digits
+                if(i%2==0&&!isdigit(guess[i])){
                     check=false;
-                else if(i%2!=0&&(atoi(&guess[i])>8||atoi(&guess[i])<1))
+                    cout<<"Please only enter digits. Try again!"<<endl;
+                }
+                //check if all digits are 1-8
+                else if(i%2==0&&(atoi(&guess[i])>8||atoi(&guess[i])<1)){
                     check=false;
+                    cout<<"Digits must all be between 1 & 8. Try again!"<<endl;
+                    break;
+                }
+                //check if every even is space
                 else{
-                    if(!isspace(guess[i]))
+                    if(!isspace(guess[i])&&!isdigit(guess[i])){
                         check=false;
+                        cout<<"Every digit must be "
+                                <<"separated by a space. Try again!"<<endl;
+                    }
                 }
             }   
         }
-        for(int i=0;i<row;i++)
-            temp[i]=atoi(&guess[i+1])
     }while(!check);
-}
+    //copy digits into int array to return
+    for(int i=0;i<row;i++)
+        temp[i]=atoi(&guess[2*i]);
+    //int array ready to return
+    return temp;
+}//end
