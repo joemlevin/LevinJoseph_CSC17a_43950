@@ -38,13 +38,10 @@ int main(int argc, char** argv) {
         g->guess[i].code=new int[4];
         for(int j=0;j<4;j++)
             g->guess[i].code[j]=rand()%8+1;
+        g->guess[i].corPos=rand()%3+1;
+            g->guess[i].corNum=rand()%3+1;
     }
     pBoard(g,a,4);
-    for(int i=0;i<3;i++){
-        for(int j=0;j<4;j++)
-            cout<<g->guess[i].code[j]<<" ";
-        cout<<endl;
-    }
     return 0;
 }
 
@@ -171,7 +168,8 @@ void pBoard(Guesses *g, Answer *a, int r){
     for(int i=g->nGuess-1;i>=0;i--){
         for(int j=0;j<r;j++)
             cout<<g->guess[i].code[j]<<" ";
-        cout<<endl;
+        cout<<" N:"<<g->guess[i].corNum
+        <<" P:"<<g->guess[i].corPos<<endl;
     }
  //finished
 }//end
