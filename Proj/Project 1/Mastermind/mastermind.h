@@ -11,13 +11,18 @@
 struct Answer{
     int *code;//stores the integer combination
     int mxGuess;//keeps track of maximum guesses allowed
-    int corPos;//tallies the number of correct positions in a guess
-    int corNum;//tallies the number of correct numbers in a guess
+    
 };
 
 struct Guess{
     int *code;//stores the guess
-    int nGuess;//tracks guesses taken
+    int corPos;//tallies the number of correct positions in a guess
+    int corNum;//tallies the number of correct numbers in a guess
+};
+
+struct Guesses{
+    Guess *guess;//array of guess attempts
+    int nGuess;//how many guesses have been taken
 };
 
 struct Stats{

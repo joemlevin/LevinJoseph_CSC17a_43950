@@ -24,10 +24,27 @@ using namespace std;
 Answer *getAns(int,int);//generates an answer
 void checkG(Answer *,Guess *,int);//checks guess against answer
 int *getG(int);//gets guess from user
-void pBoard(Guess *,Answer *,int**,int);//prints the game board
+void pBoard(Guesses *,Answer *,int);//prints the game board
 
 //Begin
 int main(int argc, char** argv) {
+    
+    
+    Answer *a=getAns(10,4);
+    Guesses *g=new Guesses;
+    g->nGuess=3;
+    g->guess=new Guess[g->nGuess];
+    for(int i=0;i<g->nGuess;i++){
+        g->guess[i].code=new int[4];
+        for(int j=0;j<4;j++)
+            g->guess[i].code[j]=rand()%8+1;
+    }
+    pBoard(g,a,4);
+    for(int i=0;i<3;i++){
+        for(int j=0;j<4;j++)
+            cout<<g->guess[i].code[j]<<" ";
+        cout<<endl;
+    }
     return 0;
 }
 
@@ -36,8 +53,6 @@ int main(int argc, char** argv) {
 Answer *getAns(int max, int row){
     Answer *answer=new Answer;
     answer->mxGuess=max;//max number of guesses allowed
-    answer->corNum=0;//starts correct numbers at zero
-    answer->corPos=0;//starts correct positions at zero
     answer->code=new int[row];//the combination is 'row' digits long
     for(int i=0;i<row;i++)
         answer->code[i]=rand()%8+1;//fill code with 1-9
@@ -51,18 +66,18 @@ Answer *getAns(int max, int row){
 //both the correct number and correct position counters are incremented
 //otherwise if only the number is matched then the correct number indication
 //is incremented. Man this is a long description.
-void checkG(Answer *answer,Guess *guess,int row){
+void checkG(Answer *a,Guesses *g,int row){
     int *ta=new int[row];//temp array to store answer
     int *tg=new int[row];//temp array to store guess
     for(int i=0;i<row;i++){
-        ta[i]=answer->code[i];//copy answer to temp answer
-        tg[i]=guess->code[i];//copy guess to temp guess
+        ta[i]=a->code[i];//copy answer to temp answer
+        tg[i]=g->guess[g->nGuess-1].code[i];//copy guess to temp guess
     }
     //loop through arrays to check for both correct position and correct number
     for(int i=0;i<row;i++){
         if(tg[i]==ta[i]){
-            answer->corPos++;
-            answer->corNum++;
+            g->guess[g->nGuess-1].corPos++;
+            g->guess[g->nGuess-1].corNum++;
             ta[i]=-1;//no duplicates
             tg[i]=-1;
         }
@@ -73,7 +88,7 @@ void checkG(Answer *answer,Guess *guess,int row){
         for(int j=0;j<row;j++){
             //check for same number
             if(ta[i]==tg[j]&&i!=j&&tg[i]!=-1&&ta[i]!=-1){//same num, diff pos
-                answer->corNum++;
+                g->guess[g->nGuess-1].corNum++;
                 ta[i]=-1;
                 tg[j]=-1;
             }
@@ -141,15 +156,22 @@ int *getG(int row){
  * specifying the code length. It prints out dashed lines indicating
  * how many guesses remain and also prints out all previous guesses
  */
-void pBoard(Guess *g, Answer *a, int **pg, int r){
-    for(int i=0;i<(a->mxGuess)-(g->nGuess);i++){
+void pBoard(Guesses *g, Answer *a, int r){
+    //X's represent the mystery code
+    for(int i=0;i<r;i++)
+        cout<<"X ";
+    cout<<endl;
+    //-'s represent spaces left for remaining guesses
+    for(int i=0;i<(a->mxGuess)-(g->nGuess)+1;i++){
         for(int j=0;j<r;j++)
             cout<<"- ";
         cout<<endl;
     }
+    //all previous guesses
     for(int i=g->nGuess-1;i>=0;i--){
         for(int j=0;j<r;j++)
-            cout<<pg[i][j]<<" ";
+            cout<<g->guess[i].code[j]<<" ";
         cout<<endl;
     }
-}
+ //finished
+}//end
