@@ -1,0 +1,14 @@
+create dynamic int array temp
+create string object guess
+create bool check, initialize to true
+prompt user to enter a 4 digit string separated by spaces
+do
+	get guess from user
+	if size of guess is not 7, check=false
+	for the contents of guess
+		if any odd element is not a digit 1-8, check==false
+		if any even element is not a space, check==false
+while check==false		
+for the length of the int array
+	convert each odd guess convert to int and store in temp
+return temp	
