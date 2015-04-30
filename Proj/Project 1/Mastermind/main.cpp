@@ -24,15 +24,10 @@ using namespace std;
 Answer *getAns(int,int);//generates an answer
 void checkG(Answer *,Guess *,int);//checks guess against answer
 int *getG(int);//gets guess from user
+void pBoard(Guess *,Answer *,int**,int);//prints the game board
 
 //Begin
 int main(int argc, char** argv) {
-    
-    int *g=getG(4);
-    for(int i=0;i<4;i++)
-        cout<<g[i]<<" ";
-    cout<<endl;
-    
     return 0;
 }
 
@@ -141,3 +136,20 @@ int *getG(int row){
     //int array ready to return
     return temp;
 }//end
+/*
+ * pBoard takes in pointers to an Answer and Guess, and an int
+ * specifying the code length. It prints out dashed lines indicating
+ * how many guesses remain and also prints out all previous guesses
+ */
+void pBoard(Guess *g, Answer *a, int **pg, int r){
+    for(int i=0;i<(a->mxGuess)-(g->nGuess);i++){
+        for(int j=0;j<r;j++)
+            cout<<"- ";
+        cout<<endl;
+    }
+    for(int i=g->nGuess-1;i>=0;i--){
+        for(int j=0;j<r;j++)
+            cout<<pg[i][j]<<" ";
+        cout<<endl;
+    }
+}
