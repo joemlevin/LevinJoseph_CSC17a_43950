@@ -21,30 +21,29 @@ using namespace std;
 //Global Constants
 
 //Function Prototypes
+void clrscrn();//clears screen
 Answer *getAns(int,int);//generates an answer
 void checkG(Answer *,Guess *,int);//checks guess against answer
 int *getG(int);//gets guess from user
 void pBoard(Guesses *,Answer *,int);//prints the game board
+int getL();//returns length for code combination
+void play(int,int);//launches the game
+void pAns(Answer *,int);//prints the answer
 
 //Begin
 int main(int argc, char** argv) {
     
+    play(10,getL());
     
-    Answer *a=getAns(10,4);
-    Guesses *g=new Guesses;
-    g->nGuess=3;
-    g->guess=new Guess[g->nGuess];
-    for(int i=0;i<g->nGuess;i++){
-        g->guess[i].code=new int[4];
-        for(int j=0;j<4;j++)
-            g->guess[i].code[j]=rand()%8+1;
-        g->guess[i].corPos=rand()%3+1;
-            g->guess[i].corNum=rand()%3+1;
-    }
-    pBoard(g,a,4);
     return 0;
 }
 
+//Clear screen function outputs a ton of new lines in order to clear
+//the command prompt to look nice
+void clrscrn(){
+    for(int i=0; i<100; i++)
+        cout<<endl;
+}//end
 //getAns dynamically creates a Answer struct, fills the code array with
 //random integers 0-9, sets nGuess to max (max # of guesse) and then returns
 Answer *getAns(int max, int row){
@@ -165,11 +164,70 @@ void pBoard(Guesses *g, Answer *a, int r){
         cout<<endl;
     }
     //all previous guesses
-    for(int i=g->nGuess-1;i>=0;i--){
+    if(g->nGuess-1!=0){
+    for(int i=g->nGuess-2;i>=0;i--){
         for(int j=0;j<r;j++)
             cout<<g->guess[i].code[j]<<" ";
         cout<<" N:"<<g->guess[i].corNum
         <<" P:"<<g->guess[i].corPos<<endl;
     }
+    }
  //finished
 }//end
+/*
+ * getL prompts the user to enter either 4, 6, or 8. It then returns
+ * the value selected as an int. No parameters
+ */
+int getL(){
+    int l;//length of code
+    bool check=false;//error checking flag
+    cout <<"Please the code length! Options: 4, 6, 8"<<endl;
+    do{
+        cin>>l;
+        if(cin.fail()||(l!=4&&l!=6&&l!=8)){
+            cin.clear();
+            cin.ignore(256,'\n');
+            cout<<"Sorry! You have to choose "
+                    "either 4, 6, or 8. Try again!"<<endl;
+        }
+        else
+            check=true;
+    }while(!check);
+    return l;
+}//end
+/*
+ * pAns prints the answer code
+ */
+void pAns(Answer *a, int r){
+    for(int i=0;i<r;i++)
+        cout<<a->code[i]<<" ";
+    cout<<endl;
+}//end
+/*
+ * play is the main driver for Mastermind gameplay. It handles turn taking,
+ * win/lose checks, as well as stat saving. Void function, takes in an integer
+ * to determine max # of guesses and an integer to determine code length
+ */
+void play(int m,int r){
+    //generate answer
+    cin.clear();
+    cin.ignore(265,'\n');
+    Answer *a=getAns(m,r);
+    //generate and prepare Guesses
+    Guesses *g=new Guesses;
+    g->nGuess=0;
+    g->guess=new Guess[m];
+    do{
+        clrscrn();
+        g->nGuess++;
+        pBoard(g,a,r);
+        g->guess[g->nGuess-1].code=getG(r);
+        checkG(a,g,r);
+    }while(g->nGuess<a->mxGuess&&g->guess[g->nGuess-1].corPos!=r);
+    pAns(a,r);
+    pBoard(g,a,r);
+    if(g->guess[g->nGuess-1].corPos==r)
+        cout<<"You cracked the code! You win!"<<endl;
+    else
+        cout<<"You didn't crack the code! You lose... Sorry!"<<endl;
+}
