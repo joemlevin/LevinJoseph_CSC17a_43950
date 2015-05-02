@@ -12,6 +12,7 @@
 #include <ctime>
 #include <string>
 #include <cstring>
+#include <fstream>
 
 using namespace std;
 
@@ -27,13 +28,26 @@ void checkG(Answer *,Guess *,int);//checks guess against answer
 int *getG(int);//gets guess from user
 void pBoard(Guesses *,Answer *,int);//prints the game board
 int getL();//returns length for code combination
-void play(int,int);//launches the game
+void play(int);//launches the game
 void pAns(Answer *,int);//prints the answer
+void save(Stats *);//saves the stats structure as binary file
+Stats *load();//loads stats structure
 
 //Begin
 int main(int argc, char** argv) {
     
-    play(10,getL());
+//    Stats *s3=new Stats;
+//    s3->wins=15;
+//    s3->loses=115;
+//    cout<<sizeof(s3)<<endl;
+//    save(s3);
+//    cout<<sizeof(Stats)<<endl;
+    Stats *s4=load();
+    cout<<s4->wins<<endl;
+    cout<<s4->loses<<endl;
+    
+    delete s4;
+    //play(10,getL());
     
     return 0;
 }
@@ -224,10 +238,48 @@ void play(int m,int r){
         g->guess[g->nGuess-1].code=getG(r);
         checkG(a,g,r);
     }while(g->nGuess<a->mxGuess&&g->guess[g->nGuess-1].corPos!=r);
+    clrscrn();
     pAns(a,r);
     pBoard(g,a,r);
     if(g->guess[g->nGuess-1].corPos==r)
         cout<<"You cracked the code! You win!"<<endl;
     else
         cout<<"You didn't crack the code! You lose... Sorry!"<<endl;
+}//end
+/*
+ * save takes in a Stats struct pointer. It prompts the user for a name
+ * to store the stats struct under, and then writes the contents of the Stats
+ * to a binary file. Returns void
+ */
+void save(Stats *s){
+    ofstream out;//file stream
+    cout<<"Enter the name to store the stats under"<<endl;
+    string name;
+    getline(cin,name);
+    out.open(name.c_str(),ios::binary);
+    out.write(reinterpret_cast<char *>(s),sizeof(Stats));
+    out.close();
+}//end
+/*
+ * load prompts the user for a name, and attempts to open a file
+ * with that name. If found, it reads the contents into a Stats structure
+ * and returns it.
+ */
+Stats *load(){
+    string name;
+    ifstream in;
+    cout<<"Enter the name of the person whose stats to load"<<endl;
+    do{
+        getline(cin,name);
+        in.open(name.c_str(),ios::binary);
+        if(in.fail()){
+            cout<<"Name not found. Try again!"<<endl;
+        }
+        else{
+            Stats *s=new Stats;
+            in.read(reinterpret_cast<char *>(s),sizeof(Stats));
+            in.close();
+            return s;
+        }
+    }while(in.fail());
 }
