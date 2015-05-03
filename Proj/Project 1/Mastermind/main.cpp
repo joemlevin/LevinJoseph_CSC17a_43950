@@ -37,16 +37,20 @@ Stats *load();//loads stats structure
 int main(int argc, char** argv) {
     
 //    Stats *s3=new Stats;
-//    s3->wins=15;
-//    s3->loses=115;
+//    s3->wins=25;
+//    s3->loses=215;
 //    cout<<sizeof(s3)<<endl;
 //    save(s3);
 //    cout<<sizeof(Stats)<<endl;
     Stats *s4=load();
     cout<<s4->wins<<endl;
     cout<<s4->loses<<endl;
+    Stats *s5=load();
+    cout<<s5->wins<<endl;
+    cout<<s5->loses<<endl;
     
     delete s4;
+    delete s5;
     //play(10,getL());
     
     return 0;
