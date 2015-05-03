@@ -28,6 +28,7 @@ struct Guesses{
 struct Stats{
     int wins;//number of wins
     int loses;//number of loses
+    int nGuess;//number of loses
 };
 
 

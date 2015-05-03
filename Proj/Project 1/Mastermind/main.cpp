@@ -28,31 +28,59 @@ void checkG(Answer *,Guess *,int);//checks guess against answer
 int *getG(int);//gets guess from user
 void pBoard(Guesses *,Answer *,int);//prints the game board
 int getL();//returns length for code combination
-void play(int);//launches the game
+void play(Stats *,int,int);//launches the game
 void pAns(Answer *,int);//prints the answer
 void save(Stats *);//saves the stats structure as binary file
 Stats *load();//loads stats structure
+short slct();
+void instrct();
+void purge(Answer *, Guesses *,int);//deletes all structures related to a game
+bool again();//replay function
+void seeStats(Stats *);//Displays stats
 
 //Begin
 int main(int argc, char** argv) {
-    
-//    Stats *s3=new Stats;
-//    s3->wins=25;
-//    s3->loses=215;
-//    cout<<sizeof(s3)<<endl;
-//    save(s3);
-//    cout<<sizeof(Stats)<<endl;
-    Stats *s4=load();
-    cout<<s4->wins<<endl;
-    cout<<s4->loses<<endl;
-    Stats *s5=load();
-    cout<<s5->wins<<endl;
-    cout<<s5->loses<<endl;
-    
-    delete s4;
-    delete s5;
-    //play(10,getL());
-    
+   
+    short optn;
+    Stats *s=new Stats;
+    s->wins=0;
+    s->loses=0;
+    s->nGuess=0;
+    do{
+        clrscrn();
+        optn=slct();
+        switch(optn){
+            case 1:
+                clrscrn();
+                //instrct();
+                break;
+            case 2:
+                s=load();
+                break;
+            case 3:
+                do{
+                    clrscrn();
+                    seeStats(s);
+                }while(again());
+                break;
+            case 4:
+                do{
+                    clrscrn();
+                    int l=getL();
+                    play(s,10,l);
+                }while(again());
+                break;
+            case -1:
+                cout<<"Thanks for playing!"<<endl;
+                break;
+            default:
+                cout<<"Invalid option selected..."
+                        "it's not that hard, really."<<endl;
+                break;
+        }
+    }while(optn!=-1);
+    //clean up!
+    delete s;
     return 0;
 }
 
@@ -199,7 +227,7 @@ void pBoard(Guesses *g, Answer *a, int r){
 int getL(){
     int l;//length of code
     bool check=false;//error checking flag
-    cout <<"Please the code length! Options: 4, 6, 8"<<endl;
+    cout <<"Please the code length!"<<endl<<"Options: 4, 6, 8"<<endl;
     do{
         cin>>l;
         if(cin.fail()||(l!=4&&l!=6&&l!=8)){
@@ -226,15 +254,21 @@ void pAns(Answer *a, int r){
  * win/lose checks, as well as stat saving. Void function, takes in an integer
  * to determine max # of guesses and an integer to determine code length
  */
-void play(int m,int r){
+void play(Stats *s,int m,int r){
     //generate answer
     cin.clear();
     cin.ignore(265,'\n');
+    char optn;
     Answer *a=getAns(m,r);
     //generate and prepare Guesses
     Guesses *g=new Guesses;
     g->nGuess=0;
     g->guess=new Guess[m];
+    for(int i=0;i<m;i++){
+        g->guess[i].corNum=0;
+        g->guess[i].corPos=0;
+    }
+    //loop until win/lose
     do{
         clrscrn();
         g->nGuess++;
@@ -245,17 +279,56 @@ void play(int m,int r){
     clrscrn();
     pAns(a,r);
     pBoard(g,a,r);
-    if(g->guess[g->nGuess-1].corPos==r)
+    if(g->guess[g->nGuess-1].corPos==r){
         cout<<"You cracked the code! You win!"<<endl;
-    else
+        s->wins++;
+    }
+    else{
         cout<<"You didn't crack the code! You lose... Sorry!"<<endl;
+        s->loses++;
+    }
+    s->nGuess+=g->nGuess;
+    cout<<"Would you like to save your stats? y/n"<<endl;
+    do{
+        cin>>optn;
+        if(tolower(optn)!='y'&&tolower(optn)!='n')
+            cout<<"Sorry, that's not a valid option. Please try again."<<endl;
+        else if(tolower(optn)=='y'){
+            save(s);
+            cout<<"Stats saved!"<<endl;
+        }
+        else
+            cout<<"Stats not saved."<<endl;
+    }while(tolower(optn)!='y'&&tolower(optn)!='n');
+    //clean up
+    purge(a,g,m);
 }//end
+/*
+ * purge takes in an Answers and Guesses pointer and deletes all dynamically
+ * allocated elements of the struct, as well as the structs themselves
+ * and then points them to nullptrs
+ */
+void purge(Answer *a,Guesses *g,int m){
+    delete []a->code;
+    a->code=NULL;
+    delete a;
+    for(int i=0;i<m;i++){
+        delete []g->guess[i].code;
+        g->guess[i].code=NULL;
+    }
+    delete g->guess;
+    g->guess=NULL;
+    delete g;
+    g=NULL;
+}
 /*
  * save takes in a Stats struct pointer. It prompts the user for a name
  * to store the stats struct under, and then writes the contents of the Stats
  * to a binary file. Returns void
  */
 void save(Stats *s){
+    cin.clear();
+    cin.ignore(256,'\n');
     ofstream out;//file stream
     cout<<"Enter the name to store the stats under"<<endl;
     string name;
@@ -270,6 +343,8 @@ void save(Stats *s){
  * and returns it.
  */
 Stats *load(){
+    cin.clear();
+    cin.ignore(256,'\n');
     string name;
     ifstream in;
     cout<<"Enter the name of the person whose stats to load"<<endl;
@@ -286,4 +361,79 @@ Stats *load(){
             return s;
         }
     }while(in.fail());
+}
+//slct serves to take in input for menu selection, performs error checks
+//and then returns the value if it passes checks
+short slct(){
+    short pick; //for menu selection
+    bool check=false;
+    cout<<"Welcome to Code Breaker!"<<endl;
+    cout<<"Choose an option from the menu: "<<endl
+            <<"1. View Instructions"<<endl
+            <<"2. Load Stats File"<<endl
+            <<"3. View Stats"<<endl
+            <<"4. Play Game!"<<endl
+            <<"-1 to quit"<<endl;
+    do{
+        cin>>pick;
+        if(cin.fail()||pick<=0&&pick!=-1||pick>7){//error checking
+            cin.clear();
+            cin.ignore(256,'\n');
+            cout<<"Error. Invalid selection. Try again."<<endl;
+        }
+        else
+            check=true;//valid input
+    }while(!check);
+    return pick;
+}
+/*
+ * again asks the user if they would like to play another game
+ * it returns true if the user does, false if they do not
+ */
+bool again(){
+    bool check=false;
+    char pick;
+    cout<<"Would you like to play again? y/n"<<endl;
+    do{
+        cin>>pick;
+        if(cin.fail()||tolower(pick)!='y'&&tolower(pick)!='n'){//only accepts
+            cin.clear();                                       //y or n as input
+            cin.ignore(256,'\n');
+            cout<<"Error. Invalid selection. Try again."<<endl;
+        }
+        else if(tolower(pick)=='y'){//user wants to repeat
+            check=true;
+            cin.clear();
+            cin.ignore(256,'\n');
+            return true;
+        }
+        else{ //user does not want to repeat
+            cin.clear();
+            cin.ignore(256,'\n');
+            check=true;
+        return false;
+        }
+    }while(!check);
+    
+}//end
+/*
+ * seeStats takes in Stats pointer. It displays the elements within,
+ * (wins/loses/total guesses) and also calculates win percentage, and
+ * correct guess percentage
+ */
+void seeStats(Stats *s){
+    if(s->nGuess!=0){
+        cout<<"Games played: "<<s->wins+s->loses<<endl;
+        cout<<"Wins: "<<s->wins<<endl;
+        cout<<"Losses: "<<s->loses<<endl;
+        cout<<"Total guesses: "<<s->nGuess<<endl;
+        cout<<setprecision(2)<<fixed
+                <<"% Games won: "<<100*static_cast<float>(s->wins)/
+               (static_cast<float>(s->wins)+static_cast<float>(s->loses))<<endl;
+        cout<<setprecision(5)<<fixed
+                <<"% Guesses correct: "<<100*static_cast<float>(s->wins)/
+                static_cast<float>(s->nGuess)<<endl;
+    }
+    else
+        cout<<"Stats File is empty!"<<endl;
 }
