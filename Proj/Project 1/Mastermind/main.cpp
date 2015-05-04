@@ -40,6 +40,7 @@ void clrscrn();//clears screen
 
 //Begin
 int main(int argc, char** argv) {
+    srand(time(0));
     short optn;
     Stats *s=new Stats;
     s->wins=0;
