@@ -12,8 +12,10 @@
  * Answer stores the correct code in an int array and the max guesses allowed
  */
 struct Answer{
-    int *code;//!stores the integer combination
-    int mxGuess;//!keeps track of maximum guesses allowed
+    //!stores the integer combination
+    int *code;
+    //!keeps track of maximum guesses allowed
+    int mxGuess;
     
 };
 
@@ -22,9 +24,12 @@ struct Answer{
  * associated with the guess and the number of correct numbers
  */
 struct Guess{
-    int *code;//!stores the guess
-    int corPos;//!tallies the number of correct positions in a guess
-    int corNum;//!tallies the number of correct numbers in a guess
+    //!stores the guess
+    int *code;
+    //!tallies the number of correct positions in a guess
+    int corPos;
+    //!tallies the number of correct numbers in a guess
+    int corNum;
 };
 
 /*!
@@ -32,17 +37,22 @@ struct Guess{
  * the total number of guesses taken
  */
 struct Guesses{
-    Guess *guess;//!array of guess attempts
-    int nGuess;//!how many guesses have been taken
+    //!array of guess attempts
+    Guess *guess;
+    //!how many guesses have been taken
+    int nGuess;
 };
 
 /*!
  * Stats stores the number of wins, losses, and number of guesses
  */
 struct Stats{
-    int wins;//!number of wins
-    int loses;//!number of loses
-    int nGuess;//!number of guesses
+    //!number of wins
+    int wins;
+    //!number of loses
+    int loses;
+    //!number of guesses
+    int nGuess;
 };
 
 
