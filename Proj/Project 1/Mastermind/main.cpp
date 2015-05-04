@@ -29,7 +29,7 @@ int *getG(int);//gets guess from user
 void pBoard(Guesses *,Answer *,int);//prints the game board
 int getL();//returns length for code combination
 void play(Stats *,int,int);//launches the game
-void pAns(Answer *,int);//prints the answer
+void pAns(Answer *,Guesses *,int);//prints the answer
 void save(Stats *);//saves the stats structure as binary file
 Stats *load();//loads stats structure
 short slct();
@@ -40,7 +40,6 @@ void seeStats(Stats *);//Displays stats
 
 //Begin
 int main(int argc, char** argv) {
-   
     short optn;
     Stats *s=new Stats;
     s->wins=0;
@@ -51,8 +50,10 @@ int main(int argc, char** argv) {
         optn=slct();
         switch(optn){
             case 1:
-                clrscrn();
-                //instrct();
+                do{
+                    clrscrn();
+                    instrct();
+                }while(again());
                 break;
             case 2:
                 s=load();
@@ -129,7 +130,7 @@ void checkG(Answer *a,Guesses *g,int row){
         //loop through guess
         for(int j=0;j<row;j++){
             //check for same number
-            if(ta[i]==tg[j]&&i!=j&&tg[i]!=-1&&ta[i]!=-1){//same num, diff pos
+            if(ta[i]==tg[j]&&i!=j&&tg[j]!=-1&&ta[i]!=-1){//same num, diff pos
                 g->guess[g->nGuess-1].corNum++;
                 ta[i]=-1;
                 tg[j]=-1;
@@ -244,10 +245,27 @@ int getL(){
 /*
  * pAns prints the answer code
  */
-void pAns(Answer *a, int r){
+void pAns(Answer *a,Guesses *g,int r){
+    //Show Answer
     for(int i=0;i<r;i++)
         cout<<a->code[i]<<" ";
-    cout<<endl;
+    
+    cout<<" <- Answer!"<<endl;
+    //-'s represent spaces left for remaining guesses
+    for(int i=0;i<(a->mxGuess)-(g->nGuess);i++){
+        for(int j=0;j<r;j++)
+            cout<<"- ";
+        cout<<endl;
+    }
+    //all previous guesses
+    if(g->nGuess!=0){
+    for(int i=g->nGuess-1;i>=0;i--){
+        for(int j=0;j<r;j++)
+            cout<<g->guess[i].code[j]<<" ";
+        cout<<" N:"<<g->guess[i].corNum
+        <<" P:"<<g->guess[i].corPos<<endl;
+    }
+    }
 }//end
 /*
  * play is the main driver for Mastermind gameplay. It handles turn taking,
@@ -277,8 +295,7 @@ void play(Stats *s,int m,int r){
         checkG(a,g,r);
     }while(g->nGuess<a->mxGuess&&g->guess[g->nGuess-1].corPos!=r);
     clrscrn();
-    pAns(a,r);
-    pBoard(g,a,r);
+    pAns(a,g,r);
     if(g->guess[g->nGuess-1].corPos==r){
         cout<<"You cracked the code! You win!"<<endl;
         s->wins++;
@@ -436,4 +453,27 @@ void seeStats(Stats *s){
     }
     else
         cout<<"Stats File is empty!"<<endl;
+}
+/*
+ * instrct displays the rules for Code Breaker (based on Mastermind)
+ */
+void instrct(){
+    cout<<"Code Breaker is a game of decryption!"<<endl<<endl
+            <<"In it, the player (that's you!)"<<endl
+            <<"attempts to decipher a secret code generated at random."<<endl
+            <<"The code consists of integers between 1 and 8."<<endl
+            <<"The player chooses from 3 code lengths (4, 6, 8),"<<endl
+            <<"and guesses at each of the individual digits that make up"
+            " the secret code."<<endl
+            <<"After each attempt the player is told how "
+            "many correct numbers"<<endl
+            <<"(shown as 'N') and correct position "
+            "(shown as 'P') the attempt had."<<endl
+            <<"The player wins by correctly determining"
+            " all 4 correct numbers and positions."<<endl
+            <<"Remember, a guess can have 4 correct numbers but 0 correct "
+            "positions,"<<endl
+            <<"but you can't have a correct position without"
+            " it also being the correct number."<<endl
+            <<endl<<"Good luck!"<<endl;
 }
