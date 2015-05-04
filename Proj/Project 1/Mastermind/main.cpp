@@ -1,7 +1,7 @@
 /* 
  * File:   main.cpp
  * Author: Joseph Levin
- * C++ Project 1 Mastermind
+ * C++ Project 1 Mastermind - Spring 2015 43950
  * Created on April 26, 2015, 7:01 PM
  */
 
