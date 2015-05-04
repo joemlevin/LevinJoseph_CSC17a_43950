@@ -24,6 +24,7 @@ using namespace std;
 //Function Prototypes
 Answer *getAns(int,int);//generates an answer
 bool again();//replay function
+bool menu();//returns to menu
 int *getG(int);//gets guess from user
 int getL();//returns length for code combination
 short slct();
@@ -54,7 +55,7 @@ int main(int argc, char** argv) {
                 do{
                     clrscrn();
                     instrct();
-                }while(again());
+                }while(!menu());
                 break;
             case 2:
                 s=load();
@@ -63,7 +64,7 @@ int main(int argc, char** argv) {
                 do{
                     clrscrn();
                     seeStats(s);
-                }while(again());
+                }while(!menu());
                 break;
             case 4:
                 do{
@@ -434,6 +435,36 @@ bool again(){
     }while(!check);
     
 }//end
+/*!
+ * menu prompts the user if they want to return to the main menu.
+ * if the user types 'y', it returns true
+ * if the user types 'n', it returns false
+ */
+bool menu(){
+    bool check=false;
+    char pick;
+    cout<<"Would you like to return to the menu? y/n"<<endl;
+    do{
+        cin>>pick;
+        if(cin.fail()||tolower(pick)!='y'&&tolower(pick)!='n'){//only accepts
+            cin.clear();                                       //y or n as input
+            cin.ignore(256,'\n');
+            cout<<"Error. Invalid selection. Try again."<<endl;
+        }
+        else if(tolower(pick)=='y'){//user wants to repeat
+            check=true;
+            cin.clear();
+            cin.ignore(256,'\n');
+            return true;
+        }
+        else{ //user does not want to repeat
+            cin.clear();
+            cin.ignore(256,'\n');
+            check=true;
+        return false;
+        }
+    }while(!check);
+}
 /*!
  * seeStats takes in Stats pointer. It displays the elements within,
  * (wins/loses/total guesses) and also calculates win percentage, and
