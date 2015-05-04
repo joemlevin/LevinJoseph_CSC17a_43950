@@ -22,21 +22,21 @@ using namespace std;
 //Global Constants
 
 //Function Prototypes
-Answer *getAns(int,int);//generates an answer
-bool again();//replay function
-int *getG(int);//gets guess from user
-int getL();//returns length for code combination
+Answer *getAns(int,int);//!generates an answer
+bool again();//!replay function
+int *getG(int);//!gets guess from user
+int getL();//!returns length for code combination
 short slct();
-Stats *load();//loads stats structure
-void play(Stats *,int,int);//launches the game
-void pAns(Answer *,Guesses *,int);//prints the answer
-void save(Stats *);//saves the stats structure as binary file
-void pBoard(Guesses *,Answer *,int);//prints the game board
-void checkG(Answer *,Guess *,int);//checks guess against answer
+Stats *load();//!loads stats structure
+void play(Stats *,int,int);//!launches the game
+void pAns(Answer *,Guesses *,int);//!prints the answer
+void save(Stats *);//!saves the stats structure as binary file
+void pBoard(Guesses *,Answer *,int);//!prints the game board
+void checkG(Answer *,Guess *,int);//!checks guess against answer
 void instrct();
-void purge(Answer *, Guesses *,int);//deletes all structures related to a game
-void seeStats(Stats *);//Displays stats
-void clrscrn();//clears screen
+void purge(Answer *, Guesses *,int);//!deletes all structures related to a game
+void seeStats(Stats *);//!Displays stats
+void clrscrn();//!clears screen
 
 //Begin
 int main(int argc, char** argv) {
@@ -85,14 +85,14 @@ int main(int argc, char** argv) {
     return 0;
 }
 
-//Clear screen function outputs a ton of new lines in order to clear
-//the command prompt to look nice
+//!Clear screen function outputs a ton of new lines in order to clear
+//!the command prompt to look nice
 void clrscrn(){
     for(int i=0; i<100; i++)
         cout<<endl;
 }//end
-//getAns dynamically creates a Answer struct, fills the code array with
-//random integers 0-9, sets nGuess to max (max # of guesse) and then returns
+//!getAns dynamically creates a Answer struct, fills the code array with
+//!random integers 0-9, sets nGuess to max (max # of guesse) and then returns
 Answer *getAns(int max, int row){
     Answer *answer=new Answer;
     answer->mxGuess=max;//max number of guesses allowed
@@ -101,14 +101,14 @@ Answer *getAns(int max, int row){
         answer->code[i]=rand()%8+1;//fill code with 1-9
     return answer;
 }//end
-//checkG takes in an Answer struct. It copies the contents of the code array
-//into another int array and compares each element to a Guess array
-//It changes the elments in the temp int array to -1 as it finds matches
-//in order to ensure no duplicate matches are found
-//if an element in the guess matches the position and number of the answer
-//both the correct number and correct position counters are incremented
-//otherwise if only the number is matched then the correct number indication
-//is incremented. Man this is a long description.
+//!checkG takes in an Answer struct. It copies the contents of the code array
+//!into another int array and compares each element to a Guess array
+//!It changes the elments in the temp int array to -1 as it finds matches
+//!in order to ensure no duplicate matches are found
+//!if an element in the guess matches the position and number of the answer
+//!both the correct number and correct position counters are incremented
+//!otherwise if only the number is matched then the correct number indication
+//!is incremented. Man this is a long description.
 void checkG(Answer *a,Guesses *g,int row){
     int *ta=new int[row];//temp array to store answer
     int *tg=new int[row];//temp array to store guess
@@ -140,7 +140,7 @@ void checkG(Answer *a,Guesses *g,int row){
     delete []ta;
     delete []tg;
 }//end
-/*
+/*!
  * getG prompts the user to enter a 4 digit combination, separated by spaces
  * it stores it as a string, and checks if every odd element is a digit 1-8
  * and then checks if every even is a space
@@ -194,7 +194,7 @@ int *getG(int row){
     //int array ready to return
     return temp;
 }//end
-/*
+/*!
  * pBoard takes in pointers to an Answer and Guess, and an int
  * specifying the code length. It prints out dashed lines indicating
  * how many guesses remain and also prints out all previous guesses
@@ -221,7 +221,7 @@ void pBoard(Guesses *g, Answer *a, int r){
     }
  //finished
 }//end
-/*
+/*!
  * getL prompts the user to enter either 4, 6, or 8. It then returns
  * the value selected as an int. No parameters
  */
@@ -242,7 +242,7 @@ int getL(){
     }while(!check);
     return l;
 }//end
-/*
+/*!
  * pAns prints the answer code
  */
 void pAns(Answer *a,Guesses *g,int r){
@@ -267,7 +267,7 @@ void pAns(Answer *a,Guesses *g,int r){
     }
     }
 }//end
-/*
+/*!
  * play is the main driver for Mastermind gameplay. It handles turn taking,
  * win/lose checks, as well as stat saving. Void function, takes in an integer
  * to determine max # of guesses and an integer to determine code length
@@ -320,7 +320,7 @@ void play(Stats *s,int m,int r){
     //clean up
     purge(a,g,m);
 }//end
-/*
+/*!
  * purge takes in an Answers and Guesses pointer and deletes all dynamically
  * allocated elements of the struct, as well as the structs themselves
  * and then points them to nullptrs
@@ -338,7 +338,7 @@ void purge(Answer *a,Guesses *g,int m){
     delete g;
     g=NULL;
 }
-/*
+/*!
  * save takes in a Stats struct pointer. It prompts the user for a name
  * to store the stats struct under, and then writes the contents of the Stats
  * to a binary file. Returns void
@@ -354,7 +354,7 @@ void save(Stats *s){
     out.write(reinterpret_cast<char *>(s),sizeof(Stats));
     out.close();
 }//end
-/*
+/*!
  * load prompts the user for a name, and attempts to open a file
  * with that name. If found, it reads the contents into a Stats structure
  * and returns it.
@@ -379,8 +379,8 @@ Stats *load(){
         }
     }while(in.fail());
 }
-//slct serves to take in input for menu selection, performs error checks
-//and then returns the value if it passes checks
+//!slct serves to take in input for menu selection, performs error checks
+//!and then returns the value if it passes checks
 short slct(){
     short pick; //for menu selection
     bool check=false;
@@ -403,7 +403,7 @@ short slct(){
     }while(!check);
     return pick;
 }
-/*
+/*!
  * again asks the user if they would like to play another game
  * it returns true if the user does, false if they do not
  */
@@ -433,7 +433,7 @@ bool again(){
     }while(!check);
     
 }//end
-/*
+/*!
  * seeStats takes in Stats pointer. It displays the elements within,
  * (wins/loses/total guesses) and also calculates win percentage, and
  * correct guess percentage
@@ -454,7 +454,7 @@ void seeStats(Stats *s){
     else
         cout<<"Stats File is empty!"<<endl;
 }
-/*
+/*!
  * instrct displays the rules for Code Breaker (based on Mastermind)
  */
 void instrct(){
