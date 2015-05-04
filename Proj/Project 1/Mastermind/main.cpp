@@ -384,7 +384,7 @@ Stats *load(){
 short slct(){
     short pick; //for menu selection
     bool check=false;
-    cout<<"Welcome to Code Breaker!"<<endl;
+    cout<<"Welcome to Mastermind!"<<endl;
     cout<<"Choose an option from the menu: "<<endl
             <<"1. View Instructions"<<endl
             <<"2. Load Stats File"<<endl
@@ -458,7 +458,7 @@ void seeStats(Stats *s){
  * instrct displays the rules for Code Breaker (based on Mastermind)
  */
 void instrct(){
-    cout<<"Code Breaker is a game of decryption!"<<endl<<endl
+    cout<<"Mastermind is a game of decryption!"<<endl<<endl
             <<"In it, the player (that's you!)"<<endl
             <<"attempts to decipher a secret code generated at random."<<endl
             <<"The code consists of integers between 1 and 8."<<endl
