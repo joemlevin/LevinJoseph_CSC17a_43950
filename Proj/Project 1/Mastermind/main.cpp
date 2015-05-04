@@ -36,7 +36,7 @@ void checkG(Answer *,Guess *,int);//checks guess against answer
 void instrct();
 void purge(Answer *, Guesses *,int);//deletes all structures related to a game
 void seeStats(Stats *);//Displays stats
-void clrscrn();//!clears screen
+void clrscrn();//clears screen
 
 //Begin
 int main(int argc, char** argv) {
