@@ -22,20 +22,20 @@ using namespace std;
 //Global Constants
 
 //Function Prototypes
-Answer *getAns(int,int);//!generates an answer
-bool again();//!replay function
-int *getG(int);//!gets guess from user
-int getL();//!returns length for code combination
+Answer *getAns(int,int);//generates an answer
+bool again();//replay function
+int *getG(int);//gets guess from user
+int getL();//returns length for code combination
 short slct();
-Stats *load();//!loads stats structure
-void play(Stats *,int,int);//!launches the game
-void pAns(Answer *,Guesses *,int);//!prints the answer
-void save(Stats *);//!saves the stats structure as binary file
-void pBoard(Guesses *,Answer *,int);//!prints the game board
-void checkG(Answer *,Guess *,int);//!checks guess against answer
+Stats *load();//loads stats structure
+void play(Stats *,int,int);//launches the game
+void pAns(Answer *,Guesses *,int);//prints the answer
+void save(Stats *);//saves the stats structure as binary file
+void pBoard(Guesses *,Answer *,int);//prints the game board
+void checkG(Answer *,Guess *,int);//checks guess against answer
 void instrct();
-void purge(Answer *, Guesses *,int);//!deletes all structures related to a game
-void seeStats(Stats *);//!Displays stats
+void purge(Answer *, Guesses *,int);//deletes all structures related to a game
+void seeStats(Stats *);//Displays stats
 void clrscrn();//!clears screen
 
 //Begin
