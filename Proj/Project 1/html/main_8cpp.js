@@ -10,6 +10,7 @@ var main_8cpp =
     [ "instrct", "main_8cpp.html#a1805138975ee4f74ec931280eaa7f52e", null ],
     [ "load", "main_8cpp.html#a376d77019fd51be769b03b50f313ae2e", null ],
     [ "main", "main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627", null ],
+    [ "menu", "main_8cpp.html#a40367ec6ab7c61ae3bdef5ec38d0becc", null ],
     [ "pAns", "main_8cpp.html#abed6b3fd15a6b75bba126ce2ea11c88d", null ],
     [ "pBoard", "main_8cpp.html#abd1ef90d7b557471aa6605db29a27b5a", null ],
     [ "play", "main_8cpp.html#ac2871a080eb5a5a5f743c638c925c16b", null ],

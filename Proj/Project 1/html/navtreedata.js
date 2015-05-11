@@ -1,6 +1,6 @@
 var NAVTREE =
 [
-  [ "Proj1_Doxy", "index.html", [
+  [ "Project 1 Mastermind", "index.html", [
     [ "Classes", null, [
       [ "Class List", "annotated.html", "annotated" ],
       [ "Class Index", "classes.html", null ],
