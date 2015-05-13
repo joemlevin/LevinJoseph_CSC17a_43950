@@ -11,7 +11,7 @@
 class Circle{
     private:
         float radius;
-        float pi = 3.14159;
+        const float pi = 3.14159;
     public:
         Circle();
         Circle(float);

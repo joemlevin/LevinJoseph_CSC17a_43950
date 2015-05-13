@@ -8,12 +8,14 @@
 #include <cstdlib>
 #include <iostream>
 #include <iomanip>
+#include <ctime>
 
 using namespace std;
 
 //User Libraries
 #include "Circle.h"
 #include "NumArray.h"
+#include "Coin.h"
 
 //Function Prototypes
 void menu(); //Main menu function
@@ -22,10 +24,12 @@ short slct(); //menu selection
 bool again(); //problem repeater
 void prb138();//driver for problem 13.8 (Circle Class)
 void prb1310();//driver for problem 13.10 (Number Array)
+void prb1312();//driver for problem 13.12 (Con Toss Simulator)
 
 //Execution begins
 int main(int argc, char** argv) {
-    prb1310();
+    srand(static_cast<unsigned int>(time(0)));
+    prb1312();
     return 0;
 }
 
@@ -143,7 +147,26 @@ void prb1310(){
     cout<<"The highest value is "<<a.getHigh()<<endl;
     cout<<"The lowest value is "<<a.getLow()<<endl;
     cout<<"The average value is "<<a.getAvg()<<endl;
-    
-    
-    
+}//end
+/*!
+ * prb1312 is the driver for problem 13.12 (Coin Toss Simulator)
+ */
+void prb1312(){
+   Coin coin;//instance of Coin class
+   int heads=0;//counter for heads
+   int tails=0;//counter for tails
+   cout<<"The initial side up is "<<coin.getSideUp()<<endl;
+   for(int i=0;i<20;i++){
+       coin.toss();
+       if(coin.getSideUp()=="Heads"){
+           cout<<"Toss #"<<i+1<<" landed on "<<coin.getSideUp()<<endl;
+           heads++;
+       }
+       else{
+           cout<<"Toss #"<<i+1<<" landed on "<<coin.getSideUp()<<endl;
+           tails++;
+       }
+   }
+   cout<<"Total heads: "<<heads<<endl;
+   cout<<"Total tails: "<<tails<<endl;
 }
