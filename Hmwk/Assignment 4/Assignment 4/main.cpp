@@ -25,11 +25,12 @@ bool again(); //problem repeater
 void prb138();//driver for problem 13.8 (Circle Class)
 void prb1310();//driver for problem 13.10 (Number Array)
 void prb1312();//driver for problem 13.12 (Con Toss Simulator)
+void prb1313();//driver for problem 13.13 (Tossing Coins for a Dollar)
 
 //Execution begins
 int main(int argc, char** argv) {
     srand(static_cast<unsigned int>(time(0)));
-    prb1312();
+    prb1313();
     return 0;
 }
 
@@ -169,4 +170,19 @@ void prb1312(){
    }
    cout<<"Total heads: "<<heads<<endl;
    cout<<"Total tails: "<<tails<<endl;
+}//end
+/*!
+ * prb1313() is the driver for problem 13.13 (Tossing Coins for a Dollar)
+ * A game in which you toss 3 coins, a quarter, dime, and nickel, with the
+ * goal being to end up with $1 exactly.
+ */
+void prb1313(){
+    //Initialize three Coin's, one for quarters, nickels, and dimes
+    Coin q,n,d;
+    cout<<"Welcome to Problem 13.13!"<<endl
+            <<"Each round, three coins will be tossed:"<<endl
+            <<"a quarter ($.25), a dime ($.10), and a nickel ($.05)."<<endl
+            <<"The goal is for the game to end on $1.00 exactly."<<endl
+            <<"If it does, you win! If you go over, you lose. Simple!"<<endl
+            <<"Type 'n' to begin. Good luck!"<<endl;
 }
