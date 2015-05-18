@@ -1,5 +1,3 @@
-build/Debug/MinGW-Windows/Loan.o: Loan.cpp Loan.h Circle.h
+build/Debug/MinGW-Windows/Loan.o: Loan.cpp Loan.h
 
 Loan.h:
-
-Circle.h:

@@ -16,6 +16,7 @@ using namespace std;
 #include "Circle.h"
 #include "NumArray.h"
 #include "Coin.h"
+#include "Loan.h"
 
 //Function Prototypes
 void menu(); //Main menu function
@@ -26,11 +27,12 @@ void prb138();//driver for problem 13.8 (Circle Class)
 void prb1310();//driver for problem 13.10 (Number Array)
 void prb1312();//driver for problem 13.12 (Con Toss Simulator)
 void prb1313();//driver for problem 13.13 (Tossing Coins for a Dollar)
+void prb1315();//driver for problem 13.15 (Mortage Payment)
 
 //Execution begins
 int main(int argc, char** argv) {
     srand(static_cast<unsigned int>(time(0)));
-    prb1313();
+    prb1315();
     return 0;
 }
 
@@ -228,4 +230,36 @@ void prb1313(){
         cout<<"Your total: $"<<setprecision(2)<<fixed<<total<<endl;
         cout<<"You lose! Congratulations! ... Oh, no. Sorry!"<<endl;
     }
+}//end
+/*!
+ * prb1315 is the driver for problem 13.15 (Mortgage Payment)
+ */
+void prb1315(){
+    Loan loan;
+    float a, r;
+    int y;
+    cout<<"Enter the initial amount of the loan"<<endl;
+    do{
+        cin>>a;
+        loan.setAmnt(a);
+        if(loan.getAmnt()==-1)
+            cout<<"Must enter a positive amount"<<endl;
+    }while(loan.getAmnt()==-1);
+    cout<<"Enter the interest rate of the loan"<<endl;
+    do{
+        cin>>r;
+        loan.setRate(r);
+        if(loan.getRate()==-1)
+            cout<<"Must enter a positive amount"<<endl;
+    }while(loan.getRate()==-1);
+    cout<<"Enter the year length of the loan"<<endl;
+    do{
+        cin>>y;
+        loan.setYear(y);
+        if(loan.getYear()==-1)
+            cout<<"Must enter an integer greater than 0"<<endl;
+    }while(loan.getYear()==-1);
+    cout<<loan.getAmnt()<<" "<<loan.getRate()<<" "<<loan.getYear()<<endl;
+    cout<<"The monthly payment is $"<<loan.getPay()<<endl;
+    cout<<"The total amount repaid will be $"<<loan.getTotal()<<endl;
 }

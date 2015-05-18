@@ -6,7 +6,7 @@
 
 #ifndef LOAN_H
 #define	LOAN_H
-
+#include <iostream>
 class Loan{
 private:
     float amnt;
@@ -15,8 +15,11 @@ private:
 public:
     Loan(){amnt=0.0f; rate=0.0f; year=0;}
     void setAmnt(float);
+    float getAmnt();
     void setRate(float);
+    float getRate();
     void setYear(int);
+    int getYear();
     float getPay();
     float getTotal();
 };
