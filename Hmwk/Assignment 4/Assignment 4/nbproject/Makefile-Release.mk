@@ -37,6 +37,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 OBJECTFILES= \
 	${OBJECTDIR}/Circle.o \
 	${OBJECTDIR}/Coin.o \
+	${OBJECTDIR}/Loan.o \
 	${OBJECTDIR}/NumArray.o \
 	${OBJECTDIR}/main.o
 
@@ -74,6 +75,11 @@ ${OBJECTDIR}/Coin.o: Coin.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Coin.o Coin.cpp
+
+${OBJECTDIR}/Loan.o: Loan.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Loan.o Loan.cpp
 
 ${OBJECTDIR}/NumArray.o: NumArray.cpp 
 	${MKDIR} -p ${OBJECTDIR}
