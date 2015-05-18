@@ -179,10 +179,53 @@ void prb1312(){
 void prb1313(){
     //Initialize three Coin's, one for quarters, nickels, and dimes
     Coin q,n,d;
+    char next;
+    float total=0.0f;
     cout<<"Welcome to Problem 13.13!"<<endl
             <<"Each round, three coins will be tossed:"<<endl
             <<"a quarter ($.25), a dime ($.10), and a nickel ($.05)."<<endl
+            <<"Every coin that lands heads up will be added to your total"<<endl
             <<"The goal is for the game to end on $1.00 exactly."<<endl
-            <<"If it does, you win! If you go over, you lose. Simple!"<<endl
-            <<"Type 'n' to begin. Good luck!"<<endl;
+            <<"If it does, you win! If you go over, you lose. Simple!"<<endl;
+    do{
+        cout<<"Type 'f' to flip the coins"<<endl;
+        do{
+            cin>>next;
+            if(tolower(next)!='f')
+                cout<<"You need to type 'f'. It's not that hard, really"<<endl;
+        }while(tolower(next)!='f');
+        q.toss();
+        d.toss();
+        n.toss();
+        if(q.getSideUp()=="Heads"){
+            cout<<"The quarter landed heads up! That's +$.25!"<<endl;
+            total+=.25;
+        }
+        else{
+            cout<<"The quarter landed tails up! Nothing was added."<<endl;
+        }
+        if(d.getSideUp()=="Heads"){
+            cout<<"The dime landed heads up! That's +$.10!"<<endl;
+            total+=.10;
+        }
+        else{
+            cout<<"The dime landed tails up! Nothing was added."<<endl;
+        }
+        if(n.getSideUp()=="Heads"){
+            cout<<"The nickel landed heads up! That's +$.05!"<<endl;
+            total+=.05;
+        }
+        else{
+            cout<<"The nickel landed tails up! Nothing was added."<<endl;
+        }
+        cout<<"Your total: $"<<setprecision(2)<<fixed<<total<<endl;
+    }while(total<1.00f);
+    if(total==1.00f){
+        cout<<"Your total: $"<<setprecision(2)<<fixed<<total<<endl;
+        cout<<"You win! Congratulations!"<<endl;
+    }
+    else{
+        cout<<"Your total: $"<<setprecision(2)<<fixed<<total<<endl;
+        cout<<"You lose! Congratulations! ... Oh, no. Sorry!"<<endl;
+    }
 }
