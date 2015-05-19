@@ -40,6 +40,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/Loan.o \
 	${OBJECTDIR}/NumArray.o \
 	${OBJECTDIR}/NumDay.o \
+	${OBJECTDIR}/Numbers.o \
 	${OBJECTDIR}/TimeOff.o \
 	${OBJECTDIR}/main.o
 
@@ -92,6 +93,11 @@ ${OBJECTDIR}/NumDay.o: NumDay.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/NumDay.o NumDay.cpp
+
+${OBJECTDIR}/Numbers.o: Numbers.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Numbers.o Numbers.cpp
 
 ${OBJECTDIR}/TimeOff.o: TimeOff.cpp 
 	${MKDIR} -p ${OBJECTDIR}

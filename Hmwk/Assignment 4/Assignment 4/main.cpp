@@ -38,7 +38,8 @@ void prb146();//driver for problem 14.6 ({Personnel report))
 //Execution begins
 int main(int argc, char** argv) {
     srand(static_cast<unsigned int>(time(0)));
-    prb146();
+    int num=2456;
+    cout<<num%100<<endl;
     return 0;
     
 }
