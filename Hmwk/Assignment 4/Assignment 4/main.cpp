@@ -9,6 +9,7 @@
 #include <iostream>
 #include <iomanip>
 #include <ctime>
+#include <string>
 
 using namespace std;
 
@@ -18,6 +19,7 @@ using namespace std;
 #include "Coin.h"
 #include "Loan.h"
 #include "NumDay.h"
+#include "TimeOff.h"
 
 //Function Prototypes
 void menu(); //Main menu function
@@ -30,11 +32,12 @@ void prb1312();//driver for problem 13.12 (Con Toss Simulator)
 void prb1313();//driver for problem 13.13 (Tossing Coins for a Dollar)
 void prb1315();//driver for problem 13.15 (Mortage Payment)
 void prb144();//driver for problem 14.4 (NumDay class)
+void prb145();//driver for problem 14.5(Time Off))
 
 //Execution begins
 int main(int argc, char** argv) {
     srand(static_cast<unsigned int>(time(0)));
-    prb1310();
+    prb145();
     return 0;
     
 }
@@ -274,7 +277,7 @@ void prb1315(){
  */
 void prb144(){
     //initial set NumDay objects to 0
-    NumDay day1(0),day2(0),day3(0);
+    NumDay day1,day2,day3;
     //Display initial contents
     cout<<"Initial hours (day 1, day 2): "
             <<day1.getHours()<<", "<<day2.getHours()<<endl;
@@ -315,4 +318,47 @@ void prb144(){
     cout<<"Postfix decrementor on day 2:"<<endl;
     day2--;
     cout<<day2.getHours()<<" hours or "<<day2.getDays()<<" days"<<endl;
+}//end
+/*!
+ * prb145 is the driver for problem 14.5 (Time Off). It implements
+ * a number of NumDay classes
+ */
+void prb145(){
+    //get name for EID
+    string name, eid;
+    int num;
+    cout<<"Enter the employee's name"<<endl;
+    getline(cin,name);
+    cout<<"Enter the employee's identification number."<<endl;
+    getline(cin,eid);
+    TimeOff emp1(name,eid);
+    cin.clear();
+    cin.ignore(265,'\n');
+    //Fill in the contents of the TimeOff object emp1
+    cout<<"Enter the max sick hours allowed"<<endl;
+    cin>>num;
+    emp1.setMaxSickDays(num);
+    cout<<"Enter the number of sick days taken"<<endl;
+    cin>>num;
+    emp1.setSickTaken(num);
+    cout<<"Enter the max paid vacation hours allowed"<<endl;
+    cin>>num;
+    emp1.setMaxVacation(num);
+    cout<<"Enter the number of vacation hours taken"<<endl;
+    cin>>num;
+    emp1.setVacTaken(num);
+    cout<<"Enter the max unpaid vacation hours allowed"<<endl;
+    cin>>num;
+    emp1.setMaxUnpaid(num);
+    cout<<"Enter the number of unpaid vacation hours taken"<<endl;
+    cin>>num;
+    emp1.setUnpaidTaken(num);
+    cout<<"Employee name: "<<emp1.getName()<<endl;
+    cout<<"Employee ID: "<<emp1.getEID()<<endl;
+    cout<<"Max sick days: "<<emp1.getMaxSickDays()<<endl;
+    cout<<"Sick days taken: "<<emp1.getSickTaken()<<endl;
+    cout<<"Max vacation days: "<<emp1.getMaxVacation()<<endl;
+    cout<<"Vacations days taken: "<<emp1.getVacTaken()<<endl;
+    cout<<"Max unpaid vacation days: "<<emp1.getMaxUnpaid()<<endl;
+    cout<<"Unpaid vacation days taken: "<<emp1.getUnpaidTaken()<<endl;
 }

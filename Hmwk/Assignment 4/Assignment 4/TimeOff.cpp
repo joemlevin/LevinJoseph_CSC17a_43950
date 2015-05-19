@@ -5,8 +5,9 @@
  */
 #include "TimeOff.h"
 
-TimeOff::TimeOff(std::string n){
+TimeOff::TimeOff(std::string n,std::string id){
     name=n;
+    eid=id;
 }
 void TimeOff::setMaxSickDays(int m){
     maxSickDays.setHours(m);
@@ -53,9 +54,9 @@ void TimeOff::setName(std::string n){
 std::string TimeOff::getName(){
     return name;
 }
-void TimeOff::setEID(int id){
+void TimeOff::setEID(std::string id){
     eid=id;
 }
-int TimeOff::getEID(){
+std::string TimeOff::getEID(){
     return eid;
 }

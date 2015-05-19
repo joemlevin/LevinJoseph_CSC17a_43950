@@ -7,18 +7,35 @@
 #ifndef TIMEOFF_H
 #define	TIMEOFF_H
 #include "NumDay.h"
+#include <string>
 class TimeOff{
 private:
-    NumDay maxSickDays(0);
-    NumDay sickTaken(0);
-    NumDay maxVacation(0);
-    NumDay vacTaken(0);
-    NumDay maxUnpad(0);
-    NumDay unpaidTaken(0);
+    NumDay maxSickDays;
+    NumDay sickTaken;
+    NumDay maxVacation;
+    NumDay vacTaken;
+    NumDay maxUnpaid;
+    NumDay unpaidTaken;
     std::string name;
-    int eid;
+    std::string eid;
 public:
-    TimeOff(std::string);
+    TimeOff(std::string,std::string);
+    void setMaxSickDays(int);
+    float getMaxSickDays();
+    void setSickTaken(int);
+    float getSickTaken();
+    void setMaxVacation(int);
+    float getMaxVacation();
+    void setVacTaken(int);
+    float getVacTaken();
+    void setMaxUnpaid(int);
+    float getMaxUnpaid();
+    void setUnpaidTaken(int);
+    float getUnpaidTaken();
+    void setName(std::string);
+    std::string getName();
+    void setEID(std::string);
+    std::string getEID();
     
 };
 

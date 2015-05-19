@@ -14,7 +14,7 @@ private:
     float days;
 public:
     //Constructor
-    NumDay(int);
+    NumDay();
     //Mutators
     void setHours(int);
     void setDays(int);

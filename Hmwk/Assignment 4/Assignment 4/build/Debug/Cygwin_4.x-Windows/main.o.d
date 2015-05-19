@@ -1,5 +1,5 @@
 build/Debug/Cygwin_4.x-Windows/main.o: main.cpp Circle.h NumArray.h \
- Coin.h Loan.h NumDay.h
+ Coin.h Loan.h NumDay.h TimeOff.h
 
 Circle.h:
 
@@ -10,3 +10,5 @@ Coin.h:
 Loan.h:
 
 NumDay.h:
+
+TimeOff.h:

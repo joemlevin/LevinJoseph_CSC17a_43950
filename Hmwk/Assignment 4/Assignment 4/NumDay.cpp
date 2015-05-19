@@ -6,12 +6,13 @@
 
 #include "NumDay.h"
 
-NumDay::NumDay(int h){
-    hours=h;
-    days=h/8.0;
+NumDay::NumDay(){
+    hours=0;
+    days=0.0;
 }
 void NumDay::setHours(int h){
     hours=h;
+    setDays(h);
 }
 void NumDay::setDays(int h){
     days=h/8.0;
@@ -23,11 +24,15 @@ float NumDay::getDays(){
     return days;
 }
 NumDay NumDay::operator+(const NumDay &right){
-    NumDay temp(hours+right.hours);
+    NumDay temp;
+    temp.hours=hours+right.hours;
+    temp.setDays(temp.hours);
     return temp;
 }
 NumDay NumDay::operator-(const NumDay &right){
-    NumDay temp(hours-right.hours);
+    NumDay temp;
+    temp.hours=hours-right.hours;
+    temp.setDays(temp.hours);
     return temp;
 }
 NumDay NumDay::operator++(){
@@ -36,7 +41,9 @@ NumDay NumDay::operator++(){
     return *this;
 }
 NumDay NumDay::operator++(int){
-    NumDay temp(hours);
+    NumDay temp;
+    temp.hours=hours;
+    temp.days=days;
     hours++;
     setDays(hours);
     return temp;
@@ -47,7 +54,9 @@ NumDay NumDay::operator--(){
     return *this;
 }
 NumDay NumDay::operator--(int){
-    NumDay temp(hours);
+    NumDay temp;
+    temp.hours=hours;
+    temp.days=days;
     hours--;
     setDays(hours);
     return temp;
