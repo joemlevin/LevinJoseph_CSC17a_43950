@@ -23,6 +23,7 @@
       <itemPath>Loan.cpp</itemPath>
       <itemPath>NumArray.cpp</itemPath>
       <itemPath>NumDay.cpp</itemPath>
+      <itemPath>TimeOff.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -66,6 +67,8 @@
       <item path="NumDay.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="NumDay.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="TimeOff.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="TimeOff.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -111,6 +114,8 @@
       <item path="NumDay.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="NumDay.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="TimeOff.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="TimeOff.h" ex="false" tool="3" flavor2="0">
       </item>
