@@ -33,11 +33,12 @@ void prb1313();//driver for problem 13.13 (Tossing Coins for a Dollar)
 void prb1315();//driver for problem 13.15 (Mortage Payment)
 void prb144();//driver for problem 14.4 (NumDay class)
 void prb145();//driver for problem 14.5(Time Off))
+void prb146();//driver for problem 14.6 ({Personnel report))
 
 //Execution begins
 int main(int argc, char** argv) {
     srand(static_cast<unsigned int>(time(0)));
-    prb145();
+    prb146();
     return 0;
     
 }
@@ -332,8 +333,6 @@ void prb145(){
     cout<<"Enter the employee's identification number."<<endl;
     getline(cin,eid);
     TimeOff emp1(name,eid);
-    cin.clear();
-    cin.ignore(265,'\n');
     //Fill in the contents of the TimeOff object emp1
     cout<<"Enter the max sick hours allowed"<<endl;
     cin>>num;
@@ -361,4 +360,29 @@ void prb145(){
     cout<<"Vacations days taken: "<<emp1.getVacTaken()<<endl;
     cout<<"Max unpaid vacation days: "<<emp1.getMaxUnpaid()<<endl;
     cout<<"Unpaid vacation days taken: "<<emp1.getUnpaidTaken()<<endl;
+}//end
+/*!
+ * void prb146 is the main driver for problem 14.6 (Personnel report)
+ * 
+ */
+void prb146(){
+    string name, eid;
+    int month;
+    cout<<"Enter the employee's name"<<endl;
+    getline(cin,name);
+    cout<<"Enter the employee's ID"<<endl;
+    getline(cin,eid);
+    TimeOff emp1(name,eid);
+    cout<<"Enter the number of months"
+            " the employee has worked for the company"<<endl;
+    cin>>month;
+    emp1.setMaxSickDays(month*8);
+    emp1.setMaxVacation(month*12);
+    cout<<emp1.getName()<<", ID: "<<emp1.getEID()<<endl;
+    cout<<"Has worked "<<month<<" months"<<endl;
+    cout<<"Has earned "<<emp1.getMaxSickDays()
+            <<" days of paid sick leave"<<endl;
+    cout<<"Has earned "<<emp1.getMaxVacation()
+            <<" days of paid vacation"<<endl;
+    
 }
