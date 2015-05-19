@@ -29,20 +29,12 @@ void prb1310();//driver for problem 13.10 (Number Array)
 void prb1312();//driver for problem 13.12 (Con Toss Simulator)
 void prb1313();//driver for problem 13.13 (Tossing Coins for a Dollar)
 void prb1315();//driver for problem 13.15 (Mortage Payment)
+void prb144();//driver for problem 14.4 (NumDay class)
 
 //Execution begins
 int main(int argc, char** argv) {
     srand(static_cast<unsigned int>(time(0)));
-    NumDay day1(7);
-    cout<<day1.getHours()<<" "<<day1.getDays()<<endl;
-    ++day1;
-    cout<<day1.getHours()<<" "<<day1.getDays()<<endl;
-    day1++;
-    cout<<day1.getHours()<<" "<<day1.getDays()<<endl;
-    --day1;
-    cout<<day1.getHours()<<" "<<day1.getDays()<<endl;
-    day1--;
-    cout<<day1.getHours()<<" "<<day1.getDays()<<endl;
+    prb144();
     return 0;
     
 }
@@ -273,4 +265,54 @@ void prb1315(){
     cout<<loan.getAmnt()<<" "<<loan.getRate()<<" "<<loan.getYear()<<endl;
     cout<<"The monthly payment is $"<<loan.getPay()<<endl;
     cout<<"The total amount repaid will be $"<<loan.getTotal()<<endl;
+}//end
+/*!
+ * prb144 is the main driver for problem 14.4 (NumDay class).
+ * It demonstrations the functionality of the NumDay class
+ * which includes mathematical operator overloading,
+ * and increment/decrement overloading
+ */
+void prb144(){
+    //initial set NumDay objects to 0
+    NumDay day1(0),day2(0),day3(0);
+    //Display initial contents
+    cout<<"Initial hours (day 1, day 2): "
+            <<day1.getHours()<<", "<<day2.getHours()<<endl;
+    cout<<"Initial days (day 1, day 2), 8 hours per day: "
+            <<day1.getDays()<<", "<<day2.getDays()<<endl;
+    //Utilize mutators to set new hours and days
+    int h1, h2;
+    cout<<"Enter the hours for day 1"<<endl;
+    cin>>h1;
+    cout<<"Enter the hours for day 2"<<endl;
+    cin>>h2;
+    day1.setHours(h1);
+    day2.setHours(h2);
+    day1.setDays(h1);
+    day2.setDays(h2);
+    //Display new contents
+    cout<<"Day 1: "<<day1.getHours()<<" hours or "
+            <<day1.getDays()<<" days"<<endl;
+    cout<<"Day 2: "<<day2.getHours()<<" hours or "
+            <<day2.getDays()<<" days"<<endl;
+    //Demonstrator addition/subtraction
+    day3=day1+day2;
+    cout<<"day 1's hours + day 2's hours = "<<day3.getHours()<<endl;
+    cout<<"day 1's days + day 2's days = "<<day3.getDays()<<endl;
+    day3=day1-day2;
+    cout<<"day 1's hours - day 2's hours = "<<day3.getHours()<<endl;
+    cout<<"day 1's days - day 2's days = "<<day3.getDays()<<endl;
+    //Demonstrate incrementor and decrementor
+    cout<<"Prefix incrementor on day 1:"<<endl;
+    ++day1;
+    cout<<day1.getHours()<<" hours or "<<day1.getDays()<<" days"<<endl;
+    cout<<"Prefix decrementor on day 1:"<<endl;
+    --day1;
+    cout<<day1.getHours()<<" hours or "<<day1.getDays()<<" days"<<endl;
+    cout<<"Postfix incrementor on day 2:"<<endl;
+    day2++;
+    cout<<day2.getHours()<<" hours or "<<day2.getDays()<<" days"<<endl;
+    cout<<"Postfix decrementor on day 2:"<<endl;
+    day2--;
+    cout<<day2.getHours()<<" hours or "<<day2.getDays()<<" days"<<endl;
 }
