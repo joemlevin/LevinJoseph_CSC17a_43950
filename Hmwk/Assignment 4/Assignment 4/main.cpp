@@ -34,7 +34,7 @@ void prb144();//driver for problem 14.4 (NumDay class)
 //Execution begins
 int main(int argc, char** argv) {
     srand(static_cast<unsigned int>(time(0)));
-    prb144();
+    prb1310();
     return 0;
     
 }
