@@ -17,6 +17,7 @@ using namespace std;
 #include "NumArray.h"
 #include "Coin.h"
 #include "Loan.h"
+#include "NumDay.h"
 
 //Function Prototypes
 void menu(); //Main menu function
@@ -32,8 +33,18 @@ void prb1315();//driver for problem 13.15 (Mortage Payment)
 //Execution begins
 int main(int argc, char** argv) {
     srand(static_cast<unsigned int>(time(0)));
-    prb1315();
+    NumDay day1(7);
+    cout<<day1.getHours()<<" "<<day1.getDays()<<endl;
+    ++day1;
+    cout<<day1.getHours()<<" "<<day1.getDays()<<endl;
+    day1++;
+    cout<<day1.getHours()<<" "<<day1.getDays()<<endl;
+    --day1;
+    cout<<day1.getHours()<<" "<<day1.getDays()<<endl;
+    day1--;
+    cout<<day1.getHours()<<" "<<day1.getDays()<<endl;
     return 0;
+    
 }
 
 //!slct serves to take in input for menu selection, performs error checks

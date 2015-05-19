@@ -1,9 +1,9 @@
-/* 
- * File:   NumArray.h
- * Author: Joe
- *
- * Created on May 11, 2015, 4:21 PM
+/* File:   NumArray.h
+ * Author: Joseph Levin
+ * Assignment: C++ Assignment 4 - Spring 2015 43950
+ * Created on May 11, 2015, 3:15 PM
  */
+
 
 #ifndef NUMARRAY_H
 #define	NUMARRAY_H

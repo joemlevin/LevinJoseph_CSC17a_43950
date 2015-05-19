@@ -1,9 +1,9 @@
-/* 
- * File:   Coin.h
- * Author: Joe
- *
- * Created on May 13, 2015, 3:13 PM
+/* File:   Coin.h
+ * Author: Joseph Levin
+ * Assignment: C++ Assignment 4 - Spring 2015 43950
+ * Created on May 11, 2015, 3:15 PM
  */
+
 
 #ifndef COIN_H
 #define	COIN_H
