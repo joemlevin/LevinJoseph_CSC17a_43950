@@ -21,6 +21,7 @@ using namespace std;
 #include "NumDay.h"
 #include "TimeOff.h"
 #include "Numbers.h"
+#include "DayOfYear.h"
 
 //Function Prototypes
 void menu(); //Main menu function
@@ -36,11 +37,12 @@ void prb144();//driver for problem 14.4 (NumDay class)
 void prb145();//driver for problem 14.5(Time Off))
 void prb146();//driver for problem 14.6 ({Personnel report))
 void prb141();//driver for problem 14.6 (Numbers class)
+void prb142();//driver for problem 14.2 (Day of the Year))
 
 //Execution begins
 int main(int argc, char** argv) {
     srand(static_cast<unsigned int>(time(0)));
-    prb141();
+    prb142();
     return 0;
     
 }
@@ -398,4 +400,15 @@ void prb141(){
     Numbers toWord(number);
     cout<<"The number you entered is ";
     toWord.print();
+}
+/*!
+ * void prb142() is the main driver for problem 14.2 (day of the year)
+ */
+void prb142(){
+    int day;
+    cout<<"Enter the day of the year (1-365)"<<endl;
+    cin>>day;
+    DayOfYear date(day);
+    cout<<"You entered ";
+    date.print();
 }

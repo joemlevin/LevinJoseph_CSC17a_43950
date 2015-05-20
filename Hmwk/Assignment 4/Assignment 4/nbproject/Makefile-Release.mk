@@ -37,6 +37,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 OBJECTFILES= \
 	${OBJECTDIR}/Circle.o \
 	${OBJECTDIR}/Coin.o \
+	${OBJECTDIR}/DayOfYear.o \
 	${OBJECTDIR}/Loan.o \
 	${OBJECTDIR}/NumArray.o \
 	${OBJECTDIR}/NumDay.o \
@@ -78,6 +79,11 @@ ${OBJECTDIR}/Coin.o: Coin.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Coin.o Coin.cpp
+
+${OBJECTDIR}/DayOfYear.o: DayOfYear.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/DayOfYear.o DayOfYear.cpp
 
 ${OBJECTDIR}/Loan.o: Loan.cpp 
 	${MKDIR} -p ${OBJECTDIR}

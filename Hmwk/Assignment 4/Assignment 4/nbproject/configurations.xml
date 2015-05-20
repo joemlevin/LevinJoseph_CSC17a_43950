@@ -6,6 +6,7 @@
                    projectFiles="true">
       <itemPath>Circle.h</itemPath>
       <itemPath>Coin.h</itemPath>
+      <itemPath>DayOfYear.h</itemPath>
       <itemPath>Loan.h</itemPath>
       <itemPath>NumArray.h</itemPath>
       <itemPath>NumDay.h</itemPath>
@@ -21,6 +22,7 @@
                    projectFiles="true">
       <itemPath>Circle.cpp</itemPath>
       <itemPath>Coin.cpp</itemPath>
+      <itemPath>DayOfYear.cpp</itemPath>
       <itemPath>Loan.cpp</itemPath>
       <itemPath>NumArray.cpp</itemPath>
       <itemPath>NumDay.cpp</itemPath>
@@ -57,6 +59,10 @@
       <item path="Coin.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Coin.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="DayOfYear.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="DayOfYear.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Loan.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -108,6 +114,10 @@
       <item path="Coin.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Coin.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="DayOfYear.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="DayOfYear.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Loan.cpp" ex="false" tool="1" flavor2="0">
       </item>
