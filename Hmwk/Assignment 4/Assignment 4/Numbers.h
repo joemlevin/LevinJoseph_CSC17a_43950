@@ -23,8 +23,7 @@ public:
     Numbers(int);
     std::string getThousand();
     std::string getHundred();
-    std::string getLessThan20();
-    std::string getLessThan100();
+    std::string getTensAndOnes();
     void print();
 };
 

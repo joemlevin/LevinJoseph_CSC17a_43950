@@ -29,17 +29,24 @@ std::string Numbers::getHundred(){
     else
         return lessThan20[0];
 }
-std::string Numbers::getLessThan20(){
+std::string Numbers::getTensAndOnes(){
     int t=number%100;
     if(t>=20){
         int o=number%10;
-        t=(number/100)%10;
-        
+        t=(number/10)%10;
+        if(o==0)
+            return (lessThan100[t-2]);
+        else
+            return (lessThan100[t-2]+" "+lessThan20[o]);
+    }
+    else{
+        return lessThan20[t];
     }
 }
-std::string Numbers::getLessThan100(){
-    
-}
 void Numbers::print(){
-    
+    if(getThousand()!="zero")
+        std::cout<<getThousand()<<" ";
+    if(getHundred()!="zero")
+        std::cout<<getHundred()<<" ";
+    std::cout<<getTensAndOnes()<<std::endl;
 }

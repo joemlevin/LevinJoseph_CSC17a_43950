@@ -20,6 +20,7 @@ using namespace std;
 #include "Loan.h"
 #include "NumDay.h"
 #include "TimeOff.h"
+#include "Numbers.h"
 
 //Function Prototypes
 void menu(); //Main menu function
@@ -34,12 +35,12 @@ void prb1315();//driver for problem 13.15 (Mortage Payment)
 void prb144();//driver for problem 14.4 (NumDay class)
 void prb145();//driver for problem 14.5(Time Off))
 void prb146();//driver for problem 14.6 ({Personnel report))
+void prb141();//driver for problem 14.6 (Numbers class)
 
 //Execution begins
 int main(int argc, char** argv) {
     srand(static_cast<unsigned int>(time(0)));
-    int num=2456;
-    cout<<num%100<<endl;
+    prb141();
     return 0;
     
 }
@@ -386,4 +387,15 @@ void prb146(){
     cout<<"Has earned "<<emp1.getMaxVacation()
             <<" days of paid vacation"<<endl;
     
+}//end
+/*!
+ * void prb141() is the main driver for problem 14.1 (Numbers class)
+ */
+void prb141(){
+    int number;
+    cout<<"Enter a number between 0-9999"<<endl;
+    cin>>number;
+    Numbers toWord(number);
+    cout<<"The number you entered is ";
+    toWord.print();
 }
