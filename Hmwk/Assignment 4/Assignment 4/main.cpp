@@ -36,13 +36,83 @@ void prb1315();//driver for problem 13.15 (Mortage Payment)
 void prb144();//driver for problem 14.4 (NumDay class)
 void prb145();//driver for problem 14.5(Time Off))
 void prb146();//driver for problem 14.6 ({Personnel report))
-void prb141();//driver for problem 14.6 (Numbers class)
+void prb141();//driver for problem 14.1 (Numbers class)
 void prb142();//driver for problem 14.2 (Day of the Year))
 
 //Execution begins
 int main(int argc, char** argv) {
     srand(static_cast<unsigned int>(time(0)));
-    prb142();
+    short optn;
+    do{
+        clrscrn();
+        optn=slct();
+        switch(optn){
+            case 1:
+                do{
+                    clrscrn();
+                    prb138();
+                }while(again());
+                break;
+            case 2:
+                do{
+                    clrscrn();
+                    prb1310();
+                }while(again());
+                break;    
+            case 3:
+                do{
+                    clrscrn();
+                    prb1312();
+                }while(again());
+                break; 
+            case 4:
+                do{
+                    clrscrn();
+                    prb1313();
+                }while(again());
+                break;   
+            case 5:
+                do{
+                    clrscrn();
+                    prb1315();
+                }while(again());
+                break;
+            case 6:
+                do{
+                    clrscrn();
+                    prb141();
+                }while(again());
+                break; 
+            case 7:
+                do{
+                    clrscrn();
+                    prb142();
+                }while(again());
+                break; 
+            case 8:
+                do{
+                    clrscrn();
+                    prb144();
+                }while(again());
+                break;
+            case 9:
+                do{
+                    clrscrn();
+                    prb145();
+                }while(again());
+                break;
+            case 10:
+                do{
+                    clrscrn();
+                    prb146();
+                }while(again());
+                break; 
+            case -1:
+                cout<<"Until next time"<<endl;
+            default:
+                cout<<"What."<<endl;
+        }
+    }while(optn!=-1);
     return 0;
     
 }
@@ -53,10 +123,20 @@ short slct(){
     short pick; //for menu selectin
     bool check=false;
     cout<<"Assignment 4"<<endl;
-    cout<<"Problem 13.8 (Circle Class)"<<endl;
+    cout<<"1. Problem 13.8 (Circle Class)"<<endl
+            <<"2. Problem 13.10 (Number Array)"<<endl
+            <<"3. Problem 13.12 (Coin Toss Simulator)"<<endl
+            <<"4. Problem 13.13 (Tossing Coins for a Dollar)"<<endl
+            <<"5. Problem 13.15 (Mortage Payment)"<<endl
+            <<"6. Problem 14.1 (Numbers class)"<<endl
+            <<"7. Problem 14.2 (Day of the Year)"<<endl
+            <<"8. Problem 14.4 (NumDay class)"<<endl
+            <<"9. Problem 14.5(Time Off)"<<endl
+            <<"10. Problem 14.6 (Personnel report)"<<endl;
+            cout<<"Enter the number (1-1) of the problem to run"<<endl;
     do{
         cin>>pick;
-        if(cin.fail()||pick<=0&&pick!=-1||pick>7){//error checking
+        if(cin.fail()||pick<=0&&pick!=-1||pick>10){//error checking
             cin.clear();
             cin.ignore(256,'\n');
             cout<<"Error. Invalid selection. Try again."<<endl;
@@ -66,6 +146,12 @@ short slct(){
     }while(!check);
     return pick;
 }
+//!Clear screen function outputs a ton of new lines in order to clear
+//!the command prompt to look nice
+void clrscrn(){
+    for(int i=0; i<100; i++)
+        cout<<endl;
+}//end
 /*!
  * again asks the user if they would like to repeat the current problem
  * it returns true if the user does, false if they do not
@@ -330,6 +416,7 @@ void prb144(){
  */
 void prb145(){
     //get name for EID
+    cin.ignore();
     string name, eid;
     int num;
     cout<<"Enter the employee's name"<<endl;
@@ -370,6 +457,7 @@ void prb145(){
  * 
  */
 void prb146(){
+    cin.ignore();
     string name, eid;
     int month;
     cout<<"Enter the employee's name"<<endl;
