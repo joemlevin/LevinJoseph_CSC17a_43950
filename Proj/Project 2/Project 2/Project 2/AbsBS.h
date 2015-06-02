@@ -1,21 +1,20 @@
 /* 
- * File:   BSboard.h
+ * File:   AbsBS
  * Author: Joseph Levin
  * C++ Project 2 - Spring 2015 43950
  * 6/5/2015
  */
 
-#ifndef BSBOARD_H
-#define	BSBOARD_H
+#ifndef ABSBS_H
+#define	ABSBS_H
 //!Abstract class for the Battleship board
-class BSboard{
+class AbsBS{
     public:
         //!2D char array to store the board
-        virtual char** board(int)=0;
+        virtual char** flBoard()=0;
         //!outputs the board
-        virtual void output()=0;
-        virtual ~BSboard()=0;
+        virtual void pBoard()=0;
 };
 
-#endif	/* BSBOARD_H */
+#endif	/*  ABSBS_H */
 

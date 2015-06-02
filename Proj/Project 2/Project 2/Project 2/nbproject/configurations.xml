@@ -4,7 +4,8 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
-      <itemPath>BSboard.h</itemPath>
+      <itemPath>AbsBS.h</itemPath>
+      <itemPath>BaseBS.h</itemPath>
       <itemPath>mastermind.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
@@ -13,6 +14,7 @@
       <logicalFolder name="SourceFiles"
                      displayName="Source Files"
                      projectFiles="true">
+        <itemPath>BaseBS.cpp</itemPath>
         <itemPath>main.cpp</itemPath>
       </logicalFolder>
     </logicalFolder>
@@ -38,7 +40,11 @@
       </toolsSet>
       <compileType>
       </compileType>
-      <item path="BSboard.h" ex="false" tool="3" flavor2="0">
+      <item path="AbsBS.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="BaseBS.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="BaseBS.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -65,7 +71,11 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
-      <item path="BSboard.h" ex="false" tool="3" flavor2="0">
+      <item path="AbsBS.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="BaseBS.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="BaseBS.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>

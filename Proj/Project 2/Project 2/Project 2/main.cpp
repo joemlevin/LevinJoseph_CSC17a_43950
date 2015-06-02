@@ -18,6 +18,7 @@ using namespace std;
 
 //User Libraries
 #include "mastermind.h"
+#include "BaseBS.h"
 
 //Global Constants
 
@@ -41,49 +42,51 @@ void clrscrn();//clears screen
 
 //Begin
 int main(int argc, char** argv) {
-    srand(time(0));
-    short optn;
-    Stats *s=new Stats;
-    s->wins=0;
-    s->loses=0;
-    s->nGuess=0;
-    do{
-        clrscrn();
-        optn=slct();
-        switch(optn){
-            case 1:
-                do{
-                    clrscrn();
-                    instrct();
-                }while(!menu());
-                break;
-            case 2:
-                s=load();
-                break;
-            case 3:
-                do{
-                    clrscrn();
-                    seeStats(s);
-                }while(!menu());
-                break;
-            case 4:
-                do{
-                    clrscrn();
-                    int l=getL();
-                    play(s,10,l);
-                }while(again());
-                break;
-            case -1:
-                cout<<"Thanks for playing!"<<endl;
-                break;
-            default:
-                cout<<"Invalid option selected..."
-                        "it's not that hard, really."<<endl;
-                break;
-        }
-    }while(optn!=-1);
-    //clean up!
-    delete s;
+//    srand(time(0));
+//    short optn;
+//    Stats *s=new Stats;
+//    s->wins=0;
+//    s->loses=0;
+//    s->nGuess=0;
+//    do{
+//        clrscrn();
+//        optn=slct();
+//        switch(optn){
+//            case 1:
+//                do{
+//                    clrscrn();
+//                    instrct();
+//                }while(!menu());
+//                break;
+//            case 2:
+//                s=load();
+//                break;
+//            case 3:
+//                do{
+//                    clrscrn();
+//                    seeStats(s);
+//                }while(!menu());
+//                break;
+//            case 4:
+//                do{
+//                    clrscrn();
+//                    int l=getL();
+//                    play(s,10,l);
+//                }while(again());
+//                break;
+//            case -1:
+//                cout<<"Thanks for playing!"<<endl;
+//                break;
+//            default:
+//                cout<<"Invalid option selected..."
+//                        "it's not that hard, really."<<endl;
+//                break;
+//        }
+//    }while(optn!=-1);
+//    //clean up!
+//    delete s;
+    BaseBS test(6);
+    test.pBoard();
     return 0;
 }
 
