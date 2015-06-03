@@ -62,42 +62,44 @@ void BaseBS::place(){
     bool conf1,conf2,conf3;//error buffers
     ships=0;//begin with no ships placed
     int row, col;//for checking the given coordinate
-    do{
-        cout<<"Enter the row coordinate for where to begin ship "
-                <<ships+1<<endl;
-        //check confirms to false
-        conf1=false;
-        conf2=false;
-        conf3=false;
-        do{//gets the row coordinate
-            cin>>row;
-            if (cin.fail()||(row<0||row>size-1)){//size-1 denotes edge of board
-                cin.clear();
-                cin.ignore(256,'\n');
-                cout<<"Error. Invalid input."<<endl;
-            } else
-                conf1=true;//row coordinate is acceptable
-        } while(cin.fail()||row<0||row>size-1||!conf1);
-        cout<<"Enter the column coordinate for where to begin ship "
-                <<ships+1<<endl;
+    for(int i=0;i<size;i++){
         do{
-            cin>>col;
-            if (cin.fail()||(col<0||col>size-1)){
-                cin.clear();
-                cin.ignore(256,'\n');
-                cout<<"Error. Invalid input."<<endl;
-            } else
-                conf2=true;//column coordinate is acceptable
-        } while(cin.fail()||col<0||row>size-1||!conf1);
-        if(board[row][col]!=piece[3]){//piece[3] == blank space
-            cout << "This spot is already occupied" << endl;
-        }
-        else {
-            board[row][col]=piece[2];//piece[2]== '+'
-            ships++;//added ship to board
-            conf3=true;//process is completed successfully
-        }
-    }while(!conf3);
+            cout<<"Enter the row coordinate for where to begin ship "
+                    <<ships+1<<endl;
+            //check confirms to false
+            conf1=false;
+            conf2=false;
+            conf3=false;
+            do{//gets the row coordinate
+                cin>>row;
+                if (cin.fail()||(row<0||row>size-1)){//size-1 denotes edge of board
+                    cin.clear();
+                    cin.ignore(256,'\n');
+                    cout<<"Error. Invalid input."<<endl;
+                } else
+                    conf1=true;//row coordinate is acceptable
+            } while(cin.fail()||row<0||row>size-1||!conf1);
+            cout<<"Enter the column coordinate for where to begin ship "
+                    <<ships+1<<endl;
+            do{
+                cin>>col;
+                if (cin.fail()||(col<0||col>size-1)){
+                    cin.clear();
+                    cin.ignore(256,'\n');
+                    cout<<"Error. Invalid input."<<endl;
+                } else
+                    conf2=true;//column coordinate is acceptable
+            } while(cin.fail()||col<0||row>size-1||!conf1);
+            if(board[row][col]!=piece[3]){//piece[3] == blank space
+                cout << "This spot is already occupied" << endl;
+            }
+            else {
+                board[row][col]=piece[2];//piece[2]== '+'
+                ships++;//added ship to board
+                conf3=true;//process is completed successfully
+            }
+        }while(!conf3);
+    }
 }
 void BaseBS::target(){
     int row, col;

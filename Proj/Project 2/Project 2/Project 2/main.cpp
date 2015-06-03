@@ -87,10 +87,7 @@ int main(int argc, char** argv) {
 //    delete s;
     BaseBS test(6);
     test.pBoard();
-    for(int i=0;i<4;i++){
     test.place();
-    test.pBoard();
-    }
     test.target();
     test.pBoard();
     return 0;
