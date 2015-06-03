@@ -37,6 +37,8 @@ class BaseBS:AbsBS{
         //!the acceptable range of size, and then sets the given tile
         //!to the + char to represent a ship has been placed
         void place();
+        //!target handles the process of targeting a spot to fire on it
+        void target();
             
 };
 
