@@ -87,6 +87,8 @@ int main(int argc, char** argv) {
 //    delete s;
     BaseBS test(6);
     test.pBoard();
+    test.place();
+    test.pBoard();
     return 0;
 }
 

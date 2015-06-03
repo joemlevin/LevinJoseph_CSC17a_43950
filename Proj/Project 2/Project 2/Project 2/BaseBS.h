@@ -20,6 +20,8 @@ class BaseBS:AbsBS{
         char piece[4]={'X','O','+', ' '};
         //!dimension of board
         int size;
+        //!ships on board
+        int ships;
     public:
         //!Constructor for base battleship board. Takes in an integer for
         //!the dimension of the board (area is nxn))
@@ -30,6 +32,11 @@ class BaseBS:AbsBS{
         char** flBoard();
         //!For outputting the board formatted to show ships
         void pBoard();
+        //!place handles the ship placing procedure for the player.
+        //!it checks to make sure the given coordinates are within
+        //!the acceptable range of size, and then sets the given tile
+        //!to the + char to represent a ship has been placed
+        void place();
             
 };
 
