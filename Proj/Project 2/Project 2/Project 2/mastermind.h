@@ -16,7 +16,6 @@ struct Answer{
     int *code;
     //!keeps track of maximum guesses allowed
     int mxGuess;
-    
 };
 
 /*!
@@ -54,8 +53,4 @@ struct Stats{
     //!number of guesses
     int nGuess;
 };
-
-
-
 #endif	/* MASTERMIND_H */
-

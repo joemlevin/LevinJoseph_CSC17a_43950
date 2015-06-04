@@ -16,6 +16,7 @@
                      displayName="Source Files"
                      projectFiles="true">
         <itemPath>BaseBS.cpp</itemPath>
+        <itemPath>DerivBS.cpp</itemPath>
         <itemPath>main.cpp</itemPath>
       </logicalFolder>
     </logicalFolder>
@@ -46,6 +47,8 @@
       <item path="BaseBS.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="BaseBS.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="DerivBS.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="DerivBS.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -79,6 +82,8 @@
       <item path="BaseBS.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="BaseBS.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="DerivBS.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="DerivBS.h" ex="false" tool="3" flavor2="0">
       </item>

@@ -15,6 +15,5 @@ class AbsBS{
         //!outputs the board
         virtual void pBoard()=0;
 };
-
 #endif	/*  ABSBS_H */
 

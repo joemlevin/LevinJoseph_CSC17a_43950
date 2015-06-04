@@ -41,9 +41,5 @@ class BaseBS:AbsBS{
         void target();
         //!check() checks to see if previous shot was successful. Returns true
         //!if the shot hit, false if the shot missed
-        
-            
 };
-
 #endif	/* BASEBS_H */
-

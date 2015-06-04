@@ -16,7 +16,7 @@
 class DerivBS:public BaseBS{
     public:
         //!constructor for DerivBS calls BaseBS constructor
-        DerivBS();
+        DerivBS(int);
         //!displays a version of the board with ships masked
         void radar();
         //!place for DerivBS randomly places ships for computer
@@ -24,7 +24,4 @@ class DerivBS:public BaseBS{
         //!target for DerivBS randomly fires on spots for computer
         void target();
 };
-
-
 #endif	/* DERIVBS_H */
-

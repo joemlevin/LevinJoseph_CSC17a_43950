@@ -85,12 +85,15 @@ int main(int argc, char** argv) {
 //    }while(optn!=-1);
 //    //clean up!
 //    delete s;
-    BaseBS test(6);
-    test.pBoard();
-    test.place();
-    test.target();
-    test.pBoard();
-    
+//    BaseBS test(6);
+//    test.pBoard();
+//    test.place();
+//    test.target();
+//    test.pBoard();
+    DerivBS check(6);
+    check.place();
+    check.pBoard();
+    check.radar();
     return 0;
 }
 
