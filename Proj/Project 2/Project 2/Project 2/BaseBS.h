@@ -17,7 +17,7 @@ class BaseBS:AbsBS{
         //!for storing the board
         char** board;
         //!X is hit, O is miss, + is ship, <space> is empty
-        char piece[4]={'X','O','+', ' '};
+        char piece[4]={'X','O','+', ' '}; const
         //!dimension of board
         int size;
         //!ships on board

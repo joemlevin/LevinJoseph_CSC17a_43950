@@ -5,17 +5,12 @@
  * 6/5/2015
  */
 
+//Libraries
 #include <iostream>
-#include <iomanip>
+#include <iomanip>//board formatting
 #include "BaseBS.h"
 
 using namespace std;
-
-        char** board;
-        //!X is hit, O is miss, + is ship, <space> is empty
-        char piece[4]={'X','O','+', ' '};
-        //!dimension of board
-        int size;
 
 BaseBS::BaseBS(int s){
     size=s;

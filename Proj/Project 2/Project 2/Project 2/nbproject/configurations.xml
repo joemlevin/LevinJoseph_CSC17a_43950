@@ -6,6 +6,7 @@
                    projectFiles="true">
       <itemPath>AbsBS.h</itemPath>
       <itemPath>BaseBS.h</itemPath>
+      <itemPath>DerivBS.h</itemPath>
       <itemPath>mastermind.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
@@ -46,6 +47,8 @@
       </item>
       <item path="BaseBS.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="DerivBS.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="mastermind.h" ex="false" tool="3" flavor2="0">
@@ -76,6 +79,8 @@
       <item path="BaseBS.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="BaseBS.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="DerivBS.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
