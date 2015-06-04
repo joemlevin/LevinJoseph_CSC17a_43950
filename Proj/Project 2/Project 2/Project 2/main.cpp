@@ -18,7 +18,7 @@ using namespace std;
 
 //User Libraries
 #include "mastermind.h"
-#include "BaseBS.h"
+#include "DerivBS.h"
 
 //Global Constants
 
@@ -90,6 +90,7 @@ int main(int argc, char** argv) {
     test.place();
     test.target();
     test.pBoard();
+    
     return 0;
 }
 
