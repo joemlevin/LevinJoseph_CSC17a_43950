@@ -8,6 +8,7 @@
 //Libraries
 #include <iostream>
 #include <iomanip>//board formatting
+#include <cstdlib>//for rand
 #include "BaseBS.h"
 
 using namespace std;
@@ -96,50 +97,24 @@ void BaseBS::place(){
         }while(!conf3);
     }
 }
+//!target for BaseBS handles the computer firing on the player's board
+//!it is a glorified random number generator
 void BaseBS::target(){
-    int row, col;
-    bool conf1,conf2,conf3;//error buffers
+    bool confirm=false;
+    int row,col;
+    //randomly fires at spots until it
     do{
-        conf1=false;
-        conf2=false;
-        conf3=false;
-        cout<<"Enter the row (vertical) component of the coordinate "
-                <<"you wish to fire upon"<<endl;
-        do{
-            cin>>row;
-            if (cin.fail()||row<0||row>size-1) {
-                cin.clear();
-                cin.ignore(256,'\n');
-                cout<<"Error. Invalid selection." << endl;
-            } else
-                conf1=true;
-        }while(cin.fail()||row<0||row>size-1||!conf1);
-        cout<<"Enter the column (horizontal) component "
-                <<"of the coordinate you wish to fire upon"<<endl;
-        do{
-            cin>>col;
-            if(cin.fail()||col<0||col>size-1){
-                cin.clear();
-                cin.ignore(256,'\n');
-                cout<<"Error. Invalid selection."<<endl;
-            }else
-                conf2=true;
-        }while(cin.fail()||col<0||col>size-1||!conf2);
-        if(board[row][col]!=piece[3]&&board[row][col]!=piece[2])
-            cout<<"This spot has been fired upon already."<<endl;
-        else
-            conf3=true;
-    } while (!conf3);
-    //if a ship was hit, replace with X and decrease remaining ships
-    //and announce hit was successful
+        row=(rand()%6);
+        col=(rand()%6);
+        //piece[3]==blank, piece[2]==ship
+        if(board[row][col]==piece[3]||board[row][col]==piece[2])
+            confirm=true;
+    } while(!confirm);
+    //piece[2]==ship,piece[0]==X
     if (board[row][col]==piece[2]){
         board[row][col]=piece[0];
-        cout<<"Ship at position ("<<row<<","<<col<<")"<<" destroyed!"<<endl;
         ships--;
-    } 
-    //if a ship wasn't hit, replace with O and announce miss
-    else{
+        //piece[1]==O
+    } else
         board[row][col]=piece[1];
-        cout<<"Ship at position ("<<row<<","<<col<<")"<<" missed."<<endl;
-    }
 }

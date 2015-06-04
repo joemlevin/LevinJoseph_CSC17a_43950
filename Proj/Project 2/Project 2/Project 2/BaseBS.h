@@ -17,7 +17,7 @@ class BaseBS:AbsBS{
         //!for storing the board
         char** board;
         //!X is hit, O is miss, + is ship, <space> is empty
-        char piece[4]={'X','O','+', ' '}; const
+        char piece[4]={'X','O','+', ' '};
         //!dimension of board
         int size;
         //!ships on board
@@ -39,7 +39,5 @@ class BaseBS:AbsBS{
         void place();
         //!target handles the process of targeting a spot to fire on it
         void target();
-        //!check() checks to see if previous shot was successful. Returns true
-        //!if the shot hit, false if the shot missed
 };
 #endif	/* BASEBS_H */

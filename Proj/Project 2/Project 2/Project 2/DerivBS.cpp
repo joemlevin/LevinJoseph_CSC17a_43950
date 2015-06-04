@@ -43,13 +43,60 @@ void DerivBS::radar(){
 void DerivBS::place(){
     int row, col;
     for(int i=0;i<size;i++){
+        //randomly picks spots until it finds one that isn't occupied already
         do{
             row=(rand()%6);
             col=(rand()%6);
-        } while(board[row][col]!=piece[3]);//piece[3]==blank space
+        }while(board[row][col]!=piece[3]);//piece[3]==blank space
         board[row][col]=piece[2];//piece[2] == '+', ship
     }
 }
-//!target for DerivBS randomly fires on spots for computer
-void target();
+//!target for DerivBS handles the player firing on the computer's board
+//!it prompts for the coordinates one component a time, checks for any errors
+//!and decides if it was a hit or miss and announces such
+void DerivBS::target(){
+    int row, col;
+    bool conf1,conf2,conf3;//error buffers
+    do{
+        conf1=false;
+        conf2=false;
+        conf3=false;
+        cout<<"Enter the row (vertical) component of the coordinate "
+                <<"you wish to fire upon"<<endl;
+        do{
+            cin>>row;
+            if (cin.fail()||row<0||row>size-1) {
+                cin.clear();
+                cin.ignore(256,'\n');
+                cout<<"Error. Invalid selection." << endl;
+            } else
+                conf1=true;
+        }while(cin.fail()||row<0||row>size-1||!conf1);
+        cout<<"Enter the column (horizontal) component "
+                <<"of the coordinate you wish to fire upon"<<endl;
+        do{
+            cin>>col;
+            if(cin.fail()||col<0||col>size-1){
+                cin.clear();
+                cin.ignore(256,'\n');
+                cout<<"Error. Invalid selection."<<endl;
+            }else
+                conf2=true;
+        }while(cin.fail()||col<0||col>size-1||!conf2);
+        if(board[row][col]!=piece[3]&&board[row][col]!=piece[2])
+            cout<<"This spot has been fired upon already."<<endl;
+        else
+            conf3=true;
+    } while (!conf3);
+    //if a ship was hit, replace with X and decrease remaining ships
+    //and announce hit was successful
+    if (board[row][col]==piece[2]){
+        board[row][col]=piece[0];
+        ships--;
+    } 
+    //if a ship wasn't hit, replace with O and announce miss
+    else{
+        board[row][col]=piece[1];
+    }
+}
 
