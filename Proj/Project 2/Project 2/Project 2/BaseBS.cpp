@@ -62,7 +62,7 @@ void BaseBS::place(){
     bool conf1,conf2,conf3;//error buffers
     ships=0;//begin with no ships placed
     int row, col;//for checking the given coordinate
-    for(int i=0;i<size;i++){
+    for(int i=0;i<size;i++){//will place size # of ships
         do{
             cout<<"Enter the row coordinate for where to begin ship "
                     <<ships+1<<endl;
@@ -103,9 +103,7 @@ void BaseBS::place(){
 }
 void BaseBS::target(){
     int row, col;
-    bool conf1;
-    bool conf2;
-    bool conf3;
+    bool conf1,conf2,conf3;//error buffers
     do{
         conf1=false;
         conf2=false;
@@ -137,10 +135,16 @@ void BaseBS::target(){
         else
             conf3=true;
     } while (!conf3);
+    //if a ship was hit, replace with X and decrease remaining ships
+    //and announce hit was successful
     if (board[row][col]==piece[2]){
         board[row][col]=piece[0];
+        cout<<"Ship at position ("<<row<<","<<col<<")"<<" destroyed!"<<endl;
         ships--;
-    } else{
+    } 
+    //if a ship wasn't hit, replace with O and announce miss
+    else{
         board[row][col]=piece[1];
+        cout<<"Ship at position ("<<row<<","<<col<<")"<<" missed."<<endl;
     }
 }

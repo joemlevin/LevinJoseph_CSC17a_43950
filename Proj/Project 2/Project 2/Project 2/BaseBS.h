@@ -39,6 +39,9 @@ class BaseBS:AbsBS{
         void place();
         //!target handles the process of targeting a spot to fire on it
         void target();
+        //!check() checks to see if previous shot was successful. Returns true
+        //!if the shot hit, false if the shot missed
+        
             
 };
 
