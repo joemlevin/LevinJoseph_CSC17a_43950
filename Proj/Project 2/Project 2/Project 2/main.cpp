@@ -86,12 +86,14 @@ int main(int argc, char** argv) {
             //play Mastermind    
             case 4:
                 do{
+                    clrscrn();
                     playMM(s);
                 }while(again());
                 break;
             //play BattleShip    
             case 5:
-            do{
+                do{
+                    clrscrn();
                     playBS(s);
                 }while(again());
                 break;
@@ -607,11 +609,12 @@ void playBS(Stats *s){
         player.pBoard();
         cout<<endl;
         cout<<"Radar ("<<comp.getShips()<<" enemy ships remain)"<<endl;
-        comp.pBoard();
+        comp.radar();
         //targeting round
         player.target();
         comp.target();
     }while(comp.getShips()!=0&&player.getShips()!=0);
+    clrscrn();
     //Display boards final time
     cout<<"Player board ("<<player.getShips()<<" ships remain)"<<endl;
     player.pBoard();
