@@ -39,15 +39,18 @@ void instrct();
 void purge(Answer *, Guesses *,int);//deletes all structures related to a game
 void seeStats(Stats *);//Displays stats
 void clrscrn();//clears screen
+void playMM(Stats *);//driver for mastermind game
+void playBS(Stats *);//driver for battleship 
+int getDim();//gets dimension for BattleShip board
 
 //Begin
 int main(int argc, char** argv) {
 //    srand(time(0));
 //    short optn;
-//    Stats *s=new Stats;
-//    s->wins=0;
-//    s->loses=0;
-//    s->nGuess=0;
+    Stats *s=new Stats;
+    s->wins=0;
+    s->loses=0;
+    s->nGuess=0;
 //    do{
 //        clrscrn();
 //        optn=slct();
@@ -86,17 +89,7 @@ int main(int argc, char** argv) {
 //    //clean up!
 //    delete s;
 
-    BaseBS player(6);
-    DerivBS comp(6);
-    player.place();
-    comp.place();
-    player.pBoard();
-    comp.pBoard();
-    player.target();
-    comp.target();
-    player.pBoard();
-    comp.pBoard();
-    comp.radar();
+    playBS(s);
     return 0;
 }
 
@@ -521,4 +514,79 @@ void instrct(){
             <<"but you can't have a correct position without"
             " it also being the correct number."<<endl
             <<endl<<"Good luck!"<<endl;
+}//end
+/*!
+ * playBS is the main driver for BattleShip.
+ * Parameters: a stats struct for storing stats
+ */
+void playBS(Stats *){
+    int dim;//for storing dimension of board
+    bool sConf=false;//confirming size is valid
+    cout<<"Welcome to BattleShip!"
+            " Please select the size board you'd like to play."<<endl;
+    cout<<"1. 6x6"<<endl;
+    cout<<"2. 8x8"<<endl;
+    cout<<"3. 10x10"<<endl;
+    do{
+        try{
+            dim=getDim();
+            sConf=true;
+        }
+        catch(string invalid){
+            cout<<invalid<<endl;
+        }
+    }while(!sConf);
+    //initialize BaseBS (for player) and DerivBS (for computer) of dim
+    BaseBS player(dim);
+    DerivBS comp(dim);
+    //randomly place computer's ships
+    comp.place();
+    //place players ships
+    player.place();
+    //begin rounds
+    do{
+        clrscrn();
+        cout<<"Player board ("<<player.getShips()<<" ships remain)"<<endl;
+        player.pBoard();
+        cout<<endl;
+        cout<<"Radar ("<<comp.getShips()<<" enemy ships remain)"<<endl;
+        comp.pBoard();
+        player.target();
+        comp.target();
+    }while(comp.getShips()!=0&&player.getShips()!=0);
+    //Display boards final time
+    cout<<"Player board ("<<player.getShips()<<" ships remain)"<<endl;
+    player.pBoard();
+    cout<<endl;
+    cout<<"Radar ("<<comp.getShips()<<" enemy ships remain)"<<endl;
+    comp.radar();
+    //Determine victor
+    if(comp.getShips()==0){
+        cout<<"You win! Congratulations!"<<endl;
+    }
+    else{
+        cout<<"You lose. Sorry!"<<endl;
+    }
+}//end
+/*!
+ * getDim prompts user for dimension for BattleShip board. It will throw
+ * an exception if invalid, otherwise returns the value
+ */
+int getDim(){
+    int dim;
+    cin>>dim;
+    if(dim<1||dim>3||cin.fail()){
+        string invalid="Invalid selection for dimension. Try again.";
+        throw invalid;
+    }
+    if(dim==1){
+        dim=6;
+    }
+    else if(dim==2){
+        dim=8;
+    }
+    else{
+        dim=10;
+    }
+    return dim;
 }

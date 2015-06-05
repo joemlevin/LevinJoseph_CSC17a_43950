@@ -14,6 +14,8 @@ class AbsBS{
         virtual char** flBoard()=0;
         //!outputs the board
         virtual void pBoard()=0;
+        //!returns ships remaining
+        virtual int getShips()=0;
 };
 #endif	/*  ABSBS_H */
 

@@ -39,5 +39,7 @@ class BaseBS:AbsBS{
         void place();
         //!target handles the process of targeting a spot to fire on it
         void target();
+        //!getShips returns the value of the ships member variable
+        int getShips();
 };
 #endif	/* BASEBS_H */

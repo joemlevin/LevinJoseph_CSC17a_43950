@@ -8,7 +8,8 @@
 //Libraries
 #include <iostream>
 #include <iomanip>//board formatting
-#include <cstdlib>//for rand
+#include <cstdlib>
+#include <vector>//for rand
 #include "BaseBS.h"
 
 using namespace std;
@@ -60,6 +61,7 @@ void BaseBS::place(){
     int row, col;//for checking the given coordinate
     for(int i=0;i<size;i++){//will place size # of ships
         do{
+            pBoard();
             cout<<"Enter the row coordinate for where to begin ship "
                     <<ships+1<<endl;
             //check confirms to false
@@ -68,7 +70,7 @@ void BaseBS::place(){
             conf3=false;
             do{//gets the row coordinate
                 cin>>row;
-                if (cin.fail()||(row<0||row>size-1)){//size-1 denotes edge of board
+                if (cin.fail()||(row<0||row>size-1)){//size-1 denotes edge
                     cin.clear();
                     cin.ignore(256,'\n');
                     cout<<"Error. Invalid input."<<endl;
@@ -104,8 +106,8 @@ void BaseBS::target(){
     int row,col;
     //randomly fires at spots until it
     do{
-        row=(rand()%6);
-        col=(rand()%6);
+        row=(rand()%size);
+        col=(rand()%size);
         //piece[3]==blank, piece[2]==ship
         if(board[row][col]==piece[3]||board[row][col]==piece[2])
             confirm=true;
@@ -118,3 +120,5 @@ void BaseBS::target(){
     } else
         board[row][col]=piece[1];
 }
+//!getShips returns the value of the ships member variable
+int BaseBS::getShips(){return ships;}

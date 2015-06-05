@@ -42,13 +42,15 @@ void DerivBS::radar(){
 //!place for DerivBS randomly places ships for computer
 void DerivBS::place(){
     int row, col;
+    ships=0;
     for(int i=0;i<size;i++){
         //randomly picks spots until it finds one that isn't occupied already
         do{
-            row=(rand()%6);
-            col=(rand()%6);
+            row=(rand()%size);
+            col=(rand()%size);
         }while(board[row][col]!=piece[3]);//piece[3]==blank space
         board[row][col]=piece[2];//piece[2] == '+', ship
+        ships++;
     }
 }
 //!target for DerivBS handles the player firing on the computer's board
