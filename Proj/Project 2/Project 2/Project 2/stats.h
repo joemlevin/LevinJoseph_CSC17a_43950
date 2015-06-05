@@ -21,6 +21,9 @@ struct Stats{
     int winsBS;
     //!number of loses for BattleShip
     int losesBS;
+    //!tracks games played
+    int gamesBS;
+    int gamesMM;
 };
 
 

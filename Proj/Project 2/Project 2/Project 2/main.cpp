@@ -51,8 +51,10 @@ int main(int argc, char** argv) {
     bool optnChk;//for checking if menu option is valid
     Stats *s=new Stats;
     //initialize all Stats variables to 0
+    s->gamesMM=0;
     s->winsMM=0;
     s->losesMM=0;
+    s->gamesBS=0;
     s->winsBS=0;
     s->losesBS=0;
     s->nGuess=0;
@@ -320,8 +322,10 @@ void play(Stats *s,int m,int r){
         g->guess[g->nGuess-1].code=getG(r);
         checkG(a,g,r);
     }while(g->nGuess<a->mxGuess&&g->guess[g->nGuess-1].corPos!=r);
+    //display answer and determine win or lose and increment stats counters
     clrscrn();
     pAns(a,g,r);
+    s->gamesMM++;
     if(g->guess[g->nGuess-1].corPos==r){
         cout<<"You cracked the code! You win!"<<endl;
         s->winsMM++;
@@ -496,17 +500,17 @@ bool menu(){
  * correct guess percentage
  */
 void seeStats(Stats *s){
-    if(s->nGuess!=0){
-        cout<<"Games played: "<<s->winsMM+s->losesMM<<endl;
+    if(s->gamesBS!=0||s->gamesMM!=0){
+        cout<<"Mastermind"<<endl;
+        cout<<"Games played: "<<s->gamesMM<<endl;
         cout<<"Wins: "<<s->winsMM<<endl;
         cout<<"Losses: "<<s->losesMM<<endl;
         cout<<"Total guesses: "<<s->nGuess<<endl;
-        cout<<setprecision(2)<<fixed
-                <<"% Games won: "<<100*static_cast<float>(s->winsMM)/
-           (static_cast<float>(s->winsMM)+static_cast<float>(s->losesMM))<<endl;
-        cout<<setprecision(5)<<fixed
-                <<"% Guesses correct: "<<100*static_cast<float>(s->winsMM)/
-                static_cast<float>(s->nGuess)<<endl;
+        cout<<endl;
+        cout<<"BattleShip"<<endl;
+        cout<<"Games played: "<<s->gamesBS<<endl;
+        cout<<"Wins: "<<s->winsBS<<endl;
+        cout<<"Losses: "<<s->losesBS<<endl;
     }
     else
         cout<<"Stats File is empty!"<<endl;
@@ -591,12 +595,15 @@ void playBS(Stats *s){
     cout<<endl;
     cout<<"Radar ("<<comp.getShips()<<" enemy ships remain)"<<endl;
     comp.radar();
-    //Determine victor
+    //Determine victor and increment stats counters
+    s->gamesBS++;
     if(comp.getShips()==0){
         cout<<"You win! Congratulations!"<<endl;
+        s->winsBS++;
     }
     else{
         cout<<"You lose. Sorry!"<<endl;
+        s->losesBS++;
     }
     cout<<"Would you like to save your stats? y/n"<<endl;
     do{
