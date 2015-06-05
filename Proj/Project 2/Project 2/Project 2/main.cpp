@@ -19,6 +19,7 @@ using namespace std;
 //User Libraries
 #include "mastermind.h"
 #include "DerivBS.h"
+#include "stats.h"
 
 //Global Constants
 
@@ -45,51 +46,68 @@ int getDim();//gets dimension for BattleShip board
 
 //Begin
 int main(int argc, char** argv) {
-//    srand(time(0));
-//    short optn;
+    srand(time(0));
+    short optn;
+    bool optnChk;//for checking if menu option is valid
     Stats *s=new Stats;
-    s->wins=0;
-    s->loses=0;
+    //initialize all Stats variables to 0
+    s->winsMM=0;
+    s->losesMM=0;
+    s->winsBS=0;
+    s->losesBS=0;
     s->nGuess=0;
-//    do{
-//        clrscrn();
-//        optn=slct();
-//        switch(optn){
-//            case 1:
-//                do{
-//                    clrscrn();
-//                    instrct();
-//                }while(!menu());
-//                break;
-//            case 2:
-//                s=load();
-//                break;
-//            case 3:
-//                do{
-//                    clrscrn();
-//                    seeStats(s);
-//                }while(!menu());
-//                break;
-//            case 4:
-//                do{
-//                    clrscrn();
-//                    int l=getL();
-//                    play(s,10,l);
-//                }while(again());
-//                break;
-//            case -1:
-//                cout<<"Thanks for playing!"<<endl;
-//                break;
-//            default:
-//                cout<<"Invalid option selected..."
-//                        "it's not that hard, really."<<endl;
-//                break;
-//        }
-//    }while(optn!=-1);
-//    //clean up!
-//    delete s;
-
-    playBS(s);
+    //display menu
+    do{
+        optnChk=false;
+        clrscrn();
+        //get menu selection
+        optn=slct();
+        switch(optn){
+            //display instructions
+            case 1:
+                do{
+                    clrscrn();
+                    instrct();
+                }while(!menu());
+                break;
+            //load a stats struct
+            case 2:
+                s=load();
+                break;
+            //view stats    
+            case 3:
+                do{
+                    clrscrn();
+                    seeStats(s);
+                }while(!menu());
+                break;
+            //play Mastermind    
+            case 4:
+                do{
+                    playMM(s);
+                }while(again());
+                break;
+            //play BattleShip    
+            case 5:
+            do{
+                    playBS(s);
+                }while(again());
+                break;
+            //exit case    
+            case -1:
+                cout<<"Thanks for playing!"<<endl;
+                break;
+            //invalid option    
+            default:
+                cout<<"Invalid option selected..."
+                        "it's not that hard, really."<<endl;
+                break;
+        }
+    }while(optn!=-1);
+    //clean up!
+    delete s;
+    
+    //It's over!
     return 0;
 }
 
@@ -306,11 +324,11 @@ void play(Stats *s,int m,int r){
     pAns(a,g,r);
     if(g->guess[g->nGuess-1].corPos==r){
         cout<<"You cracked the code! You win!"<<endl;
-        s->wins++;
+        s->winsMM++;
     }
     else{
         cout<<"You didn't crack the code! You lose... Sorry!"<<endl;
-        s->loses++;
+        s->losesMM++;
     }
     s->nGuess+=g->nGuess;
     cout<<"Would you like to save your stats? y/n"<<endl;
@@ -397,11 +415,12 @@ short slct(){
             <<"1. View Instructions"<<endl
             <<"2. Load Stats File"<<endl
             <<"3. View Stats"<<endl
-            <<"4. Play Game!"<<endl
+            <<"4. Play Mastermind!"<<endl
+            <<"5. Play BattleShip!"<<endl
             <<"-1 to quit"<<endl;
     do{
         cin>>pick;
-        if(cin.fail()||pick<=0&&pick!=-1||pick>7){//error checking
+        if(cin.fail()||pick<=0&&pick!=-1||pick>5){//error checking
             cin.clear();
             cin.ignore(256,'\n');
             cout<<"Error. Invalid selection. Try again."<<endl;
@@ -478,15 +497,15 @@ bool menu(){
  */
 void seeStats(Stats *s){
     if(s->nGuess!=0){
-        cout<<"Games played: "<<s->wins+s->loses<<endl;
-        cout<<"Wins: "<<s->wins<<endl;
-        cout<<"Losses: "<<s->loses<<endl;
+        cout<<"Games played: "<<s->winsMM+s->losesMM<<endl;
+        cout<<"Wins: "<<s->winsMM<<endl;
+        cout<<"Losses: "<<s->losesMM<<endl;
         cout<<"Total guesses: "<<s->nGuess<<endl;
         cout<<setprecision(2)<<fixed
-                <<"% Games won: "<<100*static_cast<float>(s->wins)/
-               (static_cast<float>(s->wins)+static_cast<float>(s->loses))<<endl;
+                <<"% Games won: "<<100*static_cast<float>(s->winsMM)/
+           (static_cast<float>(s->winsMM)+static_cast<float>(s->losesMM))<<endl;
         cout<<setprecision(5)<<fixed
-                <<"% Guesses correct: "<<100*static_cast<float>(s->wins)/
+                <<"% Guesses correct: "<<100*static_cast<float>(s->winsMM)/
                 static_cast<float>(s->nGuess)<<endl;
     }
     else
@@ -516,11 +535,21 @@ void instrct(){
             <<endl<<"Good luck!"<<endl;
 }//end
 /*!
+ * playMMis the main driver for Mastermind.
+ * Parameters: a stats struct for storing stats
+ */
+void playMM(Stats *s){
+    clrscrn();
+    int l=getL(); 
+    play(s,10,l);
+}
+/*!
  * playBS is the main driver for BattleShip.
  * Parameters: a stats struct for storing stats
  */
-void playBS(Stats *){
+void playBS(Stats *s){
     int dim;//for storing dimension of board
+    char optn;//for stat saving selection
     bool sConf=false;//confirming size is valid
     cout<<"Welcome to BattleShip!"
             " Please select the size board you'd like to play."<<endl;
@@ -546,11 +575,13 @@ void playBS(Stats *){
     //begin rounds
     do{
         clrscrn();
+        //display board and radar
         cout<<"Player board ("<<player.getShips()<<" ships remain)"<<endl;
         player.pBoard();
         cout<<endl;
         cout<<"Radar ("<<comp.getShips()<<" enemy ships remain)"<<endl;
         comp.pBoard();
+        //targeting round
         player.target();
         comp.target();
     }while(comp.getShips()!=0&&player.getShips()!=0);
@@ -567,6 +598,18 @@ void playBS(Stats *){
     else{
         cout<<"You lose. Sorry!"<<endl;
     }
+    cout<<"Would you like to save your stats? y/n"<<endl;
+    do{
+        cin>>optn;
+        if(tolower(optn)!='y'&&tolower(optn)!='n')
+            cout<<"Sorry, that's not a valid option. Please try again."<<endl;
+        else if(tolower(optn)=='y'){
+            save(s);
+            cout<<"Stats saved!"<<endl;
+        }
+        else
+            cout<<"Stats not saved."<<endl;
+    }while(tolower(optn)!='y'&&tolower(optn)!='n');
 }//end
 /*!
  * getDim prompts user for dimension for BattleShip board. It will throw
@@ -579,6 +622,7 @@ int getDim(){
         string invalid="Invalid selection for dimension. Try again.";
         throw invalid;
     }
+    //Reassign dim to the corresponding dimension
     if(dim==1){
         dim=6;
     }

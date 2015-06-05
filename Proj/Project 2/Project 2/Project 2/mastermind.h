@@ -41,16 +41,4 @@ struct Guesses{
     //!how many guesses have been taken
     int nGuess;
 };
-
-/*!
- * Stats stores the number of wins, losses, and number of guesses
- */
-struct Stats{
-    //!number of wins
-    int wins;
-    //!number of loses
-    int loses;
-    //!number of guesses
-    int nGuess;
-};
 #endif	/* MASTERMIND_H */
