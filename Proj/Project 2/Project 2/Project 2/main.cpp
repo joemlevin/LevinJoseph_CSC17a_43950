@@ -414,7 +414,7 @@ Stats *load(){
 short slct(){
     short pick; //for menu selection
     bool check=false;
-    cout<<"Welcome to Mastermind!"<<endl;
+    cout<<"Welcome to Joseph Levin's Project 2!"<<endl;
     cout<<"Choose an option from the menu: "<<endl
             <<"1. View Instructions"<<endl
             <<"2. Load Stats File"<<endl
@@ -519,24 +519,47 @@ void seeStats(Stats *s){
  * instrct displays the rules for Code Breaker (based on Mastermind)
  */
 void instrct(){
-    cout<<"Mastermind is a game of decryption!"<<endl<<endl
+    cout<<"       **************"<<endl;
+    cout<<"       *            *"<<endl;
+    cout<<"       * MASTERMIND *"<<endl;
+    cout<<"       *            *"<<endl;
+    cout<<"       **************"<<endl;
+    cout<<"Mastermind is a game of decryption!"<<endl
             <<"In it, the player (that's you!)"<<endl
-            <<"attempts to decipher a secret code generated at random."<<endl
-            <<"The code consists of integers between 1 and 8."<<endl
+            <<"attempts to decipher a secret code"<<endl
+            <<"generated at random. The code consists"<<endl
+            <<"of integers between 1 and 8."<<endl
             <<"The player chooses from 3 code lengths (4, 6, 8),"<<endl
-            <<"and guesses at each of the individual digits that make up"
-            " the secret code."<<endl
-            <<"After each attempt the player is told how "
-            "many correct numbers"<<endl
-            <<"(shown as 'N') and correct position "
-            "(shown as 'P') the attempt had."<<endl
-            <<"The player wins by correctly determining"
-            " all 4 correct numbers and positions."<<endl
-            <<"Remember, a guess can have 4 correct numbers but 0 correct "
-            "positions,"<<endl
-            <<"but you can't have a correct position without"
-            " it also being the correct number."<<endl
-            <<endl<<"Good luck!"<<endl;
+            <<"and guesses at each of the individual digits"<<endl
+            <<"that make up the secret code. After each"<<endl
+            <<"attempt the player is told how many correct "<<endl
+            <<"numbers (shown as 'N') and correct position "<<endl
+            <<"(shown as 'P') the attempt had. The player"<<endl
+            <<"wins by correctly determining all 4 correct"<<endl
+            <<"numbers and positions. Remember, a guess can"<<endl
+            <<"have 4 correct numbers but 0 correct positions,"<<endl
+            <<"but you can't have a correct position without"<<endl
+            <<"it also being the correct number."<<endl;
+    cout<<endl;
+    cout<<"       **************"<<endl;
+    cout<<"       *            *"<<endl;
+    cout<<"       * BATTLESHIP *"<<endl;
+    cout<<"       *            *"<<endl;
+    cout<<"       **************"<<endl;
+    cout<<"Battleship is a guessing game!"<<endl
+            <<"In it, the player (that's you again!)"<<endl
+            <<"attempts to find and destroy the enemy's ships,"<<endl
+            <<"which are placed randomly. However, the enemy"<<endl
+            <<"also fires on the player! The player starts"<<endl
+            <<"by choosing the starting location of his ships"<<endl
+            <<"and then takes turns guessing at the location"<<endl
+            <<"of the enemy's ships by entering the row and"<<endl
+            <<"column coordinates of the spot on the board"<<endl
+            <<"at which to 'fire' upon. Hits are designated"<<endl
+            <<"with an 'X', and misses are 'O'. The game"<<endl
+            <<"until either the player or the computer runs"<<endl
+            <<"out of ships."<<endl;
+    cout<<endl<<"Good luck!"<<endl;
 }//end
 /*!
  * playMMis the main driver for Mastermind.

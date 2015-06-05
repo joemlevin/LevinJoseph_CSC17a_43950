@@ -25,7 +25,4 @@ struct Stats{
     int gamesBS;
     int gamesMM;
 };
-
-
 #endif	/* STATS_H */
-

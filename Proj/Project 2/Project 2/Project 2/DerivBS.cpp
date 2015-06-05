@@ -23,7 +23,7 @@ void DerivBS::radar(){
     }
     cout<<endl;
     for (int i=0;i<size; i++) {
-        cout<<"  "<<setw(25)<<setfill('-')<<'-'<<endl;
+        cout<<"  "<<setw(size*4+1)<<setfill('-')<<'-'<<endl;
         cout<<i<<" ";
         for (int j=0;j<size;j++) {
             //if ship isn't at that spot, place piece at i,j
@@ -37,7 +37,7 @@ void DerivBS::radar(){
         }
         cout<<"| "<<endl;
     }
-    cout<<"  "<<setw(25)<<setfill('-') << '-' << endl;
+    cout<<"  "<<setw(size*4+1)<<setfill('-') << '-' << endl;
 }
 //!place for DerivBS randomly places ships for computer
 void DerivBS::place(){

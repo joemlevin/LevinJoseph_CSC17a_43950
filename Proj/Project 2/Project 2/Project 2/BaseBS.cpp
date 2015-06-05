@@ -46,14 +46,14 @@ void BaseBS::pBoard(){
     }
     cout<<endl;
     for (int i=0;i<size; i++) {
-        cout<<"  "<<setw(25)<<setfill('-')<<'-'<<endl;
+        cout<<"  "<<setw(size*4+1)<<setfill('-')<<'-'<<endl;
         cout<<i<<" ";
         for (int j=0;j<size;j++) {
             cout<<"|"<<setw(2)<<setfill(' ')<<board[i][j]<<" ";
         }
         cout<<"| "<<endl;
     }
-    cout<<"  "<<setw(25)<<setfill('-') << '-' << endl;
+    cout<<"  "<<setw(size*4+1)<<setfill('-') << '-' << endl;
 }
 void BaseBS::place(){
     bool conf1,conf2,conf3;//error buffers
