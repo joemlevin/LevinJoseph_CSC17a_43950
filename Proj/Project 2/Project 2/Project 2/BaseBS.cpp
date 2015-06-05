@@ -70,15 +70,20 @@ void BaseBS::place(){
             conf3=false;
             do{//gets the row coordinate
                 cin>>row;
-                if (cin.fail()||(row<0||row>size-1)){//size-1 denotes edge
+                if (cin.fail()||(row<-1||row>size-1)){//size-1 denotes edge
                     cin.clear();
                     cin.ignore(256,'\n');
                     cout<<"Error. Invalid input."<<endl;
                 } else
                     conf1=true;//row coordinate is acceptable
-            } while(cin.fail()||row<0||row>size-1||!conf1);
+            } while(cin.fail()||row<-1||row>size-1||!conf1);
             cout<<"Enter the column coordinate for where to begin ship "
                     <<ships+1<<endl;
+            //-1 indicates the user wants to quit the game
+            if(row==-1){
+                string quit="-1 selected. Exiting game.";
+                throw quit;
+            }
             do{
                 cin>>col;
                 if (cin.fail()||(col<0||col>size-1)){

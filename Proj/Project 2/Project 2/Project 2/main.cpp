@@ -188,6 +188,11 @@ int *getG(int row){
     do{
         check=true;
         getline(cin,guess);
+        //-1 indicates player wants to quit
+        if(guess=="-1"){
+            string quit="-1 Selected. Exiting game.";
+            throw quit;
+        }
         if(guess.size()!=2*row-1){//row digits plus spaces between
             cout<<"You must enter "<<row<<" digits separated by spaces."
                     <<"Try again!"<<endl;
@@ -316,41 +321,47 @@ void play(Stats *s,int m,int r){
         g->guess[i].corNum=0;
         g->guess[i].corPos=0;
     }
-    //loop until win/lose
-    do{
+    //try til -1
+    try{
+        //loop until win/lose
+        do{
+            clrscrn();
+            g->nGuess++;
+            pBoard(g,a,r);
+            g->guess[g->nGuess-1].code=getG(r);
+            checkG(a,g,r);
+        }while(g->nGuess<a->mxGuess&&g->guess[g->nGuess-1].corPos!=r);
+        //display answer and determine win or lose and increment stats counters
         clrscrn();
-        g->nGuess++;
-        pBoard(g,a,r);
-        g->guess[g->nGuess-1].code=getG(r);
-        checkG(a,g,r);
-    }while(g->nGuess<a->mxGuess&&g->guess[g->nGuess-1].corPos!=r);
-    //display answer and determine win or lose and increment stats counters
-    clrscrn();
-    pAns(a,g,r);
-    s->gamesMM++;
-    if(g->guess[g->nGuess-1].corPos==r){
-        cout<<"You cracked the code! You win!"<<endl;
-        s->winsMM++;
-    }
-    else{
-        cout<<"You didn't crack the code! You lose... Sorry!"<<endl;
-        s->losesMM++;
-    }
-    s->nGuess+=g->nGuess;
-    cout<<"Would you like to save your stats? y/n"<<endl;
-    do{
-        cin>>optn;
-        if(tolower(optn)!='y'&&tolower(optn)!='n')
-            cout<<"Sorry, that's not a valid option. Please try again."<<endl;
-        else if(tolower(optn)=='y'){
-            save(s);
-            cout<<"Stats saved!"<<endl;
+        pAns(a,g,r);
+        s->gamesMM++;
+        if(g->guess[g->nGuess-1].corPos==r){
+            cout<<"You cracked the code! You win!"<<endl;
+            s->winsMM++;
         }
-        else
-            cout<<"Stats not saved."<<endl;
-    }while(tolower(optn)!='y'&&tolower(optn)!='n');
-    //clean up
-    purge(a,g,m);
+        else{
+            cout<<"You didn't crack the code! You lose... Sorry!"<<endl;
+            s->losesMM++;
+        }
+        s->nGuess+=g->nGuess;
+        cout<<"Would you like to save your stats? y/n"<<endl;
+        do{
+            cin>>optn;
+            if(tolower(optn)!='y'&&tolower(optn)!='n')
+                cout<<"Sorry, that's not a valid option. Please try again."<<endl;
+            else if(tolower(optn)=='y'){
+                save(s);
+                cout<<"Stats saved!"<<endl;
+            }
+            else
+                cout<<"Stats not saved."<<endl;
+        }while(tolower(optn)!='y'&&tolower(optn)!='n');
+        //clean up
+        purge(a,g,m);
+    }
+    catch(string quit){
+        cout<<quit<<endl;
+    }
 }//end
 /*!
  * purge takes in an Answers and Guesses pointer and deletes all dynamically
@@ -597,52 +608,59 @@ void playBS(Stats *s){
     //initialize BaseBS (for player) and DerivBS (for computer) of dim
     BaseBS player(dim);
     DerivBS comp(dim);
-    //randomly place computer's ships
-    comp.place();
-    //place players ships
-    player.place();
-    //begin rounds
-    do{
+    //catch is triggered if -1 is entered at any point
+    try{
+            //randomly place computer's ships
+        comp.place();
+        //place players ships
+        player.place();
+        //begin rounds
+        do{
+            clrscrn();
+            //display board and radar
+            cout<<"Player board ("<<player.getShips()<<" ships remain)"<<endl;
+            player.pBoard();
+            cout<<endl;
+            cout<<"Radar ("<<comp.getShips()<<" enemy ships remain)"<<endl;
+            comp.radar();
+            //targeting round
+            player.target();
+            comp.target();
+        }while(comp.getShips()!=0&&player.getShips()!=0);
+    
         clrscrn();
-        //display board and radar
+        //Display boards final time
         cout<<"Player board ("<<player.getShips()<<" ships remain)"<<endl;
         player.pBoard();
         cout<<endl;
         cout<<"Radar ("<<comp.getShips()<<" enemy ships remain)"<<endl;
         comp.radar();
-        //targeting round
-        player.target();
-        comp.target();
-    }while(comp.getShips()!=0&&player.getShips()!=0);
-    clrscrn();
-    //Display boards final time
-    cout<<"Player board ("<<player.getShips()<<" ships remain)"<<endl;
-    player.pBoard();
-    cout<<endl;
-    cout<<"Radar ("<<comp.getShips()<<" enemy ships remain)"<<endl;
-    comp.radar();
-    //Determine victor and increment stats counters
-    s->gamesBS++;
-    if(comp.getShips()==0){
-        cout<<"You win! Congratulations!"<<endl;
-        s->winsBS++;
-    }
-    else{
-        cout<<"You lose. Sorry!"<<endl;
-        s->losesBS++;
-    }
-    cout<<"Would you like to save your stats? y/n"<<endl;
-    do{
-        cin>>optn;
-        if(tolower(optn)!='y'&&tolower(optn)!='n')
-            cout<<"Sorry, that's not a valid option. Please try again."<<endl;
-        else if(tolower(optn)=='y'){
-            save(s);
-            cout<<"Stats saved!"<<endl;
+        //Determine victor and increment stats counters
+        s->gamesBS++;
+        if(comp.getShips()==0){
+            cout<<"You win! Congratulations!"<<endl;
+            s->winsBS++;
         }
-        else
-            cout<<"Stats not saved."<<endl;
-    }while(tolower(optn)!='y'&&tolower(optn)!='n');
+        else{
+            cout<<"You lose. Sorry!"<<endl;
+            s->losesBS++;
+        }
+        cout<<"Would you like to save your stats? y/n"<<endl;
+        do{
+            cin>>optn;
+            if(tolower(optn)!='y'&&tolower(optn)!='n')
+                cout<<"Sorry, that's not a valid option. Please try again."<<endl;
+            else if(tolower(optn)=='y'){
+                save(s);
+                cout<<"Stats saved!"<<endl;
+            }
+            else
+                cout<<"Stats not saved."<<endl;
+        }while(tolower(optn)!='y'&&tolower(optn)!='n');
+    }
+    catch(string quit){
+        cout<<quit<<endl;
+    }
 }//end
 /*!
  * getDim prompts user for dimension for BattleShip board. It will throw

@@ -67,13 +67,18 @@ void DerivBS::target(){
                 <<"you wish to fire upon"<<endl;
         do{
             cin>>row;
-            if (cin.fail()||row<0||row>size-1) {
+            if (cin.fail()||row<-1||row>size-1) {
                 cin.clear();
                 cin.ignore(256,'\n');
                 cout<<"Error. Invalid selection." << endl;
             } else
                 conf1=true;
-        }while(cin.fail()||row<0||row>size-1||!conf1);
+        }while(cin.fail()||row<-1||row>size-1||!conf1);
+        //-1 indicates the user wants to quit the game
+        if(row==-1){
+            string quit="-1 selected. Exiting game.";
+            throw quit;
+        }
         cout<<"Enter the column (horizontal) component "
                 <<"of the coordinate you wish to fire upon"<<endl;
         do{
