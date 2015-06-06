@@ -8,21 +8,27 @@
 //Libraries
 #include <iostream>
 #include <iomanip>//board formatting
-#include <cstdlib>
-#include <vector>//for rand
+#include <cstdlib>//for rand
 #include "BaseBS.h"
 
 using namespace std;
 
 BaseBS::BaseBS(int s){
     size=s;
+    piece=new char[4];
+    piece[0]='X';
+    piece[1]='O';
+    piece[2]='+';
+    piece[3]=' ';
     board=flBoard();
+
 }
 BaseBS::~BaseBS(){
     for(int i=0;i<size;i++){
         delete []board[i];
     }
     delete []board;
+    delete []piece;
 }
 /*!
  * flBoard() initializes the board with all empty spaces
@@ -125,5 +131,3 @@ void BaseBS::target(){
     } else
         board[row][col]=piece[1];
 }
-//!getShips returns the value of the ships member variable
-int BaseBS::getShips(){return ships;}

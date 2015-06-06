@@ -17,7 +17,8 @@ class BaseBS:AbsBS{
         //!for storing the board
         char** board;
         //!X is hit, O is miss, + is ship, <space> is empty
-        char piece[4]={'X','O','+', ' '};
+        //char piece[4]={'X','O','+', ' '};
+        char* piece;
         //!dimension of board
         int size;
         //!ships on board
@@ -40,6 +41,6 @@ class BaseBS:AbsBS{
         //!target handles the process of targeting a spot to fire on it
         void target();
         //!getShips returns the value of the ships member variable
-        int getShips();
+        int getShips(){return ships;}
 };
 #endif	/* BASEBS_H */
